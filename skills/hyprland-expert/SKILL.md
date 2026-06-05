@@ -7,7 +7,7 @@ metadata:
   author: opencode
   version: "1.0.0"
   domain: specialized
-  triggers: hyprland, wayland, tiling wm, window rules, hyprctl, hyprlock, hypridle, hyprpaper, waybar, wofi, rofi, swaync, dwindle, master-stack, scrolling layout, window tape, monocle, hyprpm, plugins, themes, catppuccin, migration, i3, sway, bspwm, dotfiles, security, accessibility, color management, hdr, screen recording, wayland debugging, fractional scaling, icc profile, night light, lua config, layout api, custom layouts, quickshell, ags, eww, astal, hyprpolkitagent, hyprsysteminfo, hyprland-autoname-workspaces, hyprpanel
+  triggers: hyprland, wayland, tiling wm, window rules, hyprctl, hyprlock, hypridle, hyprpaper, waybar, wofi, rofi, swaync, dwindle, master-stack, scrolling layout, window tape, monocle, hyprpm, plugins, themes, catppuccin, migration, i3, sway, bspwm, dotfiles, security, accessibility, color management, hdr, screen recording, wayland debugging, fractional scaling, icc profile, night light, lua config, hl.config, hl.bind, hl.dsp, hl.curve, hl.animation, hl.window_rule, hl.on, hl.monitor, hl.layout.register, hl.env, hl.exec_cmd, hl.timer, hl.gesture, hl.device, hl.permission, hl.layer_rule, hl.workspace_rule, hl.get_config, hl.dispatch, ux profiles, macos refugee, windows migrant, gnome transplant, layout api, custom layouts, quickshell, ags, eww, astal, hyprpolkitagent, hyprsysteminfo, hyprland-autoname-workspaces, hyprpanel
   role: specialist
   scope: implementation
   output-format: config
@@ -65,7 +65,7 @@ This skill supports users at every level. Follow the path that matches your expe
 
 ### Intermediate Track
 1. **Assess environment** — Identify GPU, monitor layout, distro, Hyprland version (v0.55+ uses Lua)
-2. **Configure core** — Set up `hyprland.conf` (or `hyprland.lua`): monitors, input, general, decoration, misc
+2. **Configure core** — Set up `hl.lua` using the `hl.*` API namespace: monitors, input, general, decoration, misc
 3. **Set window rules** — Define match props (class, title, initialClass) and effects (float, fullscreen, workspace, opacity, etc.)
 4. **Bind keys** — Map keybindings for window management, launchers, screenshots, media controls
 5. **Add animations & theming** — Configure bezier curves, animation presets, gaps, rounding, blur, shadows
@@ -73,7 +73,7 @@ This skill supports users at every level. Follow the path that matches your expe
 7. **Validate** — Run `hyprctl reload`, test keybindings, check logs with `journalctl -f -u hyprland`
 
 ### Expert Track
-1. **Migrate to Lua** — Convert `hyprland.conf` to `hyprland.lua` with full programming capabilities
+1. **Migrate to Lua** — Convert `hyprland.conf` to `hl.lua` using the `hl.*` API namespace
 2. **Write IPC scripts** — Use `hyprctl` + socket events for dynamic desktop behavior
 3. **Create dynamic workflows** — Event-driven workspace management, conditional rules
 4. **Add plugins** — Use `hyprpm` for touch gestures, workspace overview, title bars, enhanced borders
@@ -97,7 +97,13 @@ Use window rules: `windowrulev2=workspace 2,class:^(firefox)$`. See `references/
 Check `references/troubleshooting.md` — covers blank screen, keybinding issues, NVIDIA, screen sharing, and performance.
 
 ### "Should I use Lua or hyprlang?"
-**Use Lua.** hyprlang has been deprecated since Hyprland v0.55 (May 2026) and will be removed in 1–2 releases. All new configs should use `hyprland.lua`. Existing `hyprland.conf` files still work for now but should be migrated.
+**Use Lua.** hyprlang has been deprecated since Hyprland v0.55 (May 2026) and will be removed in 1–2 releases. All new configs should use `hl.lua`. Use the `hl.*` namespace (`hl.monitor()`, `hl.config()`, `hl.bind()`, `hl.window_rule()`, etc.) — do not use `hyprland.*`. See `references/lua-deep-dive.md` for complete API reference.
+
+### "What is the hl.* namespace?"
+The `hl.*` namespace is the canonical Lua API in Hyprland v0.55+. All config functions use the `hl` prefix: `hl.config()`, `hl.bind()`, `hl.monitor()`, `hl.window_rule()`, `hl.on()`, `hl.dsp.*` dispatchers, `hl.exec_cmd()`, `hl.curve()`, `hl.animation()`, `hl.layout.register()`, `hl.timer()`, `hl.dispatch()`, `hl.env()`, etc. The `hyprland.*` alias is NOT guaranteed to work — always use `hl.*`.
+
+### "How do I get started with a pre-built opinionated config?"
+Choose your UX persona from `references/ux-profiles.md`: macOS Refugee, Windows Migrant, GNOME Transplant, Gamer, Developer, or Designer. Each profile is a complete drop-in `hl.lua` config tuned for that user's expectations, with theme, keybindings, autostart, and companion tools included.
 
 ### "How do I switch from i3/sway/bspwm?"
 See `references/migration-guides.md` — side-by-side configs, tool replacements, and checklists for each source WM.
@@ -142,6 +148,7 @@ It supports sticky keys, slow keys, on-screen keyboards, screen readers, and hig
 | Security | `references/security.md` | Intermediate | Wayland security model, screen lock, clipboard, polkit |
 | Accessibility | `references/accessibility.md` | All levels | Sticky keys, on-screen keyboard, screen reader, high contrast |
 | Color Management | `references/color-management.md` | Expert | ICC profiles, HDR, night light, color-accurate workflow |
+| UX Profiles | `references/ux-profiles.md` | All levels | 6 drop-in persona configs (macOS, Windows, GNOME, Gamer, Dev, Design) |
 
 ## Key Concepts
 
@@ -149,7 +156,7 @@ It supports sticky keys, slow keys, on-screen keyboards, screen readers, and hig
 
 ```
 ~/.config/hypr/
-├── hyprland.lua           # Main config (Lua syntax, v0.55+, recommended)
+├── hl.lua                 # Main config (Lua syntax, v0.55+, recommended)
 ├── hyprland.conf          # Legacy config (hyprlang, deprecated since v0.55)
 ├── configs/               # Modular configs sourced from main
 │   ├── monitors.conf
@@ -170,74 +177,77 @@ It supports sticky keys, slow keys, on-screen keyboards, screen readers, and hig
 | Debian | `sudo apt install hyprland` | Backports for newer versions; check `apt policy hyprland` | systemd |
 | NixOS | `programs.hyprland.enable = true;` | Flake or nixpkgs-unstable for v0.55+ | systemd |
 
-### Config Sections (`hyprland.conf`)
+### Config Sections — Lua API (`hl.*` namespace)
 
-| Section | Purpose |
-|---------|---------|
-| `monitor` | Display setup: resolution, refresh rate, position, scaling |
-| `input` | Keyboard, mouse, touchpad, touch device settings |
-| `general` | Gaps, border size, layout (dwindle/master-stack), cursor |
-| `decoration` | Rounding, blur, shadows, opacity |
-| `animations` | Animation enable/disable, bezier curves, styles |
-| `misc` | Logo, splash, DPMS, disable_autoreload |
-| `windowrule` | Match windows and apply behavior |
-| `windowrulev2` | Extended window rules (v2 syntax) |
-| `bind` | Keybindings |
-| `env` | Environment variables |
-| `exec-once` | Autostart commands |
+In Lua configs (`hl.lua`), use `hl.config({ ... })` to set most section-based settings. Key API functions:
+
+| API Call | Purpose | Equivalent to hyprlang |
+|----------|---------|----------------------|
+| `hl.monitor({...})` | Display setup | `monitor=` |
+| `hl.config({input={...}})` | Keyboard, mouse, touchpad | `input {}` |
+| `hl.config({general={...}})` | Gaps, border, layout | `general {}` |
+| `hl.config({decoration={...}})` | Rounding, blur, shadows | `decoration {}` |
+| `hl.curve()` / `hl.animation()` | Bezier curves and animation presets | `animations {}` |
+| `hl.config({misc={...}})` | Logo, splash, DPMS | `misc {}` |
+| `hl.window_rule({...})` | Match windows with named rules | `windowrule=`, `windowrulev2=` |
+| `hl.bind(...)` | Keybindings with dispatcher functions | `bind=` |
+| `hl.env(...)` | Environment variables | `env=` |
+| `hl.on("hyprland.start", ...)` | Autostart commands | `exec-once=` |
 
 ### Lua Config (v0.55+) — Primary Configuration Language
 
-Since Hyprland v0.55 (May 2026), Lua is the **primary** config language. hyprlang is deprecated. Create `hyprland.lua` instead of `hyprland.conf`:
+Since Hyprland v0.55 (May 2026), Lua is the **primary** config language. hyprlang is deprecated. Create `hl.lua` instead of `hyprland.conf`:
 
 ```lua
--- hyprland.lua
-hyprland.monitor("DP-1", "2560x1440@144", "0x0", 1)
-hyprland.monitor("HDMI-A-1", "1920x1080@60", "2560x0", 1)
+-- hl.lua
+hl.monitor({ output = "DP-1", mode = "2560x1440@144", position = "0x0", scale = 1 })
+hl.monitor({ output = "HDMI-A-1", mode = "1920x1080@60", position = "2560x0", scale = 1 })
 
-hyprland.input {
-    kb_layout = "us",
-    kb_variant = "",
-    follow_mouse = 1,
-    touchpad {
-        natural_scroll = true,
-        tap-to-click = true,
-    }
-}
-
-hyprland.general {
-    gaps_in = 5,
-    gaps_out = 10,
-    border_size = 2,
-    layout = "dwindle",
-}
-
-hyprland.decoration {
-    rounding = 10,
-    active_opacity = 1.0,
-    inactive_opacity = 0.9,
-    blur {
-        enabled = true,
-        size = 3,
-        passes = 1,
+hl.config({
+    input = {
+        kb_layout = "us",
+        kb_variant = "",
+        follow_mouse = 1,
+        touchpad = {
+            natural_scroll = true,
+            ["tap-to-click"] = true,
+        },
     },
-    drop_shadow = true,
-    shadow_range = 4,
-}
+    general = {
+        gaps_in = 5,
+        gaps_out = 10,
+        border_size = 2,
+        layout = "dwindle",
+    },
+    decoration = {
+        rounding = 10,
+        active_opacity = 1.0,
+        inactive_opacity = 0.9,
+        blur = {
+            enabled = true,
+            size = 3,
+            passes = 1,
+        },
+        drop_shadow = true,
+        shadow_range = 4,
+    },
+})
 
-hyprland.windowrule("float", { class = "^pavucontrol$" })
-hyprland.windowrule("float", { class = "^blueman-manager$" })
-hyprland.windowrule("workspace 2 silent", { class = "^firefox$" })
+hl.window_rule({ name = "float-pavucontrol", match = { class = "^pavucontrol$" }, float = true })
+hl.window_rule({ name = "float-blueman", match = { class = "^blueman-manager$" }, float = true })
+hl.window_rule({ name = "ws-firefox", match = { class = "^firefox$" }, workspace = "2" })
 
-hyprland.bind("SUPER", "Return", "exec", "kitty")
-hyprland.bind("SUPER", "Q", "killactive")
-hyprland.bind("SUPER", "Space", "togglefloating")
-hyprland.bind("SUPER", "F", "fullscreen")
-hyprland.bind("SUPER SHIFT", "l", "exec", "hyprctl dispatch exit")
+hl.bind("SUPER + Return", hl.dsp.exec_cmd("kitty"))
+hl.bind("SUPER + Q", hl.dsp.window.close())
+hl.bind("SUPER + Space", hl.dsp.window.float({ action = "toggle" }))
+hl.bind("SUPER + F", hl.dsp.window.fullscreen())
+hl.bind("SUPER SHIFT + L", hl.dsp.exit())
 
-hyprland.exec_once("waybar")
-hyprland.exec_once("hyprpaper")
-hyprland.exec_once("hypridle")
+hl.on("hyprland.start", function()
+    hl.exec_cmd("waybar")
+    hl.exec_cmd("hyprpaper")
+    hl.exec_cmd("hypridle")
+end)
 ```
 
 ## Constraints

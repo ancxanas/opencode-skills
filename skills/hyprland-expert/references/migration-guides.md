@@ -404,7 +404,7 @@ windowrule = float, ^(pavucontrol)$
 | `blueman-applet` (X11) | `blueman-applet` (Wayland) | Same app, works in Wayland |
 | `pasystray` / `volumeicon` | `pavucontrol` + waybar | waybar pulseaudio module |
 | `udiskie` | `udiskie` | Works on Wayland |
-| `polkit-gnome-auth` | Same | Works on Wayland |
+| `polkit-gnome-auth` | Same (or use hyprpolkitagent) | hyprpolkitagent preferred on Arch |
 | `dunst` | `swaync` / `dunst` | `swaync` recommended |
 | `rofi` (X11) | `rofi-lbonn-wayland` | Wayland fork needed |
 | `redshift` | `hyprsunset` / `wlsunset` | `hyprsunset` |

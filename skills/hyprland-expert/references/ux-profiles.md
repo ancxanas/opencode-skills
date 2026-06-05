@@ -39,165 +39,208 @@ Pick a persona that matches how you want your desktop to feel. Each includes a *
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
--- ~/.config/hypr/hyprland.lua
+-- ~/.config/hypr/hl.lua
 -- macOS Refugee Profile
 
 -- == MONITORS ==
 -- Replace with your monitors from `hyprctl monitors`
-hyprland.monitor("DP-1", "2560x1440@144", "0x0", 1)
-hyprland.monitor("HDMI-A-1", "1920x1080@60", "2560x0", 1)
+hl.monitor({
+    output   = "DP-1",
+    mode     = "2560x1440@144",
+    position = "0x0",
+    scale    = 1,
+})
+hl.monitor({
+    output   = "HDMI-A-1",
+    mode     = "1920x1080@60",
+    position = "2560x0",
+    scale    = 1,
+})
 
 -- == INPUT ==
-hyprland.input {
-    kb_layout = "us",
-    kb_variant = "",
-    follow_mouse = 1,
-    numlock_by_default = true,
-    touchpad {
-        natural_scroll = true,
-        tap_to_click = true,
-        drag_lock = true,
-    }
-}
+
+hl.config({
+    input = {
+        kb_layout = "us",
+        kb_variant = "",
+        follow_mouse = 1,
+        numlock_by_default = true,
+        touchpad = {
+            natural_scroll = true,
+            tap_to_click = true,
+            drag_lock = true,
+        },
+    },
+    general = {
+        gaps_in = 5,
+        gaps_out = 12,
+        border_size = 1,
+        ["col.active_border"] = "rgba(cba6f7ee) rgba(89b4faee) 45deg",
+        ["col.inactive_border"] = "rgba(45475aee)",
+        layout = "master",
+        cursor_inactive_timeout = 3,
+    },
+    decoration = {
+        rounding = 12,
+        active_opacity = 1.0,
+        inactive_opacity = 0.92,
+        fullscreen_opacity = 1.0,
+        blur = {
+            enabled = true,
+            size = 4,
+            passes = 2,
+            new_optimizations = true,
+        },
+        drop_shadow = true,
+        shadow_range = 8,
+        shadow_render_power = 3,
+        ["col.shadow"] = "rgba(11111b44)",
+    },
+    misc = {
+        disable_hyprland_logo = true,
+        disable_splash_rendering = true,
+        mouse_move_enables_dpms = true,
+        key_press_enables_dpms = true,
+        enable_swallow = true,
+        swallow_regex = "^(kitty|alacritty|foot)$",
+        force_default_wallpaper = 0,
+    },
+})
+
+hl.curve("smooth", { type = "bezier", points = {{0.04, 0.83}, {0.19, 0.98}} })
+hl.curve("bounce", { type = "bezier", points = {{0.13, 0.99}, {0.29, 1.1}} })
+hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
+hl.animation({ leaf = "windows", enabled = true, speed = 7, bezier = "smooth", style = "popin" })
+hl.animation({ leaf = "windowsOut", enabled = true, speed = 7, bezier = "smooth", style = "popin" })
+hl.animation({ leaf = "fade", enabled = true, speed = 8, bezier = "default" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 6, bezier = "smooth" })
+hl.animation({ leaf = "borderangle", enabled = true, speed = 100, bezier = "default", style = "once" })
 
 -- == APPEARANCE ==
 local mod = "SUPER"
 local terminal = "kitty"
 local browser = "firefox"
 
-hyprland.general {
-    gaps_in = 5,
-    gaps_out = 12,
-    border_size = 1,
-    col.active_border = "rgba(cba6f7ee) rgba(89b4faee) 45deg",
-    col.inactive_border = "rgba(45475aee)",
-    layout = "master",
-    cursor_inactive_timeout = 3,
-}
-
-hyprland.decoration {
-    rounding = 12,
-    active_opacity = 1.0,
-    inactive_opacity = 0.92,
-    fullscreen_opacity = 1.0,
-    blur {
-        enabled = true,
-        size = 4,
-        passes = 2,
-        new_optimizations = true,
-    },
-    drop_shadow = true,
-    shadow_range = 8,
-    shadow_render_power = 3,
-    col.shadow = "rgba(11111b44)",
-}
-
-hyprland.animations {
-    enabled = true,
-    bezier = "smooth,0.04,0.83,0.19,0.98",
-    bezier = "bounce,0.13,0.99,0.29,1.1",
-    animation = "global,1,10,default",
-    animation = "windows,1,7,smooth,popin",
-    animation = "windowsOut,1,7,smooth,popin",
-    animation = "fade,1,8,default",
-    animation = "workspaces,1,6,smooth",
-    animation = "borderangle,1,100,default,once",
-}
-
-hyprland.misc {
-    disable_hyprland_logo = true,
-    disable_splash_rendering = true,
-    mouse_move_enables_dpms = true,
-    key_press_enables_dpms = true,
-    enable_swallow = true,
-    swallow_regex = "^(kitty|alacritty|foot)$",
-    force_default_wallpaper = 0,
-}
-
 -- == WINDOW RULES ==
-hyprland.windowrule("float", { class = "^(pavucontrol|blueman-manager|gnome-calculator|org.gnome.Nautilus)$" })
-hyprland.windowrule("float", { class = "^(firefox)$", title = "^(Picture-in-Picture|Library)$" })
-hyprland.windowrule("workspace 1", { class = "^" .. terminal .. "$" })
-hyprland.windowrule("workspace 2", { class = "^" .. browser .. "$" })
-hyprland.windowrule("workspace 3", { class = "^(Code|jetbrains-idea)$" })
-hyprland.windowrule("opacity 0.95 0.85", { class = "^(kitty)$" })
+hl.window_rule({
+    name  = "float-pavucontrol-blueman-manager-gnome-calculator-org.gnome.Nautilus",
+    match = { class = "^(pavucontrol|blueman-manager|gnome-calculator|org.gnome.Nautilus)$" },
+    float = true,
+})
+hl.window_rule({
+    name  = "float-firefox",
+    match = { class = "^(firefox)$", title = "^(Picture-in-Picture|Library)$" },
+    float = true,
+})
+hl.window_rule({
+    name  = "ws-custom",
+    match = { class = "^" .. terminal .. "$" },
+    workspace = "1",
+})
+hl.window_rule({
+    name  = "ws-custom",
+    match = { class = "^" .. browser .. "$" },
+    workspace = "2",
+})
+hl.window_rule({
+    name  = "ws-Code-jetbrains-idea",
+    match = { class = "^(Code|jetbrains-idea)$" },
+    workspace = "3",
+})
+hl.window_rule({
+    name  = "opacity-kitty",
+    match = { class = "^(kitty)$" },
+    opacity = { active = 0.95, inactive = 0.85 },
+})
 
 -- == KEYBINDINGS (macOS-style) ==
 -- App launcher (Spotlight: Cmd+Space)
-hyprland.bind(mod, "Space", "exec", "rofi -show drun")
+hl.bind(mod .. " + Space", hl.dsp.exec_cmd("rofi -show drun"))
 
 -- Close/kill (Cmd+Q = quit app, Cmd+W = close window)
-hyprland.bind(mod, "Q", "killactive")
-hyprland.bind(mod, "W", "exec", "hyprctl dispatch killactive")
+hl.bind(mod .. " + Q", hl.dsp.window.close())
+hl.bind(mod .. " + W", hl.dsp.exec_cmd("hyprctl dispatch killactive"))
 
 -- Fullscreen (green button: Cmd+F)
-hyprland.bind(mod, "F", "fullscreen")
+hl.bind(mod .. " + F", hl.dsp.window.fullscreen())
 
 -- Toggle float (Cmd+D)
-hyprland.bind(mod, "D", "togglefloating")
+hl.bind(mod .. " + D", hl.dsp.window.float({ action = "toggle" }))
 
 -- Minimize (Cmd+M — sends to special workspace)
-hyprland.bind(mod, "M", "movetoworkspace,special:minimized")
+hl.bind(mod .. " + M", hl.dsp.window.move({ workspace = "special:minimized" }))
 
 -- Focus movement (arrows + Vim keys)
-hyprland.bind(mod, "left", "movefocus", "l")
-hyprland.bind(mod, "right", "movefocus", "r")
-hyprland.bind(mod, "up", "movefocus", "u")
-hyprland.bind(mod, "down", "movefocus", "d")
-hyprland.bind(mod, "H", "movefocus", "l")
-hyprland.bind(mod, "J", "movefocus", "d")
-hyprland.bind(mod, "K", "movefocus", "u")
-hyprland.bind(mod, "L", "movefocus", "r")
+hl.bind(mod .. " + left", hl.dsp.focus({ direction = "l" }))
+hl.bind(mod .. " + right", hl.dsp.focus({ direction = "r" }))
+hl.bind(mod .. " + up", hl.dsp.focus({ direction = "u" }))
+hl.bind(mod .. " + down", hl.dsp.focus({ direction = "d" }))
+hl.bind(mod .. " + H", hl.dsp.focus({ direction = "l" }))
+hl.bind(mod .. " + J", hl.dsp.focus({ direction = "d" }))
+hl.bind(mod .. " + K", hl.dsp.focus({ direction = "u" }))
+hl.bind(mod .. " + L", hl.dsp.focus({ direction = "r" }))
 
 -- Move windows (Cmd+Opt+arrows)
-hyprland.bind(mod .. " SHIFT", "left", "movewindow", "l")
-hyprland.bind(mod .. " SHIFT", "right", "movewindow", "r")
-hyprland.bind(mod .. " SHIFT", "up", "movewindow", "u")
-hyprland.bind(mod .. " SHIFT", "down", "movewindow", "d")
+hl.bind(mod .. " SHIFT" .. " + left", hl.dsp.window.move({ direction = "l" }))
+hl.bind(mod .. " SHIFT" .. " + right", hl.dsp.window.move({ direction = "r" }))
+hl.bind(mod .. " SHIFT" .. " + up", hl.dsp.window.move({ direction = "u" }))
+hl.bind(mod .. " SHIFT" .. " + down", hl.dsp.window.move({ direction = "d" }))
 
 -- Workspaces (Cmd+number)
 for i = 1, 9 do
-    hyprland.bind(mod, tostring(i), "workspace", tostring(i))
-    hyprland.bind(mod .. " SHIFT", tostring(i), "movetoworkspace", tostring(i))
+    hl.bind(mod .. " + " .. tostring(i), hl.dsp.focus({ workspace = tostring(i) }))
+    hl.bind(mod .. " SHIFT" .. " + " .. tostring(i), hl.dsp.window.move({ workspace = tostring(i) }))
 end
 
 -- Mission Control / Overview (Ctrl+Up like macOS)
-hyprland.bind("CTRL", "Up", "exec", "rofi -show window")
-hyprland.bind(mod, "Tab", "changegroupactive")
+hl.bind("CTRL" .. " + Up", hl.dsp.exec_cmd("rofi -show window"))
+hl.bind(mod .. " + Tab", hl.dsp.window.group("next"))
 
 -- Exit (Cmd+Opt+Esc)
-hyprland.bind(mod .. " SHIFT", "Escape", "exit", "")
+hl.bind(mod .. " SHIFT" .. " + Escape", hl.dsp.exit())
 
 -- Scratchpad (Cmd+grave)
-hyprland.bind(mod, "grave", "togglespecialworkspace")
-hyprland.bind(mod .. " SHIFT", "grave", "movetoworkspace", "special:scratchpad")
+hl.bind(mod .. " + grave", hl.dsp.workspace.toggle_special("scratchpad"))
+hl.bind(mod .. " SHIFT" .. " + grave", hl.dsp.window.move({ workspace = "special:scratchpad" }))
 
 -- Mouse scrolling for workspaces
-hyprland.bindm(mod, "mouse_down", "workspace", "e+1")
-hyprland.bindm(mod, "mouse_up", "workspace", "e-1")
+hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Media keys
-hyprland.bindl(",", "XF86AudioRaiseVolume", "exec", "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+")
-hyprland.bindl(",", "XF86AudioLowerVolume", "exec", "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-")
-hyprland.bindl(",", "XF86AudioMute", "exec", "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")
-hyprland.bindl(",", "XF86AudioPlay", "exec", "playerctl play-pause")
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 
 -- == ENVIRONMENT ==
-hyprland.env("XCURSOR_SIZE", "24")
-hyprland.env("HYPRCURSOR_SIZE", "24")
-hyprland.env("GDK_BACKEND", "wayland,x11,*")
-hyprland.env("QT_QPA_PLATFORM", "wayland;xcb")
-hyprland.env("SDL_VIDEODRIVER", "wayland")
-hyprland.env("CLUTTER_BACKEND", "wayland")
-hyprland.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
+hl.env("XCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("GDK_BACKEND", "wayland,x11,*")
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("SDL_VIDEODRIVER", "wayland")
+hl.env("CLUTTER_BACKEND", "wayland")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 
 -- == AUTOSTART ==
-hyprland.exec_once("quickshell ~/.config/quickshell/bar.qml")
-hyprland.exec_once("swww-daemon")
-hyprland.exec_once("hypridle")
-hyprland.exec_once("swaync")
-hyprland.exec_once("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
-hyprland.exec_once("sleep 5; nm-applet")
+hl.on("hyprland.start", function()
+    hl.exec_cmd("quickshell ~/.config/quickshell/bar.qml")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("swww-daemon")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("hypridle")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("swaync")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("/usr/lib/hyprpolkitagent")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("sleep 5; nm-applet")
+end)
 ```
 
 ### Tweak Further
@@ -234,137 +277,172 @@ hyprland.exec_once("sleep 5; nm-applet")
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
--- ~/.config/hypr/hyprland.lua
+-- ~/.config/hypr/hl.lua
 -- Windows Migrant Profile
 
 -- == MONITORS ==
-hyprland.monitor("DP-1", "2560x1440@144", "0x0", 1)
-hyprland.monitor("HDMI-A-1", "1920x1080@60", "2560x0", 1)
+hl.monitor({
+    output   = "DP-1",
+    mode     = "2560x1440@144",
+    position = "0x0",
+    scale    = 1,
+})
+hl.monitor({
+    output   = "HDMI-A-1",
+    mode     = "1920x1080@60",
+    position = "2560x0",
+    scale    = 1,
+})
 
 -- == INPUT ==
-hyprland.input {
-    kb_layout = "us",
-    follow_mouse = 0,
-    numlock_by_default = true,
-    touchpad {
-        natural_scroll = false,
-        tap_to_click = true,
-    }
-}
+
+hl.config({
+    input = {
+        kb_layout = "us",
+        follow_mouse = 0,
+        numlock_by_default = true,
+        touchpad = {
+            natural_scroll = false,
+            tap_to_click = true,
+        }
+    },
+    general = {
+        gaps_in = 4,
+        gaps_out = 8,
+        border_size = 1,
+        ["col.active_border"] = "rgba(8a9ba8ff)",
+        ["col.inactive_border"] = "rgba(3b4252ff)",
+        layout = "dwindle",
+        cursor_inactive_timeout = 0,
+    },
+    decoration = {
+        rounding = 4,
+        active_opacity = 1.0,
+        inactive_opacity = 1.0,
+        blur = { enabled = false },
+        drop_shadow = true,
+        shadow_range = 4,
+        ["col.shadow"] = "rgba(00000044)",
+    },
+    misc = {
+        disable_hyprland_logo = true,
+        disable_splash_rendering = true,
+        mouse_move_enables_dpms = true,
+        key_press_enables_dpms = true,
+        enable_swallow = true,
+        swallow_regex = "^(kitty|alacritty|foot)$",
+        force_default_wallpaper = 0,
+    },
+})
+
+hl.curve("fast", { type = "bezier", points = {{0.0, 0.0}, {0.2, 1.0}} })
+hl.animation({ leaf = "global", enabled = true, speed = 3, bezier = "default" })
+hl.animation({ leaf = "windows", enabled = true, speed = 4, bezier = "fast" })
+hl.animation({ leaf = "windowsOut", enabled = true, speed = 3, bezier = "fast" })
+hl.animation({ leaf = "fade", enabled = true, speed = 3, bezier = "default" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 2, bezier = "default" })
 
 -- == APPEARANCE ==
 local mod = "SUPER"
 local terminal = "kitty"
 local browser = "firefox"
 
-hyprland.general {
-    gaps_in = 4,
-    gaps_out = 8,
-    border_size = 1,
-    col.active_border = "rgba(8a9ba8ff)",
-    col.inactive_border = "rgba(3b4252ff)",
-    layout = "dwindle",
-    cursor_inactive_timeout = 0,
-}
-
-hyprland.decoration {
-    rounding = 4,
-    active_opacity = 1.0,
-    inactive_opacity = 1.0,
-    blur { enabled = false },
-    drop_shadow = true,
-    shadow_range = 4,
-    col.shadow = "rgba(00000044)",
-}
-
-hyprland.animations {
-    enabled = true,
-    bezier = "fast,0.0,0.0,0.2,1.0",
-    animation = "global,1,3,default",
-    animation = "windows,1,4,fast",
-    animation = "windowsOut,1,3,fast",
-    animation = "fade,1,3,default",
-    animation = "workspaces,1,2,default",
-}
-
-hyprland.misc {
-    disable_hyprland_logo = true,
-    disable_splash_rendering = true,
-    mouse_move_enables_dpms = true,
-    key_press_enables_dpms = true,
-    enable_swallow = true,
-    swallow_regex = "^(kitty|alacritty|foot)$",
-    force_default_wallpaper = 0,
-}
-
 -- == WINDOW RULES ==
-hyprland.windowrule("float", { class = "^(pavucontrol|blueman-manager|gnome-calculator|org.gnome.Nautilus)$" })
-hyprland.windowrule("float", { class = "^" .. terminal .. "$", title = "^(Settings|Preferences)$" })
-hyprland.windowrule("workspace 1", { class = "^" .. browser .. "$" })
-hyprland.windowrule("workspace 2", { class = "^" .. terminal .. "$" })
+hl.window_rule({
+    name  = "float-pavucontrol-blueman-manager-gnome-calculator-org.gnome.Nautilus",
+    match = { class = "^(pavucontrol|blueman-manager|gnome-calculator|org.gnome.Nautilus)$" },
+    float = true,
+})
+hl.window_rule({
+    name  = "float-custom",
+    match = { class = "^" .. terminal .. "$", title = "^(Settings|Preferences)$" },
+    float = true,
+})
+hl.window_rule({
+    name  = "ws-custom",
+    match = { class = "^" .. browser .. "$" },
+    workspace = "1",
+})
+hl.window_rule({
+    name  = "ws-custom",
+    match = { class = "^" .. terminal .. "$" },
+    workspace = "2",
+})
 
 -- == KEYBINDINGS (Windows-style) ==
 -- Start menu: Win key opens launcher
-hyprland.bind(mod, "D", "exec", "wofi --show drun")
+hl.bind(mod .. " + D", hl.dsp.exec_cmd("wofi --show drun"))
 
 -- Close window (Alt+F4)
-hyprland.bind("ALT", "F4", "killactive", "")
+hl.bind("ALT" .. " + F4", hl.dsp.window.close())
 
 -- Snap-like window management (Win+arrows)
-hyprland.bind(mod, "Left", "movefocus", "l")
-hyprland.bind(mod, "Right", "movefocus", "r")
-hyprland.bind(mod, "Up", "movefocus", "u")
-hyprland.bind(mod, "Down", "movefocus", "d")
+hl.bind(mod .. " + Left", hl.dsp.focus({ direction = "l" }))
+hl.bind(mod .. " + Right", hl.dsp.focus({ direction = "r" }))
+hl.bind(mod .. " + Up", hl.dsp.focus({ direction = "u" }))
+hl.bind(mod .. " + Down", hl.dsp.focus({ direction = "d" }))
 
 -- Move to other monitor (Win+Shift+arrow)
-hyprland.bind(mod .. " SHIFT", "Left", "movewindow", "l")
-hyprland.bind(mod .. " SHIFT", "Right", "movewindow", "r")
-hyprland.bind(mod .. " SHIFT", "Up", "movewindow", "u")
-hyprland.bind(mod .. " SHIFT", "Down", "movewindow", "d")
+hl.bind(mod .. " SHIFT" .. " + Left", hl.dsp.window.move({ direction = "l" }))
+hl.bind(mod .. " SHIFT" .. " + Right", hl.dsp.window.move({ direction = "r" }))
+hl.bind(mod .. " SHIFT" .. " + Up", hl.dsp.window.move({ direction = "u" }))
+hl.bind(mod .. " SHIFT" .. " + Down", hl.dsp.window.move({ direction = "d" }))
 
 -- Show desktop (Win+D already taken by launcher, so Win+,)
-hyprland.bind(mod, "comma", "exec", "hyprctl dispatch workspace 1")
+hl.bind(mod .. " + comma", hl.dsp.exec_cmd("hyprctl dispatch workspace 1"))
 
 -- Fullscreen (Win+Enter or F11)
-hyprland.bind(mod, "Return", "exec", terminal)
-hyprland.bind(mod, "F", "fullscreen")
-hyprland.bind(",", "F11", "fullscreen")
+hl.bind(mod, "Return", "exec", terminal)
+hl.bind(mod .. " + F", hl.dsp.window.fullscreen())
+hl.bind(",", "F11", "fullscreen")
 
 -- Toggle float (Win+Space)
-hyprland.bind(mod, "Space", "togglefloating")
+hl.bind(mod .. " + Space", hl.dsp.window.float({ action = "toggle" }))
 
 -- Workspaces (Win+number)
 for i = 1, 9 do
-    hyprland.bind(mod, tostring(i), "workspace", tostring(i))
-    hyprland.bind(mod .. " SHIFT", tostring(i), "movetoworkspace", tostring(i))
+    hl.bind(mod .. " + " .. tostring(i), hl.dsp.focus({ workspace = tostring(i) }))
+    hl.bind(mod .. " SHIFT" .. " + " .. tostring(i), hl.dsp.window.move({ workspace = tostring(i) }))
 end
 
 -- Task view (Win+Tab — workspace overview)
-hyprland.bind(mod, "Tab", "exec", "rofi -show window")
+hl.bind(mod .. " + Tab", hl.dsp.exec_cmd("rofi -show window"))
 
 -- Exit (Alt+F4 on desktop = log out)
-hyprland.bind(mod .. " SHIFT", "Q", "exit", "")
+hl.bind(mod .. " SHIFT" .. " + Q", hl.dsp.exit())
 
 -- Media keys
-hyprland.bindl(",", "XF86AudioRaiseVolume", "exec", "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+")
-hyprland.bindl(",", "XF86AudioLowerVolume", "exec", "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-")
-hyprland.bindl(",", "XF86AudioMute", "exec", "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
 
 -- == ENVIRONMENT ==
-hyprland.env("XCURSOR_SIZE", "24")
-hyprland.env("HYPRCURSOR_SIZE", "24")
-hyprland.env("GDK_BACKEND", "wayland,x11,*")
-hyprland.env("QT_QPA_PLATFORM", "wayland;xcb")
-hyprland.env("SDL_VIDEODRIVER", "wayland")
-hyprland.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
+hl.env("XCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("GDK_BACKEND", "wayland,x11,*")
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("SDL_VIDEODRIVER", "wayland")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 
 -- == AUTOSTART ==
-hyprland.exec_once("waybar")
-hyprland.exec_once("hyprpaper")
-hyprland.exec_once("hypridle")
-hyprland.exec_once("swaync")
-hyprland.exec_once("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
-hyprland.exec_once("sleep 5; nm-applet")
+hl.on("hyprland.start", function()
+    hl.exec_cmd("waybar")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("hyprpaper")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("hypridle")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("swaync")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("/usr/lib/hyprpolkitagent")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("sleep 5; nm-applet")
+end)
 ```
 
 ### Tweak Further
@@ -400,153 +478,194 @@ hyprland.exec_once("sleep 5; nm-applet")
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
--- ~/.config/hypr/hyprland.lua
+-- ~/.config/hypr/hl.lua
 -- GNOME Transplant Profile
 
 -- == MONITORS ==
-hyprland.monitor("DP-1", "2560x1440@144", "0x0", 1)
-hyprland.monitor("HDMI-A-1", "1920x1080@60", "2560x0", 1)
+hl.monitor({
+    output   = "DP-1",
+    mode     = "2560x1440@144",
+    position = "0x0",
+    scale    = 1,
+})
+hl.monitor({
+    output   = "HDMI-A-1",
+    mode     = "1920x1080@60",
+    position = "2560x0",
+    scale    = 1,
+})
 
 -- == INPUT ==
-hyprland.input {
-    kb_layout = "us",
-    follow_mouse = 1,
-    numlock_by_default = true,
-    touchpad {
-        natural_scroll = true,
-        tap_to_click = true,
-        scroll_factor = 0.8,
-    }
-}
+
+hl.config({
+    input = {
+        kb_layout = "us",
+        follow_mouse = 1,
+        numlock_by_default = true,
+        touchpad = {
+            natural_scroll = true,
+            tap_to_click = true,
+            scroll_factor = 0.8,
+        }
+    },
+    general = {
+        gaps_in = 6,
+        gaps_out = 12,
+        border_size = 1,
+        ["col.active_border"] = "rgba(cba6f7ee)",
+        ["col.inactive_border"] = "rgba(45475aee)",
+        layout = "master",
+        cursor_inactive_timeout = 5,
+    },
+    decoration = {
+        rounding = 10,
+        active_opacity = 1.0,
+        inactive_opacity = 0.95,
+        blur = {
+            enabled = true,
+            size = 3,
+            passes = 1,
+            new_optimizations = true,
+        },
+        drop_shadow = true,
+        shadow_range = 6,
+        ["col.shadow"] = "rgba(11111b44)",
+    },
+    misc = {
+        disable_hyprland_logo = true,
+        disable_splash_rendering = true,
+        mouse_move_enables_dpms = true,
+        key_press_enables_dpms = true,
+        enable_swallow = true,
+        swallow_regex = "^(kitty|alacritty|foot)$",
+        animate_mouse_windowdragging = true,
+        force_default_wallpaper = 0,
+    },
+})
+
+hl.curve("smooth", { type = "bezier", points = {{0.04, 0.83}, {0.19, 0.98}} })
+hl.animation({ leaf = "global", enabled = true, speed = 8, bezier = "default" })
+hl.animation({ leaf = "windows", enabled = true, speed = 6, bezier = "smooth" })
+hl.animation({ leaf = "windowsOut", enabled = true, speed = 5, bezier = "smooth" })
+hl.animation({ leaf = "fade", enabled = true, speed = 6, bezier = "default" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 5, bezier = "smooth" })
 
 -- == APPEARANCE ==
 local mod = "SUPER"
 local terminal = "kitty"
 local browser = "firefox"
 
-hyprland.general {
-    gaps_in = 6,
-    gaps_out = 12,
-    border_size = 1,
-    col.active_border = "rgba(cba6f7ee)",
-    col.inactive_border = "rgba(45475aee)",
-    layout = "master",
-    cursor_inactive_timeout = 5,
-}
-
-hyprland.decoration {
-    rounding = 10,
-    active_opacity = 1.0,
-    inactive_opacity = 0.95,
-    blur {
-        enabled = true,
-        size = 3,
-        passes = 1,
-        new_optimizations = true,
-    },
-    drop_shadow = true,
-    shadow_range = 6,
-    col.shadow = "rgba(11111b44)",
-}
-
-hyprland.animations {
-    enabled = true,
-    bezier = "smooth,0.04,0.83,0.19,0.98",
-    animation = "global,1,8,default",
-    animation = "windows,1,6,smooth",
-    animation = "windowsOut,1,5,smooth",
-    animation = "fade,1,6,default",
-    animation = "workspaces,1,5,smooth",
-}
-
-hyprland.misc {
-    disable_hyprland_logo = true,
-    disable_splash_rendering = true,
-    mouse_move_enables_dpms = true,
-    key_press_enables_dpms = true,
-    enable_swallow = true,
-    swallow_regex = "^(kitty|alacritty|foot)$",
-    animate_mouse_windowdragging = true,
-    force_default_wallpaper = 0,
-}
-
 -- == WINDOW RULES ==
-hyprland.windowrule("float", { class = "^(pavucontrol|blueman-manager|gnome-calculator)$" })
-hyprland.windowrule("float", { class = "^(firefox)$", title = "^(Picture-in-Picture)$" })
-hyprland.windowrule("workspace 1", { class = "^" .. browser .. "$" })
-hyprland.windowrule("workspace 2", { class = "^" .. terminal .. "$" })
-hyprland.windowrule("workspace 3", { class = "^(org.gnome.Nautilus|thunar|nemo)$" })
-hyprland.windowrule("noblur", { class = "^(rofi)$" })
+hl.window_rule({
+    name  = "float-pavucontrol-blueman-manager-gnome-calculator",
+    match = { class = "^(pavucontrol|blueman-manager|gnome-calculator)$" },
+    float = true,
+})
+hl.window_rule({
+    name  = "float-firefox",
+    match = { class = "^(firefox)$", title = "^(Picture-in-Picture)$" },
+    float = true,
+})
+hl.window_rule({
+    name  = "ws-custom",
+    match = { class = "^" .. browser .. "$" },
+    workspace = "1",
+})
+hl.window_rule({
+    name  = "ws-custom",
+    match = { class = "^" .. terminal .. "$" },
+    workspace = "2",
+})
+hl.window_rule({
+    name  = "ws-org.gnome.Nautilus-thunar-nemo",
+    match = { class = "^(org.gnome.Nautilus|thunar|nemo)$" },
+    workspace = "3",
+})
+hl.window_rule({
+    name  = "noblur-rofi",
+    match = { class = "^(rofi)$" },
+    no_blur = true,
+})
 
 -- == KEYBINDINGS (GNOME-style) ==
 -- Activities overview (Super key = rofi desktop mode)
-hyprland.bind(mod, "D", "exec", "rofi -show drun")
+hl.bind(mod .. " + D", hl.dsp.exec_cmd("rofi -show drun"))
 
 -- Workspace overview (Super+Up = overview, like GNOME)
-hyprland.bind(mod, "Up", "exec", "hyprctl dispatch workspace e+1")
-hyprland.bind(mod, "Down", "exec", "hyprctl dispatch workspace e-1")
+hl.bind(mod .. " + Up", hl.dsp.exec_cmd("hyprctl dispatch workspace e+1"))
+hl.bind(mod .. " + Down", hl.dsp.exec_cmd("hyprctl dispatch workspace e-1"))
 
 -- Close window (Super+Q)
-hyprland.bind(mod, "Q", "killactive")
+hl.bind(mod .. " + Q", hl.dsp.window.close())
 
 -- Fullscreen (Super+F)
-hyprland.bind(mod, "F", "fullscreen")
+hl.bind(mod .. " + F", hl.dsp.window.fullscreen())
 
 -- Focus movement (Super+arrows)
-hyprland.bind(mod, "Left", "movefocus", "l")
-hyprland.bind(mod, "Right", "movefocus", "r")
-hyprland.bind(mod, "Up", "movefocus", "u")
-hyprland.bind(mod, "Down", "movefocus", "d")
+hl.bind(mod .. " + Left", hl.dsp.focus({ direction = "l" }))
+hl.bind(mod .. " + Right", hl.dsp.focus({ direction = "r" }))
+hl.bind(mod .. " + Up", hl.dsp.focus({ direction = "u" }))
+hl.bind(mod .. " + Down", hl.dsp.focus({ direction = "d" }))
 
 -- Move windows (Super+Shift+arrows)
-hyprland.bind(mod .. " SHIFT", "Left", "movewindow", "l")
-hyprland.bind(mod .. " SHIFT", "Right", "movewindow", "r")
-hyprland.bind(mod .. " SHIFT", "Up", "movewindow", "u")
-hyprland.bind(mod .. " SHIFT", "Down", "movewindow", "d")
+hl.bind(mod .. " SHIFT" .. " + Left", hl.dsp.window.move({ direction = "l" }))
+hl.bind(mod .. " SHIFT" .. " + Right", hl.dsp.window.move({ direction = "r" }))
+hl.bind(mod .. " SHIFT" .. " + Up", hl.dsp.window.move({ direction = "u" }))
+hl.bind(mod .. " SHIFT" .. " + Down", hl.dsp.window.move({ direction = "d" }))
 
 -- Toggle maximized (Super+Up = max, Super+Down = unmax)
-hyprland.bind(mod, "Space", "togglefloating")
+hl.bind(mod .. " + Space", hl.dsp.window.float({ action = "toggle" }))
 
 -- Window switcher (Alt+Tab)
-hyprland.bind("ALT", "Tab", "exec", "rofi -show window")
+hl.bind("ALT" .. " + Tab", hl.dsp.exec_cmd("rofi -show window"))
 
 -- Workspaces (Super+number)
 for i = 1, 9 do
-    hyprland.bind(mod, tostring(i), "workspace", tostring(i))
-    hyprland.bind(mod .. " SHIFT", tostring(i), "movetoworkspace", tostring(i))
+    hl.bind(mod .. " + " .. tostring(i), hl.dsp.focus({ workspace = tostring(i) }))
+    hl.bind(mod .. " SHIFT" .. " + " .. tostring(i), hl.dsp.window.move({ workspace = tostring(i) }))
 end
 
 -- Launch terminal (Super+Return)
-hyprland.bind(mod, "Return", "exec", terminal)
+hl.bind(mod, "Return", "exec", terminal)
 
 -- Show all windows (Super+A)
-hyprland.bind(mod, "A", "exec", "rofi -show window")
+hl.bind(mod .. " + A", hl.dsp.exec_cmd("rofi -show window"))
 
 -- Lock screen (Super+L)
-hyprland.bind(mod, "L", "exec", "hyprlock")
+hl.bind(mod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 
 -- Exit (Super+Shift+Q)
-hyprland.bind(mod .. " SHIFT", "Q", "exit", "")
+hl.bind(mod .. " SHIFT" .. " + Q", hl.dsp.exit())
 
 -- Media keys
-hyprland.bindl(",", "XF86AudioRaiseVolume", "exec", "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+")
-hyprland.bindl(",", "XF86AudioLowerVolume", "exec", "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-")
-hyprland.bindl(",", "XF86AudioMute", "exec", "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
 
 -- == ENVIRONMENT ==
-hyprland.env("XCURSOR_SIZE", "24")
-hyprland.env("HYPRCURSOR_SIZE", "24")
-hyprland.env("GDK_BACKEND", "wayland,x11,*")
-hyprland.env("QT_QPA_PLATFORM", "wayland;xcb")
-hyprland.env("SDL_VIDEODRIVER", "wayland")
-hyprland.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
+hl.env("XCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("GDK_BACKEND", "wayland,x11,*")
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("SDL_VIDEODRIVER", "wayland")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 
 -- == AUTOSTART ==
-hyprland.exec_once("ags")
-hyprland.exec_once("swww-daemon")
-hyprland.exec_once("hypridle")
-hyprland.exec_once("swaync")
-hyprland.exec_once("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+hl.on("hyprland.start", function()
+    hl.exec_cmd("ags")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("swww-daemon")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("hypridle")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("swaync")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("/usr/lib/hyprpolkitagent")
+end)
 ```
 
 ### Tweak Further
@@ -583,70 +702,102 @@ hyprland.exec_once("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
--- ~/.config/hypr/hyprland.lua
+-- ~/.config/hypr/hl.lua
 -- Gamer Profile
 
 -- == MONITORS ==
-hyprland.monitor("DP-1", "2560x1440@144", "0x0", 1)
-hyprland.monitor("HDMI-A-1", "1920x1080@60", "2560x0", 1)
+hl.monitor({
+    output   = "DP-1",
+    mode     = "2560x1440@144",
+    position = "0x0",
+    scale    = 1,
+})
+hl.monitor({
+    output   = "HDMI-A-1",
+    mode     = "1920x1080@60",
+    position = "2560x0",
+    scale    = 1,
+})
 
 -- == INPUT ==
-hyprland.input {
-    kb_layout = "us",
-    follow_mouse = 1,
-    touchpad { natural_scroll = false, tap_to_click = true }
-}
+
+hl.config({
+    input = {
+        kb_layout = "us",
+        follow_mouse = 1,
+        touchpad = { natural_scroll = false, tap_to_click = true }
+    },
+    general = {
+        gaps_in = 3,
+        gaps_out = 5,
+        border_size = 1,
+        ["col.active_border"] = "rgba(f38ba8ee)",
+        ["col.inactive_border"] = "rgba(45475aee)",
+        layout = "dwindle",
+    },
+    decoration = {
+        rounding = 6,
+        active_opacity = 1.0,
+        inactive_opacity = 1.0,
+        fullscreen_opacity = 1.0,
+        blur = { enabled = false },
+        drop_shadow = false,
+    },
+    misc = {
+        disable_hyprland_logo = true,
+        disable_splash_rendering = true,
+        mouse_move_enables_dpms = true,
+        key_press_enables_dpms = true,
+        enable_swallow = true,
+        swallow_regex = "^(kitty)$",
+        vrr = 0,  -- Gaming mode script sets to 2
+        force_default_wallpaper = 0,
+    },
+})
+
+hl.curve("fast", { type = "bezier", points = {{0.0, 0.0}, {0.2, 1.0}} })
+hl.animation({ leaf = "global", enabled = true, speed = 1, bezier = "default" })
+hl.animation({ leaf = "windows", enabled = true, speed = 2, bezier = "fast" })
+hl.animation({ leaf = "fade", enabled = true, speed = 1, bezier = "default" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 1, bezier = "default" })
 
 -- == APPEARANCE ==
 local mod = "SUPER"
 local terminal = "kitty"
 
-hyprland.general {
-    gaps_in = 3,
-    gaps_out = 5,
-    border_size = 1,
-    col.active_border = "rgba(f38ba8ee)",
-    col.inactive_border = "rgba(45475aee)",
-    layout = "dwindle",
-}
-
-hyprland.decoration {
-    rounding = 6,
-    active_opacity = 1.0,
-    inactive_opacity = 1.0,
-    fullscreen_opacity = 1.0,
-    blur { enabled = false },
-    drop_shadow = false,
-}
-
 -- Start with animations ON for desktop, gaming_mode.sh turns them OFF
-hyprland.animations {
-    enabled = true,
-    bezier = "fast,0.0,0.0,0.2,1.0",
-    animation = "global,1,1,default",
-    animation = "windows,1,2,fast",
-    animation = "fade,1,1,default",
-    animation = "workspaces,1,1,default",
-}
-
-hyprland.misc {
-    disable_hyprland_logo = true,
-    disable_splash_rendering = true,
-    mouse_move_enables_dpms = true,
-    key_press_enables_dpms = true,
-    enable_swallow = true,
-    swallow_regex = "^(kitty)$",
-    vrr = 0,  -- Gaming mode script sets to 2
-    force_default_wallpaper = 0,
-}
 
 -- == WINDOW RULES ==
-hyprland.windowrule("workspace 9", { class = "^(steam|steam_app)$" })
-hyprland.windowrule("workspace 8", { class = "^(lutris|heroic|bottles)$" })
-hyprland.windowrule("immediate", { class = "^(steam_app|gamescope)$" })
-hyprland.windowrule("suppressevent fullscreen", { class = "^(steam)$" })
-hyprland.windowrule("float", { class = "^(pavucontrol|blueman-manager)$" })
-hyprland.windowrule("noanim", { class = "^(steam_app)$" })
+hl.window_rule({
+    name  = "ws-steam-steam_app",
+    match = { class = "^(steam|steam_app)$" },
+    workspace = "9",
+})
+hl.window_rule({
+    name  = "ws-lutris-heroic-bottles",
+    match = { class = "^(lutris|heroic|bottles)$" },
+    workspace = "8",
+})
+hl.window_rule({
+    name  = "immediate-steam_app-gamescope",
+    match = { class = "^(steam_app|gamescope)$" },
+    immediate = true,
+})
+hl.window_rule({
+    name  = "suppress-steam",
+    match = { class = "^(steam)$" },
+    suppress_event = "fullscreen",
+})
+hl.window_rule({
+    name  = "float-pavucontrol-blueman-manager",
+    match = { class = "^(pavucontrol|blueman-manager)$" },
+    float = true,
+})
+hl.window_rule({
+    name  = "noanim-steam_app",
+    match = { class = "^(steam_app)$" },
+    no_anim = true,
+})
 
 -- == SCRIPTS ==
 -- Create ~/.config/hypr/scripts/gaming_mode.sh:
@@ -671,52 +822,60 @@ hyprland.windowrule("noanim", { class = "^(steam_app)$" })
 -- fi
 
 -- == KEYBINDINGS ==
-hyprland.bind(mod, "Return", "exec", terminal)
-hyprland.bind(mod, "Q", "killactive")
-hyprland.bind(mod, "F", "fullscreen")
-hyprland.bind(mod, "Space", "togglefloating")
-hyprland.bind(mod, "F11", "exec", terminal .. " -e gamescope -W 2560 -H 1440 --")
-hyprland.bind(mod, "G", "exec", "~/.config/hypr/scripts/gaming_mode.sh")
+hl.bind(mod, "Return", "exec", terminal)
+hl.bind(mod .. " + Q", hl.dsp.window.close())
+hl.bind(mod .. " + F", hl.dsp.window.fullscreen())
+hl.bind(mod .. " + Space", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mod, "F11", "exec", terminal .. " -e gamescope -W 2560 -H 1440 --")
+hl.bind(mod .. " + G", hl.dsp.exec_cmd("~/.config/hypr/scripts/gaming_mode.sh"))
 
-hyprland.bind(mod, "Left", "movefocus", "l")
-hyprland.bind(mod, "Right", "movefocus", "r")
-hyprland.bind(mod, "Up", "movefocus", "u")
-hyprland.bind(mod, "Down", "movefocus", "d")
+hl.bind(mod .. " + Left", hl.dsp.focus({ direction = "l" }))
+hl.bind(mod .. " + Right", hl.dsp.focus({ direction = "r" }))
+hl.bind(mod .. " + Up", hl.dsp.focus({ direction = "u" }))
+hl.bind(mod .. " + Down", hl.dsp.focus({ direction = "d" }))
 
-hyprland.bind(mod .. " SHIFT", "Left", "movewindow", "l")
-hyprland.bind(mod .. " SHIFT", "Right", "movewindow", "r")
-hyprland.bind(mod .. " SHIFT", "Up", "movewindow", "u")
-hyprland.bind(mod .. " SHIFT", "Down", "movewindow", "d")
+hl.bind(mod .. " SHIFT" .. " + Left", hl.dsp.window.move({ direction = "l" }))
+hl.bind(mod .. " SHIFT" .. " + Right", hl.dsp.window.move({ direction = "r" }))
+hl.bind(mod .. " SHIFT" .. " + Up", hl.dsp.window.move({ direction = "u" }))
+hl.bind(mod .. " SHIFT" .. " + Down", hl.dsp.window.move({ direction = "d" }))
 
 for i = 1, 9 do
-    hyprland.bind(mod, tostring(i), "workspace", tostring(i))
-    hyprland.bind(mod .. " SHIFT", tostring(i), "movetoworkspace", tostring(i))
+    hl.bind(mod .. " + " .. tostring(i), hl.dsp.focus({ workspace = tostring(i) }))
+    hl.bind(mod .. " SHIFT" .. " + " .. tostring(i), hl.dsp.window.move({ workspace = tostring(i) }))
 end
 
-hyprland.bind(mod, "mouse_down", "workspace", "e+1")
-hyprland.bind(mod, "mouse_up", "workspace", "e-1")
-hyprland.bind(mod, "D", "exec", "wofi --show drun")
-hyprland.bind(mod .. " SHIFT", "Q", "exit", "")
+hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mod .. " + D", hl.dsp.exec_cmd("wofi --show drun"))
+hl.bind(mod .. " SHIFT" .. " + Q", hl.dsp.exit())
 
-hyprland.bindl(",", "XF86AudioRaiseVolume", "exec", "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+")
-hyprland.bindl(",", "XF86AudioLowerVolume", "exec", "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-")
-hyprland.bindl(",", "XF86AudioMute", "exec", "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
 
 -- == ENVIRONMENT ==
-hyprland.env("XCURSOR_SIZE", "24")
-hyprland.env("HYPRCURSOR_SIZE", "24")
-hyprland.env("GDK_BACKEND", "wayland,x11,*")
-hyprland.env("QT_QPA_PLATFORM", "wayland;xcb")
-hyprland.env("SDL_VIDEODRIVER", "wayland")
+hl.env("XCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("GDK_BACKEND", "wayland,x11,*")
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("SDL_VIDEODRIVER", "wayland")
 
 -- Steam GameMode
-hyprland.env("GAMEMODE_REQUEST", "1")
+hl.env("GAMEMODE_REQUEST", "1")
 
 -- == AUTOSTART ==
-hyprland.exec_once("waybar")
-hyprland.exec_once("hyprpaper")
-hyprland.exec_once("hypridle")
-hyprland.exec_once("dunst")
+hl.on("hyprland.start", function()
+    hl.exec_cmd("waybar")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("hyprpaper")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("hypridle")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("dunst")
+end)
 ```
 
 ### Tweak Further
@@ -752,22 +911,73 @@ hyprland.exec_once("dunst")
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
--- ~/.config/hypr/hyprland.lua
+-- ~/.config/hypr/hl.lua
 -- Developer Profile
 
 -- == MONITORS ==
-hyprland.monitor("DP-1", "2560x1440@144", "0x0", 1)
-hyprland.monitor("HDMI-A-1", "1920x1080@60", "2560x0", 1)
+hl.monitor({
+    output   = "DP-1",
+    mode     = "2560x1440@144",
+    position = "0x0",
+    scale    = 1,
+})
+hl.monitor({
+    output   = "HDMI-A-1",
+    mode     = "1920x1080@60",
+    position = "2560x0",
+    scale    = 1,
+})
 
 -- == INPUT ==
-hyprland.input {
-    kb_layout = "us",
-    follow_mouse = 1,
-    touchpad {
-        natural_scroll = true,
-        tap_to_click = true,
-    }
-}
+
+hl.config({
+    input = {
+        kb_layout = "us",
+        follow_mouse = 1,
+        touchpad = {
+            natural_scroll = true,
+            tap_to_click = true,
+        }
+    },
+    general = {
+        gaps_in = 4,
+        gaps_out = 8,
+        border_size = 2,
+        ["col.active_border"] = "rgba(cba6f7ee) rgba(89b4faee) 45deg",
+        ["col.inactive_border"] = "rgba(45475aee)",
+        layout = "dwindle",
+        cursor_inactive_timeout = 2,
+    },
+    decoration = {
+        rounding = 8,
+        active_opacity = 1.0,
+        inactive_opacity = 0.9,
+        blur = {
+            enabled = true,
+            size = 3,
+            passes = 1,
+        },
+        drop_shadow = true,
+        shadow_range = 4,
+        ["col.shadow"] = "rgba(1e1e2e88)",
+    },
+    misc = {
+        disable_hyprland_logo = true,
+        disable_splash_rendering = true,
+        mouse_move_enables_dpms = true,
+        key_press_enables_dpms = true,
+        enable_swallow = true,
+        swallow_regex = "^(kitty|alacritty|foot)$",
+        force_default_wallpaper = 0,
+    },
+})
+
+hl.curve("fast", { type = "bezier", points = {{0.0, 0.0}, {0.2, 1.0}} })
+hl.animation({ leaf = "global", enabled = true, speed = 4, bezier = "default" })
+hl.animation({ leaf = "windows", enabled = true, speed = 4, bezier = "fast" })
+hl.animation({ leaf = "windowsOut", enabled = true, speed = 3, bezier = "fast" })
+hl.animation({ leaf = "fade", enabled = true, speed = 4, bezier = "default" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 3, bezier = "fast" })
 
 -- == APPEARANCE ==
 local mod = "SUPER"
@@ -775,138 +985,142 @@ local terminal = "kitty"
 local browser = "firefox"
 local editor = "Code"
 
-hyprland.general {
-    gaps_in = 4,
-    gaps_out = 8,
-    border_size = 2,
-    col.active_border = "rgba(cba6f7ee) rgba(89b4faee) 45deg",
-    col.inactive_border = "rgba(45475aee)",
-    layout = "dwindle",
-    cursor_inactive_timeout = 2,
-}
-
-hyprland.decoration {
-    rounding = 8,
-    active_opacity = 1.0,
-    inactive_opacity = 0.9,
-    blur {
-        enabled = true,
-        size = 3,
-        passes = 1,
-    },
-    drop_shadow = true,
-    shadow_range = 4,
-    col.shadow = "rgba(1e1e2e88)",
-}
-
-hyprland.animations {
-    enabled = true,
-    bezier = "fast,0.0,0.0,0.2,1.0",
-    animation = "global,1,4,default",
-    animation = "windows,1,4,fast",
-    animation = "windowsOut,1,3,fast",
-    animation = "fade,1,4,default",
-    animation = "workspaces,1,3,fast",
-}
-
-hyprland.misc {
-    disable_hyprland_logo = true,
-    disable_splash_rendering = true,
-    mouse_move_enables_dpms = true,
-    key_press_enables_dpms = true,
-    enable_swallow = true,
-    swallow_regex = "^(kitty|alacritty|foot)$",
-    force_default_wallpaper = 0,
-}
-
 -- == WINDOW RULES ==
-hyprland.windowrule("workspace 1", { class = "^" .. editor .. "$" })
-hyprland.windowrule("workspace 2", { class = "^" .. browser .. "$" })
-hyprland.windowrule("workspace 3", { class = "^" .. terminal .. "$" })
-hyprland.windowrule("workspace 5", { class = "^(discord|Slack|Teams)$" })
-hyprland.windowrule("opacity 0.9 0.8", { class = "^(kitty)$" })
-hyprland.windowrule("group", { class = "^(kitty|Alacritty)$" })
-hyprland.windowrule("float", { class = "^(pavucontrol|blueman-manager|gnome-calculator)$" })
-hyprland.windowrule("float", { class = "^(firefox)$", title = "^(Picture-in-Picture)$" })
-hyprland.windowrule("float", { class = "^(discord)$", title = "^(Quick Switcher|Settings)$" })
+hl.window_rule({
+    name  = "ws-custom",
+    match = { class = "^" .. editor .. "$" },
+    workspace = "1",
+})
+hl.window_rule({
+    name  = "ws-custom",
+    match = { class = "^" .. browser .. "$" },
+    workspace = "2",
+})
+hl.window_rule({
+    name  = "ws-custom",
+    match = { class = "^" .. terminal .. "$" },
+    workspace = "3",
+})
+hl.window_rule({
+    name  = "ws-discord-Slack-Teams",
+    match = { class = "^(discord|Slack|Teams)$" },
+    workspace = "5",
+})
+hl.window_rule({
+    name  = "opacity-kitty",
+    match = { class = "^(kitty)$" },
+    opacity = { active = 0.9, inactive = 0.8 },
+})
+hl.window_rule({
+    name  = "group-kitty-Alacritty",
+    match = { class = "^(kitty|Alacritty)$" },
+    group = "set",
+})
+hl.window_rule({
+    name  = "float-pavucontrol-blueman-manager-gnome-calculator",
+    match = { class = "^(pavucontrol|blueman-manager|gnome-calculator)$" },
+    float = true,
+})
+hl.window_rule({
+    name  = "float-firefox",
+    match = { class = "^(firefox)$", title = "^(Picture-in-Picture)$" },
+    float = true,
+})
+hl.window_rule({
+    name  = "float-discord",
+    match = { class = "^(discord)$", title = "^(Quick Switcher|Settings)$" },
+    float = true,
+})
 
 -- == KEYBINDINGS (Vim-adjacent) ==
 -- Launch
-hyprland.bind(mod, "Return", "exec", terminal)
-hyprland.bind(mod, "D", "exec", "rofi -show drun")
+hl.bind(mod, "Return", "exec", terminal)
+hl.bind(mod .. " + D", hl.dsp.exec_cmd("rofi -show drun"))
 
 -- Close
-hyprland.bind(mod, "Q", "killactive")
+hl.bind(mod .. " + Q", hl.dsp.window.close())
 
 -- Vim-style focus (H/J/K/L)
-hyprland.bind(mod, "H", "movefocus", "l")
-hyprland.bind(mod, "J", "movefocus", "d")
-hyprland.bind(mod, "K", "movefocus", "u")
-hyprland.bind(mod, "L", "movefocus", "r")
+hl.bind(mod .. " + H", hl.dsp.focus({ direction = "l" }))
+hl.bind(mod .. " + J", hl.dsp.focus({ direction = "d" }))
+hl.bind(mod .. " + K", hl.dsp.focus({ direction = "u" }))
+hl.bind(mod .. " + L", hl.dsp.focus({ direction = "r" }))
 
 -- Also arrow keys for newcomers
-hyprland.bind(mod, "Left", "movefocus", "l")
-hyprland.bind(mod, "Right", "movefocus", "r")
-hyprland.bind(mod, "Up", "movefocus", "u")
-hyprland.bind(mod, "Down", "movefocus", "d")
+hl.bind(mod .. " + Left", hl.dsp.focus({ direction = "l" }))
+hl.bind(mod .. " + Right", hl.dsp.focus({ direction = "r" }))
+hl.bind(mod .. " + Up", hl.dsp.focus({ direction = "u" }))
+hl.bind(mod .. " + Down", hl.dsp.focus({ direction = "d" }))
 
 -- Move windows (Vim-style)
-hyprland.bind(mod .. " SHIFT", "H", "movewindow", "l")
-hyprland.bind(mod .. " SHIFT", "J", "movewindow", "d")
-hyprland.bind(mod .. " SHIFT", "K", "movewindow", "u")
-hyprland.bind(mod .. " SHIFT", "L", "movewindow", "r")
+hl.bind(mod .. " SHIFT" .. " + H", hl.dsp.window.move({ direction = "l" }))
+hl.bind(mod .. " SHIFT" .. " + J", hl.dsp.window.move({ direction = "d" }))
+hl.bind(mod .. " SHIFT" .. " + K", hl.dsp.window.move({ direction = "u" }))
+hl.bind(mod .. " SHIFT" .. " + L", hl.dsp.window.move({ direction = "r" }))
 
 -- Build and test shortcuts (Ctrl+B / Ctrl+T)
-hyprland.bind(mod, "B", "exec", terminal .. " -e make")
-hyprland.bind(mod, "T", "exec", terminal .. " -e npm test")
+hl.bind(mod, "B", "exec", terminal .. " -e make")
+hl.bind(mod, "T", "exec", terminal .. " -e npm test")
 
 -- Quick build output
-hyprland.bind(mod .. " SHIFT", "T", "exec", terminal .. " -e cargo build")
+hl.bind(mod .. " SHIFT", "T", "exec", terminal .. " -e cargo build")
 
 -- Workspaces
 for i = 1, 9 do
-    hyprland.bind(mod, tostring(i), "workspace", tostring(i))
-    hyprland.bind(mod .. " SHIFT", tostring(i), "movetoworkspace", tostring(i))
+    hl.bind(mod .. " + " .. tostring(i), hl.dsp.focus({ workspace = tostring(i) }))
+    hl.bind(mod .. " SHIFT" .. " + " .. tostring(i), hl.dsp.window.move({ workspace = tostring(i) }))
 end
 
 -- Scratchpad (drop-down terminal)
-hyprland.bind(mod, "grave", "togglespecialworkspace")
-hyprland.bind(mod .. " SHIFT", "grave", "movetoworkspace", "special:scratchpad")
+hl.bind(mod .. " + grave", hl.dsp.workspace.toggle_special("scratchpad"))
+hl.bind(mod .. " SHIFT" .. " + grave", hl.dsp.window.move({ workspace = "special:scratchpad" }))
 
 -- Window management
-hyprland.bind(mod, "Space", "togglefloating")
-hyprland.bind(mod, "F", "fullscreen")
-hyprland.bind(mod, "T", "togglegroup")
-hyprland.bind(mod, "Tab", "changegroupactive")
+hl.bind(mod .. " + Space", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mod .. " + F", hl.dsp.window.fullscreen())
+hl.bind(mod .. " + T", hl.dsp.window.group("toggle"))
+hl.bind(mod .. " + Tab", hl.dsp.window.group("next"))
 
 -- Mouse workspace scroll
-hyprland.bindm(mod, "mouse_down", "workspace", "e+1")
-hyprland.bindm(mod, "mouse_up", "workspace", "e-1")
+hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }), { mouse = true })
+hl.bind(mod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }), { mouse = true })
 
 -- Exit
-hyprland.bind(mod .. " SHIFT", "Q", "exit", "")
+hl.bind(mod .. " SHIFT" .. " + Q", hl.dsp.exit())
 
 -- Media keys
-hyprland.bindl(",", "XF86AudioRaiseVolume", "exec", "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+")
-hyprland.bindl(",", "XF86AudioLowerVolume", "exec", "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-")
-hyprland.bindl(",", "XF86AudioMute", "exec", "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")
-hyprland.bindl(",", "XF86AudioPlay", "exec", "playerctl play-pause")
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 
 -- == ENVIRONMENT ==
-hyprland.env("XCURSOR_SIZE", "24")
-hyprland.env("HYPRCURSOR_SIZE", "24")
-hyprland.env("GDK_BACKEND", "wayland,x11,*")
-hyprland.env("QT_QPA_PLATFORM", "wayland;xcb")
-hyprland.env("SDL_VIDEODRIVER", "wayland")
-hyprland.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
+hl.env("XCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("GDK_BACKEND", "wayland,x11,*")
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("SDL_VIDEODRIVER", "wayland")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 
 -- == AUTOSTART ==
-hyprland.exec_once("waybar")
-hyprland.exec_once("hyprpaper")
-hyprland.exec_once("hypridle")
-hyprland.exec_once("dunst")
-hyprland.exec_once("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
-hyprland.exec_once("sleep 5; nm-applet")
+hl.on("hyprland.start", function()
+    hl.exec_cmd("waybar")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("hyprpaper")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("hypridle")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("dunst")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("/usr/lib/hyprpolkitagent")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("sleep 5; nm-applet")
+end)
 ```
 
 ### Tweak Further
@@ -943,163 +1157,228 @@ hyprland.exec_once("sleep 5; nm-applet")
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
--- ~/.config/hypr/hyprland.lua
+-- ~/.config/hypr/hl.lua
 -- Designer Profile
 
 -- == MONITORS ==
 -- Add ICC profiles natively (v0.55+):
-hyprland.monitor("DP-1", "2560x1440@144", "0x0", 1, "icc:/home/user/.local/share/icc/dell-u2723qe.icc")
-hyprland.monitor("HDMI-A-1", "1920x1080@60", "2560x0", 1, "icc:/home/user/.local/share/icc/lg-27gp950.icc")
+hl.monitor({
+    output   = "DP-1",
+    mode     = "2560x1440@144",
+    position = "0x0",
+    scale    = 1,
+    ["icc:path"] = "icc:/home/user/.local/share/icc/dell-u2723qe.icc",
+})
+hl.monitor({
+    output   = "HDMI-A-1",
+    mode     = "1920x1080@60",
+    position = "2560x0",
+    scale    = 1,
+    ["icc:path"] = "icc:/home/user/.local/share/icc/lg-27gp950.icc",
+})
 
 -- == INPUT ==
-hyprland.input {
-    kb_layout = "us",
-    follow_mouse = 1,
-    touchpad {
-        natural_scroll = true,
-        tap_to_click = true,
-    }
-}
+
+hl.config({
+    input = {
+        kb_layout = "us",
+        follow_mouse = 1,
+        touchpad = {
+            natural_scroll = true,
+            tap_to_click = true,
+        }
+    },
+    general = {
+        gaps_in = 6,
+        gaps_out = 12,
+        border_size = 1,
+        ["col.active_border"] = "rgba(cba6f7ee)",
+        ["col.inactive_border"] = "rgba(45475aee)",
+        layout = "master",
+        cursor_inactive_timeout = 5,
+        no_border_on_floating = false,
+        resize_corner = 2,
+    },
+    decoration = {
+        rounding = 12,
+        active_opacity = 1.0,
+        inactive_opacity = 0.92,
+        blur = {
+            enabled = true,
+            size = 4,
+            passes = 2,
+            new_optimizations = true,
+        },
+        drop_shadow = true,
+        shadow_range = 6,
+        ["col.shadow"] = "rgba(11111b55)",
+    },
+    misc = {
+        disable_hyprland_logo = true,
+        disable_splash_rendering = true,
+        mouse_move_enables_dpms = true,
+        key_press_enables_dpms = true,
+        font_family = "Noto Sans",
+        force_default_wallpaper = 0,
+    },
+})
+
+hl.curve("smooth", { type = "bezier", points = {{0.04, 0.83}, {0.19, 0.98}} })
+hl.animation({ leaf = "global", enabled = true, speed = 8, bezier = "default" })
+hl.animation({ leaf = "windows", enabled = true, speed = 7, bezier = "smooth" })
+hl.animation({ leaf = "windowsOut", enabled = true, speed = 7, bezier = "smooth" })
+hl.animation({ leaf = "fade", enabled = true, speed = 6, bezier = "default" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 5, bezier = "smooth" })
 
 -- == APPEARANCE ==
 local mod = "SUPER"
 local terminal = "kitty"
 local browser = "firefox"
 
-hyprland.general {
-    gaps_in = 6,
-    gaps_out = 12,
-    border_size = 1,
-    col.active_border = "rgba(cba6f7ee)",
-    col.inactive_border = "rgba(45475aee)",
-    layout = "master",
-    cursor_inactive_timeout = 5,
-    no_border_on_floating = false,
-    resize_corner = 2,
-}
-
-hyprland.decoration {
-    rounding = 12,
-    active_opacity = 1.0,
-    inactive_opacity = 0.92,
-    blur {
-        enabled = true,
-        size = 4,
-        passes = 2,
-        new_optimizations = true,
-    },
-    drop_shadow = true,
-    shadow_range = 6,
-    col.shadow = "rgba(11111b55)",
-}
-
-hyprland.animations {
-    enabled = true,
-    bezier = "smooth,0.04,0.83,0.19,0.98",
-    animation = "global,1,8,default",
-    animation = "windows,1,7,smooth",
-    animation = "windowsOut,1,7,smooth",
-    animation = "fade,1,6,default",
-    animation = "workspaces,1,5,smooth",
-}
-
-hyprland.misc {
-    disable_hyprland_logo = true,
-    disable_splash_rendering = true,
-    mouse_move_enables_dpms = true,
-    key_press_enables_dpms = true,
-    font_family = "Noto Sans",
-    force_default_wallpaper = 0,
-}
-
 -- == WINDOW RULES ==
 -- Float design tools, pin their palettes
-hyprland.windowrule("float", { class = "^(Gimp|inkscape|krita)$" })
-hyprland.windowrule("pin", { class = "^(Gimp)$", title = "^(Toolbox|Layers|Brushes|Colors|Options)" })
-hyprland.windowrule("pin", { class = "^(inkscape)$", title = "^(Fill and Stroke|Layers|Swatches)" })
-hyprland.windowrule("dimaround", { class = "^(Gimp|inkscape)$" })
-hyprland.windowrule("centerwindow", { class = "^(Gimp|inkscape)$" })
-hyprland.windowrule("size 1400 900", { class = "^(Gimp)$" })
+hl.window_rule({
+    name  = "float-Gimp-inkscape-krita",
+    match = { class = "^(Gimp|inkscape|krita)$" },
+    float = true,
+})
+hl.window_rule({
+    name  = "pin-Gimp",
+    match = { class = "^(Gimp)$", title = "^(Toolbox|Layers|Brushes|Colors|Options)" },
+    pin = true,
+})
+hl.window_rule({
+    name  = "pin-inkscape",
+    match = { class = "^(inkscape)$", title = "^(Fill and Stroke|Layers|Swatches)" },
+    pin = true,
+})
+hl.window_rule({
+    name  = "dimaround-Gimp-inkscape",
+    match = { class = "^(Gimp|inkscape)$" },
+    dim_around = true,
+})
+hl.window_rule({
+    name  = "centerwindow-Gimp-inkscape",
+    match = { class = "^(Gimp|inkscape)$" },
+    center = true,
+})
+hl.window_rule({
+    name  = "size-Gimp",
+    match = { class = "^(Gimp)$" },
+    size = { 1400, 900 },
+})
 
 -- Tile reference material, browser, terminal
-hyprland.windowrule("workspace 1", { class = "^" .. browser .. "$" })
-hyprland.windowrule("workspace 2", { class = "^" .. terminal .. "$" })
-hyprland.windowrule("workspace 3", { class = "^(org.gnome.Nautilus|thunar)$" })
+hl.window_rule({
+    name  = "ws-custom",
+    match = { class = "^" .. browser .. "$" },
+    workspace = "1",
+})
+hl.window_rule({
+    name  = "ws-custom",
+    match = { class = "^" .. terminal .. "$" },
+    workspace = "2",
+})
+hl.window_rule({
+    name  = "ws-org.gnome.Nautilus-thunar",
+    match = { class = "^(org.gnome.Nautilus|thunar)$" },
+    workspace = "3",
+})
 
 -- Standard floats
-hyprland.windowrule("float", { class = "^(pavucontrol|blueman-manager|gnome-calculator)$" })
-hyprland.windowrule("float", { class = "^(firefox)$", title = "^(Picture-in-Picture)$" })
+hl.window_rule({
+    name  = "float-pavucontrol-blueman-manager-gnome-calculator",
+    match = { class = "^(pavucontrol|blueman-manager|gnome-calculator)$" },
+    float = true,
+})
+hl.window_rule({
+    name  = "float-firefox",
+    match = { class = "^(firefox)$", title = "^(Picture-in-Picture)$" },
+    float = true,
+})
 
 -- == KEYBINDINGS ==
-hyprland.bind(mod, "Return", "exec", terminal)
-hyprland.bind(mod, "D", "exec", "rofi -show drun")
-hyprland.bind(mod, "Q", "killactive")
-hyprland.bind(mod, "Space", "togglefloating")
-hyprland.bind(mod, "F", "fullscreen")
+hl.bind(mod, "Return", "exec", terminal)
+hl.bind(mod .. " + D", hl.dsp.exec_cmd("rofi -show drun"))
+hl.bind(mod .. " + Q", hl.dsp.window.close())
+hl.bind(mod .. " + Space", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mod .. " + F", hl.dsp.window.fullscreen())
 
 -- Focus
-hyprland.bind(mod, "Left", "movefocus", "l")
-hyprland.bind(mod, "Right", "movefocus", "r")
-hyprland.bind(mod, "Up", "movefocus", "u")
-hyprland.bind(mod, "Down", "movefocus", "d")
+hl.bind(mod .. " + Left", hl.dsp.focus({ direction = "l" }))
+hl.bind(mod .. " + Right", hl.dsp.focus({ direction = "r" }))
+hl.bind(mod .. " + Up", hl.dsp.focus({ direction = "u" }))
+hl.bind(mod .. " + Down", hl.dsp.focus({ direction = "d" }))
 
 -- Move windows
-hyprland.bind(mod .. " SHIFT", "Left", "movewindow", "l")
-hyprland.bind(mod .. " SHIFT", "Right", "movewindow", "r")
-hyprland.bind(mod .. " SHIFT", "Up", "movewindow", "u")
-hyprland.bind(mod .. " SHIFT", "Down", "movewindow", "d")
+hl.bind(mod .. " SHIFT" .. " + Left", hl.dsp.window.move({ direction = "l" }))
+hl.bind(mod .. " SHIFT" .. " + Right", hl.dsp.window.move({ direction = "r" }))
+hl.bind(mod .. " SHIFT" .. " + Up", hl.dsp.window.move({ direction = "u" }))
+hl.bind(mod .. " SHIFT" .. " + Down", hl.dsp.window.move({ direction = "d" }))
 
 -- Workspaces
 for i = 1, 9 do
-    hyprland.bind(mod, tostring(i), "workspace", tostring(i))
-    hyprland.bind(mod .. " SHIFT", tostring(i), "movetoworkspace", tostring(i))
+    hl.bind(mod .. " + " .. tostring(i), hl.dsp.focus({ workspace = tostring(i) }))
+    hl.bind(mod .. " SHIFT" .. " + " .. tostring(i), hl.dsp.window.move({ workspace = tostring(i) }))
 end
 
 -- Color picker
-hyprland.bind(mod, "P", "exec", "hyprpicker -a")
+hl.bind(mod .. " + P", hl.dsp.exec_cmd("hyprpicker -a"))
 
 -- Color management toggle (night light)
-hyprland.bind(mod, "N", "exec", "hyprsunset -t 3500")
-hyprland.bind(mod .. " SHIFT", "N", "exec", "pkill hyprsunset")
+hl.bind(mod .. " + N", hl.dsp.exec_cmd("hyprsunset -t 3500"))
+hl.bind(mod .. " SHIFT" .. " + N", hl.dsp.exec_cmd("pkill hyprsunset"))
 
 -- Screenshots (region for design reference)
-hyprland.bind(",", "Print", "exec", "hyprshot -m region")
-hyprland.bind(mod, "Print", "exec", "hyprshot -m output")
+hl.bind(",", "Print", "exec", "hyprshot -m region")
+hl.bind(mod .. " + Print", hl.dsp.exec_cmd("hyprshot -m output"))
 
 -- Group management
-hyprland.bind(mod, "T", "togglegroup")
-hyprland.bind(mod, "Tab", "changegroupactive")
+hl.bind(mod .. " + T", hl.dsp.window.group("toggle"))
+hl.bind(mod .. " + Tab", hl.dsp.window.group("next"))
 
 -- Mouse workspace
-hyprland.bindm(mod, "mouse_down", "workspace", "e+1")
-hyprland.bindm(mod, "mouse_up", "workspace", "e-1")
+hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }), { mouse = true })
+hl.bind(mod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }), { mouse = true })
 
-hyprland.bind(mod .. " SHIFT", "Q", "exit", "")
+hl.bind(mod .. " SHIFT" .. " + Q", hl.dsp.exit())
 
 -- Media keys
-hyprland.bindl(",", "XF86AudioRaiseVolume", "exec", "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+")
-hyprland.bindl(",", "XF86AudioLowerVolume", "exec", "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-")
-hyprland.bindl(",", "XF86AudioMute", "exec", "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
 
 -- == ENVIRONMENT ==
-hyprland.env("XCURSOR_SIZE", "24")
-hyprland.env("HYPRCURSOR_SIZE", "24")
-hyprland.env("GDK_BACKEND", "wayland,x11,*")
-hyprland.env("QT_QPA_PLATFORM", "wayland;xcb")
-hyprland.env("SDL_VIDEODRIVER", "wayland")
+hl.env("XCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("GDK_BACKEND", "wayland,x11,*")
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("SDL_VIDEODRIVER", "wayland")
 
 -- HDR and color management
-hyprland.env("AQ_HDR_ENABLED", "1")
-hyprland.env("AQ_TONE_MAPPING", "aces")
-hyprland.env("AQ_HDR_METADATA", "1")
+hl.env("AQ_HDR_ENABLED", "1")
+hl.env("AQ_TONE_MAPPING", "aces")
+hl.env("AQ_HDR_METADATA", "1")
 
 -- == AUTOSTART ==
-hyprland.exec_once("waybar")
-hyprland.exec_once("hyprpaper")
-hyprland.exec_once("hypridle")
-hyprland.exec_once("swaync")
-hyprland.exec_once("hyprsunset -t 6500")
-hyprland.exec_once("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+hl.on("hyprland.start", function()
+    hl.exec_cmd("waybar")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("hyprpaper")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("hypridle")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("swaync")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("hyprsunset -t 6500")
+end)
+hl.on("hyprland.start", function()
+    hl.exec_cmd("/usr/lib/hyprpolkitagent")
+end)
 ```
 
 ### Tweak Further

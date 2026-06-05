@@ -14,7 +14,7 @@ yay -S hyprland-git                        # Git master (v0.55+ Lua)
 
 ```bash
 sudo pacman -S waybar hyprlock hypridle hyprpaper grim slurp wl-clipboard \
-  swaync wofi xdg-desktop-portal-hyprland polkit-gnome brightnessctl \
+  swaync wofi xdg-desktop-portal-hyprland hyprpolkitagent polkit-gnome brightnessctl \
   playerctl jq
 yay -S hyprshot cliphist                   # AUR packages
 ```

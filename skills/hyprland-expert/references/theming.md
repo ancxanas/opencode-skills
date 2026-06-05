@@ -760,7 +760,7 @@ exec-once=waybar
 exec-once=hyprpaper
 exec-once=hypridle
 exec-once=swaync
-exec-once=/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec-once=/usr/lib/hyprpolkitagent            -- hyprpolkitagent preferred; fallback: /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 ```
 
 ### hyprpaper.conf

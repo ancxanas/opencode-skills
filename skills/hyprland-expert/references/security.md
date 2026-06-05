@@ -170,9 +170,9 @@ security.polkit.enable = true;
 ### Start Automatically
 
 ```conf
-exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# OR
-exec-once = /usr/libexec/polkit-gnome-authentication-agent-1
+exec-once = /usr/lib/hyprpolkitagent            -- hyprpolkitagent preferred
+
+exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1  -- fallback
 ```
 
 ### Verify it's running

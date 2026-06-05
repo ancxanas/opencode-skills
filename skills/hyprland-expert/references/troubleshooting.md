@@ -17,7 +17,7 @@ Hyprland --debug              # Start with verbose debug output
 
 | Cause | Fix |
 |-------|-----|
-| No Polkit agent | Install polkit-gnome: `sudo pacman -S polkit-gnome` (Arch), `sudo dnf install policykit-1-gnome` (Fedora), `sudo apt install policykit-1-gnome` (Debian) |
+| No Polkit agent | Install hyprpolkitagent: `sudo pacman -S hyprpolkitagent` (Arch), or polkit-gnome: `sudo pacman -S polkit-gnome` (Arch), `sudo dnf install policykit-1-gnome` (Fedora), `sudo apt install policykit-1-gnome` (Debian) |
 | No `seatd` running | `sudo systemctl enable --now seatd` (if not using elogind) |
 | NVIDIA mode not set | Ensure `nvidia_drm.modeset=1` kernel parameter is set (see `distro-notes.md`) |
 | Config has errors | Comment out `source=` lines, test with minimal config, run `hyprctl reload` |

@@ -165,7 +165,7 @@ env=SDL_VIDEODRIVER,wayland
 exec-once=waybar                             # Status bar
 exec-once=hyprpaper                          # Wallpaper daemon
 exec-once=hypridle                           # Idle management
-exec-once=/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1  # Auth dialogs
+exec-once=/usr/lib/hyprpolkitagent                                  # Auth dialogs (hyprpolkitagent preferred; fallback: polkit-gnome)
 exec-once=sleep 5; nm-applet                 # Network manager tray
 ```
 

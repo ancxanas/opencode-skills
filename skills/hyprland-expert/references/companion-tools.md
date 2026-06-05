@@ -797,8 +797,16 @@ hyprctl setcursor --help
 
 ### hyprpolkitagent — Official Polkit Agent
 
-QT/QML-based Polkit authentication agent for Hyprland. Replaces `polkit-gnome-authentication-agent-1`.
+QT/QML-based Polkit authentication agent for Hyprland. Replaces `polkit-gnome-authentication-agent-1`. Available in Arch Linux (extra) repos since late 2025.
 
+**Install:**
+```bash
+sudo pacman -S hyprpolkitagent
+```
+
+**Autostart:**
+```bash
+exec-once=/usr/lib/hyprpolkitagent
 ```
 # Arch
 yay -S hyprpolkitagent
@@ -858,22 +866,16 @@ exec-once = hyprland-autoname-workspaces
 
 ```
 # Arch
-sudo pacman -S polkit-gnome
-
-# Fedora
-sudo dnf install policykit-1-gnome
-
-# Debian
-sudo apt install policykit-1-gnome
-
-# NixOS
-environment.systemPackages = with pkgs; [ polkit_gnome ];
+sudo pacman -S hyprpolkitagent
 ```
 
+then autostart it:
 ```bash
-exec-once=/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# or
-exec-once=/usr/libexec/polkit-gnome-authentication-agent-1
+exec-once=/usr/lib/hyprpolkitagent
+
+# Fallback: polkit-gnome
+# sudo pacman -S polkit-gnome
+# exec-once=/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 ```
 
 ## Network Manager Applet
