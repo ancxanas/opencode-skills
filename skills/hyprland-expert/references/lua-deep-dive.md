@@ -39,7 +39,7 @@ hl.config({
         follow_mouse  = 1,
         touchpad = {
             natural_scroll = true,
-            tap_to_click   = true,
+            -- Note: tap_to_click is not available in the Lua API as of v0.55
         },
     },
 
@@ -115,7 +115,8 @@ hl.window_rule({
 hl.window_rule({
     name  = "opacity-kitty",
     match = { class = "^(kitty)$" },
-    opacity = { active = 0.9, inactive = 0.8 },
+    -- Note: per-window opacity is not available in the Lua API as of v0.55
+    -- Use decoration { active_opacity, inactive_opacity } in hl.config() instead
 })
 
 -- Toggle via handle
@@ -268,7 +269,20 @@ require("colors")
 
 Hyprland Lua exposes events through `hl.on(event_name, callback)`.
 
+**Important:** If you register multiple handlers for the same event name (e.g. two `hl.on("hyprland.start", ...)` calls), only the last one registered will fire. Merge all logic for the same event into a single handler:
+
 ```lua
+-- GOOD: single handler for hyprland.start
+hl.on("hyprland.start", function()
+    hl.exec_cmd("waybar")
+    hl.exec_cmd("hyprpaper")
+    hl.exec_cmd("hypridle")
+end)
+
+-- BAD: two separate handlers — only the last one fires
+-- hl.on("hyprland.start", function() hl.exec_cmd("waybar") end)
+-- hl.on("hyprland.start", function() hl.exec_cmd("hyprpaper") end)
+
 -- Called when a window is opened
 hl.on("window.open", function(w)
     if w.class == "firefox" then
@@ -709,7 +723,7 @@ hl.config({
     input = {
         kb_layout = "us",
         follow_mouse = 1,
-        touchpad = { natural_scroll = true, tap_to_click = true },
+        touchpad = { natural_scroll = true },
     },
     general = {
         gaps_in = 5,

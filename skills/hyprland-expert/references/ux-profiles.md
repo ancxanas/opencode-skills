@@ -39,7 +39,7 @@ Pick a persona that matches how you want your desktop to feel. Each includes a *
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
--- ~/.config/hypr/hl.lua
+-- ~/.config/hypr/hyprland.lua
 -- macOS Refugee Profile
 
 -- == MONITORS ==
@@ -67,7 +67,6 @@ hl.config({
         numlock_by_default = true,
         touchpad = {
             natural_scroll = true,
-            tap_to_click = true,
             drag_lock = true,
         },
     },
@@ -75,10 +74,11 @@ hl.config({
         gaps_in = 5,
         gaps_out = 12,
         border_size = 1,
-        ["col.active_border"] = "rgba(cba6f7ee) rgba(89b4faee) 45deg",
-        ["col.inactive_border"] = "rgba(45475aee)",
+        col = {
+            active_border = { colors = {"rgba(cba6f7ee)", "rgba(89b4faee)"}, angle = 45 },
+            inactive_border = "rgba(45475aee)",
+        },
         layout = "master",
-        cursor_inactive_timeout = 3,
     },
     decoration = {
         rounding = 12,
@@ -91,10 +91,12 @@ hl.config({
             passes = 2,
             new_optimizations = true,
         },
-        drop_shadow = true,
-        shadow_range = 8,
-        shadow_render_power = 3,
-        ["col.shadow"] = "rgba(11111b44)",
+        shadow = {
+            enabled = true,
+            range = 8,
+            render_power = 3,
+            color = "rgba(11111b44)",
+        },
     },
     misc = {
         disable_hyprland_logo = true,
@@ -147,11 +149,7 @@ hl.window_rule({
     match = { class = "^(Code|jetbrains-idea)$" },
     workspace = "3",
 })
-hl.window_rule({
-    name  = "opacity-kitty",
-    match = { class = "^(kitty)$" },
-    opacity = { active = 0.95, inactive = 0.85 },
-})
+-- Note: per-window opacity is not available in the Lua API as of v0.55
 
 -- == KEYBINDINGS (macOS-style) ==
 -- App launcher (Spotlight: Cmd+Space)
@@ -225,20 +223,10 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 -- == AUTOSTART ==
 hl.on("hyprland.start", function()
     hl.exec_cmd("quickshell ~/.config/quickshell/bar.qml")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("swww-daemon")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("swaync")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("/usr/lib/hyprpolkitagent")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("sleep 5; nm-applet")
 end)
 ```
@@ -277,7 +265,7 @@ end)
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
--- ~/.config/hypr/hl.lua
+-- ~/.config/hypr/hyprland.lua
 -- Windows Migrant Profile
 
 -- == MONITORS ==
@@ -303,26 +291,28 @@ hl.config({
         numlock_by_default = true,
         touchpad = {
             natural_scroll = false,
-            tap_to_click = true,
         }
     },
     general = {
         gaps_in = 4,
         gaps_out = 8,
         border_size = 1,
-        ["col.active_border"] = "rgba(8a9ba8ff)",
-        ["col.inactive_border"] = "rgba(3b4252ff)",
+        col = {
+            active_border = "rgba(8a9ba8ff)",
+            inactive_border = "rgba(3b4252ff)",
+        },
         layout = "dwindle",
-        cursor_inactive_timeout = 0,
     },
     decoration = {
         rounding = 4,
         active_opacity = 1.0,
         inactive_opacity = 1.0,
         blur = { enabled = false },
-        drop_shadow = true,
-        shadow_range = 4,
-        ["col.shadow"] = "rgba(00000044)",
+        shadow = {
+            enabled = true,
+            range = 4,
+            color = "rgba(00000044)",
+        },
     },
     misc = {
         disable_hyprland_logo = true,
@@ -392,9 +382,9 @@ hl.bind(mod .. " SHIFT" .. " + Down", hl.dsp.window.move({ direction = "d" }))
 hl.bind(mod .. " + comma", hl.dsp.exec_cmd("hyprctl dispatch workspace 1"))
 
 -- Fullscreen (Win+Enter or F11)
-hl.bind(mod, "Return", "exec", terminal)
+hl.bind(mod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen())
-hl.bind(",", "F11", "fullscreen")
+hl.bind("F11", hl.dsp.window.fullscreen())
 
 -- Toggle float (Win+Space)
 hl.bind(mod .. " + Space", hl.dsp.window.float({ action = "toggle" }))
@@ -427,20 +417,10 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 -- == AUTOSTART ==
 hl.on("hyprland.start", function()
     hl.exec_cmd("waybar")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("hyprpaper")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("swaync")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("/usr/lib/hyprpolkitagent")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("sleep 5; nm-applet")
 end)
 ```
@@ -478,7 +458,7 @@ end)
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
--- ~/.config/hypr/hl.lua
+-- ~/.config/hypr/hyprland.lua
 -- GNOME Transplant Profile
 
 -- == MONITORS ==
@@ -504,7 +484,6 @@ hl.config({
         numlock_by_default = true,
         touchpad = {
             natural_scroll = true,
-            tap_to_click = true,
             scroll_factor = 0.8,
         }
     },
@@ -512,10 +491,11 @@ hl.config({
         gaps_in = 6,
         gaps_out = 12,
         border_size = 1,
-        ["col.active_border"] = "rgba(cba6f7ee)",
-        ["col.inactive_border"] = "rgba(45475aee)",
+        col = {
+            active_border = "rgba(cba6f7ee)",
+            inactive_border = "rgba(45475aee)",
+        },
         layout = "master",
-        cursor_inactive_timeout = 5,
     },
     decoration = {
         rounding = 10,
@@ -527,9 +507,11 @@ hl.config({
             passes = 1,
             new_optimizations = true,
         },
-        drop_shadow = true,
-        shadow_range = 6,
-        ["col.shadow"] = "rgba(11111b44)",
+        shadow = {
+            enabled = true,
+            range = 6,
+            color = "rgba(11111b44)",
+        },
     },
     misc = {
         disable_hyprland_logo = true,
@@ -626,7 +608,7 @@ for i = 1, 9 do
 end
 
 -- Launch terminal (Super+Return)
-hl.bind(mod, "Return", "exec", terminal)
+hl.bind(mod .. " + Return", hl.dsp.exec_cmd(terminal))
 
 -- Show all windows (Super+A)
 hl.bind(mod .. " + A", hl.dsp.exec_cmd("rofi -show window"))
@@ -653,17 +635,9 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 -- == AUTOSTART ==
 hl.on("hyprland.start", function()
     hl.exec_cmd("ags")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("swww-daemon")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("swaync")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("/usr/lib/hyprpolkitagent")
 end)
 ```
@@ -702,7 +676,7 @@ end)
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
--- ~/.config/hypr/hl.lua
+-- ~/.config/hypr/hyprland.lua
 -- Gamer Profile
 
 -- == MONITORS ==
@@ -725,14 +699,16 @@ hl.config({
     input = {
         kb_layout = "us",
         follow_mouse = 1,
-        touchpad = { natural_scroll = false, tap_to_click = true }
+        touchpad = { natural_scroll = false }
     },
     general = {
         gaps_in = 3,
         gaps_out = 5,
         border_size = 1,
-        ["col.active_border"] = "rgba(f38ba8ee)",
-        ["col.inactive_border"] = "rgba(45475aee)",
+        col = {
+            active_border = "rgba(f38ba8ee)",
+            inactive_border = "rgba(45475aee)",
+        },
         layout = "dwindle",
     },
     decoration = {
@@ -741,7 +717,7 @@ hl.config({
         inactive_opacity = 1.0,
         fullscreen_opacity = 1.0,
         blur = { enabled = false },
-        drop_shadow = false,
+        shadow = { enabled = false },
     },
     misc = {
         disable_hyprland_logo = true,
@@ -806,7 +782,7 @@ hl.window_rule({
 -- if hyprctl getoption animations:enabled | grep -q "bool: true"; then
 --     hyprctl keyword animations:enabled false
 --     hyprctl keyword decoration:blur:enabled false
---     hyprctl keyword decoration:drop_shadow false
+--     hyprctl keyword decoration:shadow:enabled false
 --     hyprctl keyword general:gaps_in 0
 --     hyprctl keyword general:gaps_out 0
 --     hyprctl keyword misc:vrr 2
@@ -814,7 +790,7 @@ hl.window_rule({
 -- else
 --     hyprctl keyword animations:enabled true
 --     hyprctl keyword decoration:blur:enabled true
---     hyprctl keyword decoration:drop_shadow true
+--     hyprctl keyword decoration:shadow:enabled true
 --     hyprctl keyword general:gaps_in 3
 --     hyprctl keyword general:gaps_out 5
 --     hyprctl keyword misc:vrr 0
@@ -822,11 +798,11 @@ hl.window_rule({
 -- fi
 
 -- == KEYBINDINGS ==
-hl.bind(mod, "Return", "exec", terminal)
+hl.bind(mod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mod .. " + Q", hl.dsp.window.close())
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mod .. " + Space", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mod, "F11", "exec", terminal .. " -e gamescope -W 2560 -H 1440 --")
+hl.bind(mod .. " + F11", hl.dsp.exec_cmd(terminal .. " -e gamescope -W 2560 -H 1440 --"))
 hl.bind(mod .. " + G", hl.dsp.exec_cmd("~/.config/hypr/scripts/gaming_mode.sh"))
 
 hl.bind(mod .. " + Left", hl.dsp.focus({ direction = "l" }))
@@ -866,14 +842,8 @@ hl.env("GAMEMODE_REQUEST", "1")
 -- == AUTOSTART ==
 hl.on("hyprland.start", function()
     hl.exec_cmd("waybar")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("hyprpaper")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("dunst")
 end)
 ```
@@ -911,7 +881,7 @@ end)
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
--- ~/.config/hypr/hl.lua
+-- ~/.config/hypr/hyprland.lua
 -- Developer Profile
 
 -- == MONITORS ==
@@ -936,17 +906,17 @@ hl.config({
         follow_mouse = 1,
         touchpad = {
             natural_scroll = true,
-            tap_to_click = true,
         }
     },
     general = {
         gaps_in = 4,
         gaps_out = 8,
         border_size = 2,
-        ["col.active_border"] = "rgba(cba6f7ee) rgba(89b4faee) 45deg",
-        ["col.inactive_border"] = "rgba(45475aee)",
+        col = {
+            active_border = { colors = {"rgba(cba6f7ee)", "rgba(89b4faee)"}, angle = 45 },
+            inactive_border = "rgba(45475aee)",
+        },
         layout = "dwindle",
-        cursor_inactive_timeout = 2,
     },
     decoration = {
         rounding = 8,
@@ -957,9 +927,11 @@ hl.config({
             size = 3,
             passes = 1,
         },
-        drop_shadow = true,
-        shadow_range = 4,
-        ["col.shadow"] = "rgba(1e1e2e88)",
+        shadow = {
+            enabled = true,
+            range = 4,
+            color = "rgba(1e1e2e88)",
+        },
     },
     misc = {
         disable_hyprland_logo = true,
@@ -1006,16 +978,8 @@ hl.window_rule({
     match = { class = "^(discord|Slack|Teams)$" },
     workspace = "5",
 })
-hl.window_rule({
-    name  = "opacity-kitty",
-    match = { class = "^(kitty)$" },
-    opacity = { active = 0.9, inactive = 0.8 },
-})
-hl.window_rule({
-    name  = "group-kitty-Alacritty",
-    match = { class = "^(kitty|Alacritty)$" },
-    group = "set",
-})
+-- Note: per-window opacity and grouping are not available in the Lua API as of v0.55
+-- Use decoration { active_opacity, inactive_opacity } in hl.config() instead
 hl.window_rule({
     name  = "float-pavucontrol-blueman-manager-gnome-calculator",
     match = { class = "^(pavucontrol|blueman-manager|gnome-calculator)$" },
@@ -1034,7 +998,7 @@ hl.window_rule({
 
 -- == KEYBINDINGS (Vim-adjacent) ==
 -- Launch
-hl.bind(mod, "Return", "exec", terminal)
+hl.bind(mod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mod .. " + D", hl.dsp.exec_cmd("rofi -show drun"))
 
 -- Close
@@ -1059,8 +1023,8 @@ hl.bind(mod .. " SHIFT" .. " + K", hl.dsp.window.move({ direction = "u" }))
 hl.bind(mod .. " SHIFT" .. " + L", hl.dsp.window.move({ direction = "r" }))
 
 -- Build and test shortcuts (Ctrl+B / Ctrl+T)
-hl.bind(mod, "B", "exec", terminal .. " -e make")
-hl.bind(mod, "T", "exec", terminal .. " -e npm test")
+hl.bind(mod .. " + B", hl.dsp.exec_cmd(terminal .. " -e make"))
+hl.bind(mod .. " + T", hl.dsp.exec_cmd(terminal .. " -e npm test"))
 
 -- Quick build output
 hl.bind(mod .. " SHIFT", "T", "exec", terminal .. " -e cargo build")
@@ -1105,20 +1069,10 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 -- == AUTOSTART ==
 hl.on("hyprland.start", function()
     hl.exec_cmd("waybar")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("hyprpaper")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("dunst")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("/usr/lib/hyprpolkitagent")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("sleep 5; nm-applet")
 end)
 ```
@@ -1157,7 +1111,7 @@ end)
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
--- ~/.config/hypr/hl.lua
+-- ~/.config/hypr/hyprland.lua
 -- Designer Profile
 
 -- == MONITORS ==
@@ -1185,17 +1139,17 @@ hl.config({
         follow_mouse = 1,
         touchpad = {
             natural_scroll = true,
-            tap_to_click = true,
         }
     },
     general = {
         gaps_in = 6,
         gaps_out = 12,
         border_size = 1,
-        ["col.active_border"] = "rgba(cba6f7ee)",
-        ["col.inactive_border"] = "rgba(45475aee)",
+        col = {
+            active_border = "rgba(cba6f7ee)",
+            inactive_border = "rgba(45475aee)",
+        },
         layout = "master",
-        cursor_inactive_timeout = 5,
         no_border_on_floating = false,
         resize_corner = 2,
     },
@@ -1209,9 +1163,10 @@ hl.config({
             passes = 2,
             new_optimizations = true,
         },
-        drop_shadow = true,
-        shadow_range = 6,
-        ["col.shadow"] = "rgba(11111b55)",
+        shadow = {
+            enabled = true,
+            range = 6,
+            color = "rgba(11111b55)",
     },
     misc = {
         disable_hyprland_logo = true,
@@ -1298,7 +1253,7 @@ hl.window_rule({
 })
 
 -- == KEYBINDINGS ==
-hl.bind(mod, "Return", "exec", terminal)
+hl.bind(mod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mod .. " + D", hl.dsp.exec_cmd("rofi -show drun"))
 hl.bind(mod .. " + Q", hl.dsp.window.close())
 hl.bind(mod .. " + Space", hl.dsp.window.float({ action = "toggle" }))
@@ -1330,7 +1285,7 @@ hl.bind(mod .. " + N", hl.dsp.exec_cmd("hyprsunset -t 3500"))
 hl.bind(mod .. " SHIFT" .. " + N", hl.dsp.exec_cmd("pkill hyprsunset"))
 
 -- Screenshots (region for design reference)
-hl.bind(",", "Print", "exec", "hyprshot -m region")
+hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region"))
 hl.bind(mod .. " + Print", hl.dsp.exec_cmd("hyprshot -m output"))
 
 -- Group management
@@ -1363,20 +1318,10 @@ hl.env("AQ_HDR_METADATA", "1")
 -- == AUTOSTART ==
 hl.on("hyprland.start", function()
     hl.exec_cmd("waybar")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("hyprpaper")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("swaync")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("hyprsunset -t 6500")
-end)
-hl.on("hyprland.start", function()
     hl.exec_cmd("/usr/lib/hyprpolkitagent")
 end)
 ```
