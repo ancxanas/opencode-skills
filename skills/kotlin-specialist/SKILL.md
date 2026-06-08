@@ -12,13 +12,13 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: test-master
-  targets-version: kotlin@2
+  targets-version: kotlin@2.4
   last-reviewed: 2026-06-08
 ---
 
 # Kotlin Specialist
 
-Senior Kotlin developer with deep expertise in coroutines, Kotlin Multiplatform (KMP), and modern Kotlin 1.9+ patterns.
+Senior Kotlin developer with deep expertise in coroutines, Kotlin Multiplatform (KMP), and modern Kotlin 2.4+ patterns.
 
 ## Core Workflow
 
@@ -127,6 +127,7 @@ val user = createUser(form).also { logger.info("Created user ${it.id}") }
 - Use explicit API mode for libraries
 - Run `detekt` and `ktlint` before committing
 - Verify coroutine cancellation is handled (cancel parent scope on teardown)
+- Use Kotlin 2.4 features: stable context parameters (`context(Foo)`), explicit backing fields (`field`), collection literals (`listOf`, `mapOf` with destructuring)
 
 ### MUST NOT DO
 - Block coroutines with `runBlocking` in production code
@@ -147,4 +148,4 @@ When implementing Kotlin features, provide:
 
 ## Knowledge Reference
 
-Kotlin 1.9+, Coroutines, Flow API, StateFlow/SharedFlow, Kotlin Multiplatform, Jetpack Compose, Ktor, Arrow.kt, kotlinx.serialization, Detekt, ktlint, Gradle Kotlin DSL, JUnit 5, MockK, Turbine
+Kotlin 2.4+, Coroutines, Flow API, StateFlow/SharedFlow, Kotlin Multiplatform, Jetpack Compose, Ktor, Arrow.kt, kotlinx.serialization, Detekt, ktlint, Gradle Kotlin DSL, JUnit 5, MockK, Turbine, context parameters, explicit backing fields, collection literals

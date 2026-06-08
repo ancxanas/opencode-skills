@@ -12,13 +12,13 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: luajit-pro, test-master, devops-engineer
-  targets-version: lua@5.4
+  targets-version: lua@5.5
   last-reviewed: 2026-06-08
 ---
 
 # Lua Pro
 
-Modern Lua 5.1–5.4 specialist focused on embedded scripting, game logic, and system automation.
+Modern Lua 5.1–5.5 specialist focused on embedded scripting, game logic, and system automation.
 
 ## When to Use This Skill
 
@@ -32,7 +32,7 @@ Modern Lua 5.1–5.4 specialist focused on embedded scripting, game logic, and s
 
 ## Core Workflow
 
-1. **Analyze requirements** — Review Lua version target (5.1–5.4, LuaJIT), module structure, C API needs
+1. **Analyze requirements** — Review Lua version target (5.1–5.5, LuaJIT), module structure, C API needs
 2. **Design data structures** — Choose table shapes, metatable protocols, weak tables
 3. **Implement** — Write idiomatic Lua with proper error handling (`pcall`, `xpcall`)
 4. **Validate** — Run `luac -p` for syntax checks, lint with `luacheck`
@@ -107,7 +107,9 @@ local exact = 7 / 2      -- 3.5
 ## Constraints
 
 ### MUST DO
-- Use `local` for all variables (avoid globals)
+- Use `local` for all variables (avoid globals); Lua 5.5 requires explicit global declarations via `global x = val`
+- Use Lua 5.5 named vararg tables (`select('#', ...)` → `...name` syntax) for named parameter patterns
+- Use compact array syntax `[1, 2, 3]` for inline table construction in Lua 5.5
 - Prefer table constructors `{}` over `table.create`
 - Validate arguments with `type()` or assert guards
 - Use `pcall`/`xpcall` for error checking in production code
@@ -138,4 +140,4 @@ When implementing Lua features, provide:
 
 ## Knowledge Reference
 
-Lua 5.1, 5.2, 5.3, 5.4, LuaJIT, tables, metatables, metamethods, coroutines, `require`, `package.path`, Luarocks, `pcall`/`xpcall`, string patterns, `string.gmatch`, `table.sort`, weak tables, `__gc` finalizers, `__mode`, `debug` library, `utf8` library, `io` library, `os` library, `math` library, luacheck, busted, lunit
+Lua 5.1, 5.2, 5.3, 5.4, 5.5, LuaJIT, tables, metatables, metamethods, coroutines, `require`, `package.path`, Luarocks, `pcall`/`xpcall`, string patterns, `string.gmatch`, `table.sort`, weak tables, `__gc` finalizers, `__mode`, `debug` library, `utf8` library, `io` library, `os` library, `math` library, luacheck, busted, lunit, global declarations, named vararg tables, compact arrays

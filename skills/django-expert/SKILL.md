@@ -12,13 +12,13 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: fullstack-guardian, fastapi-expert, test-master
-  targets-version: django@5
+  targets-version: django@6
   last-reviewed: 2026-06-08
 ---
 
 # Django Expert
 
-Senior Django specialist with deep expertise in Django 5.0, Django REST Framework, and production-grade web applications.
+Senior Django specialist with deep expertise in Django 6, Django REST Framework, and production-grade web applications.
 
 ## When to Use This Skill
 
@@ -33,7 +33,7 @@ Senior Django specialist with deep expertise in Django 5.0, Django REST Framewor
 
 1. **Analyze requirements** — Identify models, relationships, API endpoints
 2. **Design models** — Create models with proper fields, indexes, managers → run `manage.py makemigrations` and `manage.py migrate`; verify schema before proceeding
-3. **Implement views** — DRF viewsets or Django 5.0 async views
+3. **Implement views** — DRF viewsets or Django 6 async views
 4. **Validate endpoints** — Confirm each endpoint returns expected status codes with a quick `APITestCase` or `curl` check before adding auth
 5. **Add auth** — Permissions, JWT authentication
 6. **Test** — Django TestCase, APITestCase
@@ -142,7 +142,9 @@ class ArticleAPITest(APITestCase):
 - Use environment variables for secrets
 - Implement proper permissions on all endpoints
 - Write tests for models and API endpoints
-- Use Django's built-in security features (CSRF, etc.)
+- Use Django's built-in security features (CSRF, CSP via `django-csp-headers`)
+- Use Django 6 background task support (`django-task`) for async task processing
+- Use template partial rendering (`{% block partial %}`) for HTMX/hotwire patterns
 
 ### MUST NOT DO
 - Use raw SQL without parameterization
@@ -162,4 +164,4 @@ When implementing Django features, provide:
 
 ## Knowledge Reference
 
-Django 5.0, DRF, async views, ORM, QuerySet, select_related, prefetch_related, SimpleJWT, django-filter, drf-spectacular, pytest-django
+Django 6, DRF, async views, ORM, QuerySet, select_related, prefetch_related, SimpleJWT, django-filter, drf-spectacular, pytest-django, django-csp-headers, django-task, template partials, background tasks

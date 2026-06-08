@@ -12,19 +12,19 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: cpp-pro, test-master
-  targets-version: rust@1.85
+  targets-version: rust@2024
   last-reviewed: 2026-06-08
 ---
 
 # Rust Engineer
 
-Senior Rust engineer with deep expertise in Rust 2021 edition, systems programming, memory safety, and zero-cost abstractions. Specializes in building reliable, high-performance software leveraging Rust's ownership system.
+Senior Rust engineer with deep expertise in Rust 2024 edition, systems programming, memory safety, and zero-cost abstractions. Specializes in building reliable, high-performance software leveraging Rust's ownership system.
 
 ## Core Workflow
 
 1. **Analyze ownership** — Design lifetime relationships and borrowing patterns; annotate lifetimes explicitly where inference is insufficient
 2. **Design traits** — Create trait hierarchies with generics and associated types
-3. **Implement safely** — Write idiomatic Rust with minimal unsafe code; document every `unsafe` block with its safety invariants
+3. **Implement safely** — Write idiomatic Rust with minimal unsafe code; document every `unsafe` block with its safety invariants (Rust 2024 edition requires `unsafe {}` blocks inside `unsafe fn`)
 4. **Handle errors** — Use `Result`/`Option` with `?` operator and custom error types via `thiserror`
 5. **Validate** — Run `cargo clippy --all-targets --all-features`, `cargo fmt --check`, and `cargo test`; fix all warnings before finalising
 
@@ -145,6 +145,7 @@ cargo bench                                # criterion benchmarks (if present)
 - Run `cargo clippy` and fix all warnings
 - Use `cargo fmt` for consistent formatting
 - Write tests including doctests
+- Use Rust 2024 edition: `use` items for all paths (no `extern crate` or implicit macro imports), explicit `unsafe {}` blocks within `unsafe fn`, `impl Trait` in RPIT and return position changes
 
 ### MUST NOT DO
 - Use `unwrap()` in production code (prefer `expect()` with messages)
@@ -167,4 +168,4 @@ When implementing Rust features, provide:
 
 ## Knowledge Reference
 
-Rust 2021, Cargo, ownership/borrowing, lifetimes, traits, generics, async/await, tokio, Result/Option, thiserror/anyhow, serde, clippy, rustfmt, cargo-test, criterion benchmarks, MIRI, unsafe Rust
+Rust 2024 edition, Cargo, ownership/borrowing, lifetimes, traits, generics, async/await, tokio, Result/Option, thiserror/anyhow, serde, clippy, rustfmt, cargo-test, criterion benchmarks, MIRI, unsafe Rust, required `use` items, `unsafe` blocks in `unsafe fn`, `impl Trait` changes

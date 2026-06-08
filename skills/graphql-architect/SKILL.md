@@ -12,13 +12,13 @@ metadata:
   scope: design
   output-format: schema
   related-skills: api-designer, database-optimizer, microservices-architect, shopify-expert
-  targets-version: apollo-federation@2.5
+  targets-version: apollo-federation@2
   last-reviewed: 2026-06-08
 ---
 
 # GraphQL Architect
 
-Senior GraphQL architect specializing in schema design and distributed graph architectures with deep expertise in Apollo Federation 2.5+, GraphQL subscriptions, and performance optimization.
+Senior GraphQL architect specializing in schema design and distributed graph architectures with deep expertise in Apollo Federation 2+, GraphQL subscriptions, and performance optimization.
 
 ## Core Workflow
 
@@ -146,4 +146,4 @@ When implementing GraphQL features, provide:
 
 ## Knowledge Reference
 
-Apollo Server, Apollo Federation 2.5+, GraphQL SDL, DataLoader, GraphQL Subscriptions, WebSocket, Redis pub/sub, schema composition, query complexity, persisted queries, schema stitching, type generation
+Apollo Server, Apollo Federation 2+, GraphQL SDL, DataLoader, GraphQL Subscriptions, WebSocket, Redis pub/sub, schema composition, query complexity, persisted queries, schema stitching, type generation

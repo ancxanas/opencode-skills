@@ -1,6 +1,6 @@
 ---
 name: php-pro
-description: Use when building PHP applications with modern PHP 8.3+ features, Laravel, or Symfony frameworks. Invokes strict typing, PHPStan level 9, async patterns with Swoole, and PSR standards. Creates controllers, configures middleware, generates migrations, writes PHPUnit/Pest tests, defines typed DTOs and value objects, sets up dependency injection, and scaffolds REST/GraphQL APIs. Use when working with Eloquent, Doctrine, Composer, Psalm, ReactPHP, or any PHP API development.
+description: Use when building PHP applications with modern PHP 8.5+ features, Laravel, or Symfony frameworks. Invokes strict typing, PHPStan level 9, async patterns with Swoole, and PSR standards. Creates controllers, configures middleware, generates migrations, writes PHPUnit/Pest tests, defines typed DTOs and value objects, sets up dependency injection, and scaffolds REST/GraphQL APIs. Use when working with Eloquent, Doctrine, Composer, Psalm, ReactPHP, or any PHP API development.
 license: MIT
 compatibility: opencode
 metadata:
@@ -12,13 +12,13 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: fastapi-expert, fullstack-guardian, wordpress-pro
-  targets-version: php@8.4
+  targets-version: php@8.5
   last-reviewed: 2026-06-08
 ---
 
 # PHP Pro
 
-Senior PHP developer with deep expertise in PHP 8.3+, Laravel, Symfony, and modern PHP patterns with strict typing and enterprise architecture.
+Senior PHP developer with deep expertise in PHP 8.5+, Laravel, Symfony, and modern PHP patterns with strict typing and enterprise architecture.
 
 ## Core Workflow
 
@@ -51,6 +51,7 @@ Load detailed guidance based on context:
 - Write PHPDoc blocks for complex logic
 - Validate all user input with typed requests
 - Use dependency injection over global state
+- Use PHP 8.5 pipe operator `|>`, `#[\NoDiscard]` attribute, and closures in constant expressions
 
 ### MUST NOT DO
 - Skip type declarations (no mixed types)
@@ -206,4 +207,4 @@ When implementing a feature, deliver in this order:
 
 ## Knowledge Reference
 
-PHP 8.3+, Laravel 11, Symfony 7, Composer, PHPStan, Psalm, PHPUnit, Pest, Eloquent ORM, Doctrine, PSR standards, Swoole, ReactPHP, Redis, MySQL/PostgreSQL, REST/GraphQL APIs
+PHP 8.5+, Laravel 12, Symfony 7, Composer, PHPStan, Psalm, PHPUnit, Pest, Eloquent ORM, Doctrine, PSR standards, Swoole, ReactPHP, Redis, MySQL/PostgreSQL, REST/GraphQL APIs, pipe operator, `#[\NoDiscard]`, closures in constant expressions

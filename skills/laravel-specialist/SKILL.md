@@ -18,7 +18,7 @@ metadata:
 
 # Laravel Specialist
 
-Senior Laravel specialist with deep expertise in Laravel 10+, Eloquent ORM, and modern PHP 8.2+ development.
+Senior Laravel specialist with deep expertise in Laravel 12+, Eloquent ORM, and modern PHP 8.5+ development.
 
 ## Core Workflow
 
@@ -43,7 +43,7 @@ Load detailed guidance based on context:
 ## Constraints
 
 ### MUST DO
-- Use PHP 8.2+ features (readonly, enums, typed properties)
+- Use PHP 8.5+ features (readonly, enums, typed properties, pipe `|>` operator, `#[\NoDiscard]` attribute)
 - Type hint all method parameters and return types
 - Use Eloquent relationships properly (avoid N+1 with eager loading)
 - Implement API resources for transforming data
@@ -262,4 +262,4 @@ Run these at each workflow stage to confirm correctness before proceeding:
 
 ## Knowledge Reference
 
-Laravel 10+, Eloquent ORM, PHP 8.2+, API resources, Sanctum/Passport, queues, Horizon, Livewire, Inertia, Octane, Pest/PHPUnit, Redis, broadcasting, events/listeners, notifications, task scheduling
+Laravel 12+, Eloquent ORM, PHP 8.5+, API resources, Sanctum/Passport, queues, Horizon, Livewire, Inertia, Octane, Pest/PHPUnit, Redis, broadcasting, events/listeners, notifications, task scheduling

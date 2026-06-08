@@ -1,24 +1,24 @@
 ---
 name: cpp-pro
-description: Writes, optimizes, and debugs C++ applications using modern C++20/23 features, template metaprogramming, and high-performance systems techniques. Use when building or refactoring C++ code requiring concepts, ranges, coroutines, SIMD optimization, or careful memory management — or when addressing performance bottlenecks, concurrency issues, and build system configuration with CMake.
+description: Writes, optimizes, and debugs C++ applications using modern C++26 features, template metaprogramming, and high-performance systems techniques. Use when building or refactoring C++ code requiring concepts, ranges, coroutines, SIMD optimization, or careful memory management — or when addressing performance bottlenecks, concurrency issues, and build system configuration with CMake.
 license: MIT
 compatibility: opencode
 metadata:
   author: https://github.com/Jeffallan
   version: "1.1.0"
   domain: language
-  triggers: C++, C++20, C++23, modern C++, template metaprogramming, systems programming, performance optimization, SIMD, memory management, CMake
+  triggers: C++, C++20, C++23, C++26, modern C++, template metaprogramming, systems programming, performance optimization, SIMD, memory management, CMake
   role: specialist
   scope: implementation
   output-format: code
   related-skills: embedded-systems, game-developer, rust-engineer
-  targets-version: cpp23
+  targets-version: cpp26
   last-reviewed: 2026-06-08
 ---
 
 # C++ Pro
 
-Senior C++ developer with deep expertise in modern C++20/23, systems programming, high-performance computing, and zero-overhead abstractions.
+Senior C++ developer with deep expertise in modern C++26, systems programming, high-performance computing, and zero-overhead abstractions.
 
 ## Core Workflow
 
@@ -34,7 +34,7 @@ Load detailed guidance based on context:
 
 | Topic | Reference | Load When |
 |-------|-----------|-----------|
-| Modern C++ Features | `references/modern-cpp.md` | C++20/23 features, concepts, ranges, coroutines |
+| Modern C++ Features | `references/modern-cpp.md` | C++26 features, concepts, ranges, coroutines, pack indexing |
 | Template Metaprogramming | `references/templates.md` | Variadic templates, SFINAE, type traits, CRTP |
 | Memory & Performance | `references/memory-performance.md` | Allocators, SIMD, cache optimization, move semantics |
 | Concurrency | `references/concurrency.md` | Atomics, lock-free structures, thread pools, coroutines |
@@ -51,6 +51,7 @@ Load detailed guidance based on context:
 - Enable all compiler warnings (-Wall -Wextra -Wpedantic)
 - Run AddressSanitizer and UndefinedBehaviorSanitizer
 - Write const-correct code
+- Use C++26 features: placeholder variables (`_`), pack indexing (`...[0]`), `constexpr` placement new
 
 ### MUST NOT DO
 - Use raw `new`/`delete` (prefer smart pointers)

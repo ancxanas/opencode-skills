@@ -12,13 +12,13 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: devops-engineer, microservices-architect, test-master
-  targets-version: go@1.24
+  targets-version: go@1.25
   last-reviewed: 2026-06-08
 ---
 
 # Golang Pro
 
-Senior Go developer with deep expertise in Go 1.21+, concurrent programming, and cloud-native microservices. Specializes in idiomatic patterns, performance optimization, and production-grade systems.
+Senior Go developer with deep expertise in Go 1.25+, concurrent programming, and cloud-native microservices. Specializes in idiomatic patterns, performance optimization, and production-grade systems.
 
 ## Core Workflow
 
@@ -102,6 +102,7 @@ Key properties demonstrated: bounded goroutine lifetime via `ctx`, error propaga
 - Use `X | Y` union constraints for generics (Go 1.18+)
 - Propagate errors with fmt.Errorf("%w", err)
 - Run race detector on tests (-race flag)
+- Use `go.mod` `ignore` directive to exclude unused dependencies from the module graph (`go mod edit -ignore=example.com/pkg`)
 
 ### MUST NOT DO
 - Ignore errors (avoid _ assignment without justification)
@@ -122,4 +123,4 @@ When implementing Go features, provide:
 
 ## Knowledge Reference
 
-Go 1.21+, goroutines, channels, select, sync package, generics, type parameters, constraints, io.Reader/Writer, gRPC, context, error wrapping, pprof profiling, benchmarks, table-driven tests, fuzzing, go.mod, internal packages, functional options
+Go 1.25+, goroutines, channels, select, sync package, generics, type parameters, constraints, io.Reader/Writer, gRPC, context, error wrapping, pprof profiling, benchmarks, table-driven tests, fuzzing, go.mod, go.mod ignore directive, internal packages, functional options

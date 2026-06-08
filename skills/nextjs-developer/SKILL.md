@@ -1,24 +1,24 @@
 ---
 name: nextjs-developer
-description: "Use when building Next.js 14+ or 15 applications with App Router, server components, or server actions. Invoke to configure route handlers, implement middleware, set up API routes, add streaming SSR, write generateMetadata for SEO, scaffold loading.tsx/error.tsx boundaries, or deploy to Vercel. Triggers on: Next.js, Next.js 14, Next.js 15, App Router, RSC, use server, Server Components, Server Actions, React Server Components, generateMetadata, loading.tsx, Next.js deployment, Vercel, Next.js performance."
+description: "Use when building Next.js 16+ applications with App Router, server components, or server actions. Invoke to configure route handlers, implement middleware, set up API routes, add streaming SSR, write generateMetadata for SEO, scaffold loading.tsx/error.tsx boundaries, or deploy to Vercel. Triggers on: Next.js, Next.js 16, App Router, RSC, use server, Server Components, Server Actions, React Server Components, generateMetadata, loading.tsx, Next.js deployment, Vercel, Next.js performance."
 license: MIT
 compatibility: opencode
 metadata:
   author: https://github.com/Jeffallan
   version: "1.1.0"
   domain: frontend
-  triggers: Next.js, Next.js 14, App Router, Server Components, Server Actions, React Server Components, Next.js deployment, Vercel, Next.js performance
+  triggers: Next.js, Next.js 16, App Router, Server Components, Server Actions, React Server Components, Next.js deployment, Vercel, Next.js performance
   role: specialist
   scope: implementation
   output-format: code
   related-skills: typescript-pro
-  targets-version: next@15
+  targets-version: next@16
   last-reviewed: 2026-06-08
 ---
 
 # Next.js Developer
 
-Senior Next.js developer with expertise in Next.js 14+ App Router, server components, and full-stack deployment with focus on performance and SEO excellence.
+Senior Next.js developer with expertise in Next.js 16+ App Router, server components, and full-stack deployment with focus on performance and SEO excellence.
 
 ## Core Workflow
 
@@ -46,7 +46,9 @@ Load detailed guidance based on context:
 ### MUST DO (Next.js-specific)
 - Use App Router (`app/` directory), never Pages Router (`pages/`)
 - Keep components as Server Components by default; add `'use client'` only at the leaf boundary where interactivity is required
-- Use native `fetch` with explicit `cache` / `next.revalidate` options — do not rely on implicit caching (Note: in Next.js 15 params and searchParams are Promises and must be awaited)
+- Use native `fetch` with explicit `cache` / `next.revalidate` options — do not rely on implicit caching (Note: params and searchParams are Promises and must be awaited)
+- Use `"use cache"` directive for granular caching on server components and server functions
+- Leverage `proxy.ts` in `next.config.ts` for fine-grained proxy rewrites
 - Use `generateMetadata` (or the static `metadata` export) for all SEO — never hardcode `<title>` or `<meta>` tags in JSX
 - Optimize every image with `next/image`; never use a plain `<img>` tag for content images
 - Add `loading.tsx` and `error.tsx` at every route segment that performs async data fetching
@@ -144,4 +146,4 @@ When implementing Next.js features, provide:
 
 ## Knowledge Reference
 
-Next.js 14+, Next.js 15, App Router, React Server Components, Server Actions, Streaming SSR, Partial Prerendering, next/image, next/font, Metadata API, Route Handlers, Middleware, Edge Runtime, Turbopack, Vercel deployment
+Next.js 16+, Turbopack (stable), App Router, React Server Components, Server Actions, `"use cache"`, Streaming SSR, Partial Prerendering, next/image, next/font, Metadata API, Route Handlers, Middleware, proxy.ts, Edge Runtime, Vercel deployment

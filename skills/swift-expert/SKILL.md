@@ -1,6 +1,6 @@
 ---
 name: swift-expert
-description: Builds iOS/macOS/watchOS/tvOS applications, implements SwiftUI views and state management, designs protocol-oriented architectures, handles async/await concurrency, implements actors for thread safety, and debugs Swift-specific issues. Use when building iOS/macOS applications with Swift 5.9+, SwiftUI, or async/await concurrency. Invoke for protocol-oriented programming, SwiftUI state management, actors, server-side Swift, UIKit integration, Combine, or Vapor.
+description: Builds iOS/macOS/watchOS/tvOS applications with Swift 6, SwiftUI, and strict concurrency. Implements SwiftUI views and state management, designs protocol-oriented architectures, handles async/await with Sendable-aware patterns, uses actors for thread safety, and debugs Swift-specific issues. Invoke for protocol-oriented programming, SwiftUI state management, actors, server-side Swift, UIKit integration, Combine, or Vapor.
 license: MIT
 compatibility: opencode
 metadata:
@@ -21,12 +21,12 @@ metadata:
 ## Core Workflow
 
 1. **Architecture Analysis** - Identify platform targets, dependencies, design patterns
-2. **Design Protocols** - Create protocol-first APIs with associated types
-3. **Implement** - Write type-safe code with async/await and value semantics
-4. **Optimize** - Profile with Instruments, ensure thread safety
+2. **Design Protocols** - Create protocol-first APIs with associated types; ensure Sendable conformance for cross-actor types
+3. **Implement** - Write type-safe code with async/await, value semantics, and strict concurrency checking
+4. **Optimize** - Profile with Instruments, ensure thread safety with compiler-enforced actor isolation
 5. **Test** - Write comprehensive tests with XCTest and async patterns
 
-> **Validation checkpoints:** After step 3, run `swift build` to verify compilation. After step 4, run `swift build -warnings-as-errors` to surface actor isolation and Sendable warnings. After step 5, run `swift test` and confirm all async tests pass.
+> **Validation checkpoints:** After step 3, run `swift build -strict-concurrency=complete` to verify Sendable and actor isolation. After step 4, run `swift build -warnings-as-errors` to surface remaining warnings. After step 5, run `swift test` and confirm all async tests pass.
 
 ## Reference Guide
 
@@ -134,23 +134,64 @@ class UnsafeImageCache {
 }
 ```
 
+### Swift 6 Strict Concurrency — Sendable Compliance
+
+Swift 6 enforces data-race safety at compile time. Every value crossing an actor boundary must be `Sendable`.
+
+```swift
+// ✅ DO: mark value types as Sendable (automatic for structs with Sendable members)
+struct User: Sendable {
+    let id: UUID
+    let name: String
+}
+
+// ✅ DO: use @unchecked Sendable with manual locking for internal safety
+final class Cache: @unchecked Sendable {
+    private var storage: [String: Data] = [:]
+    private let lock = NSLock()
+
+    func get(_ key: String) -> Data? { lock.lock(); defer { lock.unlock() }; return storage[key] }
+    func set(_ key: String, _ value: Data) { lock.lock(); defer { lock.unlock() }; storage[key] = value }
+}
+
+// ✅ DO: use @preconcurrency import for gradual migration from non-Sendable libraries
+@preconcurrency import SomeLegacyModule
+// The module's types are treated as implicitly Sendable where needed
+
+// ❌ DON'T: pass non-Sendable types across actor boundaries
+class MutableState { var value = 0 }
+
+actor Processor {
+    func process(_ state: MutableState) {  // ❌ Compiler error in Swift 6
+        state.value += 1
+    }
+}
+```
+
+**Backward compatibility:** Swift 6 provides per-target concurrency flags:
+- `-swift-version 5` — legacy mode (warnings instead of errors)
+- `-swift-version 6` — strict mode (default for new projects)
+- Per-file opt-in via `#if compiler(>=6.0)` / `@preconcurrency`
+
 ## Constraints
 
 ### MUST DO
 - Use type hints and inference appropriately
 - Follow Swift API Design Guidelines
-- Use `async/await` for asynchronous operations (see pattern above)
-- Ensure `Sendable` compliance for concurrency
-- Use value types (`struct`/`enum`) by default
+- Use `async/await` for asynchronous operations
+- Use `Sendable` types across actor boundaries — compiler enforces this in Swift 6
+- Use value types (`struct`/`enum`) by default; mark them `Sendable` when needed across concurrency boundaries
+- Use `@preconcurrency import` for libraries that haven't adopted Sendable annotations
+- Run `swift build -strict-concurrency=complete` to verify concurrency safety
 - Document APIs with markup comments (`/// …`)
-- Use property wrappers for cross-cutting concerns
 - Profile with Instruments before optimizing
 
 ### MUST NOT DO
 - Use force unwrapping (`!`) without justification
+- Pass non-Sendable types across actor boundaries
 - Create retain cycles in closures
 - Mix synchronous and asynchronous code improperly
-- Ignore actor isolation warnings
+- Suppress compiler warnings about Sendable without adding proper isolation
 - Use implicitly unwrapped optionals unnecessarily
 - Skip error handling
 - Use Objective-C patterns when Swift alternatives exist

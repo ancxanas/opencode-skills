@@ -12,13 +12,13 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: devops-engineer, fastapi-expert, ml-pipeline, pandas-pro, rag-architect, spark-engineer
-  targets-version: python@3.13
+  targets-version: python@3.14
   last-reviewed: 2026-06-08
 ---
 
 # Python Pro
 
-Modern Python 3.11+ specialist focused on type-safe, async-first, production-ready code.
+Modern Python 3.14+ specialist focused on type-safe, async-first, production-ready code.
 
 ## When to Use This Skill
 
@@ -60,6 +60,9 @@ Load detailed guidance based on context:
 - Comprehensive docstrings (Google style)
 - Test coverage exceeding 90% with pytest
 - Use `X | None` instead of `Optional[X]` (Python 3.10+)
+- Prefer deferred annotations (`from __future__ import annotations`) in library code
+- Use template strings (`f"...{x=}"` and `f"{x!r}"`) for debug formatting
+- Leverage free-threaded mode (no-GIL) for CPU-bound parallelism when `PYTHON_GIL=0`
 - Async/await for I/O-bound operations
 - Dataclasses over manual __init__ methods
 - Context managers for resource handling
@@ -154,7 +157,7 @@ def test_app_config_port_validation(port: int, valid: bool) -> None:
 ### mypy strict configuration (pyproject.toml)
 ```toml
 [tool.mypy]
-python_version = "3.11"
+python_version = "3.14"
 strict = true
 warn_return_any = true
 warn_unused_configs = true
@@ -177,4 +180,4 @@ When implementing Python features, provide:
 
 ## Knowledge Reference
 
-Python 3.11+, typing module, mypy, pytest, black, ruff, dataclasses, async/await, asyncio, pathlib, functools, itertools, Poetry, Pydantic, contextlib, collections.abc, Protocol
+Python 3.14+, typing module, mypy, pytest, black, ruff, dataclasses, async/await, asyncio, pathlib, functools, itertools, Poetry, Pydantic, contextlib, collections.abc, Protocol, `from __future__ import annotations`, free-threaded mode (no-GIL), template strings, Python Critical Sections

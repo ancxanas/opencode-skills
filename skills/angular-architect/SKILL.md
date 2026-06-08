@@ -1,6 +1,6 @@
 ---
 name: angular-architect
-description: Generates Angular 17+ standalone components, configures advanced routing with lazy loading and guards, implements NgRx state management, applies RxJS patterns, and optimizes bundle performance. Use when building Angular 17+ applications with standalone components or signals, setting up NgRx stores, establishing RxJS reactive patterns, performance tuning, or writing Angular tests for enterprise apps.
+description: Builds Angular 22+ applications with standalone components, signal-based reactivity, zoneless change detection, and enterprise architecture. Use when implementing components with @if/@for control flow, setting up signal-based state management, using @Service() decorator for injectables, configuring advanced routing with lazy loading, managing complex state with NgRx Signal Store, optimizing bundle performance, or writing Angular tests for enterprise apps.
 license: MIT
 compatibility: opencode
 metadata:
@@ -12,20 +12,20 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: typescript-pro, test-master
-  targets-version: angular@17
+  targets-version: angular@22
   last-reviewed: 2026-06-08
 ---
 
 # Angular Architect
 
-Senior Angular architect specializing in Angular 17+ with standalone components, signals, and enterprise-grade application development.
+Senior Angular architect specializing in Angular 22+ with standalone components, signal-based reactivity, zoneless change detection, and enterprise-grade application development.
 
 ## Core Workflow
 
 1. **Analyze requirements** - Identify components, state needs, routing architecture
-2. **Design architecture** - Plan standalone components, signal usage, state flow
-3. **Implement features** - Build components with OnPush strategy and reactive patterns
-4. **Manage state** - Setup NgRx store, effects, selectors as needed; verify store hydration and action flow with Redux DevTools before proceeding
+2. **Design architecture** - Plan standalone components, signal usage, zoneless mode, state flow
+3. **Implement features** - Build components with `@if`/`@for` control flow and signal-based bindings
+4. **Manage state** - Use signals and computed for local state; NgRx Signal Store or `@Service()` for shared state; verify state flow before proceeding
 5. **Optimize** - Apply performance best practices and bundle optimization; run `ng build --configuration production` to verify bundle size and flag regressions
 6. **Test** - Write unit and integration tests with TestBed; verify >85% coverage threshold is met
 
@@ -43,20 +43,19 @@ Load detailed guidance based on context:
 
 ## Key Patterns
 
-### Standalone Component with OnPush and Signals
+### Standalone Component with Zoneless and Signals
 
 ```typescript
-import { ChangeDetectionStrategy, Component, computed, input, output, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, computed, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-user-card',
   standalone: true,
-  imports: [CommonModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="user-card">
-      <h2>{{ fullName() }}</h2>
+      @if (fullName()) {
+        <h2>{{ fullName() }}</h2>
+      }
       <button (click)="onSelect()">Select</button>
     </div>
   `,
@@ -74,75 +73,162 @@ export class UserCardComponent {
 }
 ```
 
-### RxJS Subscription Management with `takeUntilDestroyed`
+### Zoneless Change Detection
+
+Angular 22+ defaults to zoneless when no zone.js is imported. Zone.js is still supported for backward compatibility.
 
 ```typescript
-import { Component, OnInit, inject } from '@angular/core';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { UserService } from './user.service';
+// angular.json — opt into zoneless (default in new v22 projects)
+{
+  "projects": {
+    "my-app": {
+      "architect": {
+        "build": {
+          "options": {
+            "polyfills": []  // omit zone.js
+          }
+        }
+      }
+    }
+  }
+}
 
-@Component({ selector: 'app-users', standalone: true, template: `...` })
-export class UsersComponent implements OnInit {
-  private userService = inject(UserService);
-  // DestroyRef is captured at construction time for use in ngOnInit
-  private destroyRef = inject(DestroyRef);
+// Or hybrid mode — zone.js present but zoneless for specific components
+@Component({
+  changeDetection: ChangeDetectionStrategy.Zoneless,  // Angular 22+
+  template: `...`,
+})
+export class ZonelessComponent {}
+```
 
-  ngOnInit(): void {
-    this.userService.getUsers()
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe({
-        next: (users) => { /* handle */ },
-        error: (err) => console.error('Failed to load users', err),
-      });
+### @if / @for Control Flow (Replaces *ngIf / *ngFor)
+
+```typescript
+@Component({
+  template: `
+    @if (users(); as usersList) {
+      <ul>
+        @for (user of usersList; track user.id) {
+          <li>{{ user.name }}</li>
+        } @empty {
+          <li>No users found</li>
+        }
+      </ul>
+    } @else {
+      <p>Loading...</p>
+    }
+  `,
+})
+export class UserListComponent {
+  users = signal<User[] | null>(null);
+}
+```
+
+- `track` replaces `trackBy` and is always required in `@for`
+- `@empty` handles the empty-list case inline
+- `@if` / `@for` / `@switch` are the standard control flow — `*ngIf`, `*ngFor`, `*ngSwitch` are legacy
+- `@let` syntax (Angular 22+) allows template variable assignment
+
+
+### @Service() Decorator (Angular 22+)
+
+```typescript
+import { Service } from '@angular/core';
+
+@Service()
+export class UserService {
+  private users = signal<User[]>([]);
+  private http = inject(HttpClient);
+
+  readonly users$ = this.users.asReadonly();
+
+  loadUsers(): void {
+    this.http.get<User[]>('/api/users').subscribe({
+      next: (users) => this.users.set(users),
+    });
   }
 }
 ```
 
-### NgRx Action / Reducer / Selector
+- `@Service()` replaces `@Injectable({ providedIn: 'root' })` for application services
+- Also accepts scope: `@Service({ scope: 'feature' })` for module-scoped singletons
+
+### RxJS Subscription Management with `takeUntilDestroyed`
+
+Use RxJS only when integrating with third-party libraries or Angular's HttpClient. Prefer `toSignal()` to bridge RxJS to signals.
 
 ```typescript
-// actions
-export const loadUsers = createAction('[Users] Load Users');
-export const loadUsersSuccess = createAction('[Users] Load Users Success', props<{ users: User[] }>());
-export const loadUsersFailure = createAction('[Users] Load Users Failure', props<{ error: string }>());
+import { Component, inject, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { UserService } from './user.service';
 
-// reducer
-export interface UsersState { users: User[]; loading: boolean; error: string | null; }
-const initialState: UsersState = { users: [], loading: false, error: null };
+@Component({ selector: 'app-users', standalone: true, template: `...` })
+export class UsersComponent {
+  private userService = inject(UserService);
 
-export const usersReducer = createReducer(
-  initialState,
-  on(loadUsers, (state) => ({ ...state, loading: true, error: null })),
-  on(loadUsersSuccess, (state, { users }) => ({ ...state, users, loading: false })),
-  on(loadUsersFailure, (state, { error }) => ({ ...state, error, loading: false })),
+  // Bridge RxJS observable to signal
+  users = toSignal(this.userService.getUsers(), { initialValue: [] });
+
+  // Traditional subscription only when toSignal() doesn't fit
+  constructor() {
+    this.userService.getEvents()
+      .pipe(takeUntilDestroyed())
+      .subscribe((event) => { /* handle */ });
+  }
+}
+```
+
+### State Management — Signals First
+
+```typescript
+// Local component state — just signals
+@Component({ template: `@for (item of filtered(); track item.id) { ... }` })
+export class ProductListComponent {
+  private allItems = signal<Product[]>([]);
+  filterText = signal('');
+
+  filtered = computed(() =>
+    this.allItems().filter(p => p.name.includes(this.filterText()))
+  );
+}
+
+// NgRx Signal Store — for complex shared state (Angular 22+)
+import { signalStore, withState, withMethods, withComputed } from '@ngrx/signals';
+
+export const CounterStore = signalStore(
+  withState({ count: 0 }),
+  withComputed(({ count }) => ({
+    doubled: computed(() => count() * 2),
+  })),
+  withMethods(({ count, ...store }) => ({
+    increment() { count.update(c => c + 1); },
+  })),
 );
-
-// selectors
-export const selectUsersState = createFeatureSelector<UsersState>('users');
-export const selectAllUsers = createSelector(selectUsersState, (s) => s.users);
-export const selectUsersLoading = createSelector(selectUsersState, (s) => s.loading);
 ```
 
 ## Constraints
 
 ### MUST DO
-- Use standalone components (Angular 17+ default)
-- Use signals for reactive state where appropriate
-- Use OnPush change detection strategy
+- Use standalone components (Angular 17+ default; Angular 22 uses them exclusively)
+- Use `@if` / `@for` / `@switch` control flow — not `*ngIf` / `*ngFor` / `*ngSwitch`
+- Use signals and computed for local component state
+- Use `track` in `@for` (not `trackBy` in `*ngFor`)
+- Prefer `toSignal()` over manual subscriptions for bridging RxJS to signals
+- Use `@Service()` instead of `@Injectable({ providedIn: 'root' })` for Angular 22+ projects
 - Use strict TypeScript configuration
-- Implement proper error handling in RxJS streams
-- Use `trackBy` functions in `*ngFor` loops
 - Write tests with >85% coverage
 - Follow Angular style guide
 
 ### MUST NOT DO
 - Use NgModule-based components (except when required for compatibility)
-- Forget to unsubscribe from observables (use `takeUntilDestroyed` or `async` pipe)
+- Force zone.js dependency — let zoneless be the default
+- Use `*ngIf`, `*ngFor`, `*ngSwitch` in new code (use `@if`, `@for`, `@switch`)
+- Forget to unsubscribe from observables (use `takeUntilDestroyed()` without arguments or `toSignal()`)
 - Use async operations without proper error handling
 - Skip accessibility attributes
 - Expose sensitive data in client-side code
 - Use `any` type without justification
-- Mutate state directly in NgRx
+- Mutate state directly in NgRx (use Signal Store or immutable patterns)
 - Skip unit tests for critical logic
 
 ## Output Templates

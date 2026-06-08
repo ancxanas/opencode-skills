@@ -1,18 +1,18 @@
 ---
 name: dotnet-core-expert
-description: Use when building .NET 8 applications with minimal APIs, clean architecture, or cloud-native microservices. Invoke for Entity Framework Core, CQRS with MediatR, JWT authentication, AOT compilation.
+description: Use when building .NET 10 applications with minimal APIs, clean architecture, or cloud-native microservices. Invoke for Entity Framework Core, CQRS with MediatR, JWT authentication, AOT compilation.
 license: MIT
 compatibility: opencode
 metadata:
   author: https://github.com/Jeffallan
   version: "1.1.0"
   domain: backend
-  triggers: .NET Core, .NET 8, ASP.NET Core, C# 12, minimal API, Entity Framework Core, microservices .NET, CQRS, MediatR
+  triggers: .NET Core, .NET 10, ASP.NET Core, C# 14, minimal API, Entity Framework Core, microservices .NET, CQRS, MediatR
   role: specialist
   scope: implementation
   output-format: code
   related-skills: fullstack-guardian, microservices-architect, cloud-architect, test-master
-  targets-version: dotnet@8
+  targets-version: dotnet@10
   last-reviewed: 2026-06-08
 ---
 
@@ -41,11 +41,13 @@ Load detailed guidance based on context:
 ## Constraints
 
 ### MUST DO
-- Use .NET 8 and C# 12 features
+- Use .NET 10 and C# 14 features
 - Enable nullable reference types: `<Nullable>enable</Nullable>` in the `.csproj`
 - Use async/await for all I/O operations — e.g., `await dbContext.Users.ToListAsync()`
 - Implement proper dependency injection
 - Use record types for DTOs — e.g., `public record UserDto(int Id, string Name);`
+- Use field-backed properties (`field`) in property accessors (C# 14)
+- Use extension blocks for grouping extension methods
 - Follow clean architecture principles
 - Write integration tests with `WebApplicationFactory<Program>`
 - Configure OpenAPI/Swagger documentation
