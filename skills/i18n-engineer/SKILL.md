@@ -110,13 +110,9 @@ Hello {name}
 
 ### Nesting
 
-{% raw %}
 ```
-{% raw %}
 {count, plural, one {{brand} has # new message} other {{brand} has # new messages}}
-{% endraw %}
 ```
-{% endraw %}
 
 ## RTL Layout Strategy
 
