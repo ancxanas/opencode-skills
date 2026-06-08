@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: cloud-architect, devops-engineer, kubernetes-specialist
+  targets-version: terraform@1.15
+  last-reviewed: 2026-06-08
 ---
 
 # Terraform Engineer

@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: react-expert, graphql-architect, api-designer
+  targets-version: shopify-cli@4.1
+  last-reviewed: 2026-06-08
 ---
 
 # Shopify Expert

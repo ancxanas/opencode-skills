@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: cpp-pro, typescript-pro, test-master
+  targets-version: unity@6, unreal-engine@5
+  last-reviewed: 2026-06-08
 ---
 
 # Game Developer

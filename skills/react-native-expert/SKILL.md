@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: flutter-expert, react-expert, swift-expert, test-master
+  targets-version: react-native@0.85, expo@52
+  last-reviewed: 2026-06-08
 ---
 
 # React Native Expert

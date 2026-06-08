@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: angular-architect, api-designer, fullstack-guardian, game-developer, mcp-developer, nextjs-developer, vue-expert
+  targets-version: typescript@6.0
+  last-reviewed: 2026-06-08
 ---
 
 # TypeScript Pro

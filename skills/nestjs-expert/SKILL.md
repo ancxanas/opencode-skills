@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: api-designer, devops-engineer, fullstack-guardian, test-master, websocket-engineer
+  targets-version: @nestjs/core@11
+  last-reviewed: 2026-06-08
 ---
 
 # NestJS Expert

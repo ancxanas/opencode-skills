@@ -12,6 +12,8 @@ metadata:
   scope: testing
   output-format: code
   related-skills: test-master, react-expert, devops-engineer
+  targets-version: playwright@1.60
+  last-reviewed: 2026-06-08
 ---
 
 # Playwright Expert
