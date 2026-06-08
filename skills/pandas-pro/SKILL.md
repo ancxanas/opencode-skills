@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: python-pro
+  targets-version: pandas@3.0
+  last-reviewed: 2026-06-08
 ---
 
 # Pandas Pro

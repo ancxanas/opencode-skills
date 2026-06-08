@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: python-pro, sql-pro, devops-engineer
+  targets-version: pyspark@4.1
+  last-reviewed: 2026-06-08
 ---
 
 # Spark Engineer

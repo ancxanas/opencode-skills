@@ -12,6 +12,8 @@ metadata:
   scope: system-design
   output-format: architecture
   related-skills: python-pro, database-optimizer, monitoring-expert, api-designer
+  targets-version: ""
+  last-reviewed: 2026-06-08
 ---
 
 # RAG Architect

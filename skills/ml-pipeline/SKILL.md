@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: devops-engineer, kubernetes-specialist, cloud-architect, python-pro
+  targets-version: mlflow@3.13
+  last-reviewed: 2026-06-08
 ---
 
 # ML Pipeline Expert
