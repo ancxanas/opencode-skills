@@ -1,3 +1,5 @@
+# Multi-Cluster Management
+
 ---
 
 ## Cluster API
@@ -41,7 +43,6 @@ spec:
     apiVersion: infrastructure.cluster.x-k8s.io/v1beta2
     kind: AWSCluster
     name: production-cluster
-render_with_liquid: false
 ---
 apiVersion: infrastructure.cluster.x-k8s.io/v1beta2
 kind: AWSCluster

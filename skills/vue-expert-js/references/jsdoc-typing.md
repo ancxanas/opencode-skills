@@ -1,3 +1,5 @@
+# JSDoc Typing for Vue
+
 ---
 
 ## Basic JSDoc with Vue
@@ -75,7 +77,7 @@ const form = reactive({
 })
 </script>
 ```
-render_with_liquid: false
+
 ---
 
 ## Props with JSDoc

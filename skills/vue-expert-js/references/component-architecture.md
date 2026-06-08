@@ -1,3 +1,5 @@
+# Component Architecture
+
 ---
 
 ## Props
@@ -27,7 +29,7 @@ const props = defineProps({
 })
 </script>
 ```
-render_with_liquid: false
+
 ---
 
 ## Emits

@@ -1,6 +1,3 @@
----
-render_with_liquid: false
----
 # Release Automation
 
 ## Artifact Management

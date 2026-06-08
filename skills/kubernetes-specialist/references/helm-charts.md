@@ -1,6 +1,3 @@
----
-render_with_liquid: false
----
 # Helm Charts
 
 ## Chart Structure

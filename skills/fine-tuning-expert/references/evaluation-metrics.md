@@ -1,3 +1,5 @@
+# Evaluation Metrics for Fine-Tuned Models
+
 ---
 
 ## Overview
@@ -569,9 +571,7 @@ BENCHMARK_TASKS = {
 ### Metric Selection by Task
 
 | Task Type | Primary Metrics | Secondary Metrics |
-|
-render_with_liquid: false
------------|-----------------|-------------------|
+|-----------|-----------------|-------------------|
 | General Fine-Tuning | Perplexity, Loss | ROUGE, BLEU |
 | Classification | Accuracy, F1 | Precision, Recall |
 | Generation | ROUGE-L, BERTScore | Human eval, LLM-as-judge |

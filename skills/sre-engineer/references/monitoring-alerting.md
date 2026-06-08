@@ -1,6 +1,3 @@
----
-render_with_liquid: false
----
 # Monitoring and Alerting
 
 ## Golden Signals Monitoring

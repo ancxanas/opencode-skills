@@ -1,3 +1,5 @@
+# App Development
+
 ---
 
 ## When to Use
@@ -14,7 +16,7 @@
 - Customer-facing storefronts (use Storefront API)
 - Simple product displays (use Liquid or Storefront API)
 - Checkout-only customizations (use Checkout Extensions)
-render_with_liquid: false
+
 ---
 
 ## App Architecture Overview

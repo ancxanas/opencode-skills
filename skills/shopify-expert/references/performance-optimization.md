@@ -1,3 +1,5 @@
+# Performance Optimization
+
 ---
 
 ## When to Use
@@ -14,7 +16,7 @@
 - Checkout performance (mostly controlled by Shopify)
 - Server-side API optimization (use Admin API best practices)
 - Headless performance (use Hydrogen/framework-specific patterns)
-render_with_liquid: false
+
 ---
 
 ## Performance Metrics Overview
