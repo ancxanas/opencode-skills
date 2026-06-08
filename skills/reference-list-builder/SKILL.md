@@ -1,6 +1,16 @@
 ---
 name: reference-list-builder
 description: Format professional references properly and prepare reference materials
+license: MIT
+compatibility: opencode
+metadata:
+  domain: career
+  triggers: reference list, professional references, reference formatting, reference check
+  role: specialist
+  scope: implementation
+  output-format: code
+  related-skills: resume-formatter, resume-section-builder
+  last-reviewed: 2026-06-08
 ---
 
 # Reference List Builder

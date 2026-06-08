@@ -2,6 +2,16 @@
 name: design-system
 description: "Extract a complete design system from an existing website or screenshot into a DESIGN.md file. Analyses colours, typography, component styles, spacing, and atmosphere through browser automation and HTML inspection. Produces a semantic design system document optimised for consistent page generation. Triggers: 'extract design system', 'design system', 'create DESIGN.md', 'analyse the design', 'what design does this site use', 'extract styles from', 'reverse engineer the design'."
 compatibility: opencode
+license: MIT
+compatibility: opencode
+metadata:
+  domain: frontend
+  triggers: design system, extract design, reverse engineer design, CSS analysis, typography, design tokens, UI kit
+  role: specialist
+  scope: implementation
+  output-format: code
+  related-skills: tailwind-design-system, frontend-design, css-standards
+  last-reviewed: 2026-06-08
 ---
 
 # Design System Extractor

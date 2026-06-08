@@ -7,6 +7,16 @@ description: CSS motion design and implementation for web interfaces. Use when d
 #   - description rewritten for local skill-selection clarity
 #   - body extensively restructured — condensed overview, inlined review checklist, reformatted easing section, normalised punctuation (em-dash to double-hyphen)
 #   - references/LINEAR_EASING_PATTERNS.md headings simplified (dropped numbering, lowercase)
+license: MIT
+compatibility: opencode
+metadata:
+  domain: frontend
+  triggers: CSS animation, transition, motion design, View Transitions API, easing, motion tokens, web animation
+  role: specialist
+  scope: implementation
+  output-format: code
+  related-skills: tailwind-design-system, frontend-design
+  last-reviewed: 2026-06-08
 ---
 
 # CSS Motion Systems

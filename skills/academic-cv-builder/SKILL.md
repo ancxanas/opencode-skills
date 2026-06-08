@@ -1,6 +1,16 @@
 ---
 name: academic-cv-builder
 description: Format CVs for academic positions with publications, grants, and teaching
+license: MIT
+compatibility: opencode
+metadata:
+  domain: career
+  triggers: academic CV, faculty position, research, publications, grants, teaching, tenure
+  role: specialist
+  scope: implementation
+  output-format: code
+  related-skills: resume-formatter, resume-tailor, tech-resume-optimizer
+  last-reviewed: 2026-06-08
 ---
 
 # Academic CV Builder

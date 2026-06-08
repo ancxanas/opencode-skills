@@ -1,6 +1,16 @@
 ---
 name: linkedin-profile-optimizer
 description: Optimize LinkedIn profile for searchability, recruiter visibility, and engagement
+license: MIT
+compatibility: opencode
+metadata:
+  domain: career
+  triggers: LinkedIn optimization, profile headline, about section, recruiter visibility
+  role: specialist
+  scope: implementation
+  output-format: code
+  related-skills: resume-bullet-writer, tech-resume-optimizer
+  last-reviewed: 2026-06-08
 ---
 
 # LinkedIn Profile Optimizer

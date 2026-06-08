@@ -1,6 +1,16 @@
 ---
 name: resume-quantifier
 description: Find opportunities to add metrics and estimate numbers when exact data unavailable
+license: MIT
+compatibility: opencode
+metadata:
+  domain: career
+  triggers: resume metrics, quantify achievements, numbers, data, impact
+  role: specialist
+  scope: implementation
+  output-format: code
+  related-skills: resume-bullet-writer, resume-section-builder
+  last-reviewed: 2026-06-08
 ---
 
 # Resume Quantifier

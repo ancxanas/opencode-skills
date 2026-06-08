@@ -1,6 +1,16 @@
 ---
 name: salary-negotiation-prep
 description: Research market rates, build negotiation strategy, and create counter-offer scripts
+license: MIT
+compatibility: opencode
+metadata:
+  domain: career
+  triggers: salary negotiation, market rates, counter offer, compensation strategy
+  role: specialist
+  scope: implementation
+  output-format: code
+  related-skills: offer-comparison-analyzer, interview-prep-generator
+  last-reviewed: 2026-06-08
 ---
 
 # Salary Negotiation Prep

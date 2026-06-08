@@ -1,6 +1,16 @@
 ---
 name: career-changer-translator
 description: Translate skills from one industry to another, identify transferable skills
+license: MIT
+compatibility: opencode
+metadata:
+  domain: career
+  triggers: career change, transferable skills, industry transition, resume pivot
+  role: specialist
+  scope: implementation
+  output-format: code
+  related-skills: resume-tailor, resume-bullet-writer
+  last-reviewed: 2026-06-08
 ---
 
 # Career Changer Translator

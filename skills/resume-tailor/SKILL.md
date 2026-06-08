@@ -1,6 +1,16 @@
 ---
 name: resume-tailor
 description: Customize resume for specific job postings while maintaining truthfulness
+license: MIT
+compatibility: opencode
+metadata:
+  domain: career
+  triggers: resume customization, job targeting, ATS optimization, keyword matching
+  role: specialist
+  scope: implementation
+  output-format: code
+  related-skills: resume-ats-optimizer, job-description-analyzer
+  last-reviewed: 2026-06-08
 ---
 
 # Resume Tailor

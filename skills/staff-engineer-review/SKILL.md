@@ -1,6 +1,16 @@
 ---
 name: staff-engineer-review
 description: Performs deep code review of pull requests as a Staff+ level engineer. This skill should be used when reviewing PRs, evaluating implementation against plans, assessing architectural decisions, code quality, and providing actionable feedback.
+license: MIT
+compatibility: opencode
+metadata:
+  domain: process
+  triggers: code review, PR review, staff engineer, architecture review, implementation review, plan validation
+  role: specialist
+  scope: implementation
+  output-format: code
+  related-skills: code-reviewer, architecture-designer
+  last-reviewed: 2026-06-08
 ---
 
 # Staff Engineer Review

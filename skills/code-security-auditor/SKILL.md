@@ -1,6 +1,16 @@
 ---
 name: code-security-auditor
 description: Perform pre-execution security audits of untrusted codebases through static analysis. Use when analyzing a codebase for potential malicious behavior, supply chain risks, or security vulnerabilities before local execution. Triggered by requests like "analyze this project for security risks", "audit this code before running", "check if this codebase is safe", or similar security review requests.
+license: MIT
+compatibility: opencode
+metadata:
+  domain: security
+  triggers: security audit, code review security, vulnerability scan, supply chain risk, malware analysis, pre-execution audit
+  role: specialist
+  scope: implementation
+  output-format: code
+  related-skills: secure-code-guardian, security-reviewer
+  last-reviewed: 2026-06-08
 ---
 
 # Code Security Auditor

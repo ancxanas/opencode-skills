@@ -1,6 +1,16 @@
 ---
 name: job-description-analyzer
 description: Analyze job postings, calculate match scores, identify gaps, and create application strategy
+license: MIT
+compatibility: opencode
+metadata:
+  domain: career
+  triggers: job description analysis, match score, skill gap, resume optimization
+  role: specialist
+  scope: implementation
+  output-format: code
+  related-skills: resume-tailor, cover-letter-generator, resume-ats-optimizer
+  last-reviewed: 2026-06-08
 ---
 
 # Job Description Analyzer

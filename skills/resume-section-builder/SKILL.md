@@ -1,6 +1,16 @@
 ---
 name: resume-section-builder
 description: Create targeted resume sections optimized for different experience levels and roles
+license: MIT
+compatibility: opencode
+metadata:
+  domain: career
+  triggers: resume section, experience, education, skills, summary, resume structure
+  role: specialist
+  scope: implementation
+  output-format: code
+  related-skills: resume-bullet-writer, resume-formatter
+  last-reviewed: 2026-06-08
 ---
 
 # Resume Section Builder

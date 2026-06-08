@@ -1,6 +1,16 @@
 ---
 name: portfolio-case-study-writer
 description: Transform resume bullets into detailed portfolio case studies
+license: MIT
+compatibility: opencode
+metadata:
+  domain: career
+  triggers: case study, portfolio project, design process, project writeup
+  role: specialist
+  scope: implementation
+  output-format: code
+  related-skills: resume-bullet-writer, creative-portfolio-resume
+  last-reviewed: 2026-06-08
 ---
 
 # Portfolio Case Study Writer

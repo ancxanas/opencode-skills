@@ -1,6 +1,16 @@
 ---
 name: resume-bullet-writer
 description: Transform weak resume bullets into achievement-focused statements with metrics and impact
+license: MIT
+compatibility: opencode
+metadata:
+  domain: career
+  triggers: resume bullet, achievement, metrics, impact, quantify results
+  role: specialist
+  scope: implementation
+  output-format: code
+  related-skills: resume-quantifier, resume-section-builder
+  last-reviewed: 2026-06-08
 ---
 
 # Resume Bullet Writer

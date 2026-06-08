@@ -1,6 +1,16 @@
 ---
 name: offer-comparison-analyzer
 description: Compare multiple job offers side-by-side with total compensation analysis
+license: MIT
+compatibility: opencode
+metadata:
+  domain: career
+  triggers: job offer comparison, total compensation, salary negotiation, benefits
+  role: specialist
+  scope: implementation
+  output-format: code
+  related-skills: salary-negotiation-prep, job-description-analyzer
+  last-reviewed: 2026-06-08
 ---
 
 # Offer Comparison Analyzer

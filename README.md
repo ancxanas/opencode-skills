@@ -1,5 +1,7 @@
 # OpenCode Skills
 
+[![Skill Staleness Check](https://github.com/ancxanas/opencode-skills/actions/workflows/skill-staleness.yml/badge.svg)](https://github.com/ancxanas/opencode-skills/actions/workflows/skill-staleness.yml)
+
 A collection of **110 skills** for [OpenCode](https://opencode.ai) — covering languages, frameworks, DevOps, cloud, AI/ML, security, frontend, mobile, CSS standards, resume writing, and more.
 
 ## Skill Categories
