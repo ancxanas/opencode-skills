@@ -4,6 +4,8 @@ impact: CRITICAL
 description: Configure Composio, OpenAI, and Anthropic API keys to enable your AI agent projects
 tags: [setup, api-keys, configuration, environment, composio, openai, anthropic]
 ---
+{% raw %}
+
 
 # Setting Up API Keys for Your Project
 
@@ -228,3 +230,5 @@ print("✅ Composio API key is working!")
 - [OpenAI API Keys](https://platform.openai.com/api-keys)
 - [Anthropic Console](https://console.anthropic.com/settings/keys)
 - [Composio Documentation](https://docs.composio.dev)
+
+{% endraw %}

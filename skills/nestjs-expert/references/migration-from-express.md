@@ -1,5 +1,3 @@
-# Express to NestJS Migration Guide
-
 ---
 
 ## When to Use This Guide
@@ -22,6 +20,8 @@
 - Projects with unique architectural requirements conflicting with NestJS patterns
 
 ---
+{% raw %}
+
 
 ## Concept Mapping: Express → NestJS
 
@@ -1235,3 +1235,5 @@ app.useGlobalPipes(
 - class-validator Decorators: https://github.com/typestack/class-validator
 - TypeORM with NestJS: https://docs.nestjs.com/techniques/database
 - Testing Guide: https://docs.nestjs.com/fundamentals/testing
+
+{% endraw %}

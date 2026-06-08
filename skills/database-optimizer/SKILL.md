@@ -19,6 +19,8 @@ parent: DevOps & Infrastructure
 nav_order: 4
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Database Optimizer
 
@@ -152,3 +154,5 @@ When optimizing database performance, provide:
 4. Implementation SQL / config changes
 5. Validation queries to measure improvement
 6. Monitoring recommendations
+
+{% endraw %}

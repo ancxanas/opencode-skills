@@ -17,6 +17,8 @@ parent: Career
 nav_order: 2
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Career Changer Translator
 
@@ -381,3 +383,5 @@ When helping a career changer:
 5. **Focus on value you bring** - your unique perspective is an asset
 6. **Address concerns proactively** - don't let them wonder "why"
 7. **Network in target field** - referrals help career changers most
+
+{% endraw %}

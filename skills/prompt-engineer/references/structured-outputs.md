@@ -1,5 +1,3 @@
-# Structured Outputs
-
 ---
 
 ## Structured Output Methods
@@ -15,7 +13,9 @@
 │  ├─────────────────┤  ├─────────────────┤  ├─────────────────┤            │
 │  │ Reliability: ~  │  │ Reliability: ++ │  │ Reliability: +++│            │
 │  │ Flexibility: +++│  │ Flexibility: ++ │  │ Flexibility: +  │            │
-│  │ Validation: --- │  │ Validation: +   │  │ Validation: +++ │            │
+│  │ Validation: ---
+{% raw %}
+ │  │ Validation: +   │  │ Validation: +++ │            │
 │  └─────────────────┘  └─────────────────┘  └─────────────────┘            │
 │                                                                             │
 │  Use when:          Use when:             Use when:                        │
@@ -718,3 +718,5 @@ Response (JSON array only):"""
 - **API Designer** - Schema design for APIs
 - **Data Engineer** - Data validation pipelines
 - **RAG Architect** - Structured extraction for retrieval
+
+{% endraw %}

@@ -1,31 +1,6 @@
-# Multi-Cloud Architecture Reference
-
-Comprehensive guide for multi-cloud strategies, abstraction layers, portability patterns, and vendor lock-in mitigation.
-
-## Multi-Cloud Strategy
-
-### When to Use Multi-Cloud
-
-**Valid Use Cases**
-- Regulatory compliance requiring data residency in specific regions
-- Best-of-breed service selection (BigQuery for analytics, AWS for ML)
-- Acquisition integration (different clouds in merged organizations)
-- Disaster recovery with cloud provider as failure domain
-- Negotiating leverage with cloud vendors
-
-**Poor Reasons for Multi-Cloud**
-- "Avoiding vendor lock-in" without specific exit scenario
-- Assuming portability is free (it has significant costs)
-- Political decisions without technical justification
-- Spreading workloads arbitrarily across providers
-
-### Multi-Cloud Patterns
-
-**Active-Active**
-```
-Users -> Global Load Balancer
-              |
-    +---------+---------+
+------
+{% raw %}
+---+---------+
     |                   |
   AWS Region        GCP Region
     |                   |
@@ -481,3 +456,5 @@ resource "vault_gcp_secret_roleset" "gcp_role" {
 - No implicit trust based on network location
 - Identity-based access control
 - Encrypted transit between clouds (VPN/interconnect)
+
+{% endraw %}

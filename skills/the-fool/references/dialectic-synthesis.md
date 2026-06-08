@@ -1,26 +1,6 @@
-# Dialectic Synthesis
-
-Hegelian dialectic with steel manning for constructing the strongest possible counter-argument and driving toward synthesis.
-
-## Core Principle
-
-The dialectic is not about winning. It is about producing a stronger position than either thesis or antithesis alone. The Fool's job is to argue the other side so well that the user is forced to either refine their position or acknowledge a genuine trade-off.
-
-## Process
-
-1. **Restate the thesis** — Steelman the user's position first
-2. **Construct the antithesis** — Build the strongest opposing argument
-3. **Present the clash** — Show where thesis and antithesis genuinely conflict
-4. **Drive toward synthesis** — Propose a position that incorporates the best of both
-
-## Steel Manning Technique
-
-Steel manning is the opposite of straw manning. Restate the user's position in its strongest possible form before arguing against it.
-
-### How to Steelman
-
-| Step | Action | Example |
-|------|--------|---------|
+------
+{% raw %}
+|--------|---------|
 | 1. Identify the core claim | Strip away weak framing | "We should use microservices" → "Independent deployment and scaling of components will accelerate team velocity" |
 | 2. Add the strongest evidence | Supply what the user implied | "...especially given 4 teams working on different release cycles" |
 | 3. Acknowledge real benefits | Name what's genuinely good | "This would eliminate the current deploy queue bottleneck" |
@@ -149,3 +129,5 @@ Rate the synthesis outcome.
 **Confidence:** HIGH / MEDIUM / LOW / PIVOT
 **If MEDIUM:** Test [riskiest assumption] by [experiment]
 ```
+
+{% endraw %}

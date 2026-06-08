@@ -1,5 +1,3 @@
-# REST to GraphQL Migration Guide
-
 ---
 
 ## When to Use This Guide
@@ -38,6 +36,8 @@
 - No complex data relationship navigation needed
 
 ---
+{% raw %}
+
 
 ## Concept Mapping: REST to GraphQL
 
@@ -1139,3 +1139,5 @@ type User {
 - Client applications fully migrated
 - Performance metrics meet or exceed REST baseline
 - Team confident in GraphQL maintenance
+
+{% endraw %}

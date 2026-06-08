@@ -1,3 +1,8 @@
+---
+render_with_liquid: false
+---
+{% raw %}
+
 # Platform Engineering
 
 ## Platform Principles
@@ -64,6 +69,7 @@ output "service_url" {
 ## Backstage Service Template
 
 ```yaml
+{% raw %}
 # templates/microservice/template.yaml
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
@@ -97,6 +103,7 @@ spec:
         repoUrl: github.com?owner=org&repo=${{ parameters.name }}
     - id: register
       action: catalog:register
+{% endraw %}
 ```
 
 ## Service Catalog Info
@@ -415,3 +422,5 @@ platform() {
 - Invest in developer evangelism
 - Maintain SLOs for platform uptime
 - Provide fast, helpful support
+
+{% endraw %}

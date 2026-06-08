@@ -1,23 +1,6 @@
-# Hyprland Cheatsheet
-
-## Config Syntax
-
-```
-keyword = value                                             # Simple key-value
-keyword { subkey = value }                                  # Block
-windowrule = effect, regex                                  # Window rule v1
-windowrulev2 = effect, prop:regex, prop:regex               # Window rule v2
-bind = MODS, key, dispatcher, params                        # Keybinding
-env = KEY, value                                            # Environment variable
-exec-once = command                                         # Run once on start
-source = ~/path/to/config.conf                              # Include another file
-$VARIABLE = value                                           # Variable definition
-```
-
-## Keybinding Modifiers
-
-| Modifier | Notes |
-|----------|-------|
+------
+{% raw %}
+----|-------|
 | `SUPER` | Windows/Command key |
 | `SHIFT` | Shift key |
 | `CTRL` / `CONTROL` | Control key |
@@ -133,3 +116,5 @@ bezier=easeInOut,0.42,0.0,0.58,1.0         # Smooth in-out
 | Screen sharing | Enable `xdg-desktop-portal-hyprland` |
 | Electron apps glitchy | Set `ELECTRON_OZONE_PLATFORM_HINT=auto` |
 | NVIDIA flickering | `nvidia_drm.modeset=1`, `WLR_NO_HARDWARE_CURSORS=1` |
+
+{% endraw %}

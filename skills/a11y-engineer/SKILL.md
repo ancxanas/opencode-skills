@@ -19,6 +19,8 @@ parent: Frontend
 nav_order: 1
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # a11y Engineer
 
@@ -263,3 +265,5 @@ npx lhci autorun --collect.url=http://localhost:3000
 ```
 
 Ensure state changes remain clear even without animation. See css-motion-systems skill for detailed motion guidance.
+
+{% endraw %}

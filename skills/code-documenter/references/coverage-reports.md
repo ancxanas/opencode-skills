@@ -1,24 +1,6 @@
-# Coverage Reports
-
-## Documentation Coverage Report Template
-
-```markdown
-# Documentation Report: {project_name}
-
-## Summary
-- **Files analyzed**: 45
-- **Functions documented**: 120/150 (80%)
-- **Classes documented**: 25/25 (100%)
-- **API endpoints documented**: 30/30 (100%)
-
-## Coverage Before/After
-- Before: 45%
-- After: 92%
-
-## Files Modified
-
-| File | Functions Added | Notes |
-|------|-----------------|-------|
+------
+{% raw %}
+|-----------------|-------|
 | src/services/user.ts | 8 | All public methods |
 | src/services/auth.ts | 5 | Added examples |
 | src/controllers/users.ts | 6 | Added @Api decorators |
@@ -123,3 +105,5 @@ interrogate -v src/
 | Class coverage | 100% | >90% | <90% |
 | API endpoint coverage | 100% | 100% | <100% |
 | Example coverage | >50% | 30-50% | <30% |
+
+{% endraw %}

@@ -1,18 +1,6 @@
-# Conventional Commits 1.0.0 Reference
-
-## Structure
-```
-<type>[optional scope]: <description>
-
-[optional body]
-
-[optional footer(s)]
-```
-
-## Types
-
-| Type | Release | Description |
-|------|---------|-------------|
+------
+{% raw %}
+|---------|-------------|
 | `feat` | MINOR | A new feature |
 | `fix` | PATCH | A bug fix |
 | `BREAKING CHANGE` | MAJOR | Use in footer or `!` after type/scope |
@@ -62,3 +50,5 @@ BREAKING CHANGE → MAJOR (1.0.0 → 2.0.0)
 - `semantic-release` — Full pipeline (version, changelog, publish)
 - `commitlint` — Lint commit messages
 - `git-cliff` — Configurable changelog generator
+
+{% endraw %}

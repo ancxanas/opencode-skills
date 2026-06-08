@@ -20,6 +20,8 @@ parent: Languages
 nav_order: 10
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Python Pro
 
@@ -186,3 +188,5 @@ When implementing Python features, provide:
 ## Knowledge Reference
 
 Python 3.14+, typing module, mypy, pytest, black, ruff, dataclasses, async/await, asyncio, pathlib, functools, itertools, Poetry, Pydantic, contextlib, collections.abc, Protocol, `from __future__ import annotations`, free-threaded mode (no-GIL), template strings, Python Critical Sections
+
+{% endraw %}

@@ -20,6 +20,8 @@ parent: Frontend
 nav_order: 2
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Angular Architect
 
@@ -51,6 +53,7 @@ Load detailed guidance based on context:
 ### Standalone Component with Zoneless and Signals
 
 ```typescript
+{% raw %}
 import { Component, computed, input, output } from '@angular/core';
 
 @Component({
@@ -76,6 +79,7 @@ export class UserCardComponent {
     this.selected.emit(this.fullName());
   }
 }
+{% endraw %}
 ```
 
 ### Zoneless Change Detection
@@ -109,6 +113,7 @@ export class ZonelessComponent {}
 ### @if / @for Control Flow (Replaces *ngIf / *ngFor)
 
 ```typescript
+{% raw %}
 @Component({
   template: `
     @if (users(); as usersList) {
@@ -127,6 +132,7 @@ export class ZonelessComponent {}
 export class UserListComponent {
   users = signal<User[] | null>(null);
 }
+{% endraw %}
 ```
 
 - `track` replaces `trackBy` and is always required in `@for`
@@ -244,3 +250,5 @@ When implementing Angular features, provide:
 3. State management files if using NgRx
 4. Test file with comprehensive test cases
 5. Brief explanation of architectural decisions
+
+{% endraw %}

@@ -1,22 +1,6 @@
-# Troubleshooting Guide
-
-## Where to Check First
-
-Always start with these two commands:
-
-```bash
-journalctl -f -u hyprland     # Live Hyprland logs (run in a separate terminal)
-Hyprland --debug              # Start with verbose debug output
-```
-
-## Blank Screen After Launch
-
-**Symptoms:** You log in, screen goes black, cursor visible but nothing else.
-
-**Causes & fixes:**
-
-| Cause | Fix |
-|-------|-----|
+------
+{% raw %}
+-|-----|
 | No Polkit agent | Install hyprpolkitagent: `sudo pacman -S hyprpolkitagent` (Arch), or polkit-gnome: `sudo pacman -S polkit-gnome` (Arch), `sudo dnf install policykit-1-gnome` (Fedora), `sudo apt install policykit-1-gnome` (Debian) |
 | No `seatd` running | `sudo systemctl enable --now seatd` (if not using elogind) |
 | NVIDIA mode not set | Ensure `nvidia_drm.modeset=1` kernel parameter is set (see `distro-notes.md`) |
@@ -339,3 +323,5 @@ hyprctl setprop debug:damage_tracking 1
 
 # Log rendering timings
 journalctl -f -u hyprland | grep "render"
+
+{% endraw %}

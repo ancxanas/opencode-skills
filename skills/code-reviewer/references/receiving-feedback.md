@@ -1,5 +1,3 @@
-# Receiving Feedback
-
 ---
 
 ## Core Mindset
@@ -9,6 +7,8 @@
 Code review feedback is a technical discussion, not a social one. Focus on the code, not on feelings.
 
 ---
+{% raw %}
+
 
 ## The Six-Step Process
 
@@ -236,3 +236,5 @@ If you cannot verify a fix:
 ---
 
 *Content adapted from [obra/superpowers](https://github.com/obra/superpowers) by Jesse Vincent (@obra), MIT License.*
+
+{% endraw %}

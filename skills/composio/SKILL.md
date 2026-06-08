@@ -14,6 +14,8 @@ parent: Platform
 nav_order: 2
 render_with_liquid: false
 ---
+{% raw %}
+
 
 ## When to Apply
 
@@ -64,3 +66,5 @@ composio init
 ```
 
 > Full reference: [Building with Composio](rules/building-with-composio.md)
+
+{% endraw %}

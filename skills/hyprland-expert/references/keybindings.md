@@ -1,18 +1,6 @@
-# Keybindings Reference
-
-## Syntax
-
-```
-bind=MODS,key,dispatcher,params
-bindl=MODS,key,dispatcher,params    # Exec on key press (no release filter)
-bindr=MODS,key,dispatcher,params    # Exec on key release
-bindm=MODS,key,dispatcher,params    # Mouse bind
-```
-
-### Modifiers
-
-| Modifier | Description |
-|----------|-------------|
+------
+{% raw %}
+----|-------------|
 | `SUPER` / `WIN` / `LOGO` | Windows/Command key |
 | `SHIFT` | Shift key |
 | `CTRL` / `CONTROL` | Control key |
@@ -275,3 +263,5 @@ bind=$mainMod SHIFT,S,exec,grim -g "$(slurp)" - | wl-copy
 bind=$mainMod,Print,exec,grim ~/Pictures/$(date +%Y%m%d-%H%M%S).png
 bind=,Print,exec,grim -g "$(slurp)" ~/Pictures/$(date +%Y%m%d-%H%M%S).png
 ```
+
+{% endraw %}

@@ -1,27 +1,6 @@
-# Red Team Adversarial
-
-Adversarial thinking and red teaming for finding weaknesses before adversaries do.
-
-## Core Principle
-
-Red teaming asks: **"If someone wanted to break, exploit, or game this, how would they do it?"** The Fool adopts the mindset of an adversary — not to cause harm, but to find vulnerabilities before real adversaries do. This applies beyond security: competitors, disgruntled users, perverse incentives, and regulatory challenges are all adversarial forces.
-
-## Process
-
-1. **Identify the asset** — What are you protecting? (system, decision, strategy, product)
-2. **Construct adversary personas** — Who would attack this and why?
-3. **Map attack vectors** — How would each persona exploit weaknesses?
-4. **Assess impact** — Rank by likelihood x impact
-5. **Design defenses** — Specific countermeasures for the highest-ranked vectors
-
-## Adversary Persona Construction
-
-Generic "attackers" produce generic findings. Specific personas produce actionable insights.
-
-### Persona Template
-
-| Field | Description |
-|-------|-------------|
+------
+{% raw %}
+-|-------------|
 | **Role** | Who is this adversary? |
 | **Motivation** | Why would they attack? |
 | **Capability** | What resources and skills do they have? |
@@ -160,3 +139,5 @@ When the "adversary" is a competitor.
 | #2 | [Specific countermeasure] | Low/Med/High | Immediate/Next sprint/Backlog |
 | #3 | [Specific countermeasure] | Low/Med/High | Immediate/Next sprint/Backlog |
 ```
+
+{% endraw %}

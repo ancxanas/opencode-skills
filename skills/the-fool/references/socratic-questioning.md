@@ -1,19 +1,6 @@
-# Socratic Questioning
-
-Structured question frameworks for exposing assumptions and deepening understanding.
-
-## Core Principle
-
-Socratic questioning does not argue. It asks. The goal is to help the user discover gaps in their own reasoning by surfacing what they have not examined. Every question should create a moment of "I hadn't thought about that."
-
-## Question Categories
-
-### 1. Definitional Questions
-
-Challenge vague or overloaded terms.
-
-| Pattern | Example |
-|---------|---------|
+------
+{% raw %}
+---|---------|
 | "When you say X, what specifically do you mean?" | "When you say 'scalable,' do you mean 10x users or 1000x?" |
 | "How would you define X to someone unfamiliar?" | "How would you explain 'real-time' to a non-engineer?" |
 | "Are there cases where X means something different?" | "Does 'fast' mean the same thing for API response and batch job?" |
@@ -132,3 +119,5 @@ Watch for language that hides assumptions.
 |-----------|-----------|--------|--------|
 | [Riskiest assumption] | [How to test it] | Low/Med/High | [What result means] |
 ```
+
+{% endraw %}

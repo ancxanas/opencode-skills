@@ -17,6 +17,8 @@ parent: Process & Tooling
 nav_order: 1
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Changelog Generator
 
@@ -123,3 +125,5 @@ guidelines from CHANGELOG_STYLE.md
 - Generating email updates for users
 - Creating social media announcement posts
 
+
+{% endraw %}

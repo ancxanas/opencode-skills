@@ -18,6 +18,8 @@ parent: DevOps & Infrastructure
 nav_order: 9
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # SRE Engineer
 
@@ -153,6 +155,7 @@ sum(rate(container_cpu_cfs_periods_total[5m])) by (pod)
 ### Toil Automation Script (Python)
 
 ```python
+{% raw %}
 #!/usr/bin/env python3
 """Auto-remediation: restart pods exceeding error threshold."""
 import subprocess, sys, json
@@ -184,4 +187,7 @@ if __name__ == "__main__":
         restart_deployment(namespace, deployment)
     else:
         print("Within SLO threshold — no action required")
+{% endraw %}
 ```
+
+{% endraw %}

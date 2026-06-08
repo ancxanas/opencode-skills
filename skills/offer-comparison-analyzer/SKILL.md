@@ -17,6 +17,8 @@ parent: Career
 nav_order: 9
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Offer Comparison Analyzer
 
@@ -379,3 +381,5 @@ Based on your stated priorities of [X, Y, Z], **Offer [A/B]** appears to be the 
 - ✅ Checked company stability/risk
 - ✅ Aligned with personal priorities
 - ✅ Gut-checked the decision
+
+{% endraw %}

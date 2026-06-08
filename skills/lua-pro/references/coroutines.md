@@ -1,11 +1,6 @@
-# Coroutines
-
-## Core API
-
-All functions in the `coroutine` table:
-
-| Function | Purpose |
-|----------|---------|
+------
+{% raw %}
+----|---------|
 | `coroutine.create(f)` | Create a suspended coroutine (thread) |
 | `coroutine.resume(co, ...)` | Start or resume a coroutine; returns status + yields |
 | `coroutine.yield(...)` | Suspend the current coroutine, pass values to `resume` |
@@ -125,3 +120,5 @@ coroutine.resume(co, "hello")        -- true, "received: hello"
 - Lua 5.3+: `coroutine.running()` returns the coroutine + boolean (main thread check)
 - Lua 5.4: `coroutine.close(co)` closes a coroutine (calls `__close` methods)
 - LuaJIT: matches Lua 5.1 semantics; TValue stacks are less forgiving on deep yield chains
+
+{% endraw %}

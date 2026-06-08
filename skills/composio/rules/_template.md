@@ -4,6 +4,8 @@ impact: CRITICAL | HIGH | MEDIUM | LOW
 description: One sentence describing what this rule prevents or improves
 tags: [tag1, tag2, tag3]
 ---
+{% raw %}
+
 
 # Rule Title
 
@@ -36,3 +38,5 @@ good = "example"
 ## Reference
 
 - [Relevant documentation](https://docs.composio.dev)
+
+{% endraw %}

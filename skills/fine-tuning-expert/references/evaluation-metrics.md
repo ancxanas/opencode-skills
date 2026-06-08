@@ -1,5 +1,3 @@
-# Evaluation Metrics for Fine-Tuned Models
-
 ---
 
 ## Overview
@@ -408,6 +406,7 @@ class ModelComparison:
 ## LLM-as-Judge Evaluation
 
 ```python
+{% raw %}
 from openai import OpenAI
 import json
 
@@ -497,6 +496,7 @@ Also include a brief explanation for each rating."""
         "individual_results": results,
         "summary": summary
     }
+{% endraw %}
 ```
 
 ## Benchmark Suites
@@ -571,7 +571,9 @@ BENCHMARK_TASKS = {
 ### Metric Selection by Task
 
 | Task Type | Primary Metrics | Secondary Metrics |
-|-----------|-----------------|-------------------|
+|---
+{% raw %}
+--------|-----------------|-------------------|
 | General Fine-Tuning | Perplexity, Loss | ROUGE, BLEU |
 | Classification | Accuracy, F1 | Precision, Recall |
 | Generation | ROUGE-L, BERTScore | Human eval, LLM-as-judge |
@@ -595,3 +597,5 @@ BENCHMARK_TASKS = {
 - `hyperparameter-tuning.md` - Adjusting training based on eval results
 - `dataset-preparation.md` - Creating evaluation sets
 - `deployment-optimization.md` - Production evaluation considerations
+
+{% endraw %}

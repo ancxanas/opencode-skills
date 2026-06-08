@@ -1,9 +1,6 @@
-# Database Selection
-
-## Database Types
-
-| Type | Examples | Best For |
-|------|----------|----------|
+------
+{% raw %}
+|----------|----------|
 | **Relational** | PostgreSQL, MySQL | Transactions, complex queries, relationships |
 | **Document** | MongoDB, Firestore | Flexible schemas, rapid iteration |
 | **Key-Value** | Redis, DynamoDB | Caching, sessions, high throughput |
@@ -100,3 +97,5 @@ When to Avoid:
 | Time-based queries? | Time-Series |
 | Traversing relationships? | Graph (Neo4j) |
 | Full-text search primary? | Elasticsearch |
+
+{% endraw %}

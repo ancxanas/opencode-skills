@@ -1,9 +1,6 @@
-# Retry & Backoff Strategies Reference
-
-## Algorithm Comparison
-
-| Strategy | Formula | jitter | Total Time (10 retries) | Use Case |
-|----------|---------|--------|------------------------|----------|
+------
+{% raw %}
+----|---------|--------|------------------------|----------|
 | Fixed | `delay = C` | None | `10 × C` | Rate-limited APIs with known window |
 | Linear | `delay = C × attempt` | None | `55 × C` | Gradual backoff |
 | Exponential | `delay = 2^attempt × C` | None | `1023 × C` | General purpose |
@@ -85,3 +82,5 @@ async function retry<T>(
   }
 }
 ```
+
+{% endraw %}

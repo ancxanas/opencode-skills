@@ -1,5 +1,3 @@
-# Cost Optimization
-
 ---
 
 ## Resource Right-Sizing
@@ -253,6 +251,8 @@ spec:
     secrets: "50"
     configmaps: "50"
 ---
+{% raw %}
+
 apiVersion: v1
 kind: ResourceQuota
 metadata:
@@ -456,3 +456,5 @@ spec:
 10. **Monitor with Kubecost** or cloud cost tools
 11. **Use priority classes** to ensure critical workloads run
 12. **Review unused resources** regularly (idle deployments, orphaned PVCs)
+
+{% endraw %}

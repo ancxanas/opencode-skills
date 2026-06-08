@@ -4,6 +4,8 @@ impact: MEDIUM
 description: Build standalone and toolkit-based custom tools with proper authentication and validation
 tags: [custom-tools, extensibility, authentication, zod, development]
 ---
+{% raw %}
+
 
 # Creating Custom Tools
 
@@ -218,3 +220,5 @@ execute: async (input) => {
 - **Describe parameters:** AI agents need clear descriptions
 - **Not persisted:** Custom tools exist in memory only, recreate on restart
 - **Single toolkit scope:** executeToolRequest only works within same toolkit
+
+{% endraw %}

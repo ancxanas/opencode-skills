@@ -20,6 +20,8 @@ parent: Languages
 nav_order: 11
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Rust Engineer
 
@@ -174,3 +176,5 @@ When implementing Rust features, provide:
 ## Knowledge Reference
 
 Rust 2024 edition, Cargo, ownership/borrowing, lifetimes, traits, generics, async/await, tokio, Result/Option, thiserror/anyhow, serde, clippy, rustfmt, cargo-test, criterion benchmarks, MIRI, unsafe Rust, required `use` items, `unsafe` blocks in `unsafe fn`, `impl Trait` changes
+
+{% endraw %}

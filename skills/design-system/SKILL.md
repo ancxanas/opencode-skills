@@ -18,6 +18,8 @@ parent: Frontend
 nav_order: 5
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Design System Extractor
 
@@ -235,3 +237,5 @@ If the site has multiple pages with different styles:
 - ❌ Ignoring component patterns (just listing colours isn't enough)
 - ❌ Not including Section 6 (the copy-paste generation block)
 - ❌ Approximate colours from screenshots without flagging the uncertainty
+
+{% endraw %}

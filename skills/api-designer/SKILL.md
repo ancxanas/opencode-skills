@@ -18,6 +18,8 @@ parent: API & Architecture
 nav_order: 1
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # API Designer
 
@@ -221,3 +223,5 @@ When delivering an API design, provide:
 ## Knowledge Reference
 
 REST architecture, OpenAPI 3.1, GraphQL, HTTP semantics, JSON:API, HATEOAS, OAuth 2.0, JWT, RFC 7807 Problem Details, API versioning patterns, pagination strategies, rate limiting, webhook design, SDK generation
+
+{% endraw %}

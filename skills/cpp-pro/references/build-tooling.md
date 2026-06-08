@@ -1,110 +1,3 @@
-# Build Systems and Tooling
-
-## Modern CMake
-
-```cmake
-cmake_minimum_required(VERSION 3.20)
-project(MyProject VERSION 1.0.0 LANGUAGES CXX)
-
-# Set C++ standard
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
-# Export compile commands for tools
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-# Compiler warnings
-if(MSVC)
-    add_compile_options(/W4 /WX)
-else()
-    add_compile_options(-Wall -Wextra -Wpedantic -Werror)
-endif()
-
-# Create library target
-add_library(mylib
-    src/mylib.cpp
-    include/mylib.h
-)
-
-target_include_directories(mylib
-    PUBLIC
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-        $<INSTALL_INTERFACE:include>
-    PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/src
-)
-
-target_compile_features(mylib PUBLIC cxx_std_20)
-
-# Create executable
-add_executable(myapp src/main.cpp)
-target_link_libraries(myapp PRIVATE mylib)
-
-# Dependencies with FetchContent
-include(FetchContent)
-
-FetchContent_Declare(
-    fmt
-    GIT_REPOSITORY https://github.com/fmtlib/fmt.git
-    GIT_TAG 10.1.1
-)
-FetchContent_MakeAvailable(fmt)
-
-target_link_libraries(mylib PUBLIC fmt::fmt)
-
-# Testing
-enable_testing()
-add_subdirectory(tests)
-
-# Install rules
-include(GNUInstallDirs)
-install(TARGETS mylib myapp
-    EXPORT MyProjectTargets
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-)
-
-install(DIRECTORY include/
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-)
-```
-
-## Sanitizers
-
-```cmake
-# AddressSanitizer (ASan) - memory errors
-set(CMAKE_CXX_FLAGS_ASAN
-    "-g -O1 -fsanitize=address -fno-omit-frame-pointer"
-    CACHE STRING "Flags for ASan build"
-)
-
-# UndefinedBehaviorSanitizer (UBSan)
-set(CMAKE_CXX_FLAGS_UBSAN
-    "-g -O1 -fsanitize=undefined -fno-omit-frame-pointer"
-    CACHE STRING "Flags for UBSan build"
-)
-
-# ThreadSanitizer (TSan) - data races
-set(CMAKE_CXX_FLAGS_TSAN
-    "-g -O1 -fsanitize=thread -fno-omit-frame-pointer"
-    CACHE STRING "Flags for TSan build"
-)
-
-# MemorySanitizer (MSan) - uninitialized reads
-set(CMAKE_CXX_FLAGS_MSAN
-    "-g -O1 -fsanitize=memory -fno-omit-frame-pointer"
-    CACHE STRING "Flags for MSan build"
-)
-
-# Usage: cmake -DCMAKE_BUILD_TYPE=ASAN ..
-```
-
-## Static Analysis
-
-```yaml
-# .clang-tidy configuration
 ---
 Checks: >
   *,
@@ -359,6 +252,7 @@ cmake --build .
 ## CI/CD with GitHub Actions
 
 ```yaml
+{% raw %}
 # .github/workflows/ci.yml
 name: CI
 
@@ -421,12 +315,15 @@ jobs:
 
     - name: Run cppcheck
       run: cppcheck --enable=all --error-exitcode=1 src/
+{% endraw %}
 ```
 
 ## Quick Reference
 
 | Tool | Purpose | Command |
-|------|---------|---------|
+|---
+{% raw %}
+---|---------|---------|
 | CMake | Build system | `cmake -B build && cmake --build build` |
 | Conan | Package manager | `conan install . --build=missing` |
 | ASan | Memory errors | `-fsanitize=address` |
@@ -438,3 +335,5 @@ jobs:
 | GoogleTest | Unit testing | `TEST(Suite, Name) { EXPECT_EQ(...); }` |
 | Google Benchmark | Performance | `BENCHMARK(func)->Range(...)` |
 | Valgrind | Memory profiler | `valgrind --tool=memcheck ./app` |
+
+{% endraw %}

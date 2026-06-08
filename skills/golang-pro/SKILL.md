@@ -20,6 +20,8 @@ parent: Languages
 nav_order: 3
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Golang Pro
 
@@ -129,3 +131,5 @@ When implementing Go features, provide:
 ## Knowledge Reference
 
 Go 1.25+, goroutines, channels, select, sync package, generics, type parameters, constraints, io.Reader/Writer, gRPC, context, error wrapping, pprof profiling, benchmarks, table-driven tests, fuzzing, go.mod, go.mod ignore directive, internal packages, functional options
+
+{% endraw %}

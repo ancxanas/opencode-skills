@@ -20,6 +20,8 @@ parent: Backend
 nav_order: 6
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Laravel Specialist
 
@@ -268,3 +270,5 @@ Run these at each workflow stage to confirm correctness before proceeding:
 ## Knowledge Reference
 
 Laravel 12+, Eloquent ORM, PHP 8.5+, API resources, Sanctum/Passport, queues, Horizon, Livewire, Inertia, Octane, Pest/PHPUnit, Redis, broadcasting, events/listeners, notifications, task scheduling
+
+{% endraw %}

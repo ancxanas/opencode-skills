@@ -18,6 +18,8 @@ parent: DevOps & Infrastructure
 nav_order: 2
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # CLI Developer
 
@@ -117,3 +119,5 @@ When implementing CLI features, provide:
 ## Knowledge Reference
 
 CLI frameworks (commander, yargs, oclif, click, typer, argparse, cobra, viper), terminal UI (chalk, inquirer, rich, bubbletea), testing (snapshot testing, E2E), distribution (npm, pip, homebrew, releases), performance optimization
+
+{% endraw %}

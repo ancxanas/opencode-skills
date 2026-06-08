@@ -1,125 +1,3 @@
-# Theming Reference
-
-## 5 Popular Themes
-
-### Catppuccin Mocha
-
-```conf
-# Catppuccin Mocha palette
-$rosewater = f5e0dc
-$flamingo = f2cdcd
-$pink = f5c2e7
-$mauve = cba6f7
-$red = f38ba8
-$maroon = eba0ac
-$peach = fab387
-$yellow = f9e2af
-$green = a6e3a1
-$teal = 94e2d5
-$sky = 89dceb
-$sapphire = 74c7ec
-$blue = 89b4fa
-$lavender = b4befe
-$text = cdd6f4
-$subtext1 = bac2de
-$subtext0 = a6adc8
-$overlay2 = 9399b2
-$overlay1 = 7f849c
-$overlay0 = 6c7086
-$surface2 = 585b70
-$surface1 = 45475a
-$surface0 = 313244
-$base = 1e1e2e
-$mantle = 181825
-$crust = 11111b
-```
-
-### Catppuccin Latte (light)
-
-```conf
-$rosewater = dc8a78
-$flamingo = dd7878
-$pink = ea76cb
-$mauve = 8839ef
-$red = d20f39
-$maroon = e64553
-$peach = fe640b
-$yellow = df8e1d
-$green = 40a02b
-$teal = 179299
-$sky = 04a5e5
-$sapphire = 209fb5
-$blue = 1e66f5
-$lavender = 7287fd
-$text = 4c4f69
-$subtext1 = 5c5f77
-$subtext0 = 6c6f85
-$overlay2 = 7c7f93
-$overlay1 = 8c8fa1
-$overlay0 = 9ca0b0
-$surface2 = acb0be
-$surface1 = bcc0cc
-$surface0 = ccd0da
-$base = eff1f5
-$mantle = e6e9ef
-$crust = dce0e8
-```
-
-### Tokyo Night
-
-```conf
-$bg = 1a1b26
-$bg_dark = 16161e
-$fg = a9b1d6
-$blue = 3d59a1
-$cyan = 7dcfff
-$green = 9ece6a
-$orange = ff9e64
-$pink = f7768e
-$purple = 9aa5ce
-$red = db4b4b
-$yellow = e0af68
-$teal = 1abc9c
-$comment = 565f89
-```
-
-### Nord
-
-```conf
-$polar_night_1 = 2e3440
-$polar_night_2 = 3b4252
-$polar_night_3 = 434c5e
-$polar_night_4 = 4c566a
-$snow_storm_1 = d8dee9
-$snow_storm_2 = e5e9f0
-$snow_storm_3 = eceff4
-$frost_1 = 8fbcbb
-$frost_2 = 88c0d0
-$frost_3 = 81a1c1
-$frost_4 = 5e81ac
-$red = bf616a
-$orange = d08770
-$yellow = ebcb8b
-$green = a3be8c
-$purple = b48ead
-```
-
-### Dracula
-
-```conf
-$bg = 282a36
-$current_line = 44475a
-$fg = f8f8f2
-$comment = 6272a4
-$cyan = 8be9fd
-$green = 50fa7b
-$orange = ffb86c
-$pink = ff79c6
-$purple = bd93f9
-$red = ff5555
-$yellow = f1fa8c
-```
-
 ---
 
 ## Apply Theme Across the Ecosystem
@@ -442,6 +320,8 @@ env = QT_STYLE_OVERRIDE,kvantum
 Then open `qt5ct` or `qt6ct` and select Kvantum as the style. Open Kvantum Manager to install and apply a theme.
 
 ---
+{% raw %}
+
 
 ## Icon & Cursor Themes
 
@@ -778,3 +658,5 @@ label {
 }
 ```
 
+
+{% endraw %}

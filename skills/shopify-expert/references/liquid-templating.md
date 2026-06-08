@@ -1,5 +1,3 @@
-# Liquid Templating
-
 ---
 
 ## When to Use
@@ -17,6 +15,8 @@
 - Complex business logic (use Shopify Functions)
 
 ---
+{% raw %}
+
 
 ## Theme Architecture (Online Store 2.0)
 
@@ -82,6 +82,7 @@ theme/
 ### Complete Section with Blocks
 
 ```liquid
+{% raw %}
 {% comment %}
   sections/featured-collection.liquid
 {% endcomment %}
@@ -205,6 +206,7 @@ theme/
 {% javascript %}
   // Section-specific JavaScript
 {% endjavascript %}
+{% endraw %}
 ```
 
 ---
@@ -214,6 +216,7 @@ theme/
 ### Essential Object Access
 
 ```liquid
+{% raw %}
 {% comment %} Product object {% endcomment %}
 {{ product.title }}
 {{ product.description }}
@@ -246,11 +249,13 @@ theme/
 {% else %}
   <span class="sold-out">Sold Out</span>
 {% endif %}
+{% endraw %}
 ```
 
 ### Image Handling (Modern Syntax)
 
 ```liquid
+{% raw %}
 {% comment %} Responsive images with srcset {% endcomment %}
 {{ product.featured_image | image_url: width: 800 | image_tag:
   srcset: product.featured_image | image_url: width: 400 | append: ' 400w, ' |
@@ -276,11 +281,13 @@ theme/
          background-position: {{ section.settings.image.presentation.focal_point }};"
 >
 </div>
+{% endraw %}
 ```
 
 ### Metafield Access
 
 ```liquid
+{% raw %}
 {% comment %} Product metafields {% endcomment %}
 {% assign care_instructions = product.metafields.custom.care_instructions %}
 {% if care_instructions %}
@@ -316,11 +323,13 @@ theme/
     {% endif %}
   </div>
 {% endif %}
+{% endraw %}
 ```
 
 ### Collection Filtering and Sorting
 
 ```liquid
+{% raw %}
 {% comment %} Active filters display {% endcomment %}
 {% for filter in collection.filters %}
   {% if filter.active_values.size > 0 %}
@@ -380,6 +389,7 @@ theme/
     </option>
   {% endfor %}
 </select>
+{% endraw %}
 ```
 
 ---
@@ -389,6 +399,7 @@ theme/
 ### Cart Form Pattern
 
 ```liquid
+{% raw %}
 {% comment %} snippets/product-form.liquid {% endcomment %}
 
 {% form 'product', product, id: 'product-form', class: 'product-form', data-product-form: '' %}
@@ -461,11 +472,13 @@ theme/
 <script type="application/json" id="product-json">
   {{ product | json }}
 </script>
+{% endraw %}
 ```
 
 ### AJAX Cart Updates
 
 ```liquid
+{% raw %}
 {% comment %} snippets/cart-drawer.liquid {% endcomment %}
 
 <div id="cart-drawer" class="cart-drawer" aria-hidden="true">
@@ -557,6 +570,7 @@ theme/
     {% endif %}
   </div>
 </div>
+{% endraw %}
 ```
 
 ---
@@ -566,6 +580,7 @@ theme/
 ### Multi-language Support
 
 ```liquid
+{% raw %}
 {% comment %} Language/currency selector {% endcomment %}
 {% form 'localization', id: 'localization-form' %}
   {% if localization.available_languages.size > 1 %}
@@ -609,6 +624,7 @@ theme/
 
 {% comment %} Pluralization {% endcomment %}
 {{ 'cart.items_count' | t: count: cart.item_count }}
+{% endraw %}
 ```
 
 ---
@@ -618,6 +634,7 @@ theme/
 ### Lazy Loading Sections
 
 ```liquid
+{% raw %}
 {% comment %} Defer non-critical sections {% endcomment %}
 <div
   id="product-recommendations"
@@ -646,11 +663,13 @@ theme/
     }
   });
 </script>
+{% endraw %}
 ```
 
 ### Avoiding Common Mistakes
 
 ```liquid
+{% raw %}
 {% comment %} BAD: N+1 queries in loop {% endcomment %}
 {% for product in collection.products %}
   {% assign designer = product.metafields.custom.designer.value %}
@@ -679,6 +698,7 @@ theme/
 {% capture classes %}
   {% for tag in product.tags %} tag-{{ tag | handleize }}{% endfor %}
 {% endcapture %}
+{% endraw %}
 ```
 
 ---
@@ -688,3 +708,5 @@ theme/
 - **Storefront API** - For headless implementations
 - **Performance Optimization** - Detailed performance patterns
 - **Checkout Customization** - Post-purchase and checkout extensions
+
+{% endraw %}

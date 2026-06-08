@@ -4,6 +4,8 @@ impact: HIGH
 description: Prefer native tools over MCP for faster execution, full control, and modifier support
 tags: [tool-router, mcp, integration, providers, performance]
 ---
+{% raw %}
+
 
 # Use Native Tools for Performance and Control
 
@@ -246,3 +248,5 @@ With native tools, modifiers enable:
 - [Session Modifiers](https://docs.composio.dev/sdk/typescript/api/tool-router#using-modifiers)
 - [SessionExecuteMetaModifiers](https://docs.composio.dev/sdk/typescript/api/tool-router#sessionexecutemetamodifiers-v040)
 - [Tool Router Performance](https://docs.composio.dev/sdk/typescript/api/tool-router#best-practices)
+
+{% endraw %}

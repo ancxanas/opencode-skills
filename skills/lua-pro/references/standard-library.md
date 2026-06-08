@@ -1,32 +1,6 @@
-# Standard Library Reference
-
-## String Library
-
-```lua
--- Basic operations
-string.len(s)         -- #s
-string.sub(s, i, j)   -- substring (1-indexed, inclusive)
-string.rep(s, n)      -- repeat
-string.reverse(s)     -- "abc" -> "cba"
-string.lower(s)
-string.upper(s)
-string.byte(s, i)     -- character code
-string.char(...)      -- codes -> string (e.g., 65, 66 -> "AB")
-
--- Pattern matching
-string.find(s, pattern, init, plain)     -- start, end indices (or nil)
-string.match(s, pattern, init)           -- captures
-string.gmatch(s, pattern)                -- iterator
-string.gsub(s, pattern, repl, n)         -- count, replaced string
-
--- Format
-string.format(fmt, ...)                  -- C-style printf formatting
-```
-
-### Pattern Quick Reference
-
-| Pattern | Meaning |
-|---------|---------|
+------
+{% raw %}
+---|---------|
 | `.` | any character |
 | `%a` | letters |
 | `%d` | digits |
@@ -152,3 +126,5 @@ utf8.find(s, pattern, init, plain) -- regex find (5.4+)
 ### UTF-8 Patterns (5.4+)
 
 Same syntax as string patterns but operates on decoded codepoints rather than bytes. E.g., `utf8.match("café", "%l%l%l%l")` matches "café" because it sees 4 codepoints.
+
+{% endraw %}

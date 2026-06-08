@@ -1,11 +1,6 @@
-# Structures to Avoid
-
-## Binary Contrasts
-
-These create false drama. State the point directly.
-
-| Pattern | Problem |
-|---------|---------|
+------
+{% raw %}
+---|---------|
 | "Not because X. Because Y." / "Not because X, but because Y." | Telegraphed reversal |
 | "[X] isn't the problem. [Y] is." | Formulaic reframe |
 | "The answer isn't X. It's Y." | Predictable pivot |
@@ -132,3 +127,5 @@ Wh- openers become a crutch. "What makes this hard is..." becomes "The constrain
 |---------|---------|
 | Lazy extremes (every, always, never, everyone, everybody, nobody) | False authority. Use specifics instead of sweeping claims. |
 | All adverbs (-ly words, "really," "just," "literally," "genuinely," "honestly," "simply," "actually") | Empty emphasis. See phrases.md for full list. |
+
+{% endraw %}

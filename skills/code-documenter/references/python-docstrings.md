@@ -1,36 +1,6 @@
-# Python Docstrings
-
-## Google Style (Recommended)
-
-```python
-def calculate_total(items: list[Item], tax_rate: float = 0.0) -> float:
-    """Calculate total cost including tax.
-
-    Args:
-        items: List of items to calculate total for.
-        tax_rate: Tax rate as decimal (e.g., 0.08 for 8%).
-
-    Returns:
-        Total cost including tax.
-
-    Raises:
-        ValueError: If tax_rate is negative or items is empty.
-
-    Example:
-        >>> calculate_total([Item(10), Item(20)], 0.1)
-        33.0
-    """
-```
-
-## NumPy Style
-
-```python
-def calculate_total(items: list[Item], tax_rate: float = 0.0) -> float:
-    """
-    Calculate total cost including tax.
-
-    Parameters
-    ----------
+------
+{% raw %}
+----
     items : list[Item]
         List of items to calculate total for.
     tax_rate : float, optional
@@ -119,3 +89,5 @@ class UserService:
 | Examples | `Example:` | `Examples` | `.. code-block::` |
 | Notes | `Note:` | `Notes` | `.. note::` |
 | Attributes | `Attributes:` | `Attributes` | `:ivar:` |
+
+{% endraw %}

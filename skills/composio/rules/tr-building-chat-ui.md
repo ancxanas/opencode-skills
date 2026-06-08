@@ -4,6 +4,8 @@ impact: HIGH
 description: Best practices for building chat applications with toolkit selection, connection management, and session handling
 tags: [tool-router, chat-ui, vercel-ai-sdk, toolkit-selection, authentication, session]
 ---
+{% raw %}
+
 
 # Building Chat UIs with Tool Router
 
@@ -346,3 +348,5 @@ if (!result.successful) {
 - [Fetching Tools](./app-fetch-tools.md)
 - [Tool Execution](./app-execute-tools.md)
 - [Tool Versions](./app-tool-versions.md)
+
+{% endraw %}

@@ -20,6 +20,8 @@ parent: AI & Data
 nav_order: 1
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # AI Agent Builder
 
@@ -199,3 +201,5 @@ evaluate(
 - Implement approval gates for destructive operations (delete, write, send)
 - Rate-limit tool execution per session
 - Audit log every agent action (tool calls, state changes, decisions)
+
+{% endraw %}

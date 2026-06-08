@@ -18,6 +18,8 @@ parent: API & Architecture
 nav_order: 5
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Microservices Architect
 
@@ -168,3 +170,5 @@ When designing microservices architecture, provide:
 ## Knowledge Reference
 
 Domain-driven design, bounded contexts, event storming, REST/gRPC, message queues (Kafka, RabbitMQ), service mesh (Istio, Linkerd), Kubernetes, circuit breakers, saga patterns, event sourcing, CQRS, distributed tracing (Jaeger, Zipkin), API gateways, eventual consistency, CAP theorem
+
+{% endraw %}

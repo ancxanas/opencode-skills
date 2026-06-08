@@ -20,6 +20,8 @@ parent: DevOps & Infrastructure
 nav_order: 7
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Monitoring Expert
 
@@ -114,6 +116,7 @@ async function processOrder(orderId) {
 
 ### Prometheus Alerting Rule
 ```yaml
+{% raw %}
 groups:
   - name: api.rules
     rules:
@@ -126,6 +129,7 @@ groups:
           severity: critical
         annotations:
           summary: "Error rate above 5% on {{ $labels.route }}"
+{% endraw %}
 ```
 
 ### k6 Load Test
@@ -182,3 +186,5 @@ Load detailed guidance based on context:
 - Alert on every error (alert fatigue)
 - Use string interpolation in logs (use structured fields)
 - Skip correlation IDs in distributed systems
+
+{% endraw %}

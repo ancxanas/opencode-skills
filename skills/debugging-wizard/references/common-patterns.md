@@ -1,9 +1,6 @@
-# Common Bug Patterns
-
-## Pattern Recognition
-
-| Pattern | Symptom | Likely Cause |
-|---------|---------|--------------|
+------
+{% raw %}
+---|---------|--------------|
 | Race condition | Intermittent failures | Missing await, async timing |
 | Off-by-one | Missing first/last item | `<` vs `<=`, array bounds |
 | Null reference | "undefined is not..." | Missing null check |
@@ -130,3 +127,5 @@ useEffect(() => {
 | Gets slower over time | Memory leak, N+1 |
 | Off by one item | Loop bounds, array index |
 | Type mismatch | `==` vs `===`, coercion |
+
+{% endraw %}

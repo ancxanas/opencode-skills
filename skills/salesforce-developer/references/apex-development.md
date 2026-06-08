@@ -1,5 +1,3 @@
-# Apex Development
-
 ---
 
 ## Apex Class Structure
@@ -119,6 +117,8 @@ public with sharing class Accounts {
 ```
 
 ---
+{% raw %}
+
 
 ## Trigger Framework
 
@@ -784,3 +784,5 @@ private class AccountServiceTest {
 - **Future for complex logic**: Use Queueable instead
 - **Batch for small datasets**: Overhead not worth it for <1,000 records
 - **SOQL in loops**: Always bulkify queries outside loops
+
+{% endraw %}

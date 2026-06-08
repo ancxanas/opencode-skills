@@ -19,6 +19,8 @@ parent: Frontend
 nav_order: 8
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # html-semantics
 
@@ -872,3 +874,5 @@ Every page should clear:
 </body>
 </html>
 ```
+
+{% endraw %}

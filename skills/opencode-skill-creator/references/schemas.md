@@ -1,7 +1,3 @@
-# JSON Schemas
-
-This document defines the JSON schemas used by skill-creator.
-
 ---
 
 ## evals.json
@@ -35,6 +31,8 @@ Defines the evals for a skill. Located at `evals/evals.json` within the skill di
 - `evals[].expectations`: List of verifiable statements
 
 ---
+{% raw %}
+
 
 ## history.json
 
@@ -428,3 +426,5 @@ Output from post-hoc analyzer. Located at `<grading-dir>/analysis.json`.
   }
 }
 ```
+
+{% endraw %}

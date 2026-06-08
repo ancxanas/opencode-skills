@@ -1,11 +1,11 @@
-# Retrieval Optimization
-
 ---
 
 ## Optimization Techniques Overview
 
 | Technique | Impact | Complexity | When to Use |
-|-----------|--------|------------|-------------|
+|---
+{% raw %}
+--------|--------|------------|-------------|
 | **Hybrid Search** | High | Medium | Always for production |
 | **Reranking** | High | Low | Top-k refinement |
 | **Query Expansion** | Medium | Medium | Ambiguous queries |
@@ -793,3 +793,5 @@ class OptimizedRetriever:
 - **NLP Engineer** - Query understanding
 - **Python Pro** - Async implementation
 - **ML Pipeline** - Model serving for rerankers
+
+{% endraw %}

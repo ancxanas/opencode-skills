@@ -4,6 +4,8 @@ impact: MEDIUM
 description: Advanced patterns for customizing tool behavior with schema modifications and execution hooks
 tags: [modifiers, hooks, customization, schema, execution]
 ---
+{% raw %}
+
 
 # Tool Modifiers
 
@@ -146,3 +148,5 @@ await composio.tools.execute('GITHUB_GET_REPO', { ... }, {
 - Always return modified object (don't just mutate)
 - Modifiers are synchronous - keep operations lightweight
 - Must pass modifiers to each execute() call (not persisted)
+
+{% endraw %}

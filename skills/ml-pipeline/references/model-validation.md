@@ -1,5 +1,3 @@
-# Model Validation
-
 ---
 
 ## Overview
@@ -21,6 +19,8 @@ Model validation ensures models meet quality standards before production deploym
 - Models with no production requirements
 
 ---
+{% raw %}
+
 
 ## Offline Evaluation
 
@@ -976,3 +976,5 @@ VALIDATION_CHECKLIST = {
 
 - **Data Engineer** - Data quality validation
 - **DevOps Engineer** - Deployment pipeline integration
+
+{% endraw %}

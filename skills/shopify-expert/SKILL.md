@@ -20,6 +20,8 @@ parent: Platform
 nav_order: 4
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Shopify Expert
 
@@ -49,6 +51,7 @@ Load detailed guidance based on context:
 
 ### Liquid — Product template with metafield access
 ```liquid
+{% raw %}
 {% comment %} templates/product.liquid {% endcomment %}
 <h1>{{ product.title }}</h1>
 <p>{{ product.metafields.custom.care_instructions.value }}</p>
@@ -63,10 +66,12 @@ Load detailed guidance based on context:
 {% endfor %}
 
 {{ product.description | metafield_tag }}
+{% endraw %}
 ```
 
 ### Liquid — Collection filtering (Online Store 2.0)
 ```liquid
+{% raw %}
 {% comment %} sections/collection-filters.liquid {% endcomment %}
 {% for filter in collection.filters %}
   <details>
@@ -84,6 +89,7 @@ Load detailed guidance based on context:
     {% endfor %}
   </details>
 {% endfor %}
+{% endraw %}
 ```
 
 ### Storefront API — GraphQL product query
@@ -190,3 +196,5 @@ When implementing Shopify solutions, provide:
 ## Knowledge Reference
 
 Shopify CLI 3.x, Liquid 2.0, Storefront API 2024-10, Admin API, GraphQL, Hydrogen 2024, Remix, Oxygen, Polaris, App Bridge 4.0, Checkout UI Extensions, Shopify Functions, metafields, metaobjects, theme architecture, Shopify Plus features
+
+{% endraw %}

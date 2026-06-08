@@ -9,6 +9,8 @@ parent: Documents
 nav_order: 1
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # DOCX creation, editing, and analysis
 
@@ -201,3 +203,4 @@ Required dependencies (install if not available):
 - **LibreOffice**: `sudo apt-get install libreoffice` (for PDF conversion)
 - **Poppler**: `sudo apt-get install poppler-utils` (for pdftoppm to convert PDF to images)
 - **defusedxml**: `pip install defusedxml` (for secure XML parsing)
+{% endraw %}

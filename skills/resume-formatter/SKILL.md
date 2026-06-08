@@ -17,6 +17,8 @@ parent: Career
 nav_order: 14
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Resume Formatter
 
@@ -373,3 +375,5 @@ Before submitting any resume:
 - ✅ Saved as .docx or .pdf
 - ✅ Proper file name
 - ✅ Proofread for consistency
+
+{% endraw %}

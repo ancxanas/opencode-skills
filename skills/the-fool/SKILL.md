@@ -18,6 +18,8 @@ parent: Workflow
 nav_order: 3
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # The Fool
 
@@ -124,3 +126,5 @@ After any mode, the final output must include:
 ## Knowledge Reference
 
 Socratic method, Hegelian dialectic, steel manning, pre-mortem analysis, red teaming, falsificationism, abductive reasoning, second-order thinking, cognitive biases, inversion technique
+
+{% endraw %}

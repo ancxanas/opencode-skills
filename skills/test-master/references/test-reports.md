@@ -1,18 +1,6 @@
-# Test Reports
-
-## Test Report Template
-
-```markdown
-# Test Report: {Feature Name}
-
-**Date**: YYYY-MM-DD
-**Tester**: {Name}
-**Version**: {App Version}
-
-## Summary
-
-| Metric | Value |
-|--------|-------|
+------
+{% raw %}
+--|-------|
 | Total Tests | X |
 | Passed | X |
 | Failed | X |
@@ -102,3 +90,5 @@
 | Coverage | Code coverage analysis |
 | Recommendations | Prioritized actions |
 | Sign-off | Approval criteria |
+
+{% endraw %}

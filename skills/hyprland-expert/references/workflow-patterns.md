@@ -1,11 +1,6 @@
-# Workflow Patterns
-
-## Development Workflow
-
-### Workspace Layout
-
-| Workspace | Content | Rationale |
-|-----------|---------|-----------|
+------
+{% raw %}
+-----|---------|-----------|
 | 1 | Editor (VSCode, IntelliJ, Neovim) | Primary workspace on login |
 | 2 | Browser (Firefox, Chrome) + DevTools | Split with devtools on right |
 | 3 | Terminal (builds, git, server) | Keep running processes visible |
@@ -305,3 +300,5 @@ scrolling {
 bind=$mainMod,grave,togglespecialworkspace                   # Toggle scratchpad
 bind=$mainMod SHIFT,grave,movetoworkspace,special:scratchpad  # Send to scratchpad
 ```
+
+{% endraw %}

@@ -20,6 +20,8 @@ parent: Security
 nav_order: 1
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Auth Architect
 
@@ -246,3 +248,5 @@ Generate 8-10 single-use codes on MFA enable. Hash and store. One-time use, rege
 - [ ] Session invalidation on password change
 - [ ] CSRF protection on cookie-based auth
 - [ ] Secure cookie flags (httpOnly, secure, sameSite)
+
+{% endraw %}

@@ -18,6 +18,8 @@ parent: Process & Tooling
 nav_order: 4
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Stop Slop
 
@@ -103,3 +105,5 @@ See [references/examples.md](references/examples.md) for more before/after trans
 ## License
 
 MIT
+
+{% endraw %}

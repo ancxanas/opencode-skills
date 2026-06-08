@@ -1,11 +1,6 @@
-# Lua Types & Tables
-
-## Dynamic Types
-
-Lua is dynamically typed. The eight base types:
-
-| Type | Example | Notes |
-|------|---------|-------|
+------
+{% raw %}
+|---------|-------|
 | `nil` | `nil` | Absence of value; frees table keys |
 | `boolean` | `true`, `false` | Only `false` and `nil` are falsy |
 | `number` | `42`, `3.14` | All numbers are floats in 5.1–5.2; 5.3+ adds integers |
@@ -93,3 +88,5 @@ end
 - Pre-fill table size hint: Lua 5.2+ ignores size hints; for large tables, fill sequentially
 - Avoid sparse table growth: allocate contiguous, resize only when needed
 - `table.remove` on large arrays is O(n) — shift cost grows with size
+
+{% endraw %}

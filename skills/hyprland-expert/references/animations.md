@@ -1,33 +1,6 @@
-# Animation Reference
-
-## Configuration Block
-
-```conf
-animations {
-    enabled=true
-
-    # Bezier curves
-    bezier=name,p0x,p0y,p1x,p1y
-    bezier=overshot,0.13,0.99,0.29,1.1
-    bezier=smooth,0.04,0.83,0.19,0.98
-    bezier=linear,0.0,0.0,1.0,1.0
-
-    # Animation entries
-    # animation=name,enabled,speed,curve[,style]
-    animation=global,1,10,default
-    animation=fade,1,10,default
-    animation=windows,1,6,smooth,popin
-    animation=windowsOut,1,6,smooth,popin
-    animation=border,1,10,default
-    animation=borderangle,1,8,default
-    animation=workspaces,1,6,default
-}
-```
-
-## Animation Names
-
-| Name | Controls |
-|------|----------|
+------
+{% raw %}
+|----------|
 | `global` | Global multiplier for all animations |
 | `fade` | Fade in/out of windows |
 | `windows` | Window open/move/resize |
@@ -208,3 +181,5 @@ animations {
     animation = workspaces, 1, 10, default
 }
 ```
+
+{% endraw %}

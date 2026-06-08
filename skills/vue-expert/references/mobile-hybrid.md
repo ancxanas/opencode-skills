@@ -1,5 +1,3 @@
-# Mobile & Hybrid Apps
-
 ---
 
 ## Quasar Framework
@@ -169,6 +167,8 @@ const screenWidth = $q.screen.width
 ```
 
 ---
+{% raw %}
+
 
 ## Capacitor Integration
 
@@ -634,3 +634,5 @@ export function useOnlineStatus() {
 | `runtimeCaching` | Workbox cache strategies |
 | `beforeinstallprompt` | PWA install prompt |
 | `navigator.serviceWorker.ready` | Service worker lifecycle |
+
+{% endraw %}

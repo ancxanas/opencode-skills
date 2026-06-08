@@ -4,6 +4,8 @@ impact: HIGH
 description: Comprehensive guide to CRUD operations on connected accounts with emphasis on secure authentication flows
 tags: [connected-accounts, authentication, oauth, crud, security]
 ---
+{% raw %}
+
 
 # Connected Accounts Management
 
@@ -238,3 +240,5 @@ async function isToolkitConnected(userId, toolkit) {
 - **Store account IDs** - Save in your database, associate with users
 - **Check status** - Verify ACTIVE before use, refresh on errors
 - **Handle lifecycle** - Disable instead of delete when possible
+
+{% endraw %}

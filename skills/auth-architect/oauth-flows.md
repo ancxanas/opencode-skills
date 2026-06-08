@@ -1,21 +1,6 @@
-# OAuth 2.0 Flow Reference
-
-## Grant Type Decision Tree
-
-```
-Is the client a public (SPA/mobile) or confidential (backend)?
-├── Confidential (can keep a secret)
-│   └── Can the client use a reverse proxy?
-│       ├── Yes → Authorization Code + PKCE
-│       └── No  → Client Credentials (machine-to-machine only)
-└── Public (SPA, mobile, CLI)
-    └── Authorization Code + PKCE (always, never Implicit)
-```
-
-## Flow Comparison
-
-| Grant Type | Client Type | Refresh Token | Use Case |
-|------------|-------------|---------------|----------|
+------
+{% raw %}
+------|-------------|---------------|----------|
 | Authorization Code + PKCE | Public & Confidential | Yes | Web apps, SPAs, mobile apps |
 | Client Credentials | Confidential | N/A | Machine-to-machine, server-to-server |
 | Device Authorization | Public (input-constrained) | Yes | CLI tools, smart TVs, IoT |
@@ -71,3 +56,5 @@ signature: RSASHA256(base64(header) + "." + base64(payload), private_key)
 - Auth0: `https://{tenant}.auth0.com/.well-known/jwks.json`
 - Clerk: `https://{app}.clerk.accounts.dev/.well-known/jwks.json`
 - Firebase: `https://www.googleapis.com/oauth2/v3/certs`
+
+{% endraw %}

@@ -20,6 +20,8 @@ parent: Specialized
 nav_order: 2
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Game Developer
 
@@ -167,3 +169,5 @@ public class IdleState : State
     public override void Exit() { }
 }
 ```
+
+{% endraw %}

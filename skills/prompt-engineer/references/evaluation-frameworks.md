@@ -1,5 +1,3 @@
-# Evaluation Frameworks
-
 ---
 
 ## Evaluation Hierarchy
@@ -30,6 +28,8 @@
 ```
 
 ---
+{% raw %}
+
 
 ## Core Metrics by Task Type
 
@@ -508,6 +508,7 @@ class EvaluationRunner:
 ### GitHub Actions Workflow
 
 ```yaml
+{% raw %}
 name: Prompt Evaluation
 
 on:
@@ -580,6 +581,7 @@ jobs:
               repo: context.repo.repo,
               body: comment
             });
+{% endraw %}
 ```
 
 ### Threshold Configuration
@@ -776,3 +778,5 @@ class RegressionDetector:
 - **Prompt Optimization** - Acting on evaluation results
 - **Test Master** - General testing patterns
 - **MLOps Engineer** - Production monitoring and deployment
+
+{% endraw %}

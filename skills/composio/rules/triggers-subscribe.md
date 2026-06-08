@@ -4,6 +4,8 @@ impact: MEDIUM
 description: Listen to real-time trigger events during development using subscribe()
 tags: [triggers, events, subscribe, development, real-time]
 ---
+{% raw %}
+
 
 # Subscribe to Trigger Events
 
@@ -171,3 +173,5 @@ app.listen(3000);
 - **Filter events** - Reduce noise with triggerSlugs, userIds, connectedAccountIds
 - **Cleanup** - Always call unsubscribe() when done
 - **Long-running process** - Keep Node.js process alive to receive events
+
+{% endraw %}

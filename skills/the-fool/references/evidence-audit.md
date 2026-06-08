@@ -1,27 +1,6 @@
-# Evidence Audit
-
-Falsificationism and evidence quality assessment for auditing whether claims are actually supported by evidence.
-
-## Core Principle
-
-Karl Popper's key insight: a claim is only meaningful if you can specify what would disprove it. The Evidence Audit mode extracts claims from proposals, designs falsification criteria, assesses evidence quality, and surfaces competing explanations. The goal is not to disprove — it is to determine whether the evidence actually supports the conclusion.
-
-## Process
-
-1. **Extract claims** — Identify the specific claims being made
-2. **Design falsification criteria** — For each claim, specify what would disprove it
-3. **Assess evidence quality** — Evaluate the evidence supporting each claim
-4. **Identify cognitive biases** — Check for systematic errors in reasoning
-5. **Surface competing explanations** — Find alternative explanations for the same evidence
-
-## Claim Extraction
-
-Proposals contain claims — often implicit. Extract them before evaluating.
-
-### Types of Claims
-
-| Type | Example | Hidden In |
-|------|---------|-----------|
+------
+{% raw %}
+|---------|-----------|
 | **Causal** | "X causes Y" | "Our refactor improved performance" |
 | **Predictive** | "X will happen" | "Users will adopt this feature" |
 | **Comparative** | "X is better than Y" | "React is the better choice for us" |
@@ -194,3 +173,5 @@ Alternative explanations:
 1. [Specific action to strengthen the weakest claim]
 2. [Specific action to test the riskiest assumption]
 ```
+
+{% endraw %}

@@ -4,6 +4,8 @@ impact: MEDIUM
 description: Discover and query toolkits, categories, and authentication requirements for application integration
 tags: [toolkits, discovery, metadata, categories, apps]
 ---
+{% raw %}
+
 
 # Toolkit Management
 
@@ -182,3 +184,5 @@ async function getToolkitsByCategory(categoryId: string) {
 - **sortBy options** - 'usage' or 'alphabetically'
 - **Auth field queries** - Know what's required before creating configs
 - **Extra OAuth params** - Some services need subdomain, region, etc.
+
+{% endraw %}

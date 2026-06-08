@@ -17,6 +17,8 @@ parent: Career
 nav_order: 19
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Salary Negotiation Prep
 
@@ -391,3 +393,5 @@ When preparing salary negotiation:
 8. ✅ Get agreement in writing
 9. ✅ Review final offer letter carefully
 10. ✅ Sign and celebrate!
+
+{% endraw %}

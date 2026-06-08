@@ -1,54 +1,6 @@
-# Specification Template
-
-## Full Template
-
-```markdown
-# Feature: [Name]
-
-## Overview
-[2-3 sentence description of the feature and its value to users]
-
-## Functional Requirements
-
-### FR-001: [Requirement Name]
-While <precondition>, when <trigger>, the system shall <response>.
-
-### FR-002: [Requirement Name]
-While <precondition>, when <trigger>, the system shall <response>.
-
-## Non-Functional Requirements
-
-### Performance
-- Response time: < 200ms p95
-- Throughput: 1000 requests/minute
-- Data volume: Up to 1M records
-
-### Security
-- Authentication: JWT required
-- Authorization: Role-based (admin, user)
-- Data protection: PII encrypted at rest
-
-### Scalability
-- Concurrent users: 10,000
-- Peak load handling: Auto-scale to 3x
-- Data retention: 90 days
-
-## Acceptance Criteria
-
-### AC-001: [Scenario Name]
-Given [context/precondition]
-When [action taken]
-Then [expected result]
-
-### AC-002: [Scenario Name]
-Given [context/precondition]
-When [action taken]
-Then [expected result]
-
-## Error Handling
-
-| Error Condition | HTTP Code | User Message |
-|-----------------|-----------|--------------|
+------
+{% raw %}
+-----------|-----------|--------------|
 | Invalid input | 400 | "Please check your input" |
 | Unauthorized | 401 | "Please log in to continue" |
 | Forbidden | 403 | "You don't have permission" |
@@ -101,3 +53,5 @@ Save as: `specs/{feature_name}.spec.md`
 | Implementation TODO | Action items | Yes |
 | Out of Scope | Prevent scope creep | Recommended |
 | Open Questions | Track decisions | As needed |
+
+{% endraw %}

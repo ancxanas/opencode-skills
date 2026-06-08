@@ -1,5 +1,3 @@
-# Composables Patterns
-
 ---
 
 ## Basic Composable Structure
@@ -26,10 +24,13 @@ export function useToggle(initialValue = false) {
 ```
 
 ---
+{% raw %}
+
 
 ## Ref vs Reactive
 
 ```javascript
+{% raw %}
 import { ref, reactive, toRefs, toValue } from 'vue'
 
 // Use ref for: primitives, reassignable values, composable returns
@@ -48,6 +49,7 @@ const { email, password } = toRefs(form)
 function double(maybeRef) {
   return toValue(maybeRef) * 2
 }
+{% endraw %}
 ```
 
 ---
@@ -181,3 +183,5 @@ export function useCancellableFetch() {
 | Module-level ref | Singleton shared state |
 | Factory function | New instance per component |
 | `onUnmounted` | Cleanup timers, listeners, abort controllers |
+
+{% endraw %}

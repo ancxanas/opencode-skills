@@ -4,6 +4,8 @@ impact: CRITICAL
 description: Understand manageConnections settings to control authentication behavior in Tool Router
 tags: [authentication, tool-router, connections, configuration]
 ---
+{% raw %}
+
 
 # Configure Connection Management Properly
 
@@ -165,3 +167,5 @@ With `manageConnections: true`, **you never need to check connections before age
 
 - [Connection Management](https://docs.composio.dev/sdk/typescript/api/tool-router#manageconnections)
 - [Wait for Connections](https://docs.composio.dev/sdk/typescript/api/tool-router#wait-for-connections)
+
+{% endraw %}

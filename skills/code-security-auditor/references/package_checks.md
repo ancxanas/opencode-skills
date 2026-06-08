@@ -1,11 +1,6 @@
-# Package Security Reference
-
-## Known Malicious Packages
-
-### npm / JavaScript
-
-| Package | Indicator | Notes |
-|---------|-----------|-------|
+------
+{% raw %}
+---|-----------|-------|
 | `pluggable-json` | Typosquat of `printable-json` | Data exfiltration |
 | `babel-node` (unofficial) | Typosquat | Malware distribution |
 | `eslint-scope` (compromised) | Historical supply chain attack | Credential theft |
@@ -57,3 +52,5 @@ Dangerous operations:
 3. **Dependencies**: Heavy dependency tree = attack surface
 4. **Repository**: No GitHub link or dead link = suspicious
 5. **License**: No license or proprietary = investigate further
+
+{% endraw %}

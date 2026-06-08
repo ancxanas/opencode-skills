@@ -1,5 +1,3 @@
-# Training Pipelines
-
 ---
 
 ## Overview
@@ -21,6 +19,8 @@ Training pipelines orchestrate the end-to-end model training process including d
 - One-off experiments without production requirements
 
 ---
+{% raw %}
+
 
 ## PyTorch Training Pipeline
 
@@ -780,3 +780,5 @@ def ensure_reproducibility(seed: int) -> None:
 
 - **DevOps Engineer** - CI/CD for training pipelines
 - **Kubernetes Specialist** - K8s-based training infrastructure
+
+{% endraw %}

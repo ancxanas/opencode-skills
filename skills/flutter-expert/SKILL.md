@@ -20,6 +20,8 @@ parent: Frontend
 nav_order: 6
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Flutter Expert
 
@@ -145,3 +147,5 @@ When implementing Flutter features, provide:
 2. Provider/Bloc definitions
 3. Route configuration if needed
 4. Test file structure
+
+{% endraw %}

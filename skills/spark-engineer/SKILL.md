@@ -20,6 +20,8 @@ parent: AI & Data
 nav_order: 7
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Spark Engineer
 
@@ -154,3 +156,5 @@ When implementing Spark solutions, provide:
 ## Knowledge Reference
 
 Spark DataFrame API, Spark SQL, RDD transformations/actions, catalyst optimizer, tungsten execution engine, partitioning strategies, broadcast variables, accumulators, structured streaming, watermarks, checkpointing, Spark UI analysis, memory management, shuffle optimization
+
+{% endraw %}

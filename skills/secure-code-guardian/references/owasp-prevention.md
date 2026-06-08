@@ -1,9 +1,6 @@
-# OWASP Top 10 Prevention
-
-## OWASP Top 10 Quick Reference
-
-| # | Vulnerability | Prevention |
-|---|---------------|------------|
+---|---
+{% raw %}
+------------|------------|
 | 1 | Injection | Parameterized queries, ORMs |
 | 2 | Broken Auth | Strong passwords, MFA, secure sessions |
 | 3 | Sensitive Data | Encryption at rest/transit |
@@ -133,3 +130,5 @@ const clean = DOMPurify.sanitize(userInput);
 | CSRF | CSRF tokens |
 | IDOR | Authorization checks |
 | Command Injection | Avoid exec(), validate input |
+
+{% endraw %}

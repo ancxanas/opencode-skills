@@ -1,5 +1,3 @@
-# Aggregation and GroupBy
-
 ---
 
 ## Overview
@@ -7,6 +5,8 @@
 Aggregation transforms data from individual records to summary statistics. This reference covers GroupBy, pivot tables, crosstab, and advanced aggregation patterns with pandas 2.0+.
 
 ---
+{% raw %}
+
 
 ## GroupBy Fundamentals
 
@@ -543,3 +543,5 @@ df.groupby('dept')['salary'].mean()
 - `dataframe-operations.md` - Filtering before aggregation
 - `merging-joining.md` - Join aggregated results back
 - `performance-optimization.md` - Optimize large-scale aggregations
+
+{% endraw %}

@@ -1,43 +1,6 @@
-# Phrases to Remove
-
-## Throat-Clearing Openers
-
-Remove these announcement phrases. State the content directly.
-
-- "Here's the thing:"
-- "Here's what [X]"
-- "Here's this [X]"
-- "Here's that [X]"
-- "Here's why [X]"
-- "The uncomfortable truth is"
-- "It turns out"
-- "The real [X] is"
-- "Let me be clear"
-- "The truth is,"
-- "I'll say it again:"
-- "I'm going to be honest"
-- "Can we talk about"
-- "Here's what I find interesting"
-- "Here's the problem though"
-
-Any "here's what/this/that" construction is throat-clearing before the point. Cut it and state the point.
-
-## Emphasis Crutches
-
-These add no meaning. Delete them.
-
-- "Full stop." / "Period."
-- "Let that sink in."
-- "This matters because"
-- "Make no mistake"
-- "Here's why that matters"
-
-## Business Jargon
-
-Replace with plain language.
-
-| Avoid | Use instead |
-|-------|-------------|
+------
+{% raw %}
+-|-------------|
 | Navigate (challenges) | Handle, address |
 | Unpack (analysis) | Explain, examine |
 | Lean into | Accept, embrace |
@@ -126,3 +89,5 @@ Sentences that announce importance without naming the specific thing. Kill these
 - "The consequences are real"
 
 If a sentence says something is important/deep/structural without showing the specific thing, cut it or replace it with the specific thing.
+
+{% endraw %}

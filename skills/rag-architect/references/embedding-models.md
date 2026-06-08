@@ -1,11 +1,11 @@
-# Embedding Models
-
 ---
 
 ## Model Comparison Matrix
 
 | Model | Dimensions | Max Tokens | Strengths | Provider |
-|-------|------------|------------|-----------|----------|
+|---
+{% raw %}
+----|------------|------------|-----------|----------|
 | **text-embedding-3-large** | 3072 (or 256-3072) | 8191 | Best quality, flexible dims | OpenAI |
 | **text-embedding-3-small** | 1536 (or 256-1536) | 8191 | Cost-effective, good quality | OpenAI |
 | **embed-english-v3.0** | 1024 | 512 | Excellent compression, fast | Cohere |
@@ -559,3 +559,5 @@ Start
 - **Python Pro** - Async embedding pipelines
 - **ML Pipeline** - Embedding model deployment
 - **Fine-Tuning Expert** - Custom embedding training
+
+{% endraw %}

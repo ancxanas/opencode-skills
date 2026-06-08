@@ -1,46 +1,3 @@
-# Distro-Specific Notes
-
-## Arch Linux
-
-### Install Hyprland
-
-```bash
-sudo pacman -S hyprland                    # Stable release
-yay -S hyprland-nvidia                     # NVIDIA-patched variant
-yay -S hyprland-git                        # Git master (v0.55+ Lua)
-```
-
-### Install Companion Tools
-
-```bash
-sudo pacman -S waybar hyprlock hypridle hyprpaper grim slurp wl-clipboard \
-  swaync wofi xdg-desktop-portal-hyprland hyprpolkitagent polkit-gnome brightnessctl \
-  playerctl jq
-yay -S hyprshot cliphist                   # AUR packages
-```
-
-### NVIDIA Setup
-
-```bash
-sudo pacman -S nvidia-dkms nvidia-utils egl-wayland
-```
-
-Add `nvidia_drm.modeset=1` to `GRUB_CMDLINE_LINUX_DEFAULT` in `/etc/default/grub`, then:
-
-```bash
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-```
-
-Add to `/etc/mkinitcpio.conf`:
-```
-MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
-```
-
-Then rebuild initramfs:
-```bash
-sudo mkinitcpio -P
-```
-
 ---
 
 ## Fedora
@@ -85,6 +42,8 @@ Generally no SELinux changes are needed for standard Hyprland usage.
 Stock Fedora repos may lag behind upstream. The `solopasha/hyprland` COPR tracks latest stable releases. For v0.55+ Lua support, use the COPR.
 
 ---
+{% raw %}
+
 
 ## Debian / Ubuntu
 
@@ -385,3 +344,5 @@ A: The version depends on your nixpkgs channel. `nixos-unstable` tracks recent r
 
 **Q: "My NixOS build takes forever — what's happening?"**
 A: First build can compile Hyprland from source (C++ takes a while). Add `package = pkgs.hyprland;` to use a pre-built binary when available. Subsequent builds are cached.
+
+{% endraw %}

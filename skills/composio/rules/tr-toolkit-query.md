@@ -4,6 +4,8 @@ impact: MEDIUM
 description: Use session.toolkits() to build connection management UIs showing which toolkits are connected
 tags: [tool-router, toolkits, connections, ui]
 ---
+{% raw %}
+
 
 # Query Toolkit Connection States for UI
 
@@ -133,3 +135,5 @@ With `manageConnections: true` (default), you don't need to check connections be
 
 - [session.toolkits()](https://docs.composio.dev/sdk/typescript/api/tool-router#toolkits)
 - [Toolkit Connection State](https://docs.composio.dev/sdk/typescript/api/tool-router#toolkitconnectionstate)
+
+{% endraw %}

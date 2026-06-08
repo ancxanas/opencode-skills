@@ -18,6 +18,8 @@ parent: Workflow
 nav_order: 1
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Feature Forge
 
@@ -102,3 +104,5 @@ Then they are redirected to the dashboard within 2 seconds.
 ```
 
 Save as: `specs/{feature_name}.spec.md`
+
+{% endraw %}

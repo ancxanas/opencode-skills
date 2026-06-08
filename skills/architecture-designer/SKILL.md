@@ -18,6 +18,8 @@ parent: API & Architecture
 nav_order: 2
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Architecture Designer
 
@@ -121,3 +123,5 @@ Use PostgreSQL as the primary datastore for the Order Service.
 Consistency and query flexibility are prioritised over unlimited horizontal write scalability.
 ```
 
+
+{% endraw %}

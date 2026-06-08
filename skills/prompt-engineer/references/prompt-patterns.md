@@ -1,5 +1,3 @@
-# Prompt Patterns
-
 ---
 
 ## Pattern Selection Guide
@@ -21,7 +19,9 @@
 ```
 
 | Pattern | Best For | Token Cost | Reliability |
-|---------|----------|------------|-------------|
+|---
+{% raw %}
+------|----------|------------|-------------|
 | Zero-shot | Simple, well-defined tasks | Low | Medium |
 | Few-shot | Tasks needing format guidance | Medium | High |
 | Chain-of-Thought | Reasoning, math, logic | Medium-High | High |
@@ -504,3 +504,5 @@ Action: search("specific query based on reasoning")
 - **RAG Architect** - Retrieval patterns for grounding prompts
 - **Fine-Tuning Expert** - When prompting isn't enough
 - **LLM Architect** - System-level prompt orchestration
+
+{% endraw %}

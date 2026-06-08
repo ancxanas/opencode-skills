@@ -20,6 +20,8 @@ parent: Languages
 nav_order: 6
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Kotlin Specialist
 
@@ -154,3 +156,5 @@ When implementing Kotlin features, provide:
 ## Knowledge Reference
 
 Kotlin 2.4+, Coroutines, Flow API, StateFlow/SharedFlow, Kotlin Multiplatform, Jetpack Compose, Ktor, Arrow.kt, kotlinx.serialization, Detekt, ktlint, Gradle Kotlin DSL, JUnit 5, MockK, Turbine, context parameters, explicit backing fields, collection literals
+
+{% endraw %}

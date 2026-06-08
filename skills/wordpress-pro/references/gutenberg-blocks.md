@@ -1,5 +1,3 @@
-# Gutenberg Blocks
-
 ---
 
 ## Block Development Overview
@@ -9,7 +7,9 @@ WordPress 6.4+ uses the Block Editor (Gutenberg) as the primary editing experien
 ### Block Types
 
 | Type | Description | Use Case |
-|------|-------------|----------|
+|---
+{% raw %}
+---|-------------|----------|
 | Static | Fixed HTML output | Simple content, images |
 | Dynamic | Server-rendered | Posts list, dynamic data |
 | Interactive | Client-side JS | Accordions, tabs, carousels |
@@ -868,3 +868,5 @@ store('my-plugin/counter', {
 - Ignore block validation warnings
 - Skip internationalization for text strings
 - Bundle React/WordPress packages (use externals)
+
+{% endraw %}

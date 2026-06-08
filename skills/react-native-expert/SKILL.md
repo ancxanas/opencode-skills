@@ -20,6 +20,8 @@ parent: Frontend
 nav_order: 12
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # React Native Expert
 
@@ -191,3 +193,5 @@ When implementing React Native features, deliver:
 ## Knowledge Reference
 
 React Native 0.73+, Expo SDK 50+, Expo Router, React Navigation 7, Reanimated 3, Gesture Handler, AsyncStorage, MMKV, React Query, Zustand
+
+{% endraw %}

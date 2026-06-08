@@ -17,6 +17,8 @@ parent: Career
 nav_order: 15
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Resume Quantifier
 
@@ -363,3 +365,5 @@ For each bullet:
 **Every bullet can be quantified.** If you think your work can't be measured, you haven't asked the right questions yet.
 
 The goal isn't to have impressive numbers—it's to have SPECIFIC numbers that show the scope and impact of your work.
+
+{% endraw %}

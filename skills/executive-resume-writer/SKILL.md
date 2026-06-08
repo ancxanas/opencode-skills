@@ -17,6 +17,8 @@ parent: Career
 nav_order: 5
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Executive Resume Writer
 
@@ -319,3 +321,5 @@ When writing an executive resume:
 - Your resume will be fact-checked
 - Relationships and reputation matter
 - The resume opens doors; relationships close deals
+
+{% endraw %}

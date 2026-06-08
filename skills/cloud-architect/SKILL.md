@@ -20,6 +20,8 @@ parent: DevOps & Infrastructure
 nav_order: 3
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Cloud Architect
 
@@ -222,3 +224,5 @@ When designing cloud architecture, provide:
 3. Security architecture (IAM, network segmentation, encryption)
 4. Cost estimation and optimization strategy
 5. Deployment approach and rollback plan
+
+{% endraw %}

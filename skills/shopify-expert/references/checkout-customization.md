@@ -1,5 +1,3 @@
-# Checkout Customization
-
 ---
 
 ## When to Use
@@ -18,6 +16,8 @@
 - Admin-side order processing (use Admin API)
 
 ---
+{% raw %}
+
 
 ## Checkout Extensibility Overview
 
@@ -872,3 +872,5 @@ describe("CheckoutBanner", () => {
 - **App Development** - For backend webhook handling
 - **Storefront API** - For headless checkout flows
 - **Liquid Templating** - For pre-checkout cart customization
+
+{% endraw %}

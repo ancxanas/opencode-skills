@@ -4,6 +4,8 @@ impact: CRITICAL
 description: Use proper user IDs to ensure data isolation, security, and correct session management
 tags: [tool-router, user-id, security, authentication, multi-tenant]
 ---
+{% raw %}
+
 
 # Choose User IDs Carefully for Security and Isolation
 
@@ -474,3 +476,5 @@ const teamSession = await composio.create(req.user.organizationId, {
 - [Composio Sessions](https://docs.composio.dev/sdk/typescript/api/tool-router#creating-sessions)
 - [User ID Security](https://docs.composio.dev/sdk/typescript/core-concepts#user-ids)
 - [Connected Accounts](https://docs.composio.dev/sdk/typescript/api/connected-accounts)
+
+{% endraw %}

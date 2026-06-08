@@ -4,6 +4,8 @@ impact: HIGH
 description: Use Tool Router for native tool integration and MCP for protocol-compliant scenarios with Vercel AI SDK
 tags: [tool-router, ai-sdk, vercel, framework, native-tools, mcp, integration]
 ---
+{% raw %}
+
 
 # Using Composio with Vercel AI SDK
 
@@ -238,3 +240,5 @@ const cachedTools = await session.tools();
 - [AI SDK MCP](https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools)
 - [Composio Vercel Provider](https://docs.composio.dev/docs/providers/vercel)
 - [Tool Router Sessions](tr-session-lifecycle.md)
+
+{% endraw %}

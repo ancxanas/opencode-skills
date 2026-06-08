@@ -1,9 +1,6 @@
-# HTML Element Reference
-
-## Document Structure
-
-| Element | Purpose | Landmark | Notes |
-|---------|---------|----------|-------|
+------
+{% raw %}
+---|---------|----------|-------|
 | `<html>` | Root element | — | `lang` attribute required |
 | `<head>` | Metadata container | — | |
 | `<body>` | Content container | — | |
@@ -154,3 +151,5 @@
 2. ARIA-enhanced generic (role="tabpanel" on a div)
 3. Bare div/span (zero semantics)
 ```
+
+{% endraw %}

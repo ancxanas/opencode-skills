@@ -1,5 +1,3 @@
-# Feature Engineering
-
 ---
 
 ## Overview
@@ -21,6 +19,8 @@ Feature engineering transforms raw data into features that improve model perform
 - Prototyping with small datasets
 
 ---
+{% raw %}
+
 
 ## Feature Transformation Pipelines
 
@@ -629,3 +629,5 @@ class FeatureMetadata:
 
 - **Pandas Pro** - DataFrame operations for feature engineering
 - **Data Engineer** - Data pipeline integration for feature computation
+
+{% endraw %}

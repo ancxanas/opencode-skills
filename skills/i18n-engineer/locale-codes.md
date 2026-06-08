@@ -1,9 +1,6 @@
-# Locale & CLDR Quick Reference
-
-## Common Locale Codes
-
-| Locale | Language | Region | RTL | Notes |
-|--------|----------|--------|-----|-------|
+------
+{% raw %}
+--|----------|--------|-----|-------|
 | `en-US` | English | US | No | |
 | `en-GB` | English | UK | No | date format: DD/MM/YYYY |
 | `es` | Spanish | — | No | |
@@ -86,3 +83,5 @@
 | Angular | @angular/localize | https://angular.io/guide/i18n |
 | JS | Lingui | https://lingui.dev/ |
 | JS | globalize | https://github.com/globalizejs/globalize |
+
+{% endraw %}

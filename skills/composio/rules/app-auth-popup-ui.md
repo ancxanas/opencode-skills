@@ -4,6 +4,8 @@ impact: MEDIUM
 description: Build a popup-based Composio auth-link UI with dedicated callback page handling and parent-window polling
 tags: [connected-accounts, auth-link, popup, callback-page, ui]
 ---
+{% raw %}
+
 
 # Building Popup Connection UI
 
@@ -142,3 +144,5 @@ const { status, connected_account_id } = await initiateComposioAuthFlow(
 - Reject immediately if popup cannot be opened
 - Use a stable callback URL path across environments
 
+
+{% endraw %}

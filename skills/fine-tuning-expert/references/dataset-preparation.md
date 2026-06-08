@@ -1,5 +1,3 @@
-# Dataset Preparation for Fine-Tuning
-
 ---
 
 ## Overview
@@ -487,7 +485,9 @@ def save_dataset(dataset: Dataset, path: str, format: str = "jsonl"):
 ## Dataset Size Guidelines
 
 | Task Type | Minimum Examples | Recommended | Notes |
-|-----------|------------------|-------------|-------|
+|---
+{% raw %}
+--------|------------------|-------------|-------|
 | Classification | 100 per class | 500+ per class | Balance classes |
 | Instruction Following | 1,000 | 5,000-10,000 | Diverse instructions |
 | Domain Adaptation | 5,000 | 20,000+ | High-quality domain data |
@@ -538,3 +538,5 @@ dataset = prepare_dataset("raw_data.jsonl", "./processed", tokenizer)
 - `lora-peft.md` - Training configuration
 - `evaluation-metrics.md` - Measuring dataset quality impact
 - `hyperparameter-tuning.md` - Adjusting training for dataset size
+
+{% endraw %}

@@ -1,25 +1,6 @@
-# Window Rules Reference
-
-## Syntax
-
-### Legacy (v1)
-```
-windowrule=effect,regex
-windowrule=float,^(pavucontrol)$
-```
-
-### v2 (recommended)
-```
-windowrulev2=effect,prop:value,prop:value,...
-windowrulev2=float,class:^(pavucontrol)$,title:^(Volume Control)$
-```
-
-Rules are evaluated top-to-bottom; order matters.
-
-## Match Props (all must match)
-
-| Prop | Description | Example |
-|------|-------------|---------|
+------
+{% raw %}
+|-------------|---------|
 | `class` | Window class (regex) | `class:^(kitty)$` |
 | `title` | Window title (regex) | `title:^(Firefox)$` |
 | `initialClass` | Initial class before mapping | `initialClass:^(Alacritty)$` |
@@ -180,3 +161,5 @@ layerrule=ignorezero,rofi
 layerrule=noanim,waybar
 layerrule=noanim,eww
 ```
+
+{% endraw %}

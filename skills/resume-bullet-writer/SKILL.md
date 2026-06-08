@@ -17,6 +17,8 @@ parent: Career
 nav_order: 13
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Resume Bullet Writer
 
@@ -450,3 +452,5 @@ For each resume bullet:
 5. ✅ Test length → Keep to 1-2 lines
 6. ✅ Read aloud → Ensure it sounds natural
 7. ✅ Verify relevance → Aligns with target role
+
+{% endraw %}

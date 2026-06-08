@@ -1,5 +1,3 @@
-# System Prompts
-
 ---
 
 ## System Prompt Architecture
@@ -38,6 +36,8 @@
 ```
 
 ---
+{% raw %}
+
 
 ## Identity & Role Design
 
@@ -542,3 +542,5 @@ OpenAI-specific tips:
 - **Prompt Patterns** - Combining system prompts with few-shot examples
 - **Guardrails Engineer** - Advanced safety implementations
 - **LLM Architect** - Multi-agent system prompt design
+
+{% endraw %}

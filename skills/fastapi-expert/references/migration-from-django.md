@@ -1,5 +1,3 @@
-# Django to FastAPI Migration Guide
-
 ---
 
 ## When to Use This Guide
@@ -23,6 +21,8 @@
 - Migration cost exceeds business value
 
 ---
+{% raw %}
+
 
 ## Concept Mapping: Django/DRF → FastAPI
 
@@ -995,3 +995,4 @@ For comprehensive migration strategies and modernization patterns:
 ---
 
 **Key Takeaway:** Migrate incrementally. Start with read-heavy endpoints, validate thoroughly, then gradually move write operations. Always maintain rollback capability.
+{% endraw %}

@@ -17,6 +17,8 @@ parent: Process & Tooling
 nav_order: 3
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Staff Engineer Review
 
@@ -185,3 +187,4 @@ Specific test cases to add:
 - Consider the context of the codebase and team conventions
 - Balance perfectionism with pragmatism
 - Focus review on what matters most for the PR's success
+{% endraw %}

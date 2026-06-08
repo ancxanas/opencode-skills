@@ -1,3 +1,8 @@
+---
+render_with_liquid: false
+---
+{% raw %}
+
 # Release Automation
 
 ## Artifact Management
@@ -36,6 +41,7 @@
 ### Artifact Promotion
 
 ```yaml
+{% raw %}
 # .github/workflows/promote.yml
 name: Artifact Promotion
 
@@ -69,6 +75,7 @@ jobs:
           yq e '.image.tag = "${{ inputs.image_tag }}"' -i values.yaml
           git commit -am "Promote to ${{ inputs.target_env }}"
           git push
+{% endraw %}
 ```
 
 ## Feature Flags
@@ -315,6 +322,7 @@ echo "✓ Release $VERSION ready for production"
 ### Build Caching Strategy
 
 ```yaml
+{% raw %}
 # GitHub Actions: Multi-layer caching
 - name: Cache dependencies
   uses: actions/cache@v3
@@ -333,11 +341,13 @@ echo "✓ Release $VERSION ready for production"
     context: .
     cache-from: type=gha
     cache-to: type=gha,mode=max
+{% endraw %}
 ```
 
 ### Parallel CI Pipeline
 
 ```yaml
+{% raw %}
 # Multi-platform builds in parallel
 name: Build
 
@@ -367,6 +377,7 @@ jobs:
         with:
           platforms: ${{ matrix.platform }}
           tags: app:${{ github.sha }}
+{% endraw %}
 ```
 
 ## Multi-Service Release Orchestration
@@ -525,3 +536,5 @@ data:
 - Sign artifacts for supply chain security
 - Automate dependency updates
 - Track DORA metrics continuously
+
+{% endraw %}

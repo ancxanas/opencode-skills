@@ -1,5 +1,3 @@
-# Custom Operators
-
 ---
 
 ## CustomResourceDefinition (CRD)
@@ -209,6 +207,7 @@ func init() {
 ## Controller Implementation
 
 ```go
+{% raw %}
 // controllers/database_controller.go
 package controllers
 
@@ -412,6 +411,7 @@ func (r *DatabaseReconciler) SetupWithManager(mgr ctrl.Manager) error {
 		Owns(&corev1.Service{}).
 		Complete(r)
 }
+{% endraw %}
 ```
 
 ## Operator RBAC
@@ -423,6 +423,8 @@ metadata:
   name: database-operator
   namespace: operators
 ---
+{% raw %}
+
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -561,3 +563,5 @@ make undeploy
 8. **Set resource limits** on the operator deployment
 9. **Follow least privilege** RBAC principles
 10. **Test with envtest** for unit testing controllers
+
+{% endraw %}

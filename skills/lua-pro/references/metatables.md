@@ -1,22 +1,6 @@
-# Metatables & Metamethods
-
-## Fundamentals
-
-Every table can have a metatable — another table that controls its behavior.
-
-```lua
-local t = {}
-local mt = {}
-setmetatable(t, mt)
-assert(getmetatable(t) == mt)
-```
-
-## Metamethods
-
-### Control
-
-| Metamethod | When Fired |
-|------------|------------|
+------
+{% raw %}
+------|------------|
 | `__index(table, key)` | Accessing a missing key |
 | `__newindex(table, key, value)` | Assigning to a missing key |
 | `__mode` | Weak table mode: `"k"`, `"v"`, `"kv"` |
@@ -142,3 +126,5 @@ mem = nil    -- triggers __gc during next collection
 - `__eq` requires both operands to share the same `__eq` metamethod
 - `__newindex` fires even if the parent table in `__index` chain has the key
 - Avoid infinite recursion in `__index` / `__newindex`: don't index the proxy from within the handler without routing around it
+
+{% endraw %}

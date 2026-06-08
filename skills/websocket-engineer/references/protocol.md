@@ -1,31 +1,6 @@
-# WebSocket Protocol Reference
-
-## Protocol Basics
-
-### Handshake Process
-
-```
-Client → Server: HTTP Upgrade Request
-GET /socket.io/?EIO=4&transport=websocket HTTP/1.1
-Host: example.com
-Upgrade: websocket
-Connection: Upgrade
-Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
-Sec-WebSocket-Version: 13
-
-Server → Client: HTTP 101 Switching Protocols
-HTTP/1.1 101 Switching Protocols
-Upgrade: websocket
-Connection: Upgrade
-Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=
-```
-
-### Frame Structure
-
-```
- 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-------+-+-------------+-------------------------------+
+------
+{% raw %}
+-+-+-------------+-------------------------------+
 |F|R|R|R| opcode|M| Payload len |    Extended payload length    |
 |I|S|S|S|  (4)  |A|     (7)     |             (16/64)           |
 |N|V|V|V|       |S|             |   (if payload len==126/127)   |
@@ -193,3 +168,5 @@ socket.onmessage = (event) => {
 | Binary | Native | Converted |
 | Overhead | Minimal | Higher |
 | Fallback | None | Long polling, SSE |
+
+{% endraw %}

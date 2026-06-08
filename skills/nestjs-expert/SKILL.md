@@ -20,6 +20,8 @@ parent: Backend
 nav_order: 7
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # NestJS Expert
 
@@ -212,3 +214,5 @@ When implementing a NestJS feature, provide in this order:
 ## Knowledge Reference
 
 NestJS, TypeScript, TypeORM, Prisma, Passport, JWT, class-validator, class-transformer, Swagger/OpenAPI, Jest, Supertest, Guards, Interceptors, Pipes, Filters
+
+{% endraw %}

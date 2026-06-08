@@ -17,6 +17,8 @@ parent: Career
 nav_order: 16
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Resume Section Builder
 
@@ -410,3 +412,5 @@ When building resume sections:
 - ✅ All sections support the target role
 - ✅ Nothing irrelevant or outdated included
 - ✅ Total length appropriate (1-2 pages)
+
+{% endraw %}

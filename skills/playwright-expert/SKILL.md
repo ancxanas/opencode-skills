@@ -20,6 +20,8 @@ parent: Quality
 nav_order: 4
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Playwright Expert
 
@@ -175,3 +177,5 @@ When implementing Playwright tests, provide:
 ## Knowledge Reference
 
 Playwright, Page Object Model, auto-waiting, locators, fixtures, API mocking, trace viewer, visual comparisons, parallel execution, CI/CD integration
+
+{% endraw %}

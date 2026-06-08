@@ -1,24 +1,6 @@
-# Cloud Cost Optimization Reference
-
-Comprehensive guide for cloud cost optimization including reserved instances, spot/preemptible, right-sizing, and FinOps practices.
-
-## FinOps Framework
-
-### FinOps Principles
-
-1. **Teams need to collaborate** - Finance, engineering, and business work together
-2. **Everyone takes ownership** - Decentralized cost responsibility
-3. **A centralized team drives FinOps** - Center of excellence for best practices
-4. **Reports should be accessible and timely** - Real-time visibility
-5. **Decisions are driven by business value** - Cost per business outcome
-6. **Take advantage of variable cost model** - Scale up and down as needed
-
-### FinOps Lifecycle
-
-```
-      Inform
-         |
-    +---------+
+------
+{% raw %}
+---+
     |         |
     v         v
  Optimize --> Operate
@@ -580,3 +562,5 @@ FROM metrics;
 - [ ] Set up cost allocation tags
 - [ ] Enable Cost Anomaly Detection
 - [ ] Establish FinOps practices
+
+{% endraw %}

@@ -17,6 +17,8 @@ parent: Career
 nav_order: 11
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Reference List Builder
 
@@ -360,3 +362,5 @@ When building a reference list:
 - ✅ References are enthusiastic (not just willing)
 - ✅ Backup references identified
 - ✅ Thank you notes planned
+
+{% endraw %}

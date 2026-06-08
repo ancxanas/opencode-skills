@@ -20,6 +20,8 @@ parent: API & Architecture
 nav_order: 3
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # GraphQL Architect
 
@@ -152,3 +154,5 @@ When implementing GraphQL features, provide:
 ## Knowledge Reference
 
 Apollo Server, Apollo Federation 2+, GraphQL SDL, DataLoader, GraphQL Subscriptions, WebSocket, Redis pub/sub, schema composition, query complexity, persisted queries, schema stitching, type generation
+
+{% endraw %}

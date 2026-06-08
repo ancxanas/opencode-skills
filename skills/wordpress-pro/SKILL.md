@@ -21,6 +21,8 @@ parent: Platform
 nav_order: 5
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # WordPress Pro
 
@@ -156,3 +158,5 @@ When implementing WordPress features, provide:
 ## Knowledge Reference
 
 WordPress 6.4+, PHP 8.1+, Gutenberg, WooCommerce, ACF, REST API, WP-CLI, block development, theme customizer, widget API, shortcode API, transients, object caching, query optimization, security hardening, WPCS
+
+{% endraw %}

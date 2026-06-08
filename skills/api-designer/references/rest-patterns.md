@@ -1,42 +1,6 @@
-# REST Design Patterns
-
-## Resource-Oriented Architecture
-
-REST APIs are built around resources, not actions. Resources are the nouns of your API.
-
-### Resource Identification
-
-**Good Resource URIs:**
-```
-GET    /users                  # Collection
-GET    /users/{id}             # Individual resource
-GET    /users/{id}/orders      # Nested collection
-POST   /users                  # Create resource
-PUT    /users/{id}             # Replace resource
-PATCH  /users/{id}             # Update resource
-DELETE /users/{id}             # Delete resource
-```
-
-**Bad Resource URIs:**
-```
-POST   /getUser                # Verb in URI
-POST   /createUser             # Verb in URI
-GET    /user?action=delete     # Action as query param
-```
-
-### Resource Naming Conventions
-
-- Use plural nouns for collections: `/users`, `/orders`, `/products`
-- Use lowercase and hyphens for readability: `/shipping-addresses`
-- Avoid deep nesting (max 2-3 levels): `/users/{id}/orders/{orderId}`
-- Use query parameters for filtering: `/users?status=active&role=admin`
-
-## HTTP Method Semantics
-
-### Safe and Idempotent Methods
-
-| Method | Safe | Idempotent | Use Case |
-|--------|------|------------|----------|
+------
+{% raw %}
+--|------|------------|----------|
 | GET | Yes | Yes | Retrieve resource(s) |
 | POST | No | No | Create resource, non-idempotent operations |
 | PUT | No | Yes | Replace entire resource |
@@ -333,3 +297,5 @@ GET /products?search=laptop
 8. **Security by default** - HTTPS, authentication, rate limiting
 9. **Support filtering** - Enable clients to get exactly what they need
 10. **Implement HATEOAS** - Make APIs self-documenting and discoverable
+
+{% endraw %}

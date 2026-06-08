@@ -18,6 +18,8 @@ parent: Security
 nav_order: 3
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Fullstack Guardian
 
@@ -109,3 +111,5 @@ When implementing features, provide:
 2. Backend code (models, schemas, endpoints)
 3. Frontend code (components, hooks, API calls)
 4. Brief security notes
+
+{% endraw %}

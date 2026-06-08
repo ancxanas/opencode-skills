@@ -1,5 +1,3 @@
-# Jira Queries and Operations
-
 ---
 
 ## JQL Fundamentals
@@ -13,7 +11,9 @@ field OPERATOR value [AND|OR field OPERATOR value]
 ### Common Operators
 
 | Operator | Description | Example |
-|----------|-------------|---------|
+|---
+{% raw %}
+-------|-------------|---------|
 | `=` | Exact match | `project = "PROJ"` |
 | `!=` | Not equal | `status != Done` |
 | `~` | Contains (text search) | `summary ~ "login bug"` |
@@ -514,3 +514,5 @@ ORDER BY created DESC  -- CORRECT
 - `common-workflows.md` - End-to-end workflow patterns
 - `authentication-patterns.md` - Credential setup for API calls
 - `confluence-operations.md` - Linking Jira issues to Confluence pages
+
+{% endraw %}

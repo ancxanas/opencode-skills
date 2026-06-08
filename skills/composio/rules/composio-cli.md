@@ -4,6 +4,8 @@ impact: HIGH
 description: Use the Composio CLI to take actions on external apps directly - no code needed
 tags: [cli, composio, tools, toolkits, auth, connected-accounts, direct-use]
 ---
+{% raw %}
+
 
 # Composio CLI Guide
 
@@ -221,3 +223,5 @@ composio manage tools --help
 composio manage toolkits --help
 composio manage triggers --help
 ```
+
+{% endraw %}

@@ -1,11 +1,6 @@
-# Security Reference
-
-## Wayland Security Model
-
-Wayland is fundamentally more secure than X11. Key differences:
-
-| Feature | X11 | Wayland / Hyprland |
-|---------|-----|-------------------|
+------
+{% raw %}
+---|-----|-------------------|
 | Keylogging | Any app can listen to all keys | Apps only see their own keys |
 | Screen capture | Any app can capture entire screen | Requires portal permission dialog |
 | Window content | Any app can read window titles/content | Apps only see their own content |
@@ -221,3 +216,5 @@ sudo ufw enable
 sudo ufw default deny
 sudo ufw allow ssh
 ```
+
+{% endraw %}

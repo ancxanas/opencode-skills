@@ -17,6 +17,8 @@ parent: Career
 nav_order: 8
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # LinkedIn Profile Optimizer
 
@@ -383,3 +385,5 @@ When optimizing a LinkedIn profile:
 - Length (can be longer)
 - Keywords (broader than job-specific)
 - Call to action (add contact info)
+
+{% endraw %}

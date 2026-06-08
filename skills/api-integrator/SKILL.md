@@ -18,6 +18,8 @@ parent: Backend
 nav_order: 1
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # API Integrator
 
@@ -284,3 +286,5 @@ interface ApiMetrics {
 ```
 
 Log every API call with duration, status, and retry count. Track error rates per endpoint and alert on spikes.
+
+{% endraw %}

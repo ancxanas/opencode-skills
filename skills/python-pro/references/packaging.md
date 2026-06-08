@@ -1,3 +1,8 @@
+---
+render_with_liquid: false
+---
+{% raw %}
+
 # Python Packaging and Project Setup
 
 ## Project Structure
@@ -387,6 +392,7 @@ pip install --upgrade -r requirements.txt
 ## CI/CD Integration
 
 ```yaml
+{% raw %}
 # .github/workflows/test.yml
 name: Tests
 
@@ -425,6 +431,7 @@ jobs:
 
     - name: Upload coverage
       uses: codecov/codecov-action@v3
+{% endraw %}
 ```
 
 ## Pre-commit Hooks
@@ -458,3 +465,5 @@ pre-commit install
 # Run manually
 pre-commit run --all-files
 ```
+
+{% endraw %}

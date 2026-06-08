@@ -1,11 +1,6 @@
-# Migration Guides
-
-## i3 → Hyprland
-
-### Concept Map
-
-| i3 | Hyprland | Notes |
-|----|----------|-------|
+----|---
+{% raw %}
+-------|-------|
 | `modifier Mod4` | `$mainMod = SUPER` | Same key, different syntax |
 | `bindsym $mod+Return exec kitty` | `bind=$mainMod,Return,exec,kitty` | Commas instead of spaces |
 | `workspace 1` | `workspace 1` (or `bind=$mainMod,1,workspace,1`) | Same concept |
@@ -410,3 +405,5 @@ windowrule = float, ^(pavucontrol)$
 | `redshift` | `hyprsunset` / `wlsunset` | `hyprsunset` |
 | `picom` (transparency/shadow) | Built-in `decoration` | `decoration` section |
 | `compton` | Built-in compositor | Hyprland is the compositor |
+
+{% endraw %}

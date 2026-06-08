@@ -20,6 +20,8 @@ parent: Platform
 nav_order: 1
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Atlassian MCP Expert
 
@@ -130,3 +132,5 @@ When implementing Atlassian MCP features, provide:
 3. Tool call implementation with error handling
 4. Authentication setup instructions
 5. Brief explanation of permission requirements
+
+{% endraw %}

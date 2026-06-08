@@ -20,6 +20,8 @@ parent: DevOps & Infrastructure
 nav_order: 10
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Terraform Engineer
 
@@ -149,3 +151,5 @@ terraform {
 ## Output Format
 
 When implementing Terraform solutions, provide: module structure (`main.tf`, `variables.tf`, `outputs.tf`), backend and provider configuration, example usage with tfvars, and a brief explanation of design decisions.
+
+{% endraw %}

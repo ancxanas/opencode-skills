@@ -1,50 +1,3 @@
-# Plugin Reference
-
-## hyprpm — The Hyprland Plugin Manager
-
-`hyprpm` manages dynamic plugins that extend Hyprland functionality.
-
-### Basic Usage
-
-```bash
-hyprpm update                          # Update plugin database
-hyprpm add https://github.com/user/repo  # Add a plugin from source
-hyprpm enable plugin-name                # Enable a plugin
-hyprpm disable plugin-name               # Disable a plugin
-hyprpm remove plugin-name                # Remove a plugin
-hyprpm list                              # List all plugins with status
-hyprpm reload                            # Reload all enabled plugins
-hyprpm version                           # Show hyprpm version
-```
-
-### Install hyprpm
-
-```bash
-# Arch
-sudo pacman -S hyprland        # Comes bundled with hyprland package
-
-# Fedora
-sudo dnf install hyprland       # Comes bundled
-# If missing, install hyprpm separately:
-sudo dnf install hyprpm
-
-# Debian
-# hyprpm comes with hyprland package
-sudo apt install hyprland
-
-# NixOS
-environment.systemPackages = with pkgs; [ hyprland hyprpm ];
-```
-
-### Build hyprpm from Source
-
-```bash
-git clone https://github.com/hyprwm/Hyprland
-cd Hyprland
-make hyprpm
-sudo cp ./hyprpm /usr/local/bin/
-```
-
 ---
 
 ## Plugin Index
@@ -93,6 +46,8 @@ gestures {
 - Requires Hyprland v0.44+
 
 ---
+{% raw %}
+
 
 ### hyprspace — Workspace Overview
 
@@ -377,3 +332,5 @@ cmake .. -DCMAKE_INSTALL_PREFIX=/usr
 make
 sudo make install
 ```
+
+{% endraw %}

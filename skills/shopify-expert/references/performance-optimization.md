@@ -1,5 +1,3 @@
-# Performance Optimization
-
 ---
 
 ## When to Use
@@ -18,6 +16,8 @@
 - Headless performance (use Hydrogen/framework-specific patterns)
 
 ---
+{% raw %}
+
 
 ## Performance Metrics Overview
 
@@ -73,6 +73,7 @@ onINP(sendToAnalytics); // Replaces FID in 2024
 ### Responsive Images with Shopify CDN
 
 ```liquid
+{% raw %}
 {% comment %} Modern responsive image pattern {% endcomment %}
 {% liquid
   assign image = product.featured_image
@@ -108,11 +109,13 @@ onINP(sendToAnalytics); // Replaces FID in 2024
   fetchpriority="high"
   decoding="sync"
 >
+{% endraw %}
 ```
 
 ### Picture Element for Art Direction
 
 ```liquid
+{% raw %}
 {% comment %} Different crops for mobile vs desktop {% endcomment %}
 <picture>
   <source
@@ -132,11 +135,13 @@ onINP(sendToAnalytics); // Replaces FID in 2024
     loading="lazy"
   >
 </picture>
+{% endraw %}
 ```
 
 ### Background Images with CSS
 
 ```liquid
+{% raw %}
 {% comment %} Background images should still use srcset pattern {% endcomment %}
 {% style %}
   .hero-banner {
@@ -155,6 +160,7 @@ onINP(sendToAnalytics); // Replaces FID in 2024
     }
   }
 {% endstyle %}
+{% endraw %}
 ```
 
 ---
@@ -164,6 +170,7 @@ onINP(sendToAnalytics); // Replaces FID in 2024
 ### Defer Non-Critical JavaScript
 
 ```liquid
+{% raw %}
 {% comment %} layout/theme.liquid {% endcomment %}
 
 {% comment %} Critical JS - loaded sync {% endcomment %}
@@ -183,6 +190,7 @@ onINP(sendToAnalytics); // Replaces FID in 2024
     document.body.appendChild(script);
   });
 </script>
+{% endraw %}
 ```
 
 ### Module Pattern for Code Splitting
@@ -289,6 +297,7 @@ document.addEventListener('DOMContentLoaded', () => lazyLoad.init());
 ### Critical CSS Extraction
 
 ```liquid
+{% raw %}
 {% comment %} layout/theme.liquid {% endcomment %}
 <head>
   {% comment %} Inline critical CSS {% endcomment %}
@@ -310,9 +319,11 @@ document.addEventListener('DOMContentLoaded', () => lazyLoad.init());
     <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
   </noscript>
 </head>
+{% endraw %}
 ```
 
 ```liquid
+{% raw %}
 {% comment %} snippets/critical-css.liquid {% endcomment %}
 /* Reset and base styles */
 *,*::before,*::after{box-sizing:border-box}
@@ -330,11 +341,13 @@ img{max-width:100%;height:auto;display:block}
 /* Product grid skeleton */
 .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
 .product-card{aspect-ratio:1}
+{% endraw %}
 ```
 
 ### Prevent Layout Shift
 
 ```liquid
+{% raw %}
 {% comment %} Always define dimensions {% endcomment %}
 <img
   src="{{ image | image_url: width: 400 }}"
@@ -363,11 +376,13 @@ img{max-width:100%;height:auto;display:block}
 <div class="reviews-container" style="min-height: 200px;">
   {% comment %} Reviews loaded via JS {% endcomment %}
 </div>
+{% endraw %}
 ```
 
 ### Font Optimization
 
 ```liquid
+{% raw %}
 {% comment %} layout/theme.liquid head section {% endcomment %}
 
 {% comment %} Preconnect to font providers {% endcomment %}
@@ -405,6 +420,7 @@ img{max-width:100%;height:auto;display:block}
     font-family: var(--font-heading);
   }
 </style>
+{% endraw %}
 ```
 
 ---
@@ -414,6 +430,7 @@ img{max-width:100%;height:auto;display:block}
 ### Preload Critical Resources
 
 ```liquid
+{% raw %}
 {% comment %} layout/theme.liquid head {% endcomment %}
 
 {% comment %} DNS prefetch for third-party domains {% endcomment %}
@@ -441,11 +458,13 @@ img{max-width:100%;height:auto;display:block}
 
 {% comment %} Preload critical scripts {% endcomment %}
 <link rel="modulepreload" href="{{ 'theme.js' | asset_url }}">
+{% endraw %}
 ```
 
 ### Lazy Load Sections
 
 ```liquid
+{% raw %}
 {% comment %} templates/index.json - defer below-the-fold sections {% endcomment %}
 
 {% comment %} In section file {% endcomment %}
@@ -464,6 +483,7 @@ img{max-width:100%;height:auto;display:block}
   {% comment %} Render normally for above-the-fold {% endcomment %}
   {% render 'section-content' %}
 {% endif %}
+{% endraw %}
 ```
 
 ```javascript
@@ -504,8 +524,10 @@ document.addEventListener('DOMContentLoaded', () => {
 ### Browser Cache Headers
 
 ```liquid
+{% raw %}
 {% comment %} Shopify handles most caching automatically {% endcomment %}
 {% comment %} For custom apps, set proper headers {% endcomment %}
+{% endraw %}
 ```
 
 ```typescript
@@ -603,6 +625,7 @@ async function getRecommendations(productId) {
 ### Script Loading Strategy
 
 ```liquid
+{% raw %}
 {% comment %} snippets/third-party-scripts.liquid {% endcomment %}
 
 {% comment %} Load after user interaction {% endcomment %}
@@ -648,6 +671,7 @@ async function getRecommendations(productId) {
     setTimeout(loadScripts, 5000);
   })();
 </script>
+{% endraw %}
 ```
 
 ### Partytown for Third-Party Scripts
@@ -720,3 +744,5 @@ async function getRecommendations(productId) {
 - **Liquid Templating** - For theme-level optimizations
 - **Storefront API** - For headless performance patterns
 - **Checkout Customization** - Checkout extension performance
+
+{% endraw %}

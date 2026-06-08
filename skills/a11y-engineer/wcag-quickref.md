@@ -1,14 +1,6 @@
-# WCAG 2.2 Quick Reference
-
-## Conformance Levels
-- **A** — Must support. Minimum.
-- **AA** — Should support. Target level.
-- **AAA** — May support. Not required for compliance.
-
-## Perceivable
-
-| SC | Level | Criteria | Key Technique |
-|----|-------|----------|--------------|
+----|---
+{% raw %}
+----|----------|--------------|
 | 1.1.1 | A | Non-text Content | `alt` on all images |
 | 1.2.1 | A | Audio-only / Video-only | Transcript or audio description |
 | 1.2.2 | A | Captions (Prerecorded) | Synchronized captions |
@@ -95,3 +87,5 @@
 - WebAIM Contrast Checker: https://webaim.org/resources/contrastchecker/
 - APCA (Advanced Perceptual Contrast Algorithm): https://www.myndex.com/APCA/
 - WCAG 3 draft uses APCA instead of simple ratio
+
+{% endraw %}

@@ -4,6 +4,8 @@ impact: HIGH
 description: Essential patterns for discovering and retrieving tools from Composio for direct execution in applications
 tags: [tools, fetch, discovery, apps, providers]
 ---
+{% raw %}
+
 
 # Fetching Tools for Applications
 
@@ -290,3 +292,5 @@ if tool_name:
         version="12082025_00"  # ✅ Pinned version string for stability
     )
 ```
+
+{% endraw %}

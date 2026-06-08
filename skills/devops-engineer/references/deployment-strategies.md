@@ -1,9 +1,6 @@
-# Deployment Strategies
-
-## Strategy Comparison
-
-| Strategy | Use When | Rollback | Risk |
-|----------|----------|----------|------|
+------
+{% raw %}
+----|----------|----------|------|
 | **Rolling** | Standard updates, can tolerate mixed versions | Automatic via health checks | Low |
 | **Blue-Green** | Zero downtime, instant rollback needed | Switch traffic to old env | Medium |
 | **Canary** | Risk mitigation, gradual rollout | Scale down canary | Low |
@@ -239,3 +236,5 @@ spec:
             host: api
             subset: v1
 ```
+
+{% endraw %}

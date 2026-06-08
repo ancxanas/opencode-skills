@@ -1,11 +1,6 @@
-# Interview Questions
-
-## PM Hat Questions
-
-Focus on user value and business goals.
-
-| Area | Questions |
-|------|-----------|
+------
+{% raw %}
+|-----------|
 | **Problem** | What problem does this solve? Who experiences this problem? How often? |
 | **Users** | Who are the target users? What are their goals? Technical level? |
 | **Value** | How will users benefit? What's the business value? ROI? |
@@ -148,3 +143,5 @@ This ensures the Feature Forge interview starts with concrete technical context 
 | Details | Journey, scope, constraints | AskUserQuestions → Open-ended |
 | Edge Cases | Failures, limits, security | AskUserQuestions → Open-ended |
 | Validation | Summary, gaps | AskUserQuestions |
+
+{% endraw %}

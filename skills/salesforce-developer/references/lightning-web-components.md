@@ -1,5 +1,3 @@
-# Lightning Web Components
-
 ---
 
 ## Component Structure
@@ -216,6 +214,8 @@ export default class AccountCard extends NavigationMixin(LightningElement) {
 ```
 
 ---
+{% raw %}
+
 
 ## Wire Service Patterns
 
@@ -903,3 +903,5 @@ async loadData() {
 - **Complex forms**: Consider Screen Flow for admin-configurable forms
 - **Heavy computation**: Move to Apex to avoid client-side performance issues
 - **Non-reactive data**: Don't use @track for simple primitives (automatic since API v59)
+
+{% endraw %}

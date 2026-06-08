@@ -4,6 +4,8 @@ impact: HIGH
 description: Critical strategies for version pinning to ensure workflow stability and prevent runtime errors in production
 tags: [tools, versions, stability, production, pinning]
 ---
+{% raw %}
+
 
 # Tool Version Management
 
@@ -341,3 +343,5 @@ if (!validateToolVersion(version)) {
   throw new Error('Invalid version format');
 }
 ```
+
+{% endraw %}

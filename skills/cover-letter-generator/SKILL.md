@@ -17,6 +17,8 @@ parent: Career
 nav_order: 3
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Cover Letter Generator
 
@@ -290,3 +292,5 @@ Before delivering any cover letter:
 8. ✅ Is 250-400 words (3-4 paragraphs)
 9. ✅ Contains no typos or grammatical errors
 10. ✅ Would make you want to interview this person
+
+{% endraw %}

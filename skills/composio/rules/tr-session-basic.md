@@ -4,6 +4,8 @@ impact: HIGH
 description: Essential pattern for initializing Tool Router sessions with proper user isolation
 tags: [tool-router, session, initialization, agents]
 ---
+{% raw %}
+
 
 # Create Basic Tool Router Sessions
 
@@ -80,3 +82,5 @@ print(f"MCP URL: {session.mcp.url}")
 
 - [Tool Router API Docs](https://docs.composio.dev/sdk/typescript/api/tool-router)
 - [Creating Sessions](https://docs.composio.dev/sdk/typescript/api/tool-router#creating-sessions)
+
+{% endraw %}

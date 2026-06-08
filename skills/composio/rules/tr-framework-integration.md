@@ -4,6 +4,8 @@ impact: HIGH
 description: Connect Tool Router sessions with popular AI frameworks using MCP or native tools
 tags: [tool-router, frameworks, integration, vercel, openai, langchain, claude, crewai]
 ---
+{% raw %}
+
 
 # Integrate Tool Router with AI Frameworks
 
@@ -816,3 +818,5 @@ const client3 = hostedMcpTool({
 - [LangChain](https://langchain.com)
 - [Claude Agent SDK](https://github.com/anthropics/anthropic-sdk-typescript)
 - [CrewAI](https://www.crewai.com)
+
+{% endraw %}

@@ -20,6 +20,8 @@ parent: AI & Data
 nav_order: 3
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # ML Pipeline Expert
 
@@ -165,3 +167,5 @@ When implementing a pipeline, provide:
 ## Knowledge Reference
 
 MLflow, Kubeflow Pipelines, Apache Airflow, Prefect, Feast, Weights & Biases, Neptune, DVC, Great Expectations, Ray, Horovod, Kubernetes, Docker, S3/GCS/Azure Blob, model registry patterns, feature store architecture, distributed training, hyperparameter optimization
+
+{% endraw %}

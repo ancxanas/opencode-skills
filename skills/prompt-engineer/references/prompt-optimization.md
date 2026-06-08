@@ -1,5 +1,3 @@
-# Prompt Optimization
-
 ---
 
 ## The Optimization Loop
@@ -24,6 +22,8 @@
 > **CRITICAL RULE: Change one variable at a time.** Multiple simultaneous changes make it impossible to identify what worked.
 
 ---
+{% raw %}
+
 
 ## Establishing a Baseline
 
@@ -558,3 +558,5 @@ Revert to v2.0.0 if accuracy drops below 90% in production.
 - **Evaluation Frameworks** - Measuring prompt performance systematically
 - **Fine-Tuning Expert** - When optimization hits limits
 - **Cost Engineer** - Token and latency optimization at scale
+
+{% endraw %}

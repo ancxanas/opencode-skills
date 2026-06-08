@@ -1,9 +1,6 @@
-# Security Checklist
-
-## Per-Feature Security Checklist
-
-| Category | Check | Action |
-|----------|-------|--------|
+------
+{% raw %}
+----|-------|--------|
 | **Auth** | Endpoint requires authentication? | Add auth middleware/guard |
 | **Authz** | User authorized for this action? | Check ownership/role |
 | **Input** | All input validated and sanitized? | Use schemas, sanitize |
@@ -104,3 +101,5 @@ app.post('/login', authLimiter, loginHandler);
 | IDOR | Authorization checks |
 | Brute Force | Rate limiting |
 | Data Exposure | Response filtering |
+
+{% endraw %}

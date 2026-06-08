@@ -18,6 +18,8 @@ parent: Quality
 nav_order: 2
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Code Reviewer
 
@@ -122,3 +124,5 @@ Code review report must include:
 ## Knowledge Reference
 
 SOLID, DRY, KISS, YAGNI, design patterns, OWASP Top 10, language idioms, testing patterns
+
+{% endraw %}

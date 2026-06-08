@@ -20,6 +20,8 @@ parent: Frontend
 nav_order: 15
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Vue Expert (JavaScript)
 
@@ -54,6 +56,7 @@ Load detailed guidance based on context:
 ### Component with JSDoc-typed props and emits
 
 ```vue
+{% raw %}
 <script setup>
 /**
  * @typedef {Object} UserCardProps
@@ -86,6 +89,7 @@ function handleSelect(id) {
     {{ props.name }} ({{ props.age }})
   </div>
 </template>
+{% endraw %}
 ```
 
 ### Composable with @typedef, @param, and @returns
@@ -173,3 +177,5 @@ When implementing Vue features in JavaScript:
 ## Knowledge Reference
 
 Vue 3 Composition API, JSDoc, ESM modules, Pinia, Vue Router 4, Vite, VueUse, Vitest, Vue Test Utils, JavaScript ES2025+
+
+{% endraw %}

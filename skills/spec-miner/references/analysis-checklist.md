@@ -1,9 +1,6 @@
-# Analysis Checklist
-
-## Comprehensive Checklist
-
-| Area | What to Find | Glob/Grep Patterns |
-|------|--------------|-------------------|
+------
+{% raw %}
+|--------------|-------------------|
 | **Entry points** | main.ts, app.ts, index.ts | `**/main.{ts,js,py}` |
 | **Routes** | Controllers, route files | `**/routes/**/*`, `@Controller` |
 | **Models** | Entities, schemas | `**/models/**/*`, `@Entity` |
@@ -63,3 +60,5 @@ Before finalizing specification:
 - [ ] Error responses documented?
 - [ ] External dependencies listed?
 - [ ] Uncertainties flagged?
+
+{% endraw %}

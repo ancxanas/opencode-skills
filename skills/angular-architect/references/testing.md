@@ -1,182 +1,4 @@
-# Angular Testing
-
-## Component Testing
-
-```typescript
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { signal } from '@angular/core';
-import { UserListComponent } from './user-list.component';
-import { UsersService } from './users.service';
-import { of } from 'rxjs';
-
-describe('UserListComponent', () => {
-  let component: UserListComponent;
-  let fixture: ComponentFixture<UserListComponent>;
-  let usersService: jasmine.SpyObj<UsersService>;
-
-  const mockUsers = [
-    { id: '1', name: 'John Doe', email: 'john@example.com' },
-    { id: '2', name: 'Jane Smith', email: 'jane@example.com' }
-  ];
-
-  beforeEach(async () => {
-    // Create spy object
-    const usersServiceSpy = jasmine.createSpyObj('UsersService', ['getAll', 'delete']);
-
-    await TestBed.configureTestingModule({
-      imports: [UserListComponent],  // Standalone component
-      providers: [
-        { provide: UsersService, useValue: usersServiceSpy }
-      ]
-    }).compileComponents();
-
-    usersService = TestBed.inject(UsersService) as jasmine.SpyObj<UsersService>;
-    fixture = TestBed.createComponent(UserListComponent);
-    component = fixture.componentInstance;
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
-  it('should load users on init', () => {
-    usersService.getAll.and.returnValue(of(mockUsers));
-
-    fixture.detectChanges();  // Trigger ngOnInit
-
-    expect(usersService.getAll).toHaveBeenCalled();
-    expect(component.users()).toEqual(mockUsers);
-  });
-
-  it('should display users in template', () => {
-    component.users.set(mockUsers);
-    fixture.detectChanges();
-
-    const compiled = fixture.nativeElement;
-    const userElements = compiled.querySelectorAll('.user-item');
-
-    expect(userElements.length).toBe(2);
-    expect(userElements[0].textContent).toContain('John Doe');
-  });
-
-  it('should emit userSelected when user clicked', () => {
-    const emitSpy = spyOn(component.userSelected, 'emit');
-
-    component.onUserClick(mockUsers[0]);
-
-    expect(emitSpy).toHaveBeenCalledWith(mockUsers[0]);
-  });
-
-  it('should show loading state', () => {
-    component.loading.set(true);
-    fixture.detectChanges();
-
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.loading')).toBeTruthy();
-  });
-});
-```
-
-## Service Testing
-
-```typescript
-import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { UsersService } from './users.service';
-import { User } from './user.model';
-
-describe('UsersService', () => {
-  let service: UsersService;
-  let httpMock: HttpTestingController;
-
-  const mockUsers: User[] = [
-    { id: '1', name: 'John', email: 'john@example.com' },
-    { id: '2', name: 'Jane', email: 'jane@example.com' }
-  ];
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [UsersService]
-    });
-
-    service = TestBed.inject(UsersService);
-    httpMock = TestBed.inject(HttpTestingController);
-  });
-
-  afterEach(() => {
-    httpMock.verify();  // Verify no outstanding requests
-  });
-
-  it('should fetch all users', (done) => {
-    service.getAll().subscribe(users => {
-      expect(users).toEqual(mockUsers);
-      done();
-    });
-
-    const req = httpMock.expectOne('/api/users');
-    expect(req.request.method).toBe('GET');
-    req.flush(mockUsers);
-  });
-
-  it('should create a user', (done) => {
-    const newUser: User = { id: '3', name: 'Bob', email: 'bob@example.com' };
-
-    service.create(newUser).subscribe(user => {
-      expect(user).toEqual(newUser);
-      done();
-    });
-
-    const req = httpMock.expectOne('/api/users');
-    expect(req.request.method).toBe('POST');
-    expect(req.request.body).toEqual(newUser);
-    req.flush(newUser);
-  });
-
-  it('should handle error', (done) => {
-    service.getAll().subscribe({
-      next: () => fail('should have failed'),
-      error: (error) => {
-        expect(error.status).toBe(500);
-        done();
-      }
-    });
-
-    const req = httpMock.expectOne('/api/users');
-    req.flush('Server error', { status: 500, statusText: 'Internal Server Error' });
-  });
-});
-```
-
-## RxJS Marble Testing
-
-```typescript
-import { TestScheduler } from 'rxjs/testing';
-import { delay, map } from 'rxjs/operators';
-
-describe('RxJS Operators', () => {
-  let testScheduler: TestScheduler;
-
-  beforeEach(() => {
-    testScheduler = new TestScheduler((actual, expected) => {
-      expect(actual).toEqual(expected);
-    });
-  });
-
-  it('should map values', () => {
-    testScheduler.run(({ cold, expectObservable }) => {
-      const source$ = cold('--a--b--c--|', { a: 1, b: 2, c: 3 });
-      const expected = '    --x--y--z--|';
-      const result$ = source$.pipe(map(x => x * 10));
-
-      expectObservable(result$).toBe(expected, { x: 10, y: 20, z: 30 });
-    });
-  });
-
-  it('should delay emissions', () => {
-    testScheduler.run(({ cold, expectObservable }) => {
-      const source$ = cold('--a--b--|', { a: 1, b: 2 });
-      const expected = '    ----a--b--|';
+----a--b--|';
       const result$ = source$.pipe(delay(20));
 
       expectObservable(result$).toBe(expected, { a: 1, b: 2 });
@@ -394,7 +216,9 @@ describe('authGuard', () => {
 ## Quick Reference
 
 | Test Type | Key Tools |
-|-----------|-----------|
+|---
+{% raw %}
+--------|-----------|
 | Component | `TestBed`, `ComponentFixture`, `detectChanges()` |
 | Service | `HttpClientTestingModule`, `HttpTestingController` |
 | RxJS | `TestScheduler`, marble diagrams |
@@ -403,3 +227,5 @@ describe('authGuard', () => {
 | Guards | `TestBed.runInInjectionContext()` |
 | Signals | Direct value checks with `()` |
 | Spies | `jasmine.createSpyObj()`, `spyOn()` |
+
+{% endraw %}

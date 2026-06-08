@@ -4,6 +4,8 @@ impact: HIGH
 description: SDK-based guide for building AI agents and applications that integrate with external tools via Composio
 tags: [composio, sdk, agents, apps, typescript, python, frameworks]
 ---
+{% raw %}
+
 
 # Building Apps and Agents with Composio
 
@@ -132,3 +134,5 @@ composio manage toolkits info "gmail"
 ```
 
 Using incorrect slugs causes runtime errors.
+
+{% endraw %}

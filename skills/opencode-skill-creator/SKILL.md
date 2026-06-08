@@ -17,6 +17,8 @@ parent: Process & Tooling
 nav_order: 2
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # OpenCode Skill Creator
 
@@ -494,3 +496,5 @@ Repeating one more time the core loop here for emphasis:
 Please add steps to your TodoList (using the todowrite tool), if you have such a thing, to make sure you don't forget. Please specifically put "Create evals JSON and launch the eval viewer (via skill_serve_review) so human can review test cases" in your TodoList to make sure it happens.
 
 Good luck!
+
+{% endraw %}

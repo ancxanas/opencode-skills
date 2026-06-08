@@ -4,6 +4,8 @@ impact: HIGH
 description: Set up trigger instances to receive real-time events from connected accounts
 tags: [triggers, events, webhooks, real-time, notifications]
 ---
+{% raw %}
+
 
 # Create Triggers for Real-Time Events
 
@@ -244,3 +246,5 @@ async function setupUserTriggers(userId: string) {
 - **Automatic reuse** - Identical configs share same trigger instance
 - **Pin versions** - Prevents breaking changes in production
 - **Error handling** - Handle missing connections gracefully
+
+{% endraw %}

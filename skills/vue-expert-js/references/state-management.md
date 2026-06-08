@@ -1,5 +1,3 @@
-# State Management
-
 ---
 
 ## Setup
@@ -14,6 +12,8 @@ createApp(App).use(createPinia()).mount('#app')
 ```
 
 ---
+{% raw %}
+
 
 ## Options Store Syntax
 
@@ -105,6 +105,7 @@ export const useUserStore = defineStore('user', () => {
 ## Using Stores
 
 ```vue
+{% raw %}
 <script setup>
 import { useUserStore } from '@/stores/user'
 import { storeToRefs } from 'pinia'
@@ -125,6 +126,7 @@ const { login, logout } = userStore
     <button @click="logout">Logout</button>
   </div>
 </template>
+{% endraw %}
 ```
 
 ---
@@ -247,3 +249,5 @@ describe('Counter Store', () => {
 | Reset state | `store.$reset()` | Manual reset function |
 | Subscribe | `store.$subscribe((mutation, state) => {})` | Same |
 | Other stores | Use in actions | Call at setup top level |
+
+{% endraw %}

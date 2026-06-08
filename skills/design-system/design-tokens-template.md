@@ -1,14 +1,6 @@
-# Design Token Template
-
-## Naming Convention
-```
-{type}-{category}-{variant}
-{type}-{category}-{state}-{variant}
-```
-
-### Types
-| Prefix | Purpose | Example |
-|--------|---------|---------|
+------
+{% raw %}
+--|---------|---------|
 | `color` | All color tokens | `color-brand-primary` |
 | `spacing` | Margin, padding, gap | `spacing-md` |
 | `typography` | Font families, sizes, weights | `typography-size-lg` |
@@ -124,3 +116,5 @@ color-{role}-{variant}-{strength}
 - Roles: brand, primary, secondary, neutral, success, warning, danger, info
 - Variants: bg, text, border, icon
 - Strengths (for neutral): 50, 100, 200, ..., 900, 950
+
+{% endraw %}

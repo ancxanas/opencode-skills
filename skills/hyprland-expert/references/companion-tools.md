@@ -1,11 +1,6 @@
-# Companion Tools Reference
-
-## Build Your Stack
-
-Choose a combination that matches your needs:
-
-| Stack | Bar | Launcher | Notifications | Lock Screen | Clipboard | Wallpaper | Screenshots |
-|-------|-----|----------|---------------|-------------|-----------|-----------|-------------|
+------
+{% raw %}
+-|-----|----------|---------------|-------------|-----------|-----------|-------------|
 | Minimal | waybar | wofi | dunst / swaync | hyprlock / loginctl | wl-clipboard | hyprpaper | grim+slurp |
 | Balanced | waybar | rofi | swaync | hyprlock / loginctl | cliphist | hyprpaper | hyprshot |
 | Full-featured | waybar | rofi | swaync | hyprlock / loginctl | cliphist | hyprpaper | hyprshot |
@@ -1074,3 +1069,5 @@ sudo apt install obs-studio  # Debian
 
 Requires `xdg-desktop-portal-hyprland` to be running for screen capture.
 
+
+{% endraw %}

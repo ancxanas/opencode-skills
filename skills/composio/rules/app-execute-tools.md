@@ -4,6 +4,8 @@ impact: HIGH
 description: Core patterns for manually executing Composio tools in applications without agent frameworks
 tags: [tools, execute, execution, apps, manual]
 ---
+{% raw %}
+
 
 # Direct Tool Execution for Applications
 
@@ -200,3 +202,4 @@ try {
 5. **Log execution details**: Track which tools are executed for debugging
 6. **Test with real data**: Validate execution with actual connected accounts
 7. **Handle authentication errors**: User may not have connected account for toolkit
+{% endraw %}

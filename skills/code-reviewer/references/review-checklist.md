@@ -1,9 +1,6 @@
-# Review Checklist
-
-## Comprehensive Review Checklist
-
-| Category | Key Questions |
-|----------|---------------|
+------
+{% raw %}
+----|---------------|
 | **Design** | Does it fit existing patterns? Right abstraction level? |
 | **Logic** | Edge cases handled? Race conditions? Null checks? |
 | **Security** | Input validated? Auth checked? Secrets safe? |
@@ -86,3 +83,5 @@
 | Code logic & details | 40% |
 | Tests & coverage | 20% |
 | Final review & summary | 10% |
+
+{% endraw %}

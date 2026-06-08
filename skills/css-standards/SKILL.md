@@ -21,6 +21,8 @@ parent: Frontend
 nav_order: 4
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # css-standards
 
@@ -1447,3 +1449,5 @@ When using newer CSS features, follow this order:
 | `initial-letter` | 110+ (partial) | 9+ (prefixed) | — | ❌ Not cross-browser |
 
 This file is a living reference. As browser support improves, sections guarded with `@supports` can be promoted to baseline usage.
+
+{% endraw %}

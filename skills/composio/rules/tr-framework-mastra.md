@@ -4,6 +4,8 @@ impact: HIGH
 description: Use Tool Router for native tool integration and MCP for multi-tenant scenarios with Mastra agents
 tags: [tool-router, mastra, framework, native-tools, mcp, integration]
 ---
+{% raw %}
+
 
 # Using Composio with Mastra Framework
 
@@ -183,3 +185,5 @@ model: 'openai/gpt-5.2' // Wrong - use openai('gpt-5.2')
 - [Mastra MCP](https://mastra.ai/docs/mcp/overview)
 - [Composio Tool Router](https://docs.composio.dev/sdk/typescript/api/tool-router)
 - [Tool Router Sessions](tr-session-lifecycle.md)
+
+{% endraw %}

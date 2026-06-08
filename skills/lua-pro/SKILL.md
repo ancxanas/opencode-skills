@@ -21,6 +21,8 @@ parent: Languages
 nav_order: 7
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Lua Pro
 
@@ -147,3 +149,5 @@ When implementing Lua features, provide:
 ## Knowledge Reference
 
 Lua 5.1, 5.2, 5.3, 5.4, 5.5, LuaJIT, tables, metatables, metamethods, coroutines, `require`, `package.path`, Luarocks, `pcall`/`xpcall`, string patterns, `string.gmatch`, `table.sort`, weak tables, `__gc` finalizers, `__mode`, `debug` library, `utf8` library, `io` library, `os` library, `math` library, luacheck, busted, lunit, global declarations, named vararg tables, compact arrays
+
+{% endraw %}

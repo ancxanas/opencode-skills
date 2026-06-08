@@ -1,9 +1,6 @@
-# Modern CSS Properties Quick Reference
-
-## Layout
-
-| Property | Module | Description |
-|----------|--------|-------------|
+------
+{% raw %}
+----|--------|-------------|
 | `display: flex` | [CSS Flexbox](https://www.w3.org/TR/css-flexbox-1/) | One-dimensional layout |
 | `display: grid` | [CSS Grid](https://www.w3.org/TR/css-grid-1/) | Two-dimensional layout |
 | `display: subgrid` | [CSS Grid 2](https://www.w3.org/TR/css-grid-2/) | Inherit parent grid tracks |
@@ -83,3 +80,5 @@
 | `:has(>` | All modern | Direct children |
 | `:has(+ sibling)` | All modern | Adjacent sibling |
 | `::target-text` | Chrome, FF | Text fragment highlight |
+
+{% endraw %}

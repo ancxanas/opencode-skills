@@ -4,6 +4,8 @@ impact: MEDIUM
 description: Advanced programmatic management of authentication configurations for multi-tenant applications
 tags: [auth-config, authentication, oauth, api-key, advanced]
 ---
+{% raw %}
+
 
 # Auth Config Management
 
@@ -222,3 +224,5 @@ await composio.authConfigs.delete('auth_config_123');
 5. **Name configs clearly**
    - Include environment: "Production GitHub", "Staging Slack"
    - Makes debugging easier
+
+{% endraw %}

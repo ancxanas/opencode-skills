@@ -1,5 +1,3 @@
-# Integration Patterns
-
 ---
 
 ## REST API Integration
@@ -338,6 +336,8 @@ global with sharing class AccountRestService {
 ```
 
 ---
+{% raw %}
+
 
 ## Platform Events
 
@@ -946,3 +946,5 @@ public class RobustIntegrationService {
 - **Platform Events for guaranteed delivery**: Use external queues for critical data
 - **Raw HTTP for well-defined APIs**: Use External Services for OpenAPI specs
 - **Continuation for batch processing**: Use Batch Apex with Database.AllowsCallouts
+
+{% endraw %}

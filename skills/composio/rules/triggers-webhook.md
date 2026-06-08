@@ -4,6 +4,8 @@ impact: CRITICAL
 description: Use webhook verification for reliable, scalable event delivery in production
 tags: [triggers, webhooks, production, security, verification, hmac]
 ---
+{% raw %}
+
 
 # Webhook Verification for Production
 
@@ -225,3 +227,5 @@ app.listen(3000, () => {
 - **Quick response** - Return 200 OK within 30s
 - **Idempotency** - Handle duplicates with webhookId
 - **Error handling** - Log but don't throw
+
+{% endraw %}

@@ -20,6 +20,8 @@ parent: AI & Data
 nav_order: 4
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Pandas Pro
 
@@ -184,3 +186,5 @@ When implementing pandas solutions, provide:
 2. Comments explaining complex transformations
 3. Memory/performance considerations if dataset is large
 4. Data validation checks (dtypes, nulls, shapes)
+
+{% endraw %}

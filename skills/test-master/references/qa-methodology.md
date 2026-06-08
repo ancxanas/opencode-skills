@@ -1,73 +1,6 @@
-# QA Methodology
-
-## Manual Testing Types
-
-### Exploratory Testing
-```markdown
-**Charter**: Explore {feature} with focus on {aspect}
-**Duration**: 60-90 min
-**Mission**: Find defects in {specific functionality}
-
-Test Ideas:
-- Boundary conditions & edge cases
-- Error handling & recovery
-- User workflow variations
-- Integration points
-
-Findings:
-1. [HIGH] {Issue + impact}
-2. [MED] {Issue + impact}
-
-Coverage: {Areas explored} | Risks: {Identified risks}
-```
-
-### Usability Testing
-```markdown
-**Task**: Can users complete {action} intuitively?
-**Metrics**: Time to complete, errors made, satisfaction (1-5)
-**Success**: 80% complete without help in <5 min
-
-Observations:
-- Navigation confusing at {step}
-- Users expect {A} but get {B}
-- Positive: {feature feedback}
-```
-
-### Accessibility Testing (WCAG 2.1 AA)
-```typescript
-test('accessibility compliance', async ({ page }) => {
-  // Keyboard navigation
-  await page.keyboard.press('Tab');
-  expect(['A', 'BUTTON', 'INPUT']).toContain(
-    await page.evaluate(() => document.activeElement.tagName)
-  );
-  
-  // ARIA labels
-  expect(await page.getByRole('button').first().getAttribute('aria-label')).toBeTruthy();
-  
-  // Color contrast (axe-core)
-  const violations = await page.evaluate(async () => {
-    const axe = await import('axe-core');
-    return (await axe.run()).violations;
-  });
-  expect(violations).toHaveLength(0);
-});
-```
-
-### Localization Testing
-```markdown
-**Test**: {Feature} in {language/locale}
-- [ ] Text displays without truncation
-- [ ] Date/time/currency formats correct
-- [ ] Right-to-left layout (Arabic, Hebrew)
-- [ ] Character encoding UTF-8
-- [ ] Sort order respects locale
-```
-
-### Compatibility Matrix
-```markdown
-| Browser | Version | OS | Status |
-|---------|---------|----|----- --|
+------
+{% raw %}
+---|---------|----|----- --|
 | Chrome | Latest | Win/Mac | ✓ |
 | Firefox | Latest | Win/Mac | ✓ |
 | Safari | Latest | macOS/iOS | ✓ |
@@ -245,3 +178,5 @@ const feedbackCycle = {
 | Leakage | <2% | 2-5% | >5% |
 | Automation | >80% | 60-80% | <60% |
 | MTTR | <24h | 24-48h | >48h |
+
+{% endraw %}

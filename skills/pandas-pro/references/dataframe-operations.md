@@ -1,5 +1,3 @@
-# DataFrame Operations
-
 ---
 
 ## Overview
@@ -7,6 +5,8 @@
 DataFrame operations form the foundation of pandas work. This reference covers indexing, selection, filtering, and sorting with pandas 2.0+ best practices.
 
 ---
+{% raw %}
+
 
 ## Indexing and Selection
 
@@ -418,3 +418,5 @@ df = df[(df['age'] > 25) & (df['salary'] > 50000)]
 - `data-cleaning.md` - After selection, clean the data
 - `aggregation-groupby.md` - Group and aggregate filtered data
 - `performance-optimization.md` - Optimize filtering on large datasets
+
+{% endraw %}

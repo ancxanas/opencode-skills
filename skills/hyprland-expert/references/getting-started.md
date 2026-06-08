@@ -1,178 +1,6 @@
-# Getting Started with Hyprland
-
-## What is Hyprland?
-
-Hyprland is a **dynamic tiling Wayland compositor** — a modern replacement for traditional X11 window managers and desktop environments. Unlike floating desktops (GNOME, KDE, Windows) where windows overlap, a tiling compositor automatically arranges windows in a non-overlapping grid. You control everything with the keyboard instead of the mouse.
-
-**Key concepts:**
-- **Wayland** — Modern display protocol (replaces X11). Faster, more secure, no screen tearing
-- **Tiling** — Windows automatically fill available space without overlapping
-- **Dynamic** — Hyprland supports multiple layouts: dwindle (spiral), master-stack (main + side), floating, and tabbed groups
-- **Compositor** — Hyprland is both the window manager and the compositor (handles rendering, animations, vsync)
-
-## Before You Start
-
-### Check your GPU
-
-```bash
-lspci -k | grep -E "(VGA|3D|Display)"
-```
-
-- **AMD** — Best experience, works out of the box
-- **Intel** — Good experience, works out of the box
-- **NVIDIA** — Works but requires extra setup (see `references/distro-notes.md`)
-
-### Check your distro
-
-- **Arch** — `sudo pacman -S hyprland`
-- **Fedora** — `sudo dnf install hyprland`
-- **Debian 12+** — `sudo apt install -t bookworm-backports hyprland`
-- **Ubuntu 24.04+** — `sudo apt install hyprland`
-- **NixOS** — `programs.hyprland.enable = true;`
-
-### Backup your existing config
-
-```bash
-mv ~/.config/hypr ~/.config/hypr.bak
-```
-
-## First Launch
-
-1. Install Hyprland (see distro-specific instructions in `distro-notes.md`)
-2. Log out of your current session
-3. On the login screen, select **Hyprland** (may be listed as "Hyprland" or "Hyprland Session")
-4. Log in
-
-**What you'll see:** A blank screen with a cursor. That's normal — Hyprland ships with no bar, no wallpaper, just the compositor.
-
-**Default keybindings that always work:**
-- `SUPER + Q` — Close focused window
-- `SUPER + mouse_down` — Next workspace
-- `SUPER + mouse_up` — Previous workspace
-- `SUPER + click/drag` — Move/resize floating window
-
-Open a terminal: `SUPER + Return` (if ghostty is installed) or use `SUPER + F2` to run a command.
-
-## Your First Config
-
-Put this in `~/.config/hypr/hyprland.conf`. Each line explains what it does:
-
-```conf
-# ===== MONITOR =====
-monitor=,preferred,auto,1
-#                │       │  └─ 1x scale (2 for HiDPI)
-#                │       └──── auto-position relative to other monitors
-#                └──────────── use best available resolution and refresh rate
-
-# ===== INPUT (keyboard & mouse) =====
-input {
-    kb_layout=us             # Keyboard layout: us, de, fr, etc.
-    follow_mouse=1           # 1=focus follows mouse, 0=click to focus
-    touchpad {
-        natural_scroll=true  # Touchpad scroll direction (like macOS)
-        tap-to-click=true    # Tap to click instead of press
-    }
-}
-
-# ===== GENERAL (window appearance) =====
-general {
-    gaps_in=5                # Pixels between windows
-    gaps_out=10              # Pixels between windows and screen edge
-    border_size=2            # Border width in pixels
-    layout=dwindle           # Layout: dwindle or master
-}
-
-# ===== DECORATION (visual effects) =====
-decoration {
-    rounding=10              # Corner radius of windows
-    active_opacity=1.0       # Opacity of focused window
-    inactive_opacity=0.9     # Opacity of unfocused windows
-    blur {
-        enabled=true         # Background blur
-        size=3               # Blur strength
-        passes=1             # Blur quality (higher = better but slower)
-    }
-    drop_shadow=true
-    shadow_range=4
-}
-
-# ===== ANIMATIONS =====
-animations {
-    enabled=true
-    bezier=myBezier,0.05,0.9,0.1,1.05  # Custom smooth curve
-    animation=windows,1,7,myBezier     # Open/close/move windows
-    animation=fade,1,7,default          # Fade effects
-    animation=workspaces,1,6,default    # Workspace switching
-}
-
-# ===== WINDOW RULES (override behavior per app) =====
-windowrule=float,^(pavucontrol)$            # Keep volume control floating
-windowrule=float,^(blueman-manager)$        # Keep bluetooth floating
-windowrule=workspace 1,^(firefox)$          # Firefox always on workspace 1
-windowrule=workspace 2,^(code|Alacritty)$   # Code + terminal on workspace 2
-
-# ===== KEYBINDINGS =====
-$mainMod=SUPER                              # Shortcut for the SUPER key
-
-# Launch applications
-bind=$mainMod,Return,exec,ghostty           # Open terminal
-bind=$mainMod,D,exec,wofi --show drun       # Open app launcher
-
-# Close and exit
-bind=$mainMod,Q,killactive                  # Close focused window
-bind=$mainMod,M,exit                        # Exit Hyprland
-
-# Window management
-bind=$mainMod,Space,togglefloating          # Float/unfloat window
-bind=$mainMod,F,fullscreen                  # Toggle fullscreen
-
-# Focus: move between windows
-bind=$mainMod,left,movefocus,l
-bind=$mainMod,right,movefocus,r
-bind=$mainMod,up,movefocus,u
-bind=$mainMod,down,movefocus,d
-
-# Move: move window in layout
-bind=$mainMod SHIFT,left,movewindow,l
-bind=$mainMod SHIFT,right,movewindow,r
-bind=$mainMod SHIFT,up,movewindow,u
-bind=$mainMod SHIFT,down,movewindow,d
-
-# Workspaces: switch and move
-bind=$mainMod,1,workspace,1
-bind=$mainMod,2,workspace,2
-bind=$mainMod,3,workspace,3
-bind=$mainMod,4,workspace,4
-bind=$mainMod SHIFT,1,movetoworkspace,1
-bind=$mainMod SHIFT,2,movetoworkspace,2
-bind=$mainMod SHIFT,3,movetoworkspace,3
-bind=$mainMod SHIFT,4,movetoworkspace,4
-
-# Scroll workspaces with mouse
-bind=$mainMod,mouse_down,workspace,e+1
-bind=$mainMod,mouse_up,workspace,e-1
-
-# ===== ENVIRONMENT =====
-env=XCURSOR_SIZE,24                          # Cursor size
-env=HYPRCURSOR_SIZE,24
-
-# Force apps to use Wayland when possible
-env=GDK_BACKEND,wayland,x11,*
-env=QT_QPA_PLATFORM,wayland;xcb
-env=SDL_VIDEODRIVER,wayland
-
-# ===== AUTOSTART =====
-exec-once=waybar                             # Status bar
-exec-once=hyprpaper                          # Wallpaper daemon
-exec-once=hypridle                           # Idle management
-exec-once=/usr/libexec/hyprpolkitagent                              # Auth dialogs (hyprpolkitagent preferred; fallback: polkit-gnome)
-exec-once=sleep 5; nm-applet                 # Network manager tray
-```
-
-## Choosing Your Stack
-
-| Purpose | Terminal | Bar | App Launcher | Notifications | Wallpaper |
-|---------|----------|-----|-------------|---------------|-----------|
+------
+{% raw %}
+---|----------|-----|-------------|---------------|-----------|
 | Minimal | `foot` | `waybar` | `wofi` | `dunst` | `hyprpaper` |
 | Full-featured | `ghostty` | `waybar` | `rofi` | `swaync` | `hyprpaper` |
 | Eye candy | `alacritty` | `waybar` | `rofi` | `swaync` | `hyprpaper` |
@@ -276,6 +104,7 @@ git init && git add . && git commit -m "Initial dotfiles"
 ### Option 3: chezmoi (Single Binary, Template Support)
 
 ```bash
+{% raw %}
 # Install chezmoi
 # Arch: sudo pacman -S chezmoi
 # Fedora: sudo dnf install chezmoi
@@ -298,6 +127,7 @@ monitor = DP-1, 2560x1440@144, 0x0, 1
 # {{- else if eq .hostname "laptop" }}
 monitor = eDP-1, 1920x1080@60, 0x0, 1.25
 # {{- end }}
+{% endraw %}
 ```
 
 ### Option 4: Nix Home Manager (NixOS Only)
@@ -355,3 +185,5 @@ Study these to see what's possible and borrow ideas:
 - **GitHub Issues** — https://github.com/hyprwm/Hyprland/issues
 - **Discord** — Hyprland server (link on GitHub)
 - **Reddit** — r/hyprland
+
+{% endraw %}

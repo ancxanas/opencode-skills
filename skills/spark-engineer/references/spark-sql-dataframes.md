@@ -1,5 +1,3 @@
-# Spark SQL and DataFrame API
-
 ---
 
 ## When to Use DataFrames vs RDDs
@@ -17,6 +15,8 @@
 - Legacy code migration (prefer DataFrame migration when possible)
 
 ---
+{% raw %}
+
 
 ## Schema Definition
 
@@ -472,3 +472,5 @@ df.explain(True)
 8. **Monitor Spark UI** - Check shuffle, spill, and GC metrics
 9. **Enable AQE in Spark 3.x** - Automatic optimization for skew and partitions
 10. **Test with production data volume** - Performance varies with scale
+
+{% endraw %}

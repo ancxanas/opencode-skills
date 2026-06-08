@@ -1,98 +1,3 @@
-# Color Management Reference
-
-## ICC Profiles
-
-ICC profiles describe a display's color characteristics. Hyprland v0.55+ supports **native ICC profile loading** per monitor.
-
-### Check if ICC is Working
-
-```bash
-# Check current display state
-hyprctl monitors | grep -E "(name|icc|colorspace)"
-
-# List available ICC profiles
-ls /usr/share/color/icc/colord/
-ls ~/.local/share/icc/
-
-# Check what colord knows about your displays
-colormgr get-devices
-```
-
-### Apply an ICC Profile
-
-```bash
-# Using colord (auto-applies on login with display managers)
-colormgr device-add-profile <device-id> <profile-id>
-colormgr device-make-profile-default <device-id> <profile-id>
-
-# Using dispwin (from Argyll CMS) for manual loading
-dispwin -I ~/path/to/profile.icc
-
-# In hyprland env (auto-load on start)
-env = ICC_PROFILE,/usr/share/color/icc/colord/sRGB.icc
-```
-
-### Creating an ICC Profile
-
-```bash
-# Using displaycal + colord (GUI workflow)
-sudo pacman -S displaycal    # Arch
-sudo dnf install displaycal  # Fedora
-
-# Using Argyll CMS (CLI workflow)
-sudo pacman -S argyllcms     # Arch
-
-# Basic display measurement:
-# 1. Run dispcal to generate profile
-# 2. Run dispwin to load it
-# 3. Verify with hyprctl monitors
-```
-
-### Native ICC (v0.55+)
-
-Hyprland v0.55+ can load ICC profiles **natively** per monitor. Specify directly in the monitor line:
-
-```conf
-monitor=DP-1,2560x1440@144,0x0,1,icc:/path/to/dell-u2723qe.icc
-monitor=HDMI-A-1,1920x1080@60,2560x0,1,icc:/path/to/lg-27gp950.icc
-```
-
-```lua
--- hyprland.lua — native per-monitor ICC
-hyprland.monitor("DP-1", "2560x1440@144", "0x0", 1, "icc:/home/user/.local/share/icc/dell-u2723qe.icc")
-hyprland.monitor("HDMI-A-1", "1920x1080@60", "2560x0", 1, "icc:/home/user/.local/share/icc/lg-27gp950.icc")
-```
-
-### Per-Monitor Profiles (Legacy, via dispwin)
-
-For older versions or when you need dynamic profile loading:
-
-```lua
--- hyprland.lua — per-monitor ICC loading via dispwin (legacy)
-local profiles = {
-    ["DP-1"] = "~/.local/share/icc/dell-u2723qe.icc",
-    ["HDMI-A-1"] = "~/.local/share/icc/lg-27gp950.icc",
-}
-
-hyprland.on("monitorAdded", function(monitor)
-    local profile = profiles[monitor.name]
-    if profile then
-        os.execute("dispwin -I " .. profile)
-    end
-end)
-```
-
-### icc-brightness
-
-Tool to adjust brightness via ICC profile (doesn't change backlight, reduces white point).
-
-```bash
-# Arch: yay -S icc-brightness
-
-# Set brightness to 50%
-icc-brightness ~/.local/share/icc/profile.icc 0.5
-```
-
 ---
 
 ## FP16 Precision (v0.55+)
@@ -108,6 +13,8 @@ Hyprland v0.55+ uses **FP16 (16-bit floating point)** precision by default for c
 **Impact:** Slightly higher GPU memory bandwidth usage, but no meaningful performance difference on modern GPUs (2020+).
 
 ---
+{% raw %}
+
 
 ## HDR
 
@@ -347,3 +254,5 @@ env = ICC_PROFILE,/path/to/profile.icc  # Load ICC profile
 env = GDK_DPI_SCALE,1                   # GTK scaling
 env = QT_WAYLAND_FORCE_DPI,96           # Qt DPI
 ```
+
+{% endraw %}

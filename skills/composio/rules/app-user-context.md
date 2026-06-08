@@ -4,6 +4,8 @@ impact: HIGH
 description: Critical patterns for user identification, multi-tenancy, and data isolation in production applications
 tags: [user-context, security, multi-tenancy, isolation, production]
 ---
+{% raw %}
+
 
 # User Context and ID Patterns
 
@@ -220,3 +222,5 @@ accounts.items.forEach(account => {
 - **Use consistent format** - Pick one pattern and stick to it
 - **Organization IDs** - For team-wide tool access
 - **Handle changes gracefully** - Maintain mapping if IDs can change
+
+{% endraw %}

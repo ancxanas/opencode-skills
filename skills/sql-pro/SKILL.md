@@ -19,6 +19,8 @@ parent: Languages
 nav_order: 12
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # SQL Pro
 
@@ -134,3 +136,5 @@ When implementing SQL solutions, provide:
 3. Execution plan analysis
 4. Performance metrics (before/after)
 5. Platform-specific notes if applicable
+
+{% endraw %}

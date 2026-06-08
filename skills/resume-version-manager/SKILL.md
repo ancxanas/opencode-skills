@@ -17,6 +17,8 @@ parent: Career
 nav_order: 18
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Resume Version Manager
 
@@ -364,3 +366,5 @@ When managing resume versions:
 - ✅ Old versions archived (not deleted)
 - ✅ Update workflow is established
 - ✅ Regular master resume reviews scheduled
+
+{% endraw %}

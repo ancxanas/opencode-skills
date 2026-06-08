@@ -1,70 +1,6 @@
-# Scripts & IPC
-
-## `hyprctl` — The Command-Line Controller
-
-Every config option and dispatcher can be accessed via `hyprctl`.
-
-### Basic Usage
-
-```bash
-hyprctl monitors                                     # List monitors
-hyprctl clients                                      # List all windows
-hyprctl activewindow                                 # Current window info
-hyprctl reload                                       # Reload config
-hyprctl dispatch killactive                          # Close focused window
-hyprctl keyword general:gaps_in 10                   # Set config at runtime
-hyprctl keyword animations:enabled false             # Disable animations
-hyprctl setcursor "Adwaita" 24                       # Change cursor
-hyprctl version                                      # Show version
-```
-
-### JSON Output
-
-Use `-j` for machine-readable output, pipe to `jq`:
-
-```bash
-hyprctl -j monitors | jq '.[].name'                  # List monitor names
-hyprctl -j clients | jq '.[].class'                  # List window classes
-hyprctl -j clients | jq '.[] | select(.workspace.id == 1) | .class'  # Windows on ws 1
-hyprctl -j activewindow | jq -r '.at[0],.at[1],.size[0],.size[1]'    # Position + size
-```
-
-## Event-Driven Scripts (Socket)
-
-Hyprland exposes a Unix socket for real-time events.
-
-### Socket Path
-
-```bash
-echo "$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock"
-```
-
-### Listen for Events
-
-```bash
-socat - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock
-```
-
-Or in a script:
-
-```bash
-#!/bin/bash
-socket="$XDG_RUNTIME_DIR/hypr/$(hyprctl instances -j | jq -r '.[0].instance')/.socket2.sock"
-socat -u UNIX-CONNECT:"$socket" - | while read -r event; do
-    case "$event" in
-        workspace\>*) notify-send "Switched to workspace ${event#workspace>}" ;;
-        focusedmon\>*) echo "Monitor changed" ;;
-        openwindow\>*) echo "Window opened: $event" ;;
-        closewindow\>*) echo "Window closed: $event" ;;
-        activewindow\>*) echo "Focus changed: $event" ;;
-    esac
-done
-```
-
-### Available Events
-
-| Event | Payload | When triggered |
-|-------|---------|---------------|
+------
+{% raw %}
+-|---------|---------------|
 | `workspace>>` | `workspaceID` | Workspace switch |
 | `focusedmon>>` | `monitorName,workspaceID` | Monitor focus change |
 | `activewindow>>` | `class,title` | Focused window changed |
@@ -259,3 +195,5 @@ brightnessctl -r                                  # Restore saved brightness
 - Avoid polling loops (e.g., `while true; do hyprctl clients; sleep 1; done`) — use the socket instead
 - Batch multiple `hyprctl keyword` calls into a single script rather than separate keybindings
 - `jq` is fast but for high-frequency operations, consider `hyprctl -j clients | jq -c '.[] | select(.focusHistoryID == 0)'` (filter server-side as much as possible)
+
+{% endraw %}

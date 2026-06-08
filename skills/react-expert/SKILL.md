@@ -20,6 +20,8 @@ parent: Frontend
 nav_order: 11
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # React Expert
 
@@ -155,3 +157,5 @@ When implementing React features, provide:
 ## Knowledge Reference
 
 React 19, Server Components, use() hook, Suspense, TypeScript, TanStack Query, Zustand, Redux Toolkit, React Router, React Testing Library, Vitest/Jest, Next.js App Router, accessibility (WCAG)
+
+{% endraw %}

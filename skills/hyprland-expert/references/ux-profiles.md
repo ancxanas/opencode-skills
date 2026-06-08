@@ -1,11 +1,6 @@
-# UX Profiles Reference
-
-Pick a persona that matches how you want your desktop to feel. Each includes a **paste-ready `hyprland.lua`** — just change your monitor names and keyboard layout.
-
-## Quick Guide
-
-| I want it to feel like... | Jump to |
-|---|---|
+---|---
+{% raw %}
+|
 | macOS — top bar, smooth, polished | [macOS Refugee](#-macos-refugee) |
 | Windows — taskbar, start menu, familiar | [Windows Migrant](#-windows-migrant) |
 | GNOME — overview, clean, simple | [GNOME Transplant](#-gnome-transplant) |
@@ -39,6 +34,7 @@ Pick a persona that matches how you want your desktop to feel. Each includes a *
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
+{% raw %}
 -- ~/.config/hypr/hyprland.lua
 -- macOS Refugee Profile
 
@@ -229,6 +225,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("/usr/libexec/hyprpolkitagent")
     hl.exec_cmd("sleep 5; nm-applet")
 end)
+{% endraw %}
 ```
 
 ### Tweak Further
@@ -265,6 +262,7 @@ end)
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
+{% raw %}
 -- ~/.config/hypr/hyprland.lua
 -- Windows Migrant Profile
 
@@ -423,6 +421,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("/usr/libexec/hyprpolkitagent")
     hl.exec_cmd("sleep 5; nm-applet")
 end)
+{% endraw %}
 ```
 
 ### Tweak Further
@@ -458,6 +457,7 @@ end)
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
+{% raw %}
 -- ~/.config/hypr/hyprland.lua
 -- GNOME Transplant Profile
 
@@ -640,6 +640,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("swaync")
     hl.exec_cmd("/usr/libexec/hyprpolkitagent")
 end)
+{% endraw %}
 ```
 
 ### Tweak Further
@@ -676,6 +677,7 @@ end)
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
+{% raw %}
 -- ~/.config/hypr/hyprland.lua
 -- Gamer Profile
 
@@ -846,6 +848,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle")
     hl.exec_cmd("dunst")
 end)
+{% endraw %}
 ```
 
 ### Tweak Further
@@ -881,6 +884,7 @@ end)
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
+{% raw %}
 -- ~/.config/hypr/hyprland.lua
 -- Developer Profile
 
@@ -1091,6 +1095,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("sleep 5; nm-applet")
 end)
+{% endraw %}
 ```
 
 ### Tweak Further
@@ -1127,6 +1132,7 @@ end)
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
+{% raw %}
 -- ~/.config/hypr/hyprland.lua
 -- Designer Profile
 
@@ -1340,6 +1346,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprsunset -t 6500")
     hl.exec_cmd("/usr/libexec/hyprpolkitagent")
 end)
+{% endraw %}
 ```
 
 ### Tweak Further
@@ -1349,3 +1356,5 @@ end)
 - [Theme: Catppuccin Mocha ecosystem](theming.md#catppuccin-mocha)
 - [Plugins: hyprpicker color picker](companion-tools.md#hyprpicker--color-picker)
 - [Animations: smooth presets](animations.md)
+
+{% endraw %}

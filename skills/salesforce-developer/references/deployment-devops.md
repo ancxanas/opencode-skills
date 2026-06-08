@@ -1,5 +1,3 @@
-# Deployment and DevOps
-
 ---
 
 ## Salesforce DX Project Setup
@@ -137,6 +135,8 @@ Thumbs.db
 ```
 
 ---
+{% raw %}
+
 
 ## SF CLI Commands
 
@@ -396,6 +396,7 @@ sf data upsert bulk \
 ### GitHub Actions Workflow
 
 ```yaml
+{% raw %}
 # .github/workflows/salesforce-ci.yml
 name: Salesforce CI/CD
 
@@ -521,6 +522,7 @@ jobs:
         run: |
           JOB_ID=$(./sfdx/bin/sf project deploy report --json | jq -r '.result.id')
           ./sfdx/bin/sf project deploy quick --job-id $JOB_ID --target-org prod
+{% endraw %}
 ```
 
 ### GitLab CI Pipeline
@@ -858,3 +860,5 @@ echo "=== Post-refresh configuration complete ==="
 - **Wildcard package.xml in production**: Explicitly list components
 - **Deployment without tests**: Always run tests in production deployments
 - **Direct changes in production**: Always deploy through version control
+
+{% endraw %}

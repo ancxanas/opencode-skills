@@ -20,6 +20,8 @@ parent: AI & Data
 nav_order: 5
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Prompt Engineer
 
@@ -63,14 +65,17 @@ Load detailed guidance based on context:
 
 **Zero-shot (baseline):**
 ```
+{% raw %}
 Classify the sentiment of the following review as Positive, Negative, or Neutral.
 
 Review: {{review}}
 Sentiment:
+{% endraw %}
 ```
 
 **Few-shot (improved reliability):**
 ```
+{% raw %}
 Classify the sentiment of the following review as Positive, Negative, or Neutral.
 
 Review: "The battery life is incredible, lasts all day."
@@ -84,25 +89,30 @@ Sentiment: Neutral
 
 Review: {{review}}
 Sentiment:
+{% endraw %}
 ```
 
 ### Before/After Optimization
 
 **Before (vague, inconsistent outputs):**
 ```
+{% raw %}
 Summarize this document.
 
 {{document}}
+{% endraw %}
 ```
 
 **After (structured, token-efficient):**
 ```
+{% raw %}
 Summarize the document below in exactly 3 bullet points. Each bullet must be one sentence and start with an action verb. Do not include opinions or information not present in the document.
 
 Document:
 {{document}}
 
 Summary:
+{% endraw %}
 ```
 
 ## Constraints
@@ -139,3 +149,5 @@ When delivering prompt work, provide:
 ## Coverage Note
 
 Reference files cover major prompting techniques (zero-shot, few-shot, CoT, ReAct, tree-of-thoughts), structured output patterns (JSON mode, function calling), and model-specific guidance for GPT-4, Claude, and Gemini families. Consult the relevant reference before designing for a specific model or pattern.
+
+{% endraw %}

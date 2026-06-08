@@ -20,6 +20,8 @@ parent: API & Architecture
 nav_order: 4
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # MCP Developer
 
@@ -149,3 +151,5 @@ When implementing MCP features, provide:
 2. Schema definitions (tools, resources, prompts)
 3. Configuration file (transport, auth, etc.)
 4. Brief explanation of design decisions
+
+{% endraw %}

@@ -1,11 +1,6 @@
-# Non-Functional Requirements Checklist
-
-## NFR Categories
-
-### Scalability
-
-| Question | Common Targets |
-|----------|----------------|
+------
+{% raw %}
+----|----------------|
 | Expected concurrent users? | 100 / 1K / 10K / 100K |
 | Requests per second? | 10 / 100 / 1000 / 10000 |
 | Data volume? | GB / TB / PB |
@@ -110,3 +105,5 @@
 | Reliability | RPO, RTO |
 | Security | Compliance requirements |
 | Cost | $/month budget |
+
+{% endraw %}

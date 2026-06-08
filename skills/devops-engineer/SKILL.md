@@ -20,6 +20,8 @@ parent: DevOps & Infrastructure
 nav_order: 5
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # DevOps Engineer
 
@@ -93,6 +95,7 @@ Provide: CI/CD pipeline config, Dockerfile, K8s/Terraform files, deployment veri
 ### Minimal GitHub Actions Example
 
 ```yaml
+{% raw %}
 name: CI
 on:
   push:
@@ -114,6 +117,7 @@ jobs:
         run: |
           docker tag myapp:${{ github.sha }} ghcr.io/org/myapp:${{ github.sha }}
           docker push ghcr.io/org/myapp:${{ github.sha }}
+{% endraw %}
 ```
 
 ### Minimal Dockerfile Example
@@ -150,3 +154,5 @@ Always document the rollback command and verification step in the PR or change t
 ## Knowledge Reference
 
 GitHub Actions, GitLab CI, Jenkins, CircleCI, Docker, Kubernetes, Helm, ArgoCD, Flux, Terraform, Pulumi, Crossplane, AWS/GCP/Azure, Prometheus, Grafana, PagerDuty, Backstage, LaunchDarkly, Flagger
+
+{% endraw %}

@@ -1,15 +1,3 @@
-# Before/After Examples
-
-## Example 1: Throat-Clearing + Binary Contrast
-
-**Before:**
-> "Here's the thing: building products is hard. Not because the technology is complex. Because people are complex. Let that sink in."
-
-**After:**
-> "Building products is hard. Technology is manageable. People aren't."
-
-**Changes:** Removed opener, binary contrast structure, and emphasis crutch. Direct statements.
-
 ---
 
 ## Example 2: Filler + Unnecessary Reassurance
@@ -23,6 +11,8 @@
 **Changes:** Cut hedging ("most"), removed throat-clearing phrases, deleted permission-granting ending.
 
 ---
+{% raw %}
+
 
 ## Example 3: Business Jargon Stack
 
@@ -57,3 +47,5 @@
 > "The best teams optimize for learning, not productivity."
 
 **Changes:** Direct claim. No rhetorical scaffolding.
+
+{% endraw %}

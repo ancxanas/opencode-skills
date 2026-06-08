@@ -20,6 +20,8 @@ parent: Frontend
 nav_order: 10
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Next.js Developer
 
@@ -152,3 +154,5 @@ When implementing Next.js features, provide:
 ## Knowledge Reference
 
 Next.js 16+, Turbopack (stable), App Router, React Server Components, Server Actions, `"use cache"`, Streaming SSR, Partial Prerendering, next/image, next/font, Metadata API, Route Handlers, Middleware, proxy.ts, Edge Runtime, Vercel deployment
+
+{% endraw %}

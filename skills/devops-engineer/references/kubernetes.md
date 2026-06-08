@@ -1,54 +1,3 @@
-# Kubernetes Manifests
-
-## Complete Deployment Stack
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: app
-  labels:
-    app: app
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: app
-  template:
-    metadata:
-      labels:
-        app: app
-    spec:
-      containers:
-        - name: app
-          image: ghcr.io/org/app:latest
-          ports:
-            - containerPort: 3000
-          resources:
-            requests:
-              memory: "128Mi"
-              cpu: "100m"
-            limits:
-              memory: "256Mi"
-              cpu: "500m"
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 3000
-            initialDelaySeconds: 10
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /ready
-              port: 3000
-            initialDelaySeconds: 5
-            periodSeconds: 5
-          env:
-            - name: DATABASE_URL
-              valueFrom:
-                secretKeyRef:
-                  name: app-secrets
-                  key: database-url
 ---
 apiVersion: v1
 kind: Service
@@ -62,6 +11,8 @@ spec:
       targetPort: 3000
   type: ClusterIP
 ---
+{% raw %}
+
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -152,3 +103,5 @@ kubectl exec -it <pod-name> -- /bin/sh
 kubectl rollout status deployment/app
 kubectl rollout undo deployment/app
 ```
+
+{% endraw %}

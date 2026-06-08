@@ -18,6 +18,8 @@ parent: Quality
 nav_order: 5
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Test Master
 
@@ -98,3 +100,5 @@ When creating test plans, provide:
 3. Coverage analysis
 4. Findings with severity (Critical/High/Medium/Low)
 5. Specific fix recommendations
+
+{% endraw %}

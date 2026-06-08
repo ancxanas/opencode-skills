@@ -1,14 +1,6 @@
-# Security Report Template
-
-## Full Report Template
-
-```markdown
-# Security Review Report
-
-## Executive Summary
-
-| Field | Value |
-|-------|-------|
+------
+{% raw %}
+-|-------|
 | **Application** | [Application Name] |
 | **Review Date** | [YYYY-MM-DD] |
 | **Reviewer** | [Name] |
@@ -168,3 +160,5 @@ const isValid =
 | Detailed Findings | Technical details |
 | Scan Results | Automated tool output |
 | Recommendations | Prioritized action items |
+
+{% endraw %}

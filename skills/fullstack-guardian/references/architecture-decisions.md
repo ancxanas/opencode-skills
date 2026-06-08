@@ -1,11 +1,6 @@
-# Architecture Decision Guide
-
-## Technology Selection Matrix
-
-### Backend Framework Selection
-
-| Framework | Best For | Pros | Cons |
-|-----------|----------|------|------|
+------
+{% raw %}
+-----|----------|------|------|
 | **NestJS** | Enterprise apps, microservices | TypeScript-first, dependency injection, excellent docs | Opinionated, steeper learning curve |
 | **Express** | Simple APIs, flexibility | Minimal, huge ecosystem, well-known | Manual structure, less opinionated |
 | **Fastify** | High performance APIs | Fast, schema validation, plugins | Smaller ecosystem than Express |
@@ -348,3 +343,5 @@ Medium complexity? → Zustand
 Complex state logic? → Redux Toolkit
 Real-time updates? → Zustand + WebSocket
 ```
+
+{% endraw %}

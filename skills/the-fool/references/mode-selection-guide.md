@@ -1,13 +1,6 @@
-# Mode Selection Guide
-
-How to recommend the right reasoning mode when the user selects "You choose" or when auto-recommending.
-
-## Signal-to-Mode Mapping
-
-Analyze the user's language and context to identify which mode fits best.
-
-| User Signal | Recommended Mode | Rationale |
-|-------------|-----------------|-----------|
+------
+{% raw %}
+-------|-----------------|-----------|
 | "Is this the right approach?" | Socratic Questioning | Exploring assumptions, not yet committed |
 | "I'm about to commit to X" | Dialectic Synthesis | Needs strongest counter-argument before committing |
 | "What could go wrong?" | Pre-mortem Analysis | Explicitly asking about failure modes |
@@ -94,3 +87,5 @@ Then confirm with `AskUserQuestion`:
 - **Multiple concerns**: Recommend Pre-mortem Analysis — it covers breadth naturally
 - **User is emotional/frustrated**: Default to Dialectic Synthesis — steel manning validates their position before challenging it
 - **Technical vs business split**: Match the mode to which side the user emphasizes
+
+{% endraw %}

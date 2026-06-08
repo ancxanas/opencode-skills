@@ -1,9 +1,6 @@
-# Architecture Patterns
-
-## Pattern Comparison
-
-| Pattern | Best For | Team Size | Trade-offs |
-|---------|----------|-----------|------------|
+------
+{% raw %}
+---|----------|-----------|------------|
 | **Monolith** | Simple domain, small team | 1-10 | Simple deploy; hard to scale parts |
 | **Modular Monolith** | Growing complexity | 5-20 | Module boundaries; still single deploy |
 | **Microservices** | Complex domain, large org | 20+ | Independent scale; operational complexity |
@@ -109,3 +106,5 @@
 | Variable load | Serverless |
 | Async processing | Event-Driven |
 | Read-heavy | CQRS |
+
+{% endraw %}

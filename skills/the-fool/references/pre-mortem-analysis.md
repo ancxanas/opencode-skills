@@ -1,81 +1,6 @@
-# Pre-Mortem Analysis
-
-Pre-mortem methodology with second-order thinking for identifying how plans fail before they fail.
-
-## Core Principle
-
-A pre-mortem inverts the question. Instead of "Will this work?" ask: **"It's 6 months from now and this has failed. Why?"** This psychological shift bypasses optimism bias by making failure the starting point, not the thing to be argued against.
-
-## Process
-
-1. **Set the scene** — "Imagine it's [timeframe] from now. This plan has failed. Not a small setback — a clear failure."
-2. **Generate failure narratives** — Write specific stories about how it failed
-3. **Rank by likelihood and impact** — Not all failures are equal
-4. **Trace consequence chains** — First → second → third order effects
-5. **Identify early warning signs** — What would you see before the failure?
-6. **Design mitigations** — Concrete actions, not vague "be careful"
-
-## Failure Narrative Construction
-
-Failure narratives must be specific. "It didn't scale" is not a narrative. "At 50K concurrent users, the database connection pool exhausted, causing cascading timeouts across all services, which triggered the circuit breaker to reject all requests for 4 minutes during peak hours" is a narrative.
-
-### Specificity Checklist
-
-- [ ] Names a specific trigger (not "something goes wrong")
-- [ ] Includes a number or threshold
-- [ ] Describes the chain of events, not just the end state
-- [ ] Identifies who or what is affected
-- [ ] Could actually happen (not a fantasy scenario)
-
-### Failure Narrative Template
-
-```markdown
-**Failure: [Title]**
-
-It's [timeframe] from now. [Specific trigger event]. This caused [first-order effect],
-which led to [second-order effect]. The team discovered the problem when [detection point],
-but by then [consequence]. The root cause was [underlying assumption that proved wrong].
-```
-
-### Example
-
-```markdown
-**Failure: Migration Data Loss**
-
-It's 3 months from now. During the database migration from PostgreSQL to the new schema,
-a batch job silently drops records where the `legacy_id` field contains special characters
-(~2% of records). The team discovers the problem 2 weeks post-migration when a customer
-reports missing order history. By then, the legacy database has been decommissioned and
-backups have rotated past the migration date. The root cause was that the migration script
-was tested against a sanitized staging dataset that didn't include special characters.
-```
-
-## Second-Order Consequence Chains
-
-Every failure has consequences beyond the immediate impact. Trace at least two orders deep.
-
-### Chain Template
-
-```
-Trigger: [event]
-  → 1st order: [immediate effect]
-    → 2nd order: [consequence of the 1st order effect]
-      → 3rd order: [consequence of the 2nd order effect]
-```
-
-### Example Chain
-
-```
-Trigger: Key engineer leaves during migration
-  → 1st order: Migration timeline slips 4 weeks
-    → 2nd order: Overlap period with legacy system extends, doubling operational cost
-      → 3rd order: Budget overrun triggers executive review, project gets descoped
-```
-
-### Common Second-Order Patterns
-
-| First Order | Second Order | Third Order |
-|------------|-------------|-------------|
+------
+{% raw %}
+------|-------------|-------------|
 | Feature ships late | Sales misses quarter target | Engineering loses trust, gets more oversight |
 | Performance degrades | Users adopt workarounds | Workarounds become "requirements" that constrain future design |
 | Team member burns out | Knowledge concentrated in fewer people | Bus factor drops, risk increases |
@@ -185,3 +110,5 @@ Ask: **"What would guarantee this fails?"** Then check if any of those condition
 **What would guarantee failure:** [List top 3 conditions]
 **Do any exist now?** [Yes/No with specifics]
 ```
+
+{% endraw %}

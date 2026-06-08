@@ -17,6 +17,8 @@ parent: Career
 nav_order: 10
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Portfolio Case Study Writer
 
@@ -382,3 +384,5 @@ When creating a case study:
 - ✅ Appropriate length (3-10 min read)
 - ✅ Proofread and polished
 - ✅ Can discuss in detail in interview
+
+{% endraw %}

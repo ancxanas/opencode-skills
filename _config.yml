@@ -19,10 +19,6 @@ defaults:
       path: ""
     values:
       layout: default
-  - scope:
-      path: "skills"
-    values:
-      render_with_liquid: false
 
 exclude:
   - README.md

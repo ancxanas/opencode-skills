@@ -4,6 +4,8 @@ impact: CRITICAL
 description: Create new sessions frequently for better logging, debugging, and configuration management
 tags: [tool-router, session, lifecycle, best-practices, logging]
 ---
+{% raw %}
+
 
 # Treat Sessions as Short-Lived and Disposable
 
@@ -383,3 +385,5 @@ export class ConversationSession {
 - [Tool Router Sessions](https://docs.composio.dev/sdk/typescript/api/tool-router#creating-sessions)
 - [Session Properties](https://docs.composio.dev/sdk/typescript/api/tool-router#session-properties)
 - [Best Practices](https://docs.composio.dev/sdk/typescript/api/tool-router#best-practices)
+
+{% endraw %}

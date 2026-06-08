@@ -1,5 +1,3 @@
-# SOQL and SOSL
-
 ---
 
 ## SOQL Fundamentals
@@ -19,7 +17,9 @@ OFFSET 0
 ### Governor Limits
 
 | Limit | Synchronous | Asynchronous |
-|-------|-------------|--------------|
+|---
+{% raw %}
+----|-------------|--------------|
 | Total SOQL queries | 100 | 200 |
 | Total records retrieved | 50,000 | 50,000 |
 | Query rows in aggregate | 50,000 | 50,000 |
@@ -678,3 +678,5 @@ GROUP BY HOUR_IN_DAY(CreatedDate)
 - **Non-selective queries**: Add indexed field filters
 - **SOSL for exact matches**: Use SOQL for precise criteria
 - **Aggregate for single records**: Use standard queries for individual records
+
+{% endraw %}

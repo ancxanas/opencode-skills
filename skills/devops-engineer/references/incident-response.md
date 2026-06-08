@@ -1,16 +1,6 @@
-# Incident Response
-
-## Response Metrics
-
-- **MTTD** (Mean Time to Detect): Target < 5 minutes
-- **MTTA** (Mean Time to Acknowledge): Target < 5 minutes
-- **MTTR** (Mean Time to Resolve): Target < 30 minutes
-- **MTBF** (Mean Time Between Failures): Maximize
-
-### Severity Levels
-
-| Level | Impact | Response | Example |
-|-------|--------|----------|---------|
+------
+{% raw %}
+-|--------|----------|---------|
 | SEV1 | Complete outage | Immediate | Database down, payment failed |
 | SEV2 | Major degradation | 15 min | API latency >5s, 50% errors |
 | SEV3 | Minor degradation | 1 hour | Non-critical feature broken |
@@ -329,3 +319,5 @@ pci_dss:
 - Understand compliance obligations
 - Train team on response procedures
 - Review and update playbooks quarterly
+
+{% endraw %}

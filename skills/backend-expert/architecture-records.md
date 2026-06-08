@@ -1,24 +1,6 @@
-# Architecture Decision Record Template
-
-## ADR-NNN: Title
-
-**Status**: Proposed | Accepted | Deprecated | Superseded
-**Date**: YYYY-MM-DD
-
-### Context
-What is the problem or opportunity? What forces are at play? What constraints exist?
-
-### Decision
-What is the change being made? Be specific. Name the technology, pattern, or approach.
-
-### Consequences
-- **Positive**: What improves? (performance, maintainability, scalability, etc.)
-- **Negative**: What trade-offs exist? (complexity, cost, lock-in, etc.)
-- **Neutral**: What else changes? (team skills, deployment, monitoring)
-
-### Alternatives Considered
-| Option | Pros | Cons |
-|--------|------|------|
+------
+{% raw %}
+--|------|------|
 | Option A | ... | ... |
 | Option B | ... | ... |
 
@@ -59,3 +41,5 @@ Do you need event-driven communication?
 ├── Yes → Message queue (RabbitMQ, Kafka, SQS/SNS)
 └── No → Direct HTTP (synchronous) or gRPC
 ```
+
+{% endraw %}

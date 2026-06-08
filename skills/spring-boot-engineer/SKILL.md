@@ -20,6 +20,8 @@ parent: Backend
 nav_order: 9
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Spring Boot 4 Engineer
 
@@ -233,3 +235,5 @@ class ProductControllerTest {
 - Depend on `spring-retry` — use `@Retryable` from `spring-context` (built-in)
 - Write `catch (IOException e)` for Jackson errors — `JacksonException` is a `RuntimeException` in Jackson 3
 - Assume JSON date timestamps — Jackson 3 default is ISO strings (`WRITE_DATES_AS_TIMESTAMPS=false`)
+
+{% endraw %}

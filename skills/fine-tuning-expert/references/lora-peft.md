@@ -1,5 +1,3 @@
-# LoRA and Parameter-Efficient Fine-Tuning
-
 ---
 
 ## Overview
@@ -9,7 +7,9 @@ Parameter-Efficient Fine-Tuning (PEFT) methods train only a small subset of mode
 ## When to Use PEFT vs Full Fine-Tuning
 
 | Method | Use When | Avoid When |
-|--------|----------|------------|
+|---
+{% raw %}
+-----|----------|------------|
 | **LoRA** | 7B+ models, limited VRAM, need multiple task adapters | Very small models (<1B), need maximum quality |
 | **QLoRA** | 13B+ models, single GPU, memory-constrained | High-throughput training, inference speed critical |
 | **Full Fine-Tuning** | Small models, abundant compute, maximum performance needed | Large models, limited resources |
@@ -345,3 +345,5 @@ model = PeftModel.from_pretrained(base_model, "path/to/adapter")
 - `hyperparameter-tuning.md` - Learning rate schedules, batch sizes
 - `deployment-optimization.md` - Adapter merging, quantization for inference
 - `dataset-preparation.md` - Training data formatting
+
+{% endraw %}

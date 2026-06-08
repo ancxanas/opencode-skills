@@ -1,103 +1,3 @@
-# Kubernetes Chaos Engineering
-
-## Litmus Chaos - ChaosEngine
-
-```yaml
-apiVersion: litmuschaos.io/v1alpha1
-kind: ChaosEngine
-metadata:
-  name: nginx-chaos
-  namespace: default
-spec:
-  # Application information
-  appinfo:
-    appns: 'default'
-    applabel: 'app=nginx'
-    appkind: 'deployment'
-
-  # Chaos service account
-  chaosServiceAccount: litmus-admin
-
-  # Experiments to run
-  experiments:
-    - name: pod-delete
-      spec:
-        components:
-          env:
-            # Total chaos duration
-            - name: TOTAL_CHAOS_DURATION
-              value: '60'
-
-            # Chaos interval (delete pod every X seconds)
-            - name: CHAOS_INTERVAL
-              value: '10'
-
-            # Force delete pods
-            - name: FORCE
-              value: 'true'
-
-            # Number of pods to delete
-            - name: PODS_AFFECTED_PERC
-              value: '50'
-
-    - name: pod-network-latency
-      spec:
-        components:
-          env:
-            - name: TOTAL_CHAOS_DURATION
-              value: '60'
-            - name: NETWORK_LATENCY
-              value: '2000'  # 2 second latency
-            - name: JITTER
-              value: '200'   # 200ms jitter
-            - name: CONTAINER_RUNTIME
-              value: 'containerd'
-
-    - name: pod-cpu-hog
-      spec:
-        components:
-          env:
-            - name: TOTAL_CHAOS_DURATION
-              value: '60'
-            - name: CPU_CORES
-              value: '2'
-            - name: PODS_AFFECTED_PERC
-              value: '50'
-
-  # Monitor application during chaos
-  monitoring: true
-
-  # Job cleanup policy
-  jobCleanUpPolicy: 'delete'
-```
-
-## Chaos Mesh Experiments
-
-```yaml
-# Network partition between services
-apiVersion: chaos-mesh.org/v1alpha1
-kind: NetworkChaos
-metadata:
-  name: partition-frontend-backend
-  namespace: chaos-testing
-spec:
-  action: partition
-  mode: all
-  selector:
-    namespaces:
-      - production
-    labelSelectors:
-      'app': 'frontend'
-  direction: to
-  target:
-    mode: all
-    selector:
-      namespaces:
-        - production
-      labelSelectors:
-        'app': 'backend'
-  duration: '5m'
-
 ---
 # Pod failure - kill random pods
 apiVersion: chaos-mesh.org/v1alpha1
@@ -118,6 +18,8 @@ spec:
     cron: '@every 10m'  # Run every 10 minutes
 
 ---
+{% raw %}
+
 # Network bandwidth limitation
 apiVersion: chaos-mesh.org/v1alpha1
 kind: NetworkChaos
@@ -430,3 +332,5 @@ chaos_delete_custom_resources(
 | I/O latency | Chaos Mesh | `IOChaos` with latency action |
 | Network partition | Chaos Mesh | `NetworkChaos` partition |
 | Pod failure | Chaos Mesh | `PodChaos` pod-failure |
+
+{% endraw %}

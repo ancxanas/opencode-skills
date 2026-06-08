@@ -1,16 +1,6 @@
-# Bloc State Management
-
-## When to Use Bloc
-
-Use **Bloc/Cubit** when you need:
-
-* Explicit event → state transitions
-* Complex business logic
-* Predictable, testable flows
-* Clear separation between UI and logic
-
-| Use Case               | Recommended |
-| ---------------------- | ----------- |
+------
+{% raw %}
+---------------- | ----------- |
 | Simple mutable state   | Riverpod    |
 | Event-driven workflows | Bloc        |
 | Forms, auth, wizards   | Bloc        |
@@ -257,3 +247,5 @@ blocTest<CounterBloc, CounterState>(
 | BlocProvider      | Dependency injection |
 | MultiBlocProvider | Multiple blocs       |
 
+
+{% endraw %}

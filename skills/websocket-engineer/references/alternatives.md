@@ -1,9 +1,6 @@
-# Real-Time Communication Alternatives
-
-## Technology Comparison
-
-| Feature | WebSocket | SSE | Long Polling | HTTP/2 Push | WebRTC |
-|---------|-----------|-----|--------------|-------------|--------|
+------
+{% raw %}
+---|-----------|-----|--------------|-------------|--------|
 | Bidirectional | Yes | No | Yes | No | Yes |
 | Real-time | Yes | Yes | Near | Yes | Yes |
 | Browser Support | Excellent | Good | Universal | Good | Good |
@@ -389,3 +386,5 @@ io.on('connection', (socket) => {
 6. Load test before production
 7. Have fallback strategy
 8. Monitor connection success rates
+
+{% endraw %}

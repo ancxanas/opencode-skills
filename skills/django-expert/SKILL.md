@@ -20,6 +20,8 @@ parent: Backend
 nav_order: 3
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # Django Expert
 
@@ -170,3 +172,5 @@ When implementing Django features, provide:
 ## Knowledge Reference
 
 Django 6, DRF, async views, ORM, QuerySet, select_related, prefetch_related, SimpleJWT, django-filter, drf-spectacular, pytest-django, django-csp-headers, django-task, template partials, background tasks
+
+{% endraw %}

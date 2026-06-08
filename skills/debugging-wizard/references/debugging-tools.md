@@ -1,9 +1,6 @@
-# Debugging Tools
-
-## Debuggers by Language
-
-| Language | Debugger | Start Command |
-|----------|----------|---------------|
+------
+{% raw %}
+----|----------|---------------|
 | TypeScript/JS | Node Inspector | `node --inspect` |
 | Python | pdb/ipdb | `python -m pdb` |
 | Go | Delve | `dlv debug` |
@@ -138,3 +135,5 @@ spew.Dump(variable)
 | Stack trace | `console.trace()` / `traceback.print_stack()` |
 | Inspect object | `console.dir(obj)` / `dir(obj)` |
 | Step through | IDE debugger or CLI debugger |
+
+{% endraw %}

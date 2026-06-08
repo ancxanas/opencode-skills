@@ -1,19 +1,6 @@
-# Bit Library
-
-## Overview
-
-The `bit` library provides bitwise operations. Use it instead of Lua arithmetic for bit manipulation, even on Lua 5.3+ (the `bit` library is faster in LuaJIT).
-
-```lua
-local bit = require("bit")
-```
-
-## Functions
-
-### Basic
-
-| Function | Operation | Example |
-|----------|-----------|---------|
+------
+{% raw %}
+----|-----------|---------|
 | `bit.band(x, y)` | Bitwise AND | `bit.band(0x3, 0x6)` → `0x2` |
 | `bit.bor(x, y)` | Bitwise OR | `bit.bor(0x3, 0x6)` → `0x7` |
 | `bit.bxor(x, y)` | Bitwise XOR | `bit.bxor(0x3, 0x6)` → `0x5` |
@@ -119,3 +106,5 @@ end
 - Use `bit.band` / `bit.bor` for flag checks even if you could use arithmetic — they produce single machine instructions
 - Avoid `bit.tohex` in hot paths (it allocates a string)
 - `bit.bswap` (if available) is faster than manual byteswap
+
+{% endraw %}

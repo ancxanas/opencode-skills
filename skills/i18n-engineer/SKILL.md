@@ -18,6 +18,8 @@ parent: Frontend
 nav_order: 9
 render_with_liquid: false
 ---
+{% raw %}
+
 
 # i18n Engineer
 
@@ -110,7 +112,9 @@ Hello {name}
 
 {% raw %}
 ```
+{% raw %}
 {count, plural, one {{brand} has # new message} other {{brand} has # new messages}}
+{% endraw %}
 ```
 {% endraw %}
 
@@ -235,3 +239,5 @@ Always self-referencing canonical pointing to the localized URL:
 - Verify RTL rendering with long Arabic strings
 - Check truncated text at maximum string expansion (German can be 30%+ longer than English)
 - Validate number/date formatting per locale (`new Intl.DateTimeFormat('de-DE')`)
+
+{% endraw %}
