@@ -7,6 +7,7 @@ license: Proprietary. LICENSE.txt has complete terms
 compatibility: opencode
 parent: Documents
 nav_order: 3
+render_with_liquid: false
 ---
 
 # PPTX creation, editing, and analysis

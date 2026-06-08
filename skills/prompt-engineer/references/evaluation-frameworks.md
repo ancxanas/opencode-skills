@@ -1,5 +1,3 @@
-# Evaluation Frameworks
-
 ---
 
 ## Evaluation Hierarchy
@@ -28,7 +26,7 @@
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
-
+render_with_liquid: false
 ---
 
 ## Core Metrics by Task Type

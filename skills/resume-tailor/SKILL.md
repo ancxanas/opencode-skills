@@ -15,6 +15,7 @@ metadata:
   last-reviewed: 2026-06-08
 parent: Career
 nav_order: 17
+render_with_liquid: false
 ---
 
 # Resume Tailor

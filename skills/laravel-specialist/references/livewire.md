@@ -1,3 +1,6 @@
+---
+render_with_liquid: false
+---
 # Livewire Components
 
 ## Component Patterns

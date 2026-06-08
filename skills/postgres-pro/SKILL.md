@@ -19,6 +19,7 @@ metadata:
   spec-source: https://www.postgresql.org/docs/current/
 parent: DevOps & Infrastructure
 nav_order: 8
+render_with_liquid: false
 ---
 
 # PostgreSQL Pro

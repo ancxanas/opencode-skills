@@ -17,6 +17,7 @@ metadata:
   spec-source: https://www.w3.org/TR/WCAG22/
 parent: Frontend
 nav_order: 1
+render_with_liquid: false
 ---
 
 # a11y Engineer

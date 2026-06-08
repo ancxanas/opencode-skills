@@ -18,6 +18,7 @@ metadata:
   last-reviewed: 2026-06-08
 parent: Frontend
 nav_order: 11
+render_with_liquid: false
 ---
 
 # React Expert

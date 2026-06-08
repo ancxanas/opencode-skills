@@ -17,6 +17,7 @@ metadata:
   spec-source: https://html.spec.whatwg.org/multipage/
 parent: Frontend
 nav_order: 8
+render_with_liquid: false
 ---
 
 # html-semantics

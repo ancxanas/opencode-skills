@@ -18,6 +18,7 @@ metadata:
   last-reviewed: 2026-06-08
 parent: Backend
 nav_order: 9
+render_with_liquid: false
 ---
 
 # Spring Boot 4 Engineer

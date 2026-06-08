@@ -18,6 +18,7 @@ metadata:
   last-reviewed: 2026-06-08
 parent: Languages
 nav_order: 14
+render_with_liquid: false
 ---
 
 # TypeScript Pro

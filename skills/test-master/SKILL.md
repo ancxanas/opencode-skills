@@ -16,6 +16,7 @@ metadata:
   related-skills: angular-architect, code-reviewer, debugging-wizard, devops-engineer, django-expert, dotnet-core-expert, fastapi-expert, feature-forge, flutter-expert, fullstack-guardian, game-developer, golang-pro, kotlin-specialist, laravel-specialist, legacy-modernizer, nestjs-expert, playwright-expert, prompt-engineer, react-expert, react-native-expert, rust-engineer, swift-expert
 parent: Quality
 nav_order: 5
+render_with_liquid: false
 ---
 
 # Test Master

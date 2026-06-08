@@ -16,6 +16,7 @@ metadata:
   related-skills: architecture-designer, code-documenter, feature-forge, fullstack-guardian
 parent: Workflow
 nav_order: 2
+render_with_liquid: false
 ---
 
 # Spec Miner

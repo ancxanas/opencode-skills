@@ -16,6 +16,7 @@ metadata:
   related-skills: api-designer, python-pro, typescript-pro, fastapi-expert, nestjs-expert, monitoring-expert, security-reviewer
 parent: Backend
 nav_order: 1
+render_with_liquid: false
 ---
 
 # API Integrator

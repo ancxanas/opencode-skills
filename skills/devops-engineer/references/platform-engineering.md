@@ -1,3 +1,6 @@
+---
+render_with_liquid: false
+---
 # Platform Engineering
 
 ## Platform Principles

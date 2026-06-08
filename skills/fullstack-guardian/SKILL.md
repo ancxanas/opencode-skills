@@ -16,6 +16,7 @@ metadata:
   related-skills: architecture-designer, code-documenter, debugging-wizard, devops-engineer, django-expert, dotnet-core-expert, fastapi-expert, feature-forge, flutter-expert, java-architect, javascript-pro, laravel-specialist, nestjs-expert, php-pro, rails-expert, react-expert, secure-code-guardian, spec-miner, test-master, typescript-pro, vue-expert, wordpress-pro
 parent: Security
 nav_order: 3
+render_with_liquid: false
 ---
 
 # Fullstack Guardian

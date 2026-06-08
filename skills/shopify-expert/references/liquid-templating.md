@@ -1,5 +1,3 @@
-# Liquid Templating
-
 ---
 
 ## When to Use
@@ -15,7 +13,7 @@
 - Headless commerce (use Storefront API instead)
 - App development (use Remix/React with Admin API)
 - Complex business logic (use Shopify Functions)
-
+render_with_liquid: false
 ---
 
 ## Theme Architecture (Online Store 2.0)

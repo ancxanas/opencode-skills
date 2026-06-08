@@ -7,6 +7,7 @@ license: Proprietary. LICENSE.txt has complete terms
 compatibility: opencode
 parent: Documents
 nav_order: 2
+render_with_liquid: false
 ---
 
 # PDF Processing Guide

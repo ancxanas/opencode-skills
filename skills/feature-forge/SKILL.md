@@ -16,6 +16,7 @@ metadata:
   related-skills: fullstack-guardian, spec-miner, test-master, the-fool
 parent: Workflow
 nav_order: 1
+render_with_liquid: false
 ---
 
 # Feature Forge

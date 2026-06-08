@@ -22,6 +22,7 @@ metadata:
   spec-source: https://www.w3.org/TR/css-animations-1/
 parent: Frontend
 nav_order: 3
+render_with_liquid: false
 ---
 
 # CSS Motion Systems

@@ -19,6 +19,7 @@ metadata:
   spec-source: https://lua.org/manual/5.5/manual.html
 parent: Languages
 nav_order: 7
+render_with_liquid: false
 ---
 
 # Lua Pro

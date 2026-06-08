@@ -1,5 +1,3 @@
-# Storefront API
-
 ---
 
 ## When to Use
@@ -16,7 +14,7 @@
 - Admin operations (use Admin API)
 - Backend webhook processing (use Admin API)
 - Simple product displays (Liquid is faster)
-
+render_with_liquid: false
 ---
 
 ## API Fundamentals

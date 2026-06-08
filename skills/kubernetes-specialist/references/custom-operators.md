@@ -1,5 +1,3 @@
-# Custom Operators
-
 ---
 
 ## CustomResourceDefinition (CRD)
@@ -422,6 +420,7 @@ kind: ServiceAccount
 metadata:
   name: database-operator
   namespace: operators
+render_with_liquid: false
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole

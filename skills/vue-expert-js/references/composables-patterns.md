@@ -1,5 +1,3 @@
-# Composables Patterns
-
 ---
 
 ## Basic Composable Structure
@@ -24,7 +22,7 @@ export function useToggle(initialValue = false) {
   return { value, toggle }
 }
 ```
-
+render_with_liquid: false
 ---
 
 ## Ref vs Reactive

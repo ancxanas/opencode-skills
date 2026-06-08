@@ -17,6 +17,7 @@ metadata:
   spec-source: http://luajit.org/luajit.html
 parent: Languages
 nav_order: 8
+render_with_liquid: false
 ---
 
 # LuaJIT Pro

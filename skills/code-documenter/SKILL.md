@@ -16,6 +16,7 @@ metadata:
   related-skills: spec-miner, fullstack-guardian, code-reviewer
 parent: Quality
 nav_order: 1
+render_with_liquid: false
 ---
 
 # Code Documenter

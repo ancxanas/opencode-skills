@@ -19,6 +19,7 @@ metadata:
   spec-source: https://www.w3.org/Style/CSS/
 parent: Frontend
 nav_order: 4
+render_with_liquid: false
 ---
 
 # css-standards

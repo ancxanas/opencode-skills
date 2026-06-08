@@ -16,6 +16,7 @@ metadata:
   related-skills: sre-engineer, devops-engineer, kubernetes-specialist
 parent: DevOps & Infrastructure
 nav_order: 1
+render_with_liquid: false
 ---
 
 # Chaos Engineer

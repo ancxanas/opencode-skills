@@ -18,6 +18,7 @@ metadata:
   last-reviewed: 2026-06-08
 parent: Frontend
 nav_order: 12
+render_with_liquid: false
 ---
 
 # React Native Expert

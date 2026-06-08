@@ -16,6 +16,7 @@ metadata:
   related-skills: architecture-designer, code-documenter, security-reviewer, test-master, the-fool
 parent: Quality
 nav_order: 2
+render_with_liquid: false
 ---
 
 # Code Reviewer

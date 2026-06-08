@@ -17,6 +17,7 @@ metadata:
   spec-source: https://owasp.org/Top10/2025/en/
 parent: Security
 nav_order: 4
+render_with_liquid: false
 ---
 
 # Secure Code Guardian

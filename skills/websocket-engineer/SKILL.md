@@ -16,6 +16,7 @@ metadata:
   related-skills: fastapi-expert, nestjs-expert, devops-engineer, monitoring-expert, security-reviewer
 parent: API & Architecture
 nav_order: 6
+render_with_liquid: false
 ---
 
 # WebSocket Engineer

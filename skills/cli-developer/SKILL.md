@@ -16,6 +16,7 @@ metadata:
   related-skills: devops-engineer
 parent: DevOps & Infrastructure
 nav_order: 2
+render_with_liquid: false
 ---
 
 # CLI Developer

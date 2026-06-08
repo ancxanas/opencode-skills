@@ -7,6 +7,7 @@ license: Proprietary. LICENSE.txt has complete terms
 compatibility: opencode
 parent: Documents
 nav_order: 4
+render_with_liquid: false
 ---
 
 # Requirements for Outputs

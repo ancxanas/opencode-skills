@@ -16,6 +16,7 @@ metadata:
   related-skills: architecture-designer, cloud-architect, devops-engineer, dotnet-core-expert, golang-pro, graphql-architect, kubernetes-specialist, monitoring-expert, spring-boot-engineer
 parent: API & Architecture
 nav_order: 5
+render_with_liquid: false
 ---
 
 # Microservices Architect

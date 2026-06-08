@@ -16,6 +16,7 @@ metadata:
   related-skills: cpp-pro
 parent: Specialized
 nav_order: 1
+render_with_liquid: false
 ---
 
 # Embedded Systems Engineer

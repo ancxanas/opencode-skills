@@ -17,6 +17,7 @@ metadata:
   spec-source: https://owasp.org/www-project-web-security-testing-guide/stable/
 parent: Security
 nav_order: 5
+render_with_liquid: false
 ---
 
 # Security Reviewer

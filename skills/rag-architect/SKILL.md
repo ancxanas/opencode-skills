@@ -18,6 +18,7 @@ metadata:
   last-reviewed: 2026-06-08
 parent: AI & Data
 nav_order: 6
+render_with_liquid: false
 ---
 
 # RAG Architect

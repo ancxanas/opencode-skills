@@ -15,6 +15,7 @@ metadata:
   last-reviewed: 2026-06-08
 parent: Process & Tooling
 nav_order: 2
+render_with_liquid: false
 ---
 
 # OpenCode Skill Creator

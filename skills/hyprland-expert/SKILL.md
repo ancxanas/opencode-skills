@@ -18,6 +18,7 @@ metadata:
   last-reviewed: 2026-06-08
 parent: Specialized
 nav_order: 3
+render_with_liquid: false
 ---
 
 # Hyprland Expert

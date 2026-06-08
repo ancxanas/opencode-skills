@@ -1,5 +1,3 @@
-# GitOps
-
 ---
 
 ## GitOps Principles
@@ -264,6 +262,7 @@ metadata:
 spec:
   interval: 1h
   url: https://charts.bitnami.com/bitnami
+render_with_liquid: false
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease

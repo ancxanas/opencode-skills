@@ -17,6 +17,7 @@ metadata:
   spec-source: https://www.iso.org/standard/76583.html
 parent: Languages
 nav_order: 12
+render_with_liquid: false
 ---
 
 # SQL Pro

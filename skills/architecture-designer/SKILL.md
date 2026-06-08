@@ -16,6 +16,7 @@ metadata:
   related-skills: code-reviewer, devops-engineer, fullstack-guardian, microservices-architect, monitoring-expert, secure-code-guardian, spec-miner, the-fool
 parent: API & Architecture
 nav_order: 2
+render_with_liquid: false
 ---
 
 # Architecture Designer

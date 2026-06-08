@@ -1,11 +1,11 @@
-# RAG Evaluation
-
 ---
 
 ## Evaluation Framework Overview
 
 | Framework | Focus | Strengths | Use Case |
-|-----------|-------|-----------|----------|
+|
+render_with_liquid: false
+-----------|-------|-----------|----------|
 | **RAGAS** | RAG-specific metrics | Faithfulness, relevance | Production RAG evaluation |
 | **TruLens** | LLM app observability | Tracing, feedback functions | Debugging and monitoring |
 | **LangSmith** | LangChain ecosystem | Traces, datasets, testing | LangChain projects |

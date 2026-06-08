@@ -16,6 +16,7 @@ metadata:
   related-skills: chaos-engineer, cloud-architect, devops-engineer, kubernetes-specialist, postgres-pro
 parent: DevOps & Infrastructure
 nav_order: 9
+render_with_liquid: false
 ---
 
 # SRE Engineer

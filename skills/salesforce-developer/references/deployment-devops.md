@@ -1,5 +1,3 @@
-# Deployment and DevOps
-
 ---
 
 ## Salesforce DX Project Setup
@@ -135,7 +133,7 @@ Thumbs.db
 **/objects/Account/fields/IsDeleted.field-meta.xml
 **/objects/Account/fields/IsPersonAccount.field-meta.xml
 ```
-
+render_with_liquid: false
 ---
 
 ## SF CLI Commands

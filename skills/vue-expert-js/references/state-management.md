@@ -1,5 +1,3 @@
-# State Management
-
 ---
 
 ## Setup
@@ -12,7 +10,7 @@ import App from './App.vue'
 
 createApp(App).use(createPinia()).mount('#app')
 ```
-
+render_with_liquid: false
 ---
 
 ## Options Store Syntax

@@ -18,6 +18,7 @@ metadata:
   last-reviewed: 2026-06-08
 parent: API & Architecture
 nav_order: 4
+render_with_liquid: false
 ---
 
 # MCP Developer

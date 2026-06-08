@@ -16,6 +16,7 @@ metadata:
   related-skills: frontend-design, nextjs-developer, react-expert, vue-expert, swift-expert, flutter-expert
 parent: Frontend
 nav_order: 9
+render_with_liquid: false
 ---
 
 # i18n Engineer
@@ -107,9 +108,11 @@ Hello {name}
 
 ### Nesting
 
+{% raw %}
 ```
 {count, plural, one {{brand} has # new message} other {{brand} has # new messages}}
 ```
+{% endraw %}
 
 ## RTL Layout Strategy
 

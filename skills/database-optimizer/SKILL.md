@@ -17,6 +17,7 @@ metadata:
   spec-source: https://www.postgresql.org/docs/current/performance-tips.html
 parent: DevOps & Infrastructure
 nav_order: 4
+render_with_liquid: false
 ---
 
 # Database Optimizer

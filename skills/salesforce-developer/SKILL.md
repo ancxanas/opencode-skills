@@ -19,6 +19,7 @@ metadata:
   spec-source: https://developer.salesforce.com/docs
 parent: Platform
 nav_order: 3
+render_with_liquid: false
 ---
 
 # Salesforce Developer

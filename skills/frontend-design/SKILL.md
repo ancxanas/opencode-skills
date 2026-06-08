@@ -7,6 +7,7 @@ license: Complete terms in LICENSE.txt
 compatibility: opencode
 parent: Frontend
 nav_order: 7
+render_with_liquid: false
 ---
 
 This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.

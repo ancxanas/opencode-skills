@@ -1,11 +1,6 @@
-# UX Profiles Reference
-
-Pick a persona that matches how you want your desktop to feel. Each includes a **paste-ready `hyprland.lua`** — just change your monitor names and keyboard layout.
-
-## Quick Guide
-
-| I want it to feel like... | Jump to |
-|---|---|
+---|
+render_with_liquid: false
+---|
 | macOS — top bar, smooth, polished | [macOS Refugee](#-macos-refugee) |
 | Windows — taskbar, start menu, familiar | [Windows Migrant](#-windows-migrant) |
 | GNOME — overview, clean, simple | [GNOME Transplant](#-gnome-transplant) |

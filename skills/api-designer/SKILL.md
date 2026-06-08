@@ -16,6 +16,7 @@ metadata:
   related-skills: atlassian-mcp, csharp-developer, fastapi-expert, graphql-architect, java-architect, nestjs-expert, rag-architect, salesforce-developer, security-reviewer, shopify-expert, spring-boot-engineer, typescript-pro
 parent: API & Architecture
 nav_order: 1
+render_with_liquid: false
 ---
 
 # API Designer

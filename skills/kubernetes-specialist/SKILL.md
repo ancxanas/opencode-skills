@@ -18,6 +18,7 @@ metadata:
   last-reviewed: 2026-06-08
 parent: DevOps & Infrastructure
 nav_order: 6
+render_with_liquid: false
 ---
 
 # Kubernetes Specialist

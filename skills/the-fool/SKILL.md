@@ -16,6 +16,7 @@ metadata:
   related-skills: architecture-designer, code-reviewer, feature-forge
 parent: Workflow
 nav_order: 3
+render_with_liquid: false
 ---
 
 # The Fool

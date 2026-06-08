@@ -16,6 +16,7 @@ metadata:
   spec-source: https://cwe.mitre.org/
 parent: Security
 nav_order: 2
+render_with_liquid: false
 ---
 
 # Code Security Auditor

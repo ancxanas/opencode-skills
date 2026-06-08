@@ -19,6 +19,7 @@ metadata:
   spec-source: https://developer.wordpress.org/
 parent: Platform
 nav_order: 5
+render_with_liquid: false
 ---
 
 # WordPress Pro
