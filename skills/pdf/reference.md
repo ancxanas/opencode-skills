@@ -1,3 +1,7 @@
+---
+render_with_liquid: false
+---
+
 --- Page ${i} ---
 {% raw %}
 \n${pageText}`;
