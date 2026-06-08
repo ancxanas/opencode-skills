@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: config
   related-skills: devops-engineer
+  targets-version: hyprland@0.55
+  last-reviewed: 2026-06-08
 ---
 
 # Hyprland Expert

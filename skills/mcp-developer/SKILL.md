@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: atlassian-mcp, devops-engineer, fastapi-expert, security-reviewer, typescript-pro
+  targets-version: "@modelcontextprotocol/sdk@1.29, mcp-python@1.27"
+  last-reviewed: 2026-06-08
 ---
 
 # MCP Developer

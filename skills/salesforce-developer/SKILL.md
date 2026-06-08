@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: api-designer, java-architect, cloud-architect, devops-engineer
+  targets-version: salesforce@spring26
+  last-reviewed: 2026-06-08
 ---
 
 # Salesforce Developer
