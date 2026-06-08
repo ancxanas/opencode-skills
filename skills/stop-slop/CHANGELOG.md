@@ -17,7 +17,7 @@
 ## 2026-01-12
 
 - Restructured skill following Claude Code best practices (PR #1)
-- Split into SKILL.md and references/ folder
+- Split into index.md and references/ folder
 
 ## 2025-01-12
 

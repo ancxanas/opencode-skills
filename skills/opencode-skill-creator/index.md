@@ -2,12 +2,12 @@
 title: opencode-skill-creator
 
 name: opencode-skill-creator
-description: Create, test, evaluate, optimize, and package OpenCode skills with the opencode-skill-creator plugin. Use when users explicitly mention opencode-skill-creator, OpenCode Skill Creator, creating an OpenCode skill, editing an OpenCode SKILL.md, running skill evals, benchmarking skill performance, or optimizing an OpenCode skill description. Do not use for generic Claude Code or Superpowers skill creation unless the user asks to port that workflow to OpenCode.
+description: Create, test, evaluate, optimize, and package OpenCode skills with the opencode-skill-creator plugin. Use when users explicitly mention opencode-skill-creator, OpenCode Skill Creator, creating an OpenCode skill, editing an OpenCode index.md, running skill evals, benchmarking skill performance, or optimizing an OpenCode skill description. Do not use for generic Claude Code or Superpowers skill creation unless the user asks to port that workflow to OpenCode.
 license: MIT
 compatibility: opencode
 metadata:
   domain: tooling
-  triggers: opencode skill, skill creation, SKILL.md, skill evaluation, skill benchmark, skill optimization
+  triggers: opencode skill, skill creation, index.md, skill evaluation, skill benchmark, skill optimization
   role: specialist
   scope: implementation
   output-format: code
@@ -63,7 +63,7 @@ It's OK to briefly explain terms if you're in doubt, and feel free to clarify te
 
 ### Capture Intent (Required Gate for New Skills)
 
-For new skills, this step is mandatory and cannot be skipped. Do not draft SKILL.md, evals, or other files until this interview is complete and the user confirms your summary.
+For new skills, this step is mandatory and cannot be skipped. Do not draft index.md, evals, or other files until this interview is complete and the user confirms your summary.
 
 Start by understanding the user's intent. The current conversation might already contain part of the workflow the user wants to capture (e.g., they say "turn this into a skill"). Extract that first: tools used, sequence of steps, corrections, inputs/outputs, and success criteria. Then fill the gaps with questions.
 
@@ -85,7 +85,7 @@ Proactively ask questions about edge cases, input/output formats, example files,
 
 Check available MCPs — if useful for research (searching docs, finding similar skills, looking up best practices), research in parallel via the Task tool (using `general` or `explore` subagent types) if available, otherwise inline. Come prepared with context to reduce burden on the user.
 
-### Write the SKILL.md
+### Write the index.md
 
 For new skills, default to a staging location instead of the current repo/worktree. Use the system temp directory unless the user explicitly requests another path (for example: Unix/macOS `/tmp/opencode-skills/<skill-name>/`, `$TMPDIR/opencode-skills/<skill-name>/`; Windows `%TEMP%\\opencode-skills\\<skill-name>\\`). This avoids cluttering unrelated repositories during skill development.
 
@@ -102,7 +102,7 @@ Based on the user interview, fill in these components:
 
 ```
 skill-name/
-├── SKILL.md (required)
+├── index.md (required)
 │   ├── YAML frontmatter (name, description required)
 │   └── Markdown instructions
 └── Bundled Resources (optional)
@@ -117,20 +117,20 @@ The skill directory name must match the `name` field in the frontmatter.
 
 Skills use a three-level loading system:
 1. **Metadata** (name + description) — Always in context (~100 words)
-2. **SKILL.md body** — In context whenever skill triggers (<500 lines ideal)
+2. **index.md body** — In context whenever skill triggers (<500 lines ideal)
 3. **Bundled resources** — As needed (unlimited, scripts can execute without loading)
 
 These word counts are approximate and you can feel free to go longer if needed.
 
 **Key patterns:**
-- Keep SKILL.md under 500 lines; if you're approaching this limit, add an additional layer of hierarchy along with clear pointers about where the model using the skill should go next to follow up.
-- Reference files clearly from SKILL.md with guidance on when to read them
+- Keep index.md under 500 lines; if you're approaching this limit, add an additional layer of hierarchy along with clear pointers about where the model using the skill should go next to follow up.
+- Reference files clearly from index.md with guidance on when to read them
 - For large reference files (>300 lines), include a table of contents
 
 **Domain organization**: When a skill supports multiple domains/frameworks, organize by variant:
 ```
 cloud-deploy/
-├── SKILL.md (workflow + selection)
+├── index.md (workflow + selection)
 └── references/
     ├── aws.md
     ├── gcp.md
@@ -365,7 +365,7 @@ This is optional, requires the Task tool (using `general` subagent type), and mo
 
 ## Description Optimization
 
-The description field in SKILL.md frontmatter is the primary mechanism that determines whether OpenCode invokes a skill. After creating or improving a skill, offer to optimize the description for better triggering accuracy.
+The description field in index.md frontmatter is the primary mechanism that determines whether OpenCode invokes a skill. After creating or improving a skill, offer to optimize the description for better triggering accuracy.
 
 ### Step 1: Generate trigger eval queries
 
@@ -394,7 +394,7 @@ The key thing to avoid: don't make should-not-trigger queries obviously irreleva
 
 Present the eval set to the user for review using the HTML template:
 
-1. Read the template from `templates/eval-review.html` (located in the opencode-skill-creator skill directory, alongside this SKILL.md)
+1. Read the template from `templates/eval-review.html` (located in the opencode-skill-creator skill directory, alongside this index.md)
 2. Replace the placeholders:
    - `__EVAL_DATA_PLACEHOLDER__` → the JSON array of eval items (no quotes around it — it's a JS variable assignment)
    - `__SKILL_NAME_PLACEHOLDER__` → the skill's name
@@ -431,7 +431,7 @@ This means your eval queries should be substantive enough that OpenCode would ac
 
 ### Step 4: Apply the result
 
-Take `best_description` from the JSON output and update the skill's SKILL.md frontmatter. Show the user before/after and report the scores.
+Take `best_description` from the JSON output and update the skill's index.md frontmatter. Show the user before/after and report the scores.
 
 ---
 
@@ -439,10 +439,10 @@ Take `best_description` from the JSON output and update the skill's SKILL.md fro
 
 After the skill is created and validated, help the user install it. Skills can be installed in two locations:
 
-- **Project-level**: `.opencode/skills/<skill-name>/SKILL.md` — available only in this project
-- **Global**: `~/.config/opencode/skills/<skill-name>/SKILL.md` — available in all projects
+- **Project-level**: `.opencode/skills/<skill-name>/index.md` — available only in this project
+- **Global**: `~/.config/opencode/skills/<skill-name>/index.md` — available in all projects
 
-Copy the skill directory to the desired location. The directory name must match the `name` field in the SKILL.md frontmatter.
+Copy the skill directory to the desired location. The directory name must match the `name` field in the index.md frontmatter.
 
 Keep all draft/eval artifacts in the staging location; only copy the final validated skill directory into project/global install paths.
 
@@ -454,8 +454,8 @@ You can validate the skill before installation by calling the `skill_validate` t
 
 The opencode-skill-creator plugin provides these custom tools that are available during your session:
 
-- **`skill_validate`** — Validate a skill's SKILL.md structure and frontmatter
-- **`skill_parse`** — Parse a SKILL.md and return its name, description, and content length
+- **`skill_validate`** — Validate a skill's index.md structure and frontmatter
+- **`skill_parse`** — Parse a index.md and return its name, description, and content length
 - **`skill_eval`** — Test trigger accuracy for a set of eval queries
 - **`skill_improve_description`** — LLM-powered description improvement based on eval failures
 - **`skill_optimize_loop`** — Full eval→improve optimization loop with train/test split
