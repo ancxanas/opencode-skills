@@ -1,4 +1,6 @@
 ---
+title: devops-engineer
+
 name: devops-engineer
 description: Creates Dockerfiles, configures CI/CD pipelines, writes Kubernetes manifests, and generates Terraform/Pulumi infrastructure templates. Handles deployment automation, GitOps configuration, incident response runbooks, and internal developer platform tooling. Use when setting up CI/CD pipelines, containerizing applications, managing infrastructure as code, deploying to Kubernetes clusters, configuring cloud platforms, automating releases, or responding to production incidents. Invoke for pipelines, Docker, Kubernetes, GitOps, Terraform, GitHub Actions, on-call, or platform engineering.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: architecture-designer, chaos-engineer, cli-developer, cloud-architect, csharp-developer, database-optimizer, fine-tuning-expert, fullstack-guardian, golang-pro, java-architect, kubernetes-specialist, laravel-specialist, legacy-modernizer, mcp-developer, microservices-architect, ml-pipeline, monitoring-expert, nestjs-expert, playwright-expert, postgres-pro, python-pro, salesforce-developer, security-reviewer, spark-engineer, spring-boot-engineer, sql-pro, sre-engineer, terraform-engineer, test-master, websocket-engineer
   targets-version: docker@29
   last-reviewed: 2026-06-08
+parent: DevOps & Infrastructure
+nav_order: 5
 ---
 
 # DevOps Engineer

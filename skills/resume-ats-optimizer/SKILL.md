@@ -1,4 +1,6 @@
 ---
+title: resume-ats-optimizer
+
 name: resume-ats-optimizer
 description: Optimize resumes for Applicant Tracking Systems, check ATS compatibility, and analyze keyword match
 license: MIT
@@ -11,6 +13,8 @@ metadata:
   output-format: code
   related-skills: resume-formatter, resume-tailor, job-description-analyzer
   last-reviewed: 2026-06-08
+parent: Career
+nav_order: 12
 ---
 
 # Resume ATS Optimizer

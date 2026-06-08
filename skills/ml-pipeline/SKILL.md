@@ -1,4 +1,6 @@
 ---
+title: ml-pipeline
+
 name: ml-pipeline
 description: "Designs and implements production-grade ML pipeline infrastructure: configures experiment tracking with MLflow or Weights & Biases, creates Kubeflow or Airflow DAGs for training orchestration, builds feature store schemas with Feast, deploys model registries, and automates retraining and validation workflows. Use when building ML pipelines, orchestrating training workflows, automating model lifecycle, implementing feature stores, managing experiment tracking systems, setting up DVC for data versioning, tuning hyperparameters, or configuring MLOps tooling like Kubeflow, Airflow, MLflow, or Prefect."
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: devops-engineer, kubernetes-specialist, cloud-architect, python-pro
   targets-version: mlflow@3.13
   last-reviewed: 2026-06-08
+parent: AI & Data
+nav_order: 3
 ---
 
 # ML Pipeline Expert

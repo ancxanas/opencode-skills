@@ -1,4 +1,6 @@
 ---
+title: academic-cv-builder
+
 name: academic-cv-builder
 description: Format CVs for academic positions with publications, grants, and teaching
 license: MIT
@@ -11,6 +13,8 @@ metadata:
   output-format: code
   related-skills: resume-formatter, resume-tailor, tech-resume-optimizer
   last-reviewed: 2026-06-08
+parent: Career
+nav_order: 1
 ---
 
 # Academic CV Builder

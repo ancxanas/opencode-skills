@@ -1,4 +1,6 @@
 ---
+title: rails-expert
+
 name: rails-expert
 description: Rails 7+ and Rails 8 specialist that optimizes Active Record queries with includes/eager_load, implements Turbo Frames and Turbo Streams for partial page updates, configures Action Cable for WebSocket connections, sets up background job processing (Sidekiq or Solid Queue), and writes comprehensive RSpec test suites. Use when building Rails 7+ or Rails 8 web applications with Hotwire, real-time features, or background job processing. Invoke for Active Record optimization, Turbo Frames/Streams, Action Cable, Sidekiq, Solid Queue, RSpec Rails.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: fullstack-guardian, database-optimizer
   targets-version: rails@8
   last-reviewed: 2026-06-08
+parent: Backend
+nav_order: 8
 ---
 
 # Rails Expert

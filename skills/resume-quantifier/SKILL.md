@@ -1,4 +1,6 @@
 ---
+title: resume-quantifier
+
 name: resume-quantifier
 description: Find opportunities to add metrics and estimate numbers when exact data unavailable
 license: MIT
@@ -11,6 +13,8 @@ metadata:
   output-format: code
   related-skills: resume-bullet-writer, resume-section-builder
   last-reviewed: 2026-06-08
+parent: Career
+nav_order: 15
 ---
 
 # Resume Quantifier

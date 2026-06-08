@@ -1,4 +1,6 @@
 ---
+title: websocket-engineer
+
 name: websocket-engineer
 description: Use when building real-time communication systems with WebSockets or Socket.IO. Invoke for bidirectional messaging, horizontal scaling with Redis, presence tracking, room management.
 license: MIT
@@ -12,6 +14,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: fastapi-expert, nestjs-expert, devops-engineer, monitoring-expert, security-reviewer
+parent: API & Architecture
+nav_order: 6
 ---
 
 # WebSocket Engineer

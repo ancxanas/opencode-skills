@@ -1,4 +1,6 @@
 ---
+title: css-motion-systems
+
 name: css-motion-systems
 description: CSS motion design and implementation for web interfaces. Use when designing or building transitions, animations, `linear()` easing, transform strategy, View Transitions API patterns, motion tokens, or reviewing motion quality and accessibility.
 # origin: https://github.com/stolinski/s-stack/tree/main/skills/css-motion-systems
@@ -18,6 +20,8 @@ metadata:
   related-skills: tailwind-design-system, frontend-design
   last-reviewed: 2026-06-08
   spec-source: https://www.w3.org/TR/css-animations-1/
+parent: Frontend
+nav_order: 3
 ---
 
 # CSS Motion Systems

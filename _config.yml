@@ -1,0 +1,32 @@
+remote_theme: just-the-docs/just-the-docs
+title: "OpenCode Skills"
+description: "111 development skills for AI coding agents"
+url: "https://ancxanas.github.io"
+baseurl: "/opencode-skills"
+permalink: pretty
+
+aux_links:
+  "GitHub Repo": "https://github.com/ancxanas/opencode-skills"
+
+color_scheme: dark
+
+search:
+  heading_level: 3
+  rel_url: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: "skills/*/SKILL.md"
+    values:
+      layout: default
+
+exclude:
+  - README.md
+  - .github
+  - vendor
+  - scripts
+  - tmp

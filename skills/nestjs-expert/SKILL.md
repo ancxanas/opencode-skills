@@ -1,4 +1,6 @@
 ---
+title: nestjs-expert
+
 name: nestjs-expert
 description: Creates and configures NestJS modules, controllers, services, DTOs, guards, and interceptors for enterprise-grade TypeScript backend applications. Use when building NestJS REST APIs or GraphQL services, implementing dependency injection, scaffolding modular architecture, adding JWT/Passport authentication, integrating TypeORM or Prisma, or working with .module.ts, .controller.ts, and .service.ts files. Invoke for guards, interceptors, pipes, validation, Swagger documentation, and unit/E2E testing in NestJS projects.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: api-designer, devops-engineer, fullstack-guardian, test-master, websocket-engineer
   targets-version: @nestjs/core@11
   last-reviewed: 2026-06-08
+parent: Backend
+nav_order: 7
 ---
 
 # NestJS Expert

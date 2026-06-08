@@ -1,4 +1,6 @@
 ---
+title: resume-tailor
+
 name: resume-tailor
 description: Customize resume for specific job postings while maintaining truthfulness
 license: MIT
@@ -11,6 +13,8 @@ metadata:
   output-format: code
   related-skills: resume-ats-optimizer, job-description-analyzer
   last-reviewed: 2026-06-08
+parent: Career
+nav_order: 17
 ---
 
 # Resume Tailor

@@ -1,4 +1,6 @@
 ---
+title: api-designer
+
 name: api-designer
 description: Use when designing REST or GraphQL APIs, creating OpenAPI specifications, or planning API architecture. Invoke for resource modeling, versioning strategies, pagination patterns, error handling standards.
 license: MIT
@@ -12,6 +14,8 @@ metadata:
   scope: design
   output-format: specification
   related-skills: atlassian-mcp, csharp-developer, fastapi-expert, graphql-architect, java-architect, nestjs-expert, rag-architect, salesforce-developer, security-reviewer, shopify-expert, spring-boot-engineer, typescript-pro
+parent: API & Architecture
+nav_order: 1
 ---
 
 # API Designer

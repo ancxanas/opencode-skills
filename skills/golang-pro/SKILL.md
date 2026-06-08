@@ -1,4 +1,6 @@
 ---
+title: golang-pro
+
 name: golang-pro
 description: Implements concurrent Go patterns using goroutines and channels, designs and builds microservices with gRPC or REST, optimizes Go application performance with pprof, and enforces idiomatic Go with generics, interfaces, and robust error handling. Use when building Go applications requiring concurrent programming, microservices architecture, or high-performance systems. Invoke for goroutines, channels, Go generics, gRPC integration, CLI tools, benchmarks, or table-driven testing.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: devops-engineer, microservices-architect, test-master
   targets-version: go@1.25
   last-reviewed: 2026-06-08
+parent: Languages
+nav_order: 3
 ---
 
 # Golang Pro

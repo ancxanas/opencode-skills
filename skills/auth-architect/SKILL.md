@@ -1,4 +1,6 @@
 ---
+title: auth-architect
+
 name: auth-architect
 description: Design and implement authentication and authorization systems. Use when setting up OAuth 2.0 / OIDC flows, configuring Auth0, Clerk, Supabase Auth, or Firebase Auth, implementing passkeys / WebAuthn, designing RBAC or ABAC models, or managing session and token lifecycles.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: secure-code-guardian, security-reviewer, fullstack-guardian, backend-expert, nextjs-developer, fastapi-expert
   targets-version: ""
   last-reviewed: 2026-06-08
+parent: Security
+nav_order: 1
 ---
 
 # Auth Architect

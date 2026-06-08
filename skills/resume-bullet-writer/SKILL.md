@@ -1,4 +1,6 @@
 ---
+title: resume-bullet-writer
+
 name: resume-bullet-writer
 description: Transform weak resume bullets into achievement-focused statements with metrics and impact
 license: MIT
@@ -11,6 +13,8 @@ metadata:
   output-format: code
   related-skills: resume-quantifier, resume-section-builder
   last-reviewed: 2026-06-08
+parent: Career
+nav_order: 13
 ---
 
 # Resume Bullet Writer

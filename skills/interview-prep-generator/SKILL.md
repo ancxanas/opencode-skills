@@ -1,4 +1,6 @@
 ---
+title: interview-prep-generator
+
 name: interview-prep-generator
 description: Generate STAR stories, practice questions, and talking points from resume
 license: MIT
@@ -11,6 +13,8 @@ metadata:
   output-format: code
   related-skills: resume-tailor, job-description-analyzer
   last-reviewed: 2026-06-08
+parent: Career
+nav_order: 6
 ---
 
 # Interview Prep Generator

@@ -1,4 +1,6 @@
 ---
+title: i18n-engineer
+
 name: i18n-engineer
 description: Internationalize and localize web and mobile applications. Use when adding multi-language support, translating UI strings, implementing RTL layouts, managing locale files, configuring ICU message formatting, or setting up i18n frameworks like react-i18next, FormatJS, vue-i18n, next-intl, or Lingui.
 license: MIT
@@ -12,6 +14,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: frontend-design, nextjs-developer, react-expert, vue-expert, swift-expert, flutter-expert
+parent: Frontend
+nav_order: 9
 ---
 
 # i18n Engineer

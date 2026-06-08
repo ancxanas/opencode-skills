@@ -1,4 +1,6 @@
 ---
+title: css-standards
+
 name: css-standards
 description: Write modern, maintainable, and cross-browser CSS using the latest CSS specifications. Use when implementing layouts with Flexbox, Grid, or Subgrid, applying container queries, using modern selectors (:has, :is, :where), controlling the cascade with @layer and @scope, working with custom properties and @property, doing color and theming with OKLCH and color-mix, styling typography with text-wrap and variable fonts, implementing entry animations with @starting-style, building forms with field-sizing and accent-color, using Anchor Positioning, or applying scroll and visibility optimizations.
 license: MIT
@@ -15,6 +17,8 @@ metadata:
   targets-version: ""
   last-reviewed: 2026-06-08
   spec-source: https://www.w3.org/Style/CSS/
+parent: Frontend
+nav_order: 4
 ---
 
 # css-standards

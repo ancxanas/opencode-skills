@@ -1,4 +1,6 @@
 ---
+title: resume-version-manager
+
 name: resume-version-manager
 description: Track different resume versions, maintain master resume, manage tailored versions
 license: MIT
@@ -11,6 +13,8 @@ metadata:
   output-format: code
   related-skills: resume-tailor, resume-section-builder
   last-reviewed: 2026-06-08
+parent: Career
+nav_order: 18
 ---
 
 # Resume Version Manager

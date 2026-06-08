@@ -1,4 +1,6 @@
 ---
+title: pandas-pro
+
 name: pandas-pro
 description: Performs pandas DataFrame operations for data analysis, manipulation, and transformation. Use when working with pandas DataFrames, data cleaning, aggregation, merging, or time series analysis. Invoke for data manipulation tasks such as joining DataFrames on multiple keys, pivoting tables, resampling time series, handling NaN values with interpolation or forward-fill, groupby aggregations, type conversion, or performance optimization of large datasets.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: python-pro
   targets-version: pandas@3.0
   last-reviewed: 2026-06-08
+parent: AI & Data
+nav_order: 4
 ---
 
 # Pandas Pro

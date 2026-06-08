@@ -1,4 +1,6 @@
 ---
+title: career-changer-translator
+
 name: career-changer-translator
 description: Translate skills from one industry to another, identify transferable skills
 license: MIT
@@ -11,6 +13,8 @@ metadata:
   output-format: code
   related-skills: resume-tailor, resume-bullet-writer
   last-reviewed: 2026-06-08
+parent: Career
+nav_order: 2
 ---
 
 # Career Changer Translator

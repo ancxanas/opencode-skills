@@ -1,4 +1,6 @@
 ---
+title: shopify-expert
+
 name: shopify-expert
 description: Builds and debugs Shopify themes (.liquid files, theme.json, sections), develops custom Shopify apps (shopify.app.toml, OAuth, webhooks), and implements Storefront API integrations for headless storefronts. Use when building or customizing Shopify themes, creating Hydrogen or custom React storefronts, developing Shopify apps, implementing checkout UI extensions or Shopify Functions, optimizing performance, or integrating third-party services. Invoke for Liquid templating, Storefront API, app development, checkout customization, Shopify Plus features, App Bridge, Polaris, or Shopify CLI workflows.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: react-expert, graphql-architect, api-designer
   targets-version: shopify-cli@4.1
   last-reviewed: 2026-06-08
+parent: Platform
+nav_order: 4
 ---
 
 # Shopify Expert

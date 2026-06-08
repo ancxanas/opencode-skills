@@ -1,4 +1,6 @@
 ---
+title: executive-resume-writer
+
 name: executive-resume-writer
 description: Create C-suite and VP level resumes emphasizing strategic leadership
 license: MIT
@@ -11,6 +13,8 @@ metadata:
   output-format: code
   related-skills: resume-bullet-writer, resume-formatter, tech-resume-optimizer
   last-reviewed: 2026-06-08
+parent: Career
+nav_order: 5
 ---
 
 # Executive Resume Writer

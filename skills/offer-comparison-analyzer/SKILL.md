@@ -1,4 +1,6 @@
 ---
+title: offer-comparison-analyzer
+
 name: offer-comparison-analyzer
 description: Compare multiple job offers side-by-side with total compensation analysis
 license: MIT
@@ -11,6 +13,8 @@ metadata:
   output-format: code
   related-skills: salary-negotiation-prep, job-description-analyzer
   last-reviewed: 2026-06-08
+parent: Career
+nav_order: 9
 ---
 
 # Offer Comparison Analyzer

@@ -1,4 +1,6 @@
 ---
+title: angular-architect
+
 name: angular-architect
 description: Builds Angular 22+ applications with standalone components, signal-based reactivity, zoneless change detection, and enterprise architecture. Use when implementing components with @if/@for control flow, setting up signal-based state management, using @Service() decorator for injectables, configuring advanced routing with lazy loading, managing complex state with NgRx Signal Store, optimizing bundle performance, or writing Angular tests for enterprise apps.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: typescript-pro, test-master
   targets-version: angular@22
   last-reviewed: 2026-06-08
+parent: Frontend
+nav_order: 2
 ---
 
 # Angular Architect

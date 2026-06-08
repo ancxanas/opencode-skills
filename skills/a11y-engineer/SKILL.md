@@ -1,4 +1,6 @@
 ---
+title: a11y-engineer
+
 name: a11y-engineer
 description: Implement and audit web accessibility (WCAG 2.1/2.2). Use when adding ARIA attributes, ensuring keyboard navigation, auditing color contrast, fixing focus management, testing with screen readers, or meeting accessibility compliance requirements.
 license: MIT
@@ -13,6 +15,8 @@ metadata:
   output-format: code
   related-skills: frontend-design, react-expert, vue-expert, angular-architect, test-master, css-motion-systems
   spec-source: https://www.w3.org/TR/WCAG22/
+parent: Frontend
+nav_order: 1
 ---
 
 # a11y Engineer

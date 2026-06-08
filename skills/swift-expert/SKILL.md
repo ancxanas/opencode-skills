@@ -1,4 +1,6 @@
 ---
+title: swift-expert
+
 name: swift-expert
 description: Builds iOS/macOS/watchOS/tvOS applications with Swift 6, SwiftUI, and strict concurrency. Implements SwiftUI views and state management, designs protocol-oriented architectures, handles async/await with Sendable-aware patterns, uses actors for thread safety, and debugs Swift-specific issues. Invoke for protocol-oriented programming, SwiftUI state management, actors, server-side Swift, UIKit integration, Combine, or Vapor.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: react-native-expert, flutter-expert, test-master
   targets-version: swift@6
   last-reviewed: 2026-06-08
+parent: Languages
+nav_order: 13
 ---
 
 # Swift Expert

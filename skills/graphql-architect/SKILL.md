@@ -1,4 +1,6 @@
 ---
+title: graphql-architect
+
 name: graphql-architect
 description: Use when designing GraphQL schemas, implementing Apollo Federation, or building real-time subscriptions. Invoke for schema design, resolvers with DataLoader, query optimization, federation directives.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: api-designer, database-optimizer, microservices-architect, shopify-expert
   targets-version: apollo-federation@2
   last-reviewed: 2026-06-08
+parent: API & Architecture
+nav_order: 3
 ---
 
 # GraphQL Architect

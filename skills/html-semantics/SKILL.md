@@ -1,4 +1,6 @@
 ---
+title: html-semantics
+
 name: html-semantics
 description: Write modern, semantic, accessible, and performant HTML5. Use when structuring web documents, choosing HTML elements, implementing native overlays (dialog, popover), using responsive images (picture, srcset), building forms with proper validation and autocomplete, creating Web Components, optimizing resource loading, adding SEO/OG metadata, or following current HTML Living Standard best practices.
 license: MIT
@@ -13,6 +15,8 @@ metadata:
   output-format: code
   related-skills: a11y-engineer, frontend-design, css-motion-systems, tailwind-design-system, javascript-pro, secure-code-guardian
   spec-source: https://html.spec.whatwg.org/multipage/
+parent: Frontend
+nav_order: 8
 ---
 
 # html-semantics

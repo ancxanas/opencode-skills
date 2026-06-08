@@ -1,4 +1,6 @@
 ---
+title: ai-agent-builder
+
 name: ai-agent-builder
 description: Build AI agents and agentic systems using LangChain, LangGraph, AutoGen, CrewAI, or custom orchestration. Use when designing multi-agent architectures, implementing tool-use and function calling, setting up agent memory and state, building RAG agents, or deploying agent workflows with human-in-the-loop.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: mcp-developer, prompt-engineer, rag-architect, fine-tuning-expert, fastapi-expert, python-pro, typescript-pro
   targets-version: langchain@latest, langgraph@latest
   last-reviewed: 2026-06-08
+parent: AI & Data
+nav_order: 1
 ---
 
 # AI Agent Builder

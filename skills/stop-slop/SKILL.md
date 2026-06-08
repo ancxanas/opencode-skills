@@ -1,4 +1,6 @@
 ---
+title: stop-slop
+
 name: stop-slop
 description: Remove AI writing patterns from prose. Use when drafting, editing, or reviewing text to eliminate predictable AI tells.
 license: MIT
@@ -12,6 +14,8 @@ metadata:
   output-format: code
   related-skills: code-documenter
   last-reviewed: 2026-06-08
+parent: Process & Tooling
+nav_order: 4
 ---
 
 # Stop Slop

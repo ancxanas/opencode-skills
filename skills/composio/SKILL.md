@@ -1,4 +1,6 @@
 ---
+title: composio
+
 name: composio
 description: Use 1000+ external apps via Composio - either directly through the CLI or by building AI agents and apps with the SDK
 license: MIT
@@ -8,6 +10,8 @@ metadata:
   triggers: composio, tool-router, agents, mcp, tools, api, automation, cli, external apps, integrations
   targets-version: composio@latest
   last-reviewed: 2026-06-08
+parent: Platform
+nav_order: 2
 ---
 
 ## When to Apply

@@ -1,4 +1,6 @@
 ---
+title: feature-forge
+
 name: feature-forge
 description: Conducts structured requirements workshops to produce feature specifications, user stories, EARS-format functional requirements, acceptance criteria, and implementation checklists. Use when defining new features, gathering requirements, or writing specifications. Invoke for feature definition, requirements gathering, user stories, EARS format specs, PRDs, acceptance criteria, or requirement matrices.
 license: MIT
@@ -12,6 +14,8 @@ metadata:
   scope: design
   output-format: document
   related-skills: fullstack-guardian, spec-miner, test-master, the-fool
+parent: Workflow
+nav_order: 1
 ---
 
 # Feature Forge

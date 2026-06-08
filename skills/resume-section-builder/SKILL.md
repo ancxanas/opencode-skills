@@ -1,4 +1,6 @@
 ---
+title: resume-section-builder
+
 name: resume-section-builder
 description: Create targeted resume sections optimized for different experience levels and roles
 license: MIT
@@ -11,6 +13,8 @@ metadata:
   output-format: code
   related-skills: resume-bullet-writer, resume-formatter
   last-reviewed: 2026-06-08
+parent: Career
+nav_order: 16
 ---
 
 # Resume Section Builder

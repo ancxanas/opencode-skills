@@ -1,4 +1,6 @@
 ---
+title: laravel-specialist
+
 name: laravel-specialist
 description: Build and configure Laravel 10+ applications, including creating Eloquent models and relationships, implementing Sanctum authentication, configuring Horizon queues, designing RESTful APIs with API resources, and building reactive interfaces with Livewire. Use when creating Laravel models, setting up queue workers, implementing Sanctum auth flows, building Livewire components, optimising Eloquent queries, or writing Pest/PHPUnit tests for Laravel features.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: devops-engineer, fullstack-guardian, security-reviewer, test-master, wordpress-pro
   targets-version: laravel@12
   last-reviewed: 2026-06-08
+parent: Backend
+nav_order: 6
 ---
 
 # Laravel Specialist

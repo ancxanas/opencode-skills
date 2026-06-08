@@ -1,4 +1,6 @@
 ---
+title: java-architect
+
 name: java-architect
 description: Use when building, configuring, or debugging enterprise Java applications with Spring Boot 4 on Java 25 LTS, microservices, or reactive programming. Invoke to implement WebFlux endpoints with virtual threads, optimize Hibernate 7 / JPA 3.2 queries, configure Spring Security 7 with OAuth2/JWT/WebAuthn, migrate Jackson 2 to 3, or resolve authentication issues and async processing challenges in cloud-native Spring applications.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: api-designer, database-optimizer, devops-engineer, fullstack-guardian, salesforce-developer, spring-boot-engineer
   targets-version: spring-boot@4, java@25-lts
   last-reviewed: 2026-06-08
+parent: Languages
+nav_order: 4
 ---
 
 # Java Architect

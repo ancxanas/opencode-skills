@@ -1,4 +1,6 @@
 ---
+title: cover-letter-generator
+
 name: cover-letter-generator
 description: Create personalized, compelling cover letters from resume and job description
 license: MIT
@@ -11,6 +13,8 @@ metadata:
   output-format: code
   related-skills: resume-tailor, job-description-analyzer
   last-reviewed: 2026-06-08
+parent: Career
+nav_order: 3
 ---
 
 # Cover Letter Generator

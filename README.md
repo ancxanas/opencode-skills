@@ -1,8 +1,12 @@
 # OpenCode Skills
 
+[![Docs Site](https://img.shields.io/badge/docs-ancxanas.github.io/opencode--skills-2b2d42?style=flat-square)](https://ancxanas.github.io/opencode-skills/)
 [![Skill Staleness Check](https://github.com/ancxanas/opencode-skills/actions/workflows/skill-staleness.yml/badge.svg)](https://github.com/ancxanas/opencode-skills/actions/workflows/skill-staleness.yml)
+[![Skill Validation](https://github.com/ancxanas/opencode-skills/actions/workflows/skill-validate.yml/badge.svg)](https://github.com/ancxanas/opencode-skills/actions/workflows/skill-validate.yml)
 
-A collection of **110 skills** for [OpenCode](https://opencode.ai) — covering languages, frameworks, DevOps, cloud, AI/ML, security, frontend, mobile, CSS standards, resume writing, and more.
+A collection of **111 skills** for [OpenCode](https://opencode.ai) — covering languages, frameworks, DevOps, cloud, AI/ML, security, frontend, mobile, CSS standards, resume writing, and more.
+
+> Browse all skills at [ancxanas.github.io/opencode-skills/](https://ancxanas.github.io/opencode-skills/) — searchable, categorized, and maintained daily.
 
 ## Skill Categories
 

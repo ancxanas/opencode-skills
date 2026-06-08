@@ -1,4 +1,6 @@
 ---
+title: microservices-architect
+
 name: microservices-architect
 description: Designs distributed system architectures, decomposes monoliths into bounded-context services, recommends communication patterns, and produces service boundary diagrams and resilience strategies. Use when designing distributed systems, decomposing monoliths, or implementing microservices patterns — including service boundaries, DDD, saga patterns, event sourcing, CQRS, service mesh, or distributed tracing.
 license: MIT
@@ -12,6 +14,8 @@ metadata:
   scope: system-design
   output-format: architecture
   related-skills: architecture-designer, cloud-architect, devops-engineer, dotnet-core-expert, golang-pro, graphql-architect, kubernetes-specialist, monitoring-expert, spring-boot-engineer
+parent: API & Architecture
+nav_order: 5
 ---
 
 # Microservices Architect

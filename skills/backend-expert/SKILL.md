@@ -1,4 +1,6 @@
 ---
+title: backend-expert
+
 name: backend-expert
 description: Design and build production-grade backend systems, APIs, and data pipelines. Use when architecting microservices or monoliths, choosing between REST and GraphQL, setting up database schemas and migrations, implementing caching layers, designing async job queues, structuring error handling, or configuring observability. Covers architecture decisions, not framework-specific implementation — pair with framework skills (nestjs-expert, fastapi-expert, django-expert, spring-boot-engineer) for code-level work.
 license: MIT
@@ -12,6 +14,8 @@ metadata:
   related-skills: api-designer, architecture-designer, microservices-architect, database-optimizer, monitoring-expert, devops-engineer, secure-code-guardian, nestjs-expert, fastapi-expert, django-expert, spring-boot-engineer, postgres-pro, sql-pro
   targets-version: ""
   last-reviewed: 2026-06-08
+parent: Backend
+nav_order: 2
 ---
 
 # Backend Expert

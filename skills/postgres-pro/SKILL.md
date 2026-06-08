@@ -1,4 +1,6 @@
 ---
+title: postgres-pro
+
 name: postgres-pro
 description: Use when optimizing PostgreSQL queries, configuring replication, or implementing advanced database features. Invoke for EXPLAIN analysis, JSONB operations, extension usage, VACUUM tuning, performance monitoring.
 license: MIT
@@ -15,6 +17,8 @@ metadata:
   targets-version: postgresql@17
   last-reviewed: 2026-06-08
   spec-source: https://www.postgresql.org/docs/current/
+parent: DevOps & Infrastructure
+nav_order: 8
 ---
 
 # PostgreSQL Pro

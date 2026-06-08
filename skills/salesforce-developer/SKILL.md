@@ -1,4 +1,6 @@
 ---
+title: salesforce-developer
+
 name: salesforce-developer
 description: Writes and debugs Apex code, builds Lightning Web Components, optimizes SOQL queries, implements triggers, batch jobs, platform events, and integrations on the Salesforce platform. Use when developing Salesforce applications, customizing CRM workflows, managing governor limits, bulk processing, or setting up Salesforce DX and CI/CD pipelines.
 license: MIT
@@ -15,6 +17,8 @@ metadata:
   targets-version: salesforce@spring26
   last-reviewed: 2026-06-08
   spec-source: https://developer.salesforce.com/docs
+parent: Platform
+nav_order: 3
 ---
 
 # Salesforce Developer

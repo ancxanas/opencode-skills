@@ -1,4 +1,6 @@
 ---
+title: luajit-pro
+
 name: luajit-pro
 description: Use when building performance-critical Lua applications with LuaJIT's FFI, JIT compiler optimizations, and bit operations. Specializes in C foreign function interface bindings, trace compilation tuning, and low-level bit manipulation. Invoke for LuaJIT FFI, JIT compiler, NYI pitfalls, trace compilation, bit operations, Lua performance optimization, or interfacing Lua with C libraries.
 license: MIT
@@ -13,6 +15,8 @@ metadata:
   output-format: code
   related-skills: lua-pro, test-master, devops-engineer
   spec-source: http://luajit.org/luajit.html
+parent: Languages
+nav_order: 8
 ---
 
 # LuaJIT Pro

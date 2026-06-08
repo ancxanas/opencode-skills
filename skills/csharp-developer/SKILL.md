@@ -1,4 +1,6 @@
 ---
+title: csharp-developer
+
 name: csharp-developer
 description: "Use when building C# applications with .NET 10+, ASP.NET Core APIs, or Blazor web apps. Builds REST APIs using minimal or controller-based routing, configures database access with Entity Framework Core, implements async patterns and cancellation, structures applications with CQRS via MediatR, and scaffolds Blazor components with state management. Invoke for C#, .NET, ASP.NET Core, Blazor, Entity Framework, EF Core, Minimal API, MAUI, SignalR."
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: api-designer, database-optimizer, devops-engineer
   targets-version: dotnet@10
   last-reviewed: 2026-06-08
+parent: Languages
+nav_order: 2
 ---
 
 # C# Developer

@@ -1,4 +1,6 @@
 ---
+title: resume-formatter
+
 name: resume-formatter
 description: Ensure ATS-friendly formatting and create clean scannable layouts
 license: MIT
@@ -11,6 +13,8 @@ metadata:
   output-format: code
   related-skills: resume-section-builder, resume-ats-optimizer
   last-reviewed: 2026-06-08
+parent: Career
+nav_order: 14
 ---
 
 # Resume Formatter

@@ -1,4 +1,6 @@
 ---
+title: lua-pro
+
 name: lua-pro
 description: Use when building Lua applications requiring embedded scripting, game logic, or system automation. Generates idiomatic Lua code with proper table usage, metatable patterns, coroutine-based concurrency, and modular design. Invoke for Lua scripting, LuaJIT, metatables, coroutines, Lua patterns, table manipulation, Lua C API integration, or Luarocks packaging.
 license: MIT
@@ -15,6 +17,8 @@ metadata:
   targets-version: lua@5.5
   last-reviewed: 2026-06-08
   spec-source: https://lua.org/manual/5.5/manual.html
+parent: Languages
+nav_order: 7
 ---
 
 # Lua Pro

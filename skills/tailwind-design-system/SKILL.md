@@ -1,4 +1,6 @@
 ---
+title: tailwind-design-system
+
 name: tailwind-design-system
 description: Build scalable design systems with Tailwind CSS v4, design tokens, component libraries, and responsive patterns. Use when creating component libraries with CSS-first @theme configuration, implementing design systems, standardizing UI patterns, or migrating from Tailwind v3 to v4.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: frontend-design, css-motion-systems, react-expert, vue-expert
   targets-version: tailwindcss@4
   last-reviewed: 2026-06-08
+parent: Frontend
+nav_order: 13
 ---
 # Tailwind Design System
 

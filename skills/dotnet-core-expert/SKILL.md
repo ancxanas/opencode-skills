@@ -1,4 +1,6 @@
 ---
+title: dotnet-core-expert
+
 name: dotnet-core-expert
 description: Use when building .NET 10 applications with minimal APIs, clean architecture, or cloud-native microservices. Invoke for Entity Framework Core, CQRS with MediatR, JWT authentication, AOT compilation.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: fullstack-guardian, microservices-architect, cloud-architect, test-master
   targets-version: dotnet@10
   last-reviewed: 2026-06-08
+parent: Backend
+nav_order: 4
 ---
 
 # .NET Core Expert

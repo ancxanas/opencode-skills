@@ -1,4 +1,6 @@
 ---
+title: reference-list-builder
+
 name: reference-list-builder
 description: Format professional references properly and prepare reference materials
 license: MIT
@@ -11,6 +13,8 @@ metadata:
   output-format: code
   related-skills: resume-formatter, resume-section-builder
   last-reviewed: 2026-06-08
+parent: Career
+nav_order: 11
 ---
 
 # Reference List Builder

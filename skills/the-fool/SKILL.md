@@ -1,4 +1,6 @@
 ---
+title: the-fool
+
 name: the-fool
 description: Use when challenging ideas, plans, decisions, or proposals using structured critical reasoning. Invoke to play devil's advocate, run a pre-mortem, red team, or audit evidence and assumptions.
 license: MIT
@@ -12,6 +14,8 @@ metadata:
   scope: review
   output-format: report
   related-skills: architecture-designer, code-reviewer, feature-forge
+parent: Workflow
+nav_order: 3
 ---
 
 # The Fool

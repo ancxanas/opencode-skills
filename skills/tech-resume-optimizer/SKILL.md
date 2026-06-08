@@ -1,4 +1,6 @@
 ---
+title: tech-resume-optimizer
+
 name: tech-resume-optimizer
 description: Optimize resumes for software engineering, PM, and technical roles
 license: MIT
@@ -11,6 +13,8 @@ metadata:
   output-format: code
   related-skills: resume-bullet-writer, resume-ats-optimizer, resume-tailor
   last-reviewed: 2026-06-08
+parent: Career
+nav_order: 20
 ---
 
 # Tech Resume Optimizer

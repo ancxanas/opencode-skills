@@ -1,4 +1,6 @@
 ---
+title: typescript-pro
+
 name: typescript-pro
 description: Implements advanced TypeScript type systems, creates custom type guards, utility types, and branded types, and configures tRPC for end-to-end type safety. Use when building TypeScript applications requiring advanced generics, conditional or mapped types, discriminated unions, monorepo setup, or full-stack type safety with tRPC.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: angular-architect, api-designer, fullstack-guardian, game-developer, mcp-developer, nextjs-developer, vue-expert
   targets-version: typescript@6.0
   last-reviewed: 2026-06-08
+parent: Languages
+nav_order: 14
 ---
 
 # TypeScript Pro

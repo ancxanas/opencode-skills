@@ -1,4 +1,6 @@
 ---
+title: code-reviewer
+
 name: code-reviewer
 description: Analyzes code diffs and files to identify bugs, security vulnerabilities (SQL injection, XSS, insecure deserialization), code smells, N+1 queries, naming issues, and architectural concerns, then produces a structured review report with prioritized, actionable feedback. Use when reviewing pull requests, conducting code quality audits, identifying refactoring opportunities, or checking for security issues. Invoke for PR reviews, code quality checks, refactoring suggestions, review code, code quality. Complements specialized skills (security-reviewer, test-master) by providing broad-scope review across correctness, performance, maintainability, and test coverage in a single pass.
 license: MIT
@@ -12,6 +14,8 @@ metadata:
   scope: review
   output-format: report
   related-skills: architecture-designer, code-documenter, security-reviewer, test-master, the-fool
+parent: Quality
+nav_order: 2
 ---
 
 # Code Reviewer

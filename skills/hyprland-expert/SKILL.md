@@ -1,4 +1,6 @@
 ---
+title: hyprland-expert
+
 name: hyprland-expert
 description: Configures and optimizes Hyprland Wayland compositor, including window rules, keybindings, animations, multi-monitor setup, companion tools (waybar, hyprlock, hypridle, hyprpaper), and troubleshooting. Use when setting up or customizing Hyprland, writing hyprland.lua, configuring window rules, creating keybindings, tuning animations, installing companion tools, or debugging Hyprland issues.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: devops-engineer
   targets-version: hyprland@0.55
   last-reviewed: 2026-06-08
+parent: Specialized
+nav_order: 3
 ---
 
 # Hyprland Expert

@@ -1,4 +1,6 @@
 ---
+title: cpp-pro
+
 name: cpp-pro
 description: Writes, optimizes, and debugs C++ applications using modern C++26 features, template metaprogramming, and high-performance systems techniques. Use when building or refactoring C++ code requiring concepts, ranges, coroutines, SIMD optimization, or careful memory management — or when addressing performance bottlenecks, concurrency issues, and build system configuration with CMake.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: embedded-systems, game-developer, rust-engineer
   targets-version: cpp26
   last-reviewed: 2026-06-08
+parent: Languages
+nav_order: 1
 ---
 
 # C++ Pro

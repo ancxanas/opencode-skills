@@ -1,4 +1,6 @@
 ---
+title: debugging-wizard
+
 name: debugging-wizard
 description: Parses error messages, traces execution flow through stack traces, correlates log entries to identify failure points, and applies systematic hypothesis-driven methodology to isolate and resolve bugs. Use when investigating errors, analyzing stack traces, finding root causes of unexpected behavior, troubleshooting crashes, or performing log analysis, error investigation, or root cause analysis.
 license: MIT
@@ -12,6 +14,8 @@ metadata:
   scope: analysis
   output-format: analysis
   related-skills: test-master, fullstack-guardian, monitoring-expert
+parent: Quality
+nav_order: 3
 ---
 
 # Debugging Wizard

@@ -1,4 +1,6 @@
 ---
+title: kubernetes-specialist
+
 name: kubernetes-specialist
 description: Use when deploying or managing Kubernetes workloads. Invoke to create deployment manifests, configure pod security policies, set up service accounts, define network isolation rules, debug pod crashes, analyze resource limits, inspect container logs, or right-size workloads. Use for Helm charts, RBAC policies, NetworkPolicies, storage configuration, performance optimization, GitOps pipelines, and multi-cluster management.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: chaos-engineer, cloud-architect, devops-engineer, microservices-architect, ml-pipeline, security-reviewer, sre-engineer, terraform-engineer
   targets-version: kubernetes@1.36
   last-reviewed: 2026-06-08
+parent: DevOps & Infrastructure
+nav_order: 6
 ---
 
 # Kubernetes Specialist

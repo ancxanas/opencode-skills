@@ -1,4 +1,6 @@
 ---
+title: api-integrator
+
 name: api-integrator
 description: Build API clients, integrate third-party APIs, implement webhook handlers, and design data ingestion pipelines. Use when consuming REST or GraphQL APIs, implementing retry and backoff strategies, verifying webhook signatures, paginating through large datasets, or building ETL sync workflows.
 license: MIT
@@ -12,6 +14,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: api-designer, python-pro, typescript-pro, fastapi-expert, nestjs-expert, monitoring-expert, security-reviewer
+parent: Backend
+nav_order: 1
 ---
 
 # API Integrator

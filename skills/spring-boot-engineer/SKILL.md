@@ -1,4 +1,6 @@
 ---
+title: spring-boot-engineer
+
 name: spring-boot-engineer
 description: Generates Spring Boot 4 configurations built on Spring Framework 7 with Spring Security 7 and Jackson 3, creates REST controllers with API versioning, implements Spring Security 7 authentication flows (including WebAuthn/PassKeys), sets up Spring Data JPA with Hibernate 7 on Jakarta EE 11, and configures reactive WebFlux endpoints with virtual threads. Use when building Spring Boot 4 applications, microservices, or reactive Java applications on Java 17+; invoke for Spring Data JPA, Spring Security 7, WebFlux, Spring Cloud 2025.1, declarative HTTP clients (@HttpServiceClient), API versioning, or Jakarta EE 11.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: api-designer, database-optimizer, devops-engineer, java-architect, microservices-architect
   targets-version: spring-boot@4
   last-reviewed: 2026-06-08
+parent: Backend
+nav_order: 9
 ---
 
 # Spring Boot 4 Engineer

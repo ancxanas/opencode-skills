@@ -1,4 +1,6 @@
 ---
+title: nextjs-developer
+
 name: nextjs-developer
 description: "Use when building Next.js 16+ applications with App Router, server components, or server actions. Invoke to configure route handlers, implement middleware, set up API routes, add streaming SSR, write generateMetadata for SEO, scaffold loading.tsx/error.tsx boundaries, or deploy to Vercel. Triggers on: Next.js, Next.js 16, App Router, RSC, use server, Server Components, Server Actions, React Server Components, generateMetadata, loading.tsx, Next.js deployment, Vercel, Next.js performance."
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: typescript-pro
   targets-version: next@16
   last-reviewed: 2026-06-08
+parent: Frontend
+nav_order: 10
 ---
 
 # Next.js Developer

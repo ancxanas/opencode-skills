@@ -1,4 +1,6 @@
 ---
+title: test-master
+
 name: test-master
 description: Generates test files, creates mocking strategies, analyzes code coverage, designs test architectures, and produces test plans and defect reports across functional, performance, and security testing disciplines. Use when writing unit tests, integration tests, or E2E tests; creating test strategies or automation frameworks; analyzing coverage gaps; performance testing with k6 or Artillery; security testing with OWASP methods; debugging flaky tests; or working on QA, regression, test automation, quality gates, shift-left testing, or test maintenance.
 license: MIT
@@ -12,6 +14,8 @@ metadata:
   scope: testing
   output-format: report
   related-skills: angular-architect, code-reviewer, debugging-wizard, devops-engineer, django-expert, dotnet-core-expert, fastapi-expert, feature-forge, flutter-expert, fullstack-guardian, game-developer, golang-pro, kotlin-specialist, laravel-specialist, legacy-modernizer, nestjs-expert, playwright-expert, prompt-engineer, react-expert, react-native-expert, rust-engineer, swift-expert
+parent: Quality
+nav_order: 5
 ---
 
 # Test Master

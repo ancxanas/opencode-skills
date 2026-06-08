@@ -1,4 +1,6 @@
 ---
+title: javascript-pro
+
 name: javascript-pro
 description: Writes, debugs, and refactors JavaScript code using modern ES2025+ features, async/await patterns, ESM module systems, and Node.js APIs. Use when building vanilla JavaScript applications, implementing Promise-based async flows, optimising browser or Node.js performance, working with Web Workers or Fetch API, or reviewing .js/.mjs/.cjs files for correctness and best practices.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: fullstack-guardian, vue-expert-js
   targets-version: es2025
   last-reviewed: 2026-06-08
+parent: Languages
+nav_order: 5
 ---
 
 # JavaScript Pro

@@ -1,4 +1,6 @@
 ---
+title: architecture-designer
+
 name: architecture-designer
 description: Use when designing new high-level system architecture, reviewing existing designs, or making architectural decisions. Invoke to create architecture diagrams, write Architecture Decision Records (ADRs), evaluate technology trade-offs, design component interactions, and plan for scalability. Use for system design, architecture review, microservices structuring, ADR authoring, scalability planning, and infrastructure pattern selection — distinct from code-level design patterns or database-only design tasks.
 license: MIT
@@ -12,6 +14,8 @@ metadata:
   scope: design
   output-format: document
   related-skills: code-reviewer, devops-engineer, fullstack-guardian, microservices-architect, monitoring-expert, secure-code-guardian, spec-miner, the-fool
+parent: API & Architecture
+nav_order: 2
 ---
 
 # Architecture Designer

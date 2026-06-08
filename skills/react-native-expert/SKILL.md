@@ -1,4 +1,6 @@
 ---
+title: react-native-expert
+
 name: react-native-expert
 description: Builds, optimizes, and debugs cross-platform mobile applications with React Native and Expo. Implements navigation hierarchies (tabs, stacks, drawers), configures native modules, optimizes FlatList rendering with memo and useCallback, and handles platform-specific code for iOS and Android. Use when building a React Native or Expo mobile app, setting up navigation, integrating native modules, improving scroll performance, handling SafeArea or keyboard input, or configuring Expo SDK projects.
 license: MIT
@@ -14,6 +16,8 @@ metadata:
   related-skills: flutter-expert, react-expert, swift-expert, test-master
   targets-version: react-native@0.85, expo@52
   last-reviewed: 2026-06-08
+parent: Frontend
+nav_order: 12
 ---
 
 # React Native Expert

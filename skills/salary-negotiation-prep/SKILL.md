@@ -1,4 +1,6 @@
 ---
+title: salary-negotiation-prep
+
 name: salary-negotiation-prep
 description: Research market rates, build negotiation strategy, and create counter-offer scripts
 license: MIT
@@ -11,6 +13,8 @@ metadata:
   output-format: code
   related-skills: offer-comparison-analyzer, interview-prep-generator
   last-reviewed: 2026-06-08
+parent: Career
+nav_order: 19
 ---
 
 # Salary Negotiation Prep

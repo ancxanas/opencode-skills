@@ -1,4 +1,6 @@
 ---
+title: creative-portfolio-resume
+
 name: creative-portfolio-resume
 description: Balance visual design with ATS compatibility for creative roles
 license: MIT
@@ -11,6 +13,8 @@ metadata:
   output-format: code
   related-skills: resume-formatter, portfolio-case-study-writer
   last-reviewed: 2026-06-08
+parent: Career
+nav_order: 4
 ---
 
 # Creative Portfolio Resume

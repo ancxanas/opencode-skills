@@ -1,4 +1,6 @@
 ---
+title: fullstack-guardian
+
 name: fullstack-guardian
 description: Builds security-focused full-stack web applications by implementing integrated frontend and backend components with layered security at every level. Covers the complete stack from database to UI, enforcing auth, input validation, output encoding, and parameterized queries across all layers. Use when implementing features across frontend and backend, building REST APIs with corresponding UI, connecting frontend components to backend endpoints, creating end-to-end data flows from database to UI, or implementing CRUD operations with UI forms. Distinct from frontend-only, backend-only, or API-only skills in that it simultaneously addresses all three perspectives—Frontend, Backend, and Security—within a single implementation workflow. Invoke for full-stack feature work, web app development, authenticated API routes with views, microservices, real-time features, monorepo architecture, or technology selection decisions.
 license: MIT
@@ -12,6 +14,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: architecture-designer, code-documenter, debugging-wizard, devops-engineer, django-expert, dotnet-core-expert, fastapi-expert, feature-forge, flutter-expert, java-architect, javascript-pro, laravel-specialist, nestjs-expert, php-pro, rails-expert, react-expert, secure-code-guardian, spec-miner, test-master, typescript-pro, vue-expert, wordpress-pro
+parent: Security
+nav_order: 3
 ---
 
 # Fullstack Guardian
