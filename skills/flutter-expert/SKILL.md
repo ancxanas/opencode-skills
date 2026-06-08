@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: fullstack-guardian, react-native-expert, swift-expert, test-master
+  targets-version: flutter@3
+  last-reviewed: 2026-06-08
 ---
 
 # Flutter Expert

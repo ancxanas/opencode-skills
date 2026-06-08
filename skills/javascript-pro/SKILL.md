@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: fullstack-guardian, vue-expert-js
+  targets-version: es2023
+  last-reviewed: 2026-06-08
 ---
 
 # JavaScript Pro

@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: devops-engineer, fastapi-expert, ml-pipeline, pandas-pro, rag-architect, spark-engineer
+  targets-version: python@3.13
+  last-reviewed: 2026-06-08
 ---
 
 # Python Pro

@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: api-designer, database-optimizer, devops-engineer, java-architect, microservices-architect
+  targets-version: spring-boot@3
+  last-reviewed: 2026-06-08
 ---
 
 # Spring Boot Engineer

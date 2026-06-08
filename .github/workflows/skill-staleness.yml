@@ -1,0 +1,145 @@
+name: Skill Staleness Detection
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for stale skills
+        id: stale
+        uses: actions/github-script@v7
+        with:
+          result-encoding: string
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const skillsDir = path.join(process.env.GITHUB_WORKSPACE, 'skills');
+
+            async function getNpmVersion(pkg) {
+              try {
+                const url = `https://registry.npmjs.org/${encodeURIComponent(pkg)}/latest`;
+                const res = await fetch(url);
+                if (!res.ok) return null;
+                const data = await res.json();
+                return data.version;
+              } catch { return null; }
+            }
+
+            async function getPypiVersion(pkg) {
+              try {
+                const url = `https://pypi.org/pypi/${encodeURIComponent(pkg)}/json`;
+                const res = await fetch(url);
+                if (!res.ok) return null;
+                const data = await res.json();
+                return data.info.version;
+              } catch { return null; }
+            }
+
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: ['skill-stale'],
+              per_page: 100,
+            });
+
+            const newIssues = [];
+            const npmPkgs = ['next', 'react', 'vue', 'angular', 'tailwindcss',
+              'laravel', 'flutter', 'composio', 'langchain',
+              'langgraph', 'apollo-federation', '@composio/core'];
+
+            async function checkTarget(target, skillName) {
+              const parts = target.split('@');
+              if (parts.length < 2) return;
+              const pkg = parts[0].trim();
+              const version = parts.slice(1).join('@').trim();
+              if (!version) return;
+
+              let latest = null;
+              let registry = 'unknown';
+
+              if (npmPkgs.includes(pkg)) {
+                latest = await getNpmVersion(pkg);
+                registry = 'npm';
+              } else if (['django', 'fastapi', 'pydantic', 'composio-core'].includes(pkg)) {
+                latest = await getPypiVersion(pkg);
+                registry = 'PyPI';
+              }
+
+              const langStandards = ['cpp', 'es', 'python', 'swift', 'rust', 'go',
+                'kotlin', 'php', 'lua', 'dotnet', 'java', 'flutter'];
+              if (langStandards.includes(pkg)) return;
+
+              if (!latest) return;
+
+              const targetMajor = version.split('.')[0];
+              const latestMajor = latest.split('.')[0];
+
+              if (parseInt(latestMajor) > parseInt(targetMajor)) {
+                const existing = issues.find(i =>
+                  i.title.includes(skillName) && i.title.includes(pkg)
+                );
+                if (existing) return;
+
+                newIssues.push({ skill: skillName, pkg, target: version, latest, registry });
+              }
+            }
+
+            const dirs = fs.readdirSync(skillsDir, { withFileTypes: true })
+              .filter(d => d.isDirectory());
+
+            for (const dir of dirs) {
+              const skillPath = path.join(skillsDir, dir.name, 'SKILL.md');
+              if (!fs.existsSync(skillPath)) continue;
+
+              const content = fs.readFileSync(skillPath, 'utf-8');
+              const targetsMatch = content.match(/targets-version:\s*(.+)/);
+              if (!targetsMatch) continue;
+
+              const targets = targetsMatch[1].split(',').map(t => t.trim());
+              for (const target of targets) {
+                await checkTarget(target, dir.name);
+              }
+            }
+
+            return JSON.stringify(newIssues);
+
+      - name: Create issues for stale skills
+        if: fromJSON(steps.stale.outputs.result).length > 0
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo '${{ steps.stale.outputs.result }}' | jq -c '.[]' | while read -r item; do
+            SKILL=$(echo "$item" | jq -r '.skill')
+            PKG=$(echo "$item" | jq -r '.pkg')
+            TARGET=$(echo "$item" | jq -r '.target')
+            LATEST=$(echo "$item" | jq -r '.latest')
+            REGISTRY=$(echo "$item" | jq -r '.registry')
+
+            gh issue create \
+              --title "Stale skill: \`$SKILL\` (targets $PKG@$TARGET, latest $PKG@$LATEST)" \
+              --label "skill-stale" \
+              --body "## Stale Skill Detected: \`$SKILL\`
+
+          **Package:** \`$PKG\`
+          **Targeted version:** \`$TARGET\`
+          **Latest on $REGISTRY:** \`$LATEST\`
+          **Last reviewed:** Check SKILL.md frontmatter
+
+          ### What to do
+
+          1. Review the skill at \`skills/$SKILL/SKILL.md\`
+          2. Verify if the content is still accurate for the latest version
+          3. If updates are needed, edit the SKILL.md and bump \`targets-version\` and \`last-reviewed\` in the frontmatter
+          4. Close this issue when done"
+          done

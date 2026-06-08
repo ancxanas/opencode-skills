@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: luajit-pro, test-master, devops-engineer
+  targets-version: lua@5.4
+  last-reviewed: 2026-06-08
 ---
 
 # Lua Pro

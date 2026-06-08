@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: frontend-design, css-motion-systems, react-expert, vue-expert
+  targets-version: tailwindcss@4
+  last-reviewed: 2026-06-08
 ---
 # Tailwind Design System
 

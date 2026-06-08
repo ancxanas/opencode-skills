@@ -6,6 +6,8 @@ compatibility: opencode
 metadata:
   domain: platform
   triggers: composio, tool-router, agents, mcp, tools, api, automation, cli, external apps, integrations
+  targets-version: composio@latest
+  last-reviewed: 2026-06-08
 ---
 
 ## When to Apply

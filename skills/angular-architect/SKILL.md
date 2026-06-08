@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: typescript-pro, test-master
+  targets-version: angular@17
+  last-reviewed: 2026-06-08
 ---
 
 # Angular Architect

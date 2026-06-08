@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: api-designer, database-optimizer, devops-engineer
+  targets-version: dotnet@8
+  last-reviewed: 2026-06-08
 ---
 
 # C# Developer

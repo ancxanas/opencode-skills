@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: mcp-developer, prompt-engineer, rag-architect, fine-tuning-expert, fastapi-expert, python-pro, typescript-pro
+  targets-version: langchain@latest, langgraph@latest
+  last-reviewed: 2026-06-08
 ---
 
 # AI Agent Builder

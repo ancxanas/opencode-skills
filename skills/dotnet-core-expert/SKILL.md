@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: fullstack-guardian, microservices-architect, cloud-architect, test-master
+  targets-version: dotnet@8
+  last-reviewed: 2026-06-08
 ---
 
 # .NET Core Expert

@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: fullstack-guardian, playwright-expert, react-native-expert, shopify-expert, test-master
+  targets-version: react@19
+  last-reviewed: 2026-06-08
 ---
 
 # React Expert

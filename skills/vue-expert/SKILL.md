@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: fullstack-guardian, typescript-pro, vue-expert-js
+  targets-version: vue@3
+  last-reviewed: 2026-06-08
 ---
 
 # Vue Expert

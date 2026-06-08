@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: fullstack-guardian, fastapi-expert, test-master
+  targets-version: django@5
+  last-reviewed: 2026-06-08
 ---
 
 # Django Expert

@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: test-master
+  targets-version: kotlin@2
+  last-reviewed: 2026-06-08
 ---
 
 # Kotlin Specialist

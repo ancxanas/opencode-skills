@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: fastapi-expert, fullstack-guardian, wordpress-pro
+  targets-version: php@8.4
+  last-reviewed: 2026-06-08
 ---
 
 # PHP Pro

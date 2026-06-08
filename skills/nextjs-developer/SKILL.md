@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: typescript-pro
+  targets-version: next@15
+  last-reviewed: 2026-06-08
 ---
 
 # Next.js Developer

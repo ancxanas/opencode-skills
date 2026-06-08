@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: devops-engineer, microservices-architect, test-master
+  targets-version: go@1.24
+  last-reviewed: 2026-06-08
 ---
 
 # Golang Pro

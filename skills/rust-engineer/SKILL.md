@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: cpp-pro, test-master
+  targets-version: rust@1.85
+  last-reviewed: 2026-06-08
 ---
 
 # Rust Engineer

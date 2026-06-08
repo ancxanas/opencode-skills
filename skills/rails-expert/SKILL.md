@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: fullstack-guardian, database-optimizer
+  targets-version: rails@8
+  last-reviewed: 2026-06-08
 ---
 
 # Rails Expert

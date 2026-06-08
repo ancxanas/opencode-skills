@@ -12,6 +12,8 @@ metadata:
   scope: design
   output-format: schema
   related-skills: api-designer, database-optimizer, microservices-architect, shopify-expert
+  targets-version: apollo-federation@2.5
+  last-reviewed: 2026-06-08
 ---
 
 # GraphQL Architect

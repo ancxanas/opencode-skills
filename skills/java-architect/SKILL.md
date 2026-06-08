@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: api-designer, database-optimizer, devops-engineer, fullstack-guardian, salesforce-developer, spring-boot-engineer
+  targets-version: spring-boot@3, java@21
+  last-reviewed: 2026-06-08
 ---
 
 # Java Architect

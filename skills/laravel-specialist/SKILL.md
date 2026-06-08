@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: devops-engineer, fullstack-guardian, security-reviewer, test-master, wordpress-pro
+  targets-version: laravel@12
+  last-reviewed: 2026-06-08
 ---
 
 # Laravel Specialist

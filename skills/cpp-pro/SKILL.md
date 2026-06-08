@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: embedded-systems, game-developer, rust-engineer
+  targets-version: cpp23
+  last-reviewed: 2026-06-08
 ---
 
 # C++ Pro

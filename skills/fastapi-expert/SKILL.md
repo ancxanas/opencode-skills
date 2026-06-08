@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: api-designer, django-expert, fullstack-guardian, mcp-developer, php-pro, python-pro, test-master, websocket-engineer
+  targets-version: fastapi@latest, pydantic@2
+  last-reviewed: 2026-06-08
 ---
 
 # FastAPI Expert
