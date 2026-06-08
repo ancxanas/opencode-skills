@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: php-pro, laravel-specialist, fullstack-guardian, security-reviewer
+  targets-version: wordpress@7.0
+  last-reviewed: 2026-06-08
 ---
 
 # WordPress Pro

@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: architecture-designer, chaos-engineer, cli-developer, cloud-architect, csharp-developer, database-optimizer, fine-tuning-expert, fullstack-guardian, golang-pro, java-architect, kubernetes-specialist, laravel-specialist, legacy-modernizer, mcp-developer, microservices-architect, ml-pipeline, monitoring-expert, nestjs-expert, playwright-expert, postgres-pro, python-pro, salesforce-developer, security-reviewer, spark-engineer, spring-boot-engineer, sql-pro, sre-engineer, terraform-engineer, test-master, websocket-engineer
+  targets-version: docker@29
+  last-reviewed: 2026-06-08
 ---
 
 # DevOps Engineer

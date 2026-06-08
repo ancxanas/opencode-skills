@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: mcp-developer, api-designer, security-reviewer
+  targets-version: atlassian-api@v3
+  last-reviewed: 2026-06-08
 ---
 
 # Atlassian MCP Expert

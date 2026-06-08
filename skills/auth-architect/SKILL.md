@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: secure-code-guardian, security-reviewer, fullstack-guardian, backend-expert, nextjs-developer, fastapi-expert
+  targets-version: ""
+  last-reviewed: 2026-06-08
 ---
 
 # Auth Architect

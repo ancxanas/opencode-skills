@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: architecture-designer, cloud-architect, debugging-wizard, devops-engineer, microservices-architect, rag-architect, websocket-engineer
+  targets-version: prometheus@3.0, grafana@13
+  last-reviewed: 2026-06-08
 ---
 
 # Monitoring Expert

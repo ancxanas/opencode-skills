@@ -12,6 +12,8 @@ metadata:
   scope: infrastructure
   output-format: architecture
   related-skills: devops-engineer, dotnet-core-expert, kubernetes-specialist, microservices-architect, ml-pipeline, monitoring-expert, salesforce-developer, security-reviewer, sre-engineer, terraform-engineer
+  targets-version: ""
+  last-reviewed: 2026-06-08
 ---
 
 # Cloud Architect
