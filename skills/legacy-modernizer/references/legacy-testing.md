@@ -8,5 +8,4 @@
 | Mutation | Finding gaps | mutmut |
 | Property-based | Edge cases | hypothesis |
 | Coverage-guided | Untested paths | coverage.py |
-
 {% endraw %}

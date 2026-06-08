@@ -21,7 +21,6 @@ nav_order: 13
 render_with_liquid: false
 ---
 {% raw %}
-
 # Tailwind Design System
 
 Build production-ready design systems with Tailwind CSS v4, including design tokens, @theme configuration, component variants, responsive patterns, and accessibility.
@@ -740,5 +739,4 @@ After the codemod, check:
 - [CVA Documentation](https://cva.style/docs)
 - [shadcn/ui](https://ui.shadcn.com/)
 - [Radix Primitives](https://www.radix-ui.com/primitives)
-
 {% endraw %}

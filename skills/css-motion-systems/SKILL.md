@@ -25,8 +25,6 @@ nav_order: 3
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # CSS Motion Systems
 
 Production-oriented motion guidance for web UI. Focused on interaction clarity, performance, and accessibility -- not decorative animation.
@@ -184,5 +182,4 @@ See: [references/MOTION_TOKENS.css](references/MOTION_TOKENS.css)
 - Tested on desktop and mobile viewport sizes
 - Tested in at least one lower-power or throttled scenario
 - No visual tearing, clipping, or timing drift in rapid interactions
-
 {% endraw %}

@@ -8,5 +8,4 @@
 | Embedding | Composition | Extend behavior without inheritance |
 | Functional options | Configuration | Flexible constructors |
 | Type assertions | Runtime checks | Safe downcasting |
-
 {% endraw %}

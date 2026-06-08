@@ -19,7 +19,6 @@ spec:
 
 ---
 {% raw %}
-
 # Network bandwidth limitation
 apiVersion: chaos-mesh.org/v1alpha1
 kind: NetworkChaos
@@ -332,5 +331,4 @@ chaos_delete_custom_resources(
 | I/O latency | Chaos Mesh | `IOChaos` with latency action |
 | Network partition | Chaos Mesh | `NetworkChaos` partition |
 | Pod failure | Chaos Mesh | `PodChaos` pod-failure |
-
 {% endraw %}

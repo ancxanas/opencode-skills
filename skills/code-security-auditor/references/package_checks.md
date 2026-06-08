@@ -52,5 +52,4 @@ Dangerous operations:
 3. **Dependencies**: Heavy dependency tree = attack surface
 4. **Repository**: No GitHub link or dead link = suspicious
 5. **License**: No license or proprietary = investigate further
-
 {% endraw %}

@@ -106,5 +106,4 @@
 | Variable load | Serverless |
 | Async processing | Event-Driven |
 | Read-heavy | CQRS |
-
 {% endraw %}

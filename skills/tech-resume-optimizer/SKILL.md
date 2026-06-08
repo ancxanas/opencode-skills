@@ -18,8 +18,6 @@ nav_order: 20
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Tech Resume Optimizer
 
 ## When to Use This Skill
@@ -385,5 +383,4 @@ Remember: Your resume must pass ATS AND impress technical recruiters.
 - Include metrics and scale
 - Demonstrate problem-solving
 - Show you understand systems
-
 {% endraw %}

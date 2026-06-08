@@ -5,8 +5,6 @@ description: Discover and query toolkits, categories, and authentication require
 tags: [toolkits, discovery, metadata, categories, apps]
 ---
 {% raw %}
-
-
 # Toolkit Management
 
 Toolkits are collections of related tools (GitHub, Gmail, Slack). Use the `toolkits` API to discover and query toolkit metadata.
@@ -184,5 +182,4 @@ async function getToolkitsByCategory(categoryId: string) {
 - **sortBy options** - 'usage' or 'alphabetically'
 - **Auth field queries** - Know what's required before creating configs
 - **Extra OAuth params** - Some services need subdomain, region, etc.
-
 {% endraw %}

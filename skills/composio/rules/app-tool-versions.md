@@ -5,8 +5,6 @@ description: Critical strategies for version pinning to ensure workflow stabilit
 tags: [tools, versions, stability, production, pinning]
 ---
 {% raw %}
-
-
 # Tool Version Management
 
 > **⚠️ CRITICAL:** Never assume or make up toolkit names or version numbers. Always verify before using:
@@ -343,5 +341,4 @@ if (!validateToolVersion(version)) {
   throw new Error('Invalid version format');
 }
 ```
-
 {% endraw %}

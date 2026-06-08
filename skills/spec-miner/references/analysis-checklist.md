@@ -60,5 +60,4 @@ Before finalizing specification:
 - [ ] Error responses documented?
 - [ ] External dependencies listed?
 - [ ] Uncertainties flagged?
-
 {% endraw %}

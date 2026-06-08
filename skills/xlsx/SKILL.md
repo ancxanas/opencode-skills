@@ -10,8 +10,6 @@ nav_order: 4
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Requirements for Outputs
 
 ## All Excel files

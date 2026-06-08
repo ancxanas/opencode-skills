@@ -15,8 +15,6 @@ nav_order: 2
 render_with_liquid: false
 ---
 {% raw %}
-
-
 ## When to Apply
 
 - User wants to access or interact with external apps (Gmail, Slack, GitHub, Notion, etc.)
@@ -66,5 +64,4 @@ composio init
 ```
 
 > Full reference: [Building with Composio](rules/building-with-composio.md)
-
 {% endraw %}

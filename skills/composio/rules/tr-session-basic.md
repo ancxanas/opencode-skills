@@ -5,8 +5,6 @@ description: Essential pattern for initializing Tool Router sessions with proper
 tags: [tool-router, session, initialization, agents]
 ---
 {% raw %}
-
-
 # Create Basic Tool Router Sessions
 
 Always create isolated Tool Router sessions per user to ensure proper data isolation and scoped tool access.
@@ -82,5 +80,4 @@ print(f"MCP URL: {session.mcp.url}")
 
 - [Tool Router API Docs](https://docs.composio.dev/sdk/typescript/api/tool-router)
 - [Creating Sessions](https://docs.composio.dev/sdk/typescript/api/tool-router#creating-sessions)
-
 {% endraw %}

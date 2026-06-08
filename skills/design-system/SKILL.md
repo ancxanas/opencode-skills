@@ -19,8 +19,6 @@ nav_order: 5
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Design System Extractor
 
 Analyse an existing website, HTML file, or screenshot and synthesise a semantic design system into a `DESIGN.md` file. The output is optimised for use with the `design-loop` skill and general page generation.
@@ -237,5 +235,4 @@ If the site has multiple pages with different styles:
 - ❌ Ignoring component patterns (just listing colours isn't enough)
 - ❌ Not including Section 6 (the copy-paste generation block)
 - ❌ Approximate colours from screenshots without flagging the uncertainty
-
 {% endraw %}

@@ -11,5 +11,4 @@
 | `assertEqual()` | Exact match |
 | `assertContains()` | Response contains |
 | `assertRaises()` | Exception raised |
-
 {% endraw %}

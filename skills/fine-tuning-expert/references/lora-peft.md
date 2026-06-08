@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Overview
@@ -12,7 +12,7 @@ Parameter-Efficient Fine-Tuning (PEFT) methods train only a small subset of mode
 
 | Method | Use When | Avoid When |
 |---
-{% raw %}
+
 -----|----------|------------|
 | **LoRA** | 7B+ models, limited VRAM, need multiple task adapters | Very small models (<1B), need maximum quality |
 | **QLoRA** | 13B+ models, single GPU, memory-constrained | High-throughput training, inference speed critical |
@@ -349,5 +349,4 @@ model = PeftModel.from_pretrained(base_model, "path/to/adapter")
 - `hyperparameter-tuning.md` - Learning rate schedules, batch sizes
 - `deployment-optimization.md` - Adapter merging, quantization for inference
 - `dataset-preparation.md` - Training data formatting
-
 {% endraw %}

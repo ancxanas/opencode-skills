@@ -10,5 +10,4 @@
 | Options Pattern | Configuration | - |
 | Output Caching | Performance | Configurable |
 | Rate Limiting | API protection | Per partition |
-
 {% endraw %}

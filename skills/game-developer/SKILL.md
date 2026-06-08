@@ -21,8 +21,6 @@ nav_order: 2
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Game Developer
 
 ## Core Workflow
@@ -169,5 +167,4 @@ public class IdleState : State
     public override void Exit() { }
 }
 ```
-
 {% endraw %}

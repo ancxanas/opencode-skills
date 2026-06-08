@@ -7,5 +7,4 @@
 | Execute | Run experiment, monitor | 5-10 min |
 | Rollback | Restore steady state | < 30 sec |
 | Learn | Document findings, plan fixes | 2 hours |
-
 {% endraw %}

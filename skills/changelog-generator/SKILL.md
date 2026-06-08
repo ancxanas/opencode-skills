@@ -18,8 +18,6 @@ nav_order: 1
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Changelog Generator
 
 This skill transforms technical git commits into polished, user-friendly changelogs that your customers and users will actually understand and appreciate.
@@ -124,6 +122,4 @@ guidelines from CHANGELOG_STYLE.md
 - Writing app store update descriptions
 - Generating email updates for users
 - Creating social media announcement posts
-
-
 {% endraw %}

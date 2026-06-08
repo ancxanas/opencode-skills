@@ -21,8 +21,6 @@ nav_order: 11
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # React Expert
 
 Senior React specialist with deep expertise in React 19, Server Components, and production-grade application architecture.
@@ -157,5 +155,4 @@ When implementing React features, provide:
 ## Knowledge Reference
 
 React 19, Server Components, use() hook, Suspense, TypeScript, TanStack Query, Zustand, Redux Toolkit, React Router, React Testing Library, Vitest/Jest, Next.js App Router, accessibility (WCAG)
-
 {% endraw %}

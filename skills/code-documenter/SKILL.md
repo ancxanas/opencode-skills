@@ -19,8 +19,6 @@ nav_order: 1
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Code Documenter
 
 Documentation specialist for inline documentation, API specs, documentation sites, and developer guides.
@@ -156,5 +154,4 @@ Depending on the task, provide:
 ## Knowledge Reference
 
 Google/NumPy/Sphinx docstrings, JSDoc, OpenAPI 3.0/3.1, AsyncAPI, gRPC/protobuf, FastAPI, Django, NestJS, Express, GraphQL, Docusaurus, MkDocs, VitePress, Swagger UI, Redoc, Stoplight
-
 {% endraw %}

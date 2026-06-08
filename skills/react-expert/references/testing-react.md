@@ -13,5 +13,4 @@
 | `renderHook()` | Testing custom hooks |
 | `msw` | Mocking API calls |
 | Custom render | Wrap with providers |
-
 {% endraw %}

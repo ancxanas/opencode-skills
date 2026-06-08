@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Structured Output Methods
@@ -18,7 +18,7 @@ render_with_liquid: false
 │  │ Reliability: ~  │  │ Reliability: ++ │  │ Reliability: +++│            │
 │  │ Flexibility: +++│  │ Flexibility: ++ │  │ Flexibility: +  │            │
 │  │ Validation: ---
-{% raw %}
+
  │  │ Validation: +   │  │ Validation: +++ │            │
 │  └─────────────────┘  └─────────────────┘  └─────────────────┘            │
 │                                                                             │
@@ -722,5 +722,4 @@ Response (JSON array only):"""
 - **API Designer** - Schema design for APIs
 - **Data Engineer** - Data validation pipelines
 - **RAG Architect** - Structured extraction for retrieval
-
 {% endraw %}

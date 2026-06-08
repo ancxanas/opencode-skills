@@ -160,5 +160,4 @@ const isValid =
 | Detailed Findings | Technical details |
 | Scan Results | Automated tool output |
 | Recommendations | Prioritized action items |
-
 {% endraw %}

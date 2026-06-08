@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Overview
@@ -285,7 +285,7 @@ def export_to_gguf(
 
 | Format | Size (8B model) | Speed | Quality | Use Case |
 |---
-{% raw %}
+
 -----|-----------------|-------|---------|----------|
 | FP16 | ~16 GB | Baseline | 100% | Development, fine-tuning |
 | GPTQ 4-bit | ~4 GB | ~1.5x | 98-99% | GPU inference |
@@ -675,5 +675,4 @@ Is latency critical (<100ms)?
 - `lora-peft.md` - Adapter merging strategies
 - `evaluation-metrics.md` - Post-deployment evaluation
 - `hyperparameter-tuning.md` - Training configurations
-
 {% endraw %}

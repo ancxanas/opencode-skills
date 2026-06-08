@@ -456,5 +456,4 @@ resource "vault_gcp_secret_roleset" "gcp_role" {
 - No implicit trust based on network location
 - Identity-based access control
 - Encrypted transit between clouds (VPN/interconnect)
-
 {% endraw %}

@@ -21,8 +21,6 @@ nav_order: 4
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # .NET Core Expert
 
 ## Core Workflow
@@ -148,5 +146,4 @@ When implementing .NET features, provide:
 3. API endpoints or service implementations
 4. Database context and migrations if applicable
 5. Brief explanation of architectural decisions
-
 {% endraw %}

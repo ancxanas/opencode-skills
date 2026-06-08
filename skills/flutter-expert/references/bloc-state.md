@@ -246,6 +246,4 @@ blocTest<CounterBloc, CounterState>(
 | BlocConsumer      | Both                 |
 | BlocProvider      | Dependency injection |
 | MultiBlocProvider | Multiple blocs       |
-
-
 {% endraw %}

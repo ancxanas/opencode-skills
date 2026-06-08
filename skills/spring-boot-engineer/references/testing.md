@@ -22,5 +22,4 @@
 - Use parameterized tests for multiple scenarios
 - Test security rules and validation
 - Keep tests fast and independent
-
 {% endraw %}

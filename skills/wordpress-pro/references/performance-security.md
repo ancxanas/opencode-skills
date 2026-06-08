@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Performance Optimization
@@ -372,7 +372,7 @@ add_action('my_plugin_db_cleanup', function(): void {
 ```
 
 ---
-{% raw %}
+
 
 
 ## Security Hardening
@@ -1014,5 +1014,4 @@ add_action('my_plugin_daily_backup', function(): void {
 - Implement rate limiting for login
 - Add security headers
 - Keep WordPress and plugins updated
-
 {% endraw %}

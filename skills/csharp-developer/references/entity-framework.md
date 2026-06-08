@@ -9,5 +9,4 @@
 | Bulk delete | `.ExecuteDeleteAsync()` | .NET 7+ |
 | Compiled query | `EF.CompileAsyncQuery()` | Reusable queries |
 | Soft delete | Query filter | `HasQueryFilter()` |
-
 {% endraw %}

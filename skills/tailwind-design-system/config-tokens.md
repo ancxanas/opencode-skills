@@ -21,5 +21,4 @@
 | User select | `select-none` | `user-select: none` |
 | Scroll behavior | `scroll-smooth` | `scroll-behavior: smooth` |
 | Forced color adjust | `forced-color-adjust-auto` | `forced-color-adjust: auto` |
-
 {% endraw %}

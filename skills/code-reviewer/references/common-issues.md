@@ -9,5 +9,4 @@
 | Mutable shared state | Bugs | Immutable patterns |
 | Missing null checks | Crashes | Optional chaining |
 | Sync file operations | Performance | Async operations |
-
 {% endraw %}

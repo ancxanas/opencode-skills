@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Template Hierarchy
@@ -62,7 +62,7 @@ WordPress uses a specific hierarchy to determine which template file renders con
 ```
 
 ---
-{% raw %}
+
 
 
 ## Classic Theme Structure
@@ -860,5 +860,4 @@ add_action('init', __NAMESPACE__ . '\\register_pattern_categories');
 - Ignore mobile responsiveness in patterns
 - Override core block styles excessively
 - Forget to escape translatable strings in patterns
-
 {% endraw %}

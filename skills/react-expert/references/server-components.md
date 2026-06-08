@@ -11,5 +11,4 @@
 | `'use client'` | Mark client boundary |
 | `'use server'` | Server Action |
 | Suspense | Streaming, loading states |
-
 {% endraw %}

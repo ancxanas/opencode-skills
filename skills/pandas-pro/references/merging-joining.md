@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Overview
@@ -9,7 +9,7 @@ render_with_liquid: false
 Combining DataFrames is essential for working with relational data. This reference covers merge, join, concat, and advanced combination strategies with pandas 2.0+.
 
 ---
-{% raw %}
+
 
 
 ## Merge (SQL-Style Joins)
@@ -598,5 +598,4 @@ print(result['_merge'].value_counts())
 - `dataframe-operations.md` - Filter before/after merge
 - `aggregation-groupby.md` - Aggregate before merging
 - `performance-optimization.md` - Optimize large merges
-
 {% endraw %}

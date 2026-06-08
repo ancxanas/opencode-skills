@@ -5,8 +5,6 @@ description: Use the Composio CLI to take actions on external apps directly - no
 tags: [cli, composio, tools, toolkits, auth, connected-accounts, direct-use]
 ---
 {% raw %}
-
-
 # Composio CLI Guide
 
 Use the Composio CLI to search, connect, and execute tools directly — no code writing required. Ideal for agents taking actions on behalf of the user.
@@ -223,5 +221,4 @@ composio manage tools --help
 composio manage toolkits --help
 composio manage triggers --help
 ```
-
 {% endraw %}

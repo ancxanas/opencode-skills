@@ -7,5 +7,4 @@
 | **RepaintBoundary** | Isolate expensive repaints |
 | **ListView.builder** | Lazy loading for lists |
 | **const constructors** | Always use when possible |
-
 {% endraw %}

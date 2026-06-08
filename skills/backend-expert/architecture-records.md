@@ -41,5 +41,4 @@ Do you need event-driven communication?
 ├── Yes → Message queue (RabbitMQ, Kafka, SQS/SNS)
 └── No → Direct HTTP (synchronous) or gRPC
 ```
-
 {% endraw %}

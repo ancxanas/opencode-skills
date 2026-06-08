@@ -11,5 +11,4 @@
 | `AuthorizeView` | Conditional auth UI | Or `@attribute [Authorize]` |
 | `ErrorBoundary` | Error handling | Catch render exceptions |
 | `Virtualize` | Large lists | Performance optimization |
-
 {% endraw %}

@@ -5,8 +5,6 @@ description: Set up trigger instances to receive real-time events from connected
 tags: [triggers, events, webhooks, real-time, notifications]
 ---
 {% raw %}
-
-
 # Create Triggers for Real-Time Events
 
 Triggers receive real-time events from connected accounts (Gmail, GitHub, Slack, etc.). Create trigger instances to subscribe to specific events.
@@ -246,5 +244,4 @@ async function setupUserTriggers(userId: string) {
 - **Automatic reuse** - Identical configs share same trigger instance
 - **Pin versions** - Prevents breaking changes in production
 - **Error handling** - Handle missing connections gracefully
-
 {% endraw %}

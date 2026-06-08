@@ -16,5 +16,4 @@
 3. **Pass data down** - Fetch in Server Components, pass to Client Components
 4. **Use composition** - Nest Server Components inside Client Components via children
 5. **Cache expensive operations** - Use React cache() for deduplication
-
 {% endraw %}

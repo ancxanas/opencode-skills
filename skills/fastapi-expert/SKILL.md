@@ -21,8 +21,6 @@ nav_order: 5
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # FastAPI Expert
 
 Deep expertise in async Python, Pydantic V2, and production-grade API development with FastAPI.
@@ -193,5 +191,4 @@ When implementing FastAPI features, provide:
 ## Knowledge Reference
 
 FastAPI, Pydantic V2, async SQLAlchemy, Alembic migrations, JWT/OAuth2, pytest-asyncio, httpx, BackgroundTasks, WebSockets, dependency injection, OpenAPI/Swagger
-
 {% endraw %}

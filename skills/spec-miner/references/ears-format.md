@@ -6,5 +6,4 @@
 | State | While [X], shall | While logged in |
 | Conditional | While [X], when [Y], shall | While admin, when delete |
 | Optional | Where [X], shall | If feature enabled |
-
 {% endraw %}

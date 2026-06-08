@@ -19,5 +19,4 @@
 | `requestBody` | Request body schema |
 | `responses` | Response schemas |
 | `$ref` | Reference schema |
-
 {% endraw %}

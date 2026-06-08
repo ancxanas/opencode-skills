@@ -10,5 +10,4 @@
 | `[T] extends [any]` | Non-distributive check |
 | `-?` modifier | Remove optional |
 | `readonly` modifier | Make immutable |
-
 {% endraw %}

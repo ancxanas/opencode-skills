@@ -1,9 +1,9 @@
 ---
 render_with_liquid: false
 ---
-
-----|---
 {% raw %}
+----|---
+
 -------|-------|
 | `modifier Mod4` | `$mainMod = SUPER` | Same key, different syntax |
 | `bindsym $mod+Return exec kitty` | `bind=$mainMod,Return,exec,kitty` | Commas instead of spaces |
@@ -409,5 +409,4 @@ windowrule = float, ^(pavucontrol)$
 | `redshift` | `hyprsunset` / `wlsunset` | `hyprsunset` |
 | `picom` (transparency/shadow) | Built-in `decoration` | `decoration` section |
 | `compton` | Built-in compositor | Hyprland is the compositor |
-
 {% endraw %}

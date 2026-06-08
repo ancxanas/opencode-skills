@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Fedora
@@ -46,7 +46,7 @@ Generally no SELinux changes are needed for standard Hyprland usage.
 Stock Fedora repos may lag behind upstream. The `solopasha/hyprland` COPR tracks latest stable releases. For v0.55+ Lua support, use the COPR.
 
 ---
-{% raw %}
+
 
 
 ## Debian / Ubuntu
@@ -348,5 +348,4 @@ A: The version depends on your nixpkgs channel. `nixos-unstable` tracks recent r
 
 **Q: "My NixOS build takes forever — what's happening?"**
 A: First build can compile Hyprland from source (C++ takes a while). Add `package = pkgs.hyprland;` to use a pre-built binary when available. Subsequent builds are cached.
-
 {% endraw %}

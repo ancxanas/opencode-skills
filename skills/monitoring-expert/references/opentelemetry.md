@@ -13,5 +13,4 @@
 | `http.status_code` | 200, 500 |
 | `db.system` | postgresql |
 | `db.statement` | SELECT ... |
-
 {% endraw %}

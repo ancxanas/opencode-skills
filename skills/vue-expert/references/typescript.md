@@ -11,5 +11,4 @@
 | `InjectionKey<T>` | Typed provide/inject |
 | Type guards | Runtime type checking |
 | `as` assertions | Type assertions |
-
 {% endraw %}

@@ -5,8 +5,6 @@ description: Use proper user IDs to ensure data isolation, security, and correct
 tags: [tool-router, user-id, security, authentication, multi-tenant]
 ---
 {% raw %}
-
-
 # Choose User IDs Carefully for Security and Isolation
 
 User IDs are the **foundation of Composio's data isolation**. They determine which user's connections, data, and permissions are used for tool execution. Choose them carefully to ensure security and proper data isolation.
@@ -476,5 +474,4 @@ const teamSession = await composio.create(req.user.organizationId, {
 - [Composio Sessions](https://docs.composio.dev/sdk/typescript/api/tool-router#creating-sessions)
 - [User ID Security](https://docs.composio.dev/sdk/typescript/core-concepts#user-ids)
 - [Connected Accounts](https://docs.composio.dev/sdk/typescript/api/connected-accounts)
-
 {% endraw %}

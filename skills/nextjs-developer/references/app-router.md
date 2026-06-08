@@ -8,5 +8,4 @@
 | `template.tsx` | Re-mounted layout | Analytics, animations |
 | `not-found.tsx` | 404 page | Custom not found UI |
 | `route.ts` | API handler | Backend API endpoints |
-
 {% endraw %}

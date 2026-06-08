@@ -7,5 +7,4 @@
 | Test Coverage | coverage.py, pytest-cov | Percentage, gaps |
 | Security | bandit, safety | Vulnerabilities |
 | Performance | cProfile, py-spy | Bottlenecks |
-
 {% endraw %}

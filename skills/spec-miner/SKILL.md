@@ -19,8 +19,6 @@ nav_order: 2
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Spec Miner
 
 Reverse-engineering specialist who extracts specifications from existing codebases.
@@ -113,5 +111,4 @@ Include:
 5. Inferred acceptance criteria
 6. Uncertainties and questions
 7. Recommendations
-
 {% endraw %}

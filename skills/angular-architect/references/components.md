@@ -9,5 +9,4 @@
 | DI | `inject()` function |
 | Control Flow | `@if`, `@for`, `@switch` |
 | Change Detection | `ChangeDetectionStrategy.OnPush` |
-
 {% endraw %}

@@ -110,5 +110,4 @@ Ask: **"What would guarantee this fails?"** Then check if any of those condition
 **What would guarantee failure:** [List top 3 conditions]
 **Do any exist now?** [Yes/No with specifics]
 ```
-
 {% endraw %}

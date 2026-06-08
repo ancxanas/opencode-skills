@@ -9,5 +9,4 @@
 | `go generate ./...` | Run code generation |
 | `GOOS=linux go build` | Cross-compile |
 | `go work init` | Initialize workspace |
-
 {% endraw %}

@@ -562,5 +562,4 @@ FROM metrics;
 - [ ] Set up cost allocation tags
 - [ ] Enable Cost Anomaly Detection
 - [ ] Establish FinOps practices
-
 {% endraw %}

@@ -21,8 +21,6 @@ nav_order: 8
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Rails Expert
 
 ## Core Workflow
@@ -188,5 +186,4 @@ When implementing Rails features, provide:
 4. View files or Hotwire setup
 5. Spec files for models and requests
 6. Brief explanation of architectural decisions
-
 {% endraw %}

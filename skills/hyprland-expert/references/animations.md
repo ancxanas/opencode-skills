@@ -181,5 +181,4 @@ animations {
     animation = workspaces, 1, 10, default
 }
 ```
-
 {% endraw %}

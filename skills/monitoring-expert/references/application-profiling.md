@@ -23,5 +23,4 @@
 | Memory leak | Growing memory, eventual crash |
 | I/O bound | Low CPU, high wait time |
 | Lock contention | Idle threads, poor scaling |
-
 {% endraw %}

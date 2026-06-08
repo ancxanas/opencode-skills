@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Overview
@@ -9,7 +9,7 @@ render_with_liquid: false
 Data cleaning is critical for reliable analysis. This reference covers handling missing values, duplicates, type conversion, and data validation with pandas 2.0+ patterns.
 
 ---
-{% raw %}
+
 
 
 ## Missing Values
@@ -502,5 +502,4 @@ df['id'] = pd.to_numeric(df['id'], errors='coerce').astype('Int64')
 - `dataframe-operations.md` - Selection and filtering for targeted cleaning
 - `aggregation-groupby.md` - Aggregate duplicates instead of dropping
 - `performance-optimization.md` - Efficient cleaning of large datasets
-
 {% endraw %}

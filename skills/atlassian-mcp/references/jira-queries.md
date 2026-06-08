@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## JQL Fundamentals
@@ -16,7 +16,7 @@ field OPERATOR value [AND|OR field OPERATOR value]
 
 | Operator | Description | Example |
 |---
-{% raw %}
+
 -------|-------------|---------|
 | `=` | Exact match | `project = "PROJ"` |
 | `!=` | Not equal | `status != Done` |
@@ -518,5 +518,4 @@ ORDER BY created DESC  -- CORRECT
 - `common-workflows.md` - End-to-end workflow patterns
 - `authentication-patterns.md` - Credential setup for API calls
 - `confluence-operations.md` - Linking Jira issues to Confluence pages
-
 {% endraw %}

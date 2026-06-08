@@ -451,5 +451,4 @@ Observability is non-negotiable in microservices:
 - Practice incident response with game days
 
 Without observability, you're flying blind in production.
-
 {% endraw %}

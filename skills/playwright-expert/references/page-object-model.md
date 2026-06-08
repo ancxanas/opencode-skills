@@ -12,5 +12,4 @@
 | Locators as getters | Lazy evaluation |
 | No assertions in PO | Flexibility |
 | Fixtures for setup | DRY, maintainable |
-
 {% endraw %}

@@ -14,5 +14,4 @@
 | `@WithMockUser` | Mock authenticated user |
 | `assertThat()` | AssertJ fluent assertions |
 | `verify()` | Mockito verification |
-
 {% endraw %}

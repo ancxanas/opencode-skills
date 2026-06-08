@@ -56,5 +56,4 @@ signature: RSASHA256(base64(header) + "." + base64(payload), private_key)
 - Auth0: `https://{tenant}.auth0.com/.well-known/jwks.json`
 - Clerk: `https://{app}.clerk.accounts.dev/.well-known/jwks.json`
 - Firebase: `https://www.googleapis.com/oauth2/v3/certs`
-
 {% endraw %}

@@ -10,5 +10,4 @@
 | `@ApiTags()` | Swagger grouping |
 | `@ApiOperation()` | Endpoint description |
 | `@ApiResponse()` | Document response |
-
 {% endraw %}

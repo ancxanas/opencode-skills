@@ -11,5 +11,4 @@
 | `go test -fuzz FuzzName` | Run fuzzing |
 | `go test -cpuprofile cpu.prof` | CPU profiling |
 | `go test -memprofile mem.prof` | Memory profiling |
-
 {% endraw %}

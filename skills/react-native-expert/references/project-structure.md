@@ -9,5 +9,4 @@
 | `stores/` | State management |
 | `constants/` | App constants |
 | `types/` | TypeScript types |
-
 {% endraw %}

@@ -13,5 +13,4 @@
 | `ReturnType<T>` | Extract function return type |
 | `Parameters<T>` | Extract function parameters |
 | `Awaited<T>` | Unwrap Promise type |
-
 {% endraw %}

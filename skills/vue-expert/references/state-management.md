@@ -10,5 +10,4 @@
 | Plugins | Add global functionality (logger, persistence) |
 | Accessing stores | Use other stores in actions |
 | Testing | Use `setActivePinia()` for isolated tests |
-
 {% endraw %}

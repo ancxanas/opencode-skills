@@ -1,9 +1,9 @@
 ---
 render_with_liquid: false
 ---
-
------|---
 {% raw %}
+-----|---
+
 ------|
 | `Platform.OS` | Get platform ('ios' / 'android') |
 | `Platform.select()` | Platform-specific values |
@@ -16,5 +16,4 @@ render_with_liquid: false
 | `KeyboardAvoidingView` | Keyboard handling |
 | `StatusBar` | Status bar styling |
 | `BackHandler` | Android back button |
-
 {% endraw %}

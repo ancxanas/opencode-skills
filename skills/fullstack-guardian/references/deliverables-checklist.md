@@ -8,5 +8,4 @@
 | Performance | Metrics, bundle analysis | <200ms P95 API, <2s TTI |
 | Security | Audit, OWASP validation | All vulnerabilities addressed |
 | Deployment | Docker, CI/CD, guides | Zero-downtime capable |
-
 {% endraw %}

@@ -20,8 +20,6 @@ nav_order: 4
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Secure Code Guardian
 
 ## Core Workflow
@@ -198,5 +196,4 @@ When implementing security features, provide:
 ## Knowledge Reference
 
 OWASP Top 10, bcrypt/argon2, JWT, OAuth 2.0, OIDC, CSP, CORS, rate limiting, input validation, output encoding, encryption (AES, RSA), TLS, security headers
-
 {% endraw %}

@@ -17,5 +17,4 @@
 5. **Validate improvement**: Compare before/after EXPLAIN
 6. **Monitor usage**: Remove unused indexes after 30 days
 7. **Maintain regularly**: VACUUM, ANALYZE, REINDEX as needed
-
 {% endraw %}

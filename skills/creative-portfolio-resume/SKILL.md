@@ -18,8 +18,6 @@ nav_order: 4
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Creative Portfolio Resume
 
 ## When to Use This Skill
@@ -346,5 +344,4 @@ When creating a creative resume:
 - ✅ File is optimized for sharing (reasonable size)
 - ✅ Content quality matches design quality
 - ✅ Resume is a worthy portfolio piece
-
 {% endraw %}

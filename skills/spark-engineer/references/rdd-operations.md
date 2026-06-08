@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## When to Use RDDs
@@ -20,7 +20,7 @@ render_with_liquid: false
 - Working with standard file formats (Parquet, JSON, ORC)
 
 ---
-{% raw %}
+
 
 
 ## RDD Creation
@@ -601,5 +601,4 @@ print(rdd.toDebugString())
 8. **Monitor accumulators** - Use for debugging, not business logic
 9. **Check partition distribution** - Avoid skew with custom partitioners
 10. **Profile with Spark UI** - Identify shuffle, spill, and GC issues
-
 {% endraw %}

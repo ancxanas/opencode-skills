@@ -88,5 +88,4 @@ end
 - Pre-fill table size hint: Lua 5.2+ ignores size hints; for large tables, fill sequentially
 - Avoid sparse table growth: allocate contiguous, resize only when needed
 - `table.remove` on large arrays is O(n) — shift cost grows with size
-
 {% endraw %}

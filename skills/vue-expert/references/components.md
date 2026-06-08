@@ -11,5 +11,4 @@
 | `<Teleport>` | Render DOM outside component hierarchy |
 | `<component :is>` | Dynamic component switching |
 | `defineAsyncComponent()` | Lazy load components |
-
 {% endraw %}

@@ -18,5 +18,4 @@
 | `call.principal()` | Get authenticated user |
 | `authenticate { }` | Protect routes |
 | `route("/path") { }` | Group routes |
-
 {% endraw %}

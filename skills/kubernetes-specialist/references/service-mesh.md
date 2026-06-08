@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Istio Installation
@@ -200,7 +200,7 @@ spec:
   mtls:
     mode: STRICT
 ---
-{% raw %}
+
 
 # Per-workload mTLS
 apiVersion: security.istio.io/v1beta1
@@ -461,5 +461,4 @@ istioctl dashboard jaeger
 8. **Implement authorization policies** for zero-trust
 9. **Keep service mesh version updated** for security patches
 10. **Document traffic routing decisions** in VirtualServices
-
 {% endraw %}

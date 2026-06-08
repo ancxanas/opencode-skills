@@ -22,5 +22,4 @@
 - **Exceptions**: `JacksonException` extends `RuntimeException`, not `IOException` — audit `catch (IOException e)` blocks
 - **Annotations**: `@JsonProperty`, `@JsonIgnore`, `@JsonView` remain at `com.fasterxml.jackson.annotation` (shared with Jackson 2)
 - **Compatibility**: Add `spring.jackson.use-jackson2-defaults: true` + `spring-boot-jackson2` for incremental migration
-
 {% endraw %}

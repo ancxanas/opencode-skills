@@ -45,5 +45,4 @@
 | IDOR | Access other user's resource | Two user accounts, IDs |
 | Auth Bypass | Unauthorized access | Before/after screenshots |
 | RCE | Command output (safe) | Whoami, id command output |
-
 {% endraw %}

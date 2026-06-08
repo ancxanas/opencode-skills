@@ -1,14 +1,14 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Authentication Methods Overview
 
 | Method | Platform | Use Case | Security Level |
 |---
-{% raw %}
+
 -----|----------|----------|----------------|
 | OAuth 2.1 | Cloud | User-facing apps, integrations | Highest |
 | API Token | Cloud | Personal automation, scripts | Medium |
@@ -522,5 +522,4 @@ async function debugAuth(token: string): Promise<void> {
 - `mcp-server-setup.md` - Server configuration with credentials
 - `jira-queries.md` - Operations that require authentication
 - `confluence-operations.md` - Content operations with auth
-
 {% endraw %}

@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## When to Use
@@ -20,7 +20,7 @@ render_with_liquid: false
 - Checkout-only customizations (use Checkout Extensions)
 
 ---
-{% raw %}
+
 
 
 ## App Architecture Overview
@@ -715,7 +715,7 @@ function SaveButton() {
 ### Common Patterns
 
 ```typescript
-{% raw %}
+
 import {
   Page,
   Layout,
@@ -839,7 +839,7 @@ function SettingsPage() {
     </Page>
   );
 }
-{% endraw %}
+
 ```
 
 ---
@@ -898,5 +898,4 @@ npm run deploy
 - **Storefront API** - For customer-facing features
 - **Checkout Customization** - For checkout extensions
 - **Liquid Templating** - For theme app extensions
-
 {% endraw %}

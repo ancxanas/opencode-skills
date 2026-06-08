@@ -18,5 +18,4 @@
 | 80% CPU | Scale up |
 | 90% CPU | Emergency scaling |
 | 60% CPU for 24h | Scale down |
-
 {% endraw %}

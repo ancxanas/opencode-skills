@@ -206,5 +206,4 @@ export const config = environments[process.env.NODE_ENV || 'development'];
 | Blue-Green Deploy | Zero downtime | Instant rollback |
 | E2E Tests | User flows | Catch integration bugs |
 | Load Testing | Performance validation | Ensure scalability |
-
 {% endraw %}

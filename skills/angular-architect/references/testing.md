@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ----a--b--|';
       const result$ = source$.pipe(delay(20));
 
@@ -221,7 +221,7 @@ describe('authGuard', () => {
 
 | Test Type | Key Tools |
 |---
-{% raw %}
+
 --------|-----------|
 | Component | `TestBed`, `ComponentFixture`, `detectChanges()` |
 | Service | `HttpClientTestingModule`, `HttpTestingController` |
@@ -231,5 +231,4 @@ describe('authGuard', () => {
 | Guards | `TestBed.runInInjectionContext()` |
 | Signals | Direct value checks with `()` |
 | Spies | `jasmine.createSpyObj()`, `spyOn()` |
-
 {% endraw %}

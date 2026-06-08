@@ -19,8 +19,6 @@ nav_order: 1
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Chaos Engineer
 
 ## When to Use This Skill
@@ -188,5 +186,4 @@ chaos:
 # Apply and trigger a manual kill for testing
 chaos-monkey --app my-service --account staging --dry-run false
 ```
-
 {% endraw %}

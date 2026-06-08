@@ -42,5 +42,4 @@ logger.info({ event: 'request.processed', requestId, userId });
 | structlog | Python |
 | slog | Go |
 | logrus | Go |
-
 {% endraw %}

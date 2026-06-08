@@ -5,8 +5,6 @@ description: SDK-based guide for building AI agents and applications that integr
 tags: [composio, sdk, agents, apps, typescript, python, frameworks]
 ---
 {% raw %}
-
-
 # Building Apps and Agents with Composio
 
 Use the Composio SDK to build AI agents, chat apps, and backend services that integrate with 200+ external tools.
@@ -134,5 +132,4 @@ composio manage toolkits info "gmail"
 ```
 
 Using incorrect slugs causes runtime errors.
-
 {% endraw %}

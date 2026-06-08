@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Overview
@@ -23,7 +23,7 @@ Pipeline orchestration automates the end-to-end ML workflow from data ingestion 
 - Interactive development and experimentation
 
 ---
-{% raw %}
+
 
 
 ## Kubeflow Pipelines
@@ -909,5 +909,4 @@ def process_data(run_id: str, data_path: str):
 - **DevOps Engineer** - CI/CD for pipeline deployment
 - **Kubernetes Specialist** - Running pipelines on K8s
 - **Cloud Architect** - Cloud infrastructure for orchestration
-
 {% endraw %}

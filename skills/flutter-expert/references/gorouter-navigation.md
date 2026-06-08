@@ -7,5 +7,4 @@
 | `context.pushReplacement()` | Replace current |
 | `:param` | Path parameter |
 | `?key=value` | Query parameter |
-
 {% endraw %}

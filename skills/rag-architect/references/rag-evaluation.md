@@ -1,14 +1,14 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Evaluation Framework Overview
 
 | Framework | Focus | Strengths | Use Case |
 |---
-{% raw %}
+
 --------|-------|-----------|----------|
 | **RAGAS** | RAG-specific metrics | Faithfulness, relevance | Production RAG evaluation |
 | **TruLens** | LLM app observability | Tracing, feedback functions | Debugging and monitoring |
@@ -377,7 +377,7 @@ f_citation = Feedback(
 ### LLM-as-Judge Evaluation
 
 ```python
-{% raw %}
+
 from openai import OpenAI
 from dataclasses import dataclass
 from typing import Literal
@@ -463,7 +463,7 @@ eval_result = evaluate_with_llm(
 )
 print(f"Faithfulness: {eval_result.score:.2f}")
 print(f"Reasoning: {eval_result.reasoning}")
-{% endraw %}
+
 ```
 
 ### Batch Evaluation Pipeline
@@ -837,5 +837,4 @@ for query_result in production_queries:
 - **ML Pipeline** - Evaluation automation
 - **Data Scientist** - Statistical analysis
 - **Monitoring Expert** - Production observability
-
 {% endraw %}

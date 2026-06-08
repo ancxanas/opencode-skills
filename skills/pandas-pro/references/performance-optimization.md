@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Overview
@@ -9,7 +9,7 @@ render_with_liquid: false
 Optimizing pandas performance is critical for production workflows. This reference covers memory optimization, vectorization, chunking, and profiling with pandas 2.0+.
 
 ---
-{% raw %}
+
 
 
 ## Memory Analysis
@@ -599,5 +599,4 @@ Before deploying pandas code:
 - `dataframe-operations.md` - Efficient indexing and filtering
 - `aggregation-groupby.md` - Optimized aggregation patterns
 - `merging-joining.md` - Efficient merge strategies
-
 {% endraw %}

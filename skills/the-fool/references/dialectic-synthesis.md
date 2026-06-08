@@ -129,5 +129,4 @@ Rate the synthesis outcome.
 **Confidence:** HIGH / MEDIUM / LOW / PIVOT
 **If MEDIUM:** Test [riskiest assumption] by [experiment]
 ```
-
 {% endraw %}

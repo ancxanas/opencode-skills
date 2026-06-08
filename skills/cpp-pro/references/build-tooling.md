@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 Checks: >
   *,
@@ -256,7 +256,7 @@ cmake --build .
 ## CI/CD with GitHub Actions
 
 ```yaml
-{% raw %}
+
 # .github/workflows/ci.yml
 name: CI
 
@@ -319,14 +319,14 @@ jobs:
 
     - name: Run cppcheck
       run: cppcheck --enable=all --error-exitcode=1 src/
-{% endraw %}
+
 ```
 
 ## Quick Reference
 
 | Tool | Purpose | Command |
 |---
-{% raw %}
+
 ---|---------|---------|
 | CMake | Build system | `cmake -B build && cmake --build build` |
 | Conan | Package manager | `conan install . --build=missing` |
@@ -339,5 +339,4 @@ jobs:
 | GoogleTest | Unit testing | `TEST(Suite, Name) { EXPECT_EQ(...); }` |
 | Google Benchmark | Performance | `BENCHMARK(func)->Range(...)` |
 | Valgrind | Memory profiler | `valgrind --tool=memcheck ./app` |
-
 {% endraw %}

@@ -14,5 +14,4 @@
 | WebSockets | Built-in | Via package | Via package |
 | Extension | Required | Not required | Not required |
 | Learning Curve | Medium | Low | Medium |
-
 {% endraw %}

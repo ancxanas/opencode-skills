@@ -5,8 +5,6 @@ description: Comprehensive guide to CRUD operations on connected accounts with e
 tags: [connected-accounts, authentication, oauth, crud, security]
 ---
 {% raw %}
-
-
 # Connected Accounts Management
 
 > **Using Sessions/Tool Router?** If you're using Tool Router Sessions, you can use `session.toolkits()` to view the auth configs and connected accounts being used by the Tool Router. You only need to use the methods below if you're managing connected accounts outside of Tool Router.
@@ -240,5 +238,4 @@ async function isToolkitConnected(userId, toolkit) {
 - **Store account IDs** - Save in your database, associate with users
 - **Check status** - Verify ACTIVE before use, refresh on errors
 - **Handle lifecycle** - Disable instead of delete when possible
-
 {% endraw %}

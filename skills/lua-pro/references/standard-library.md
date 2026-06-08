@@ -126,5 +126,4 @@ utf8.find(s, pattern, init, plain) -- regex find (5.4+)
 ### UTF-8 Patterns (5.4+)
 
 Same syntax as string patterns but operates on decoded codepoints rather than bytes. E.g., `utf8.match("café", "%l%l%l%l")` matches "café" because it sees 4 codepoints.
-
 {% endraw %}

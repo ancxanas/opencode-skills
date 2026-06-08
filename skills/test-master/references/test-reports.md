@@ -90,5 +90,4 @@
 | Coverage | Code coverage analysis |
 | Recommendations | Prioritized actions |
 | Sign-off | Approval criteria |
-
 {% endraw %}

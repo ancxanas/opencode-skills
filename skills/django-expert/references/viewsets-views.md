@@ -14,5 +14,4 @@
 | `get_serializer_class()` | Dynamic serializer |
 | `perform_create()` | Pre-save logic |
 | `@action()` | Custom endpoints |
-
 {% endraw %}

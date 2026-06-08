@@ -12,5 +12,4 @@
 | X-Frame-Options | Clickjacking |
 | X-Content-Type-Options | MIME sniffing |
 | SameSite | CSRF protection |
-
 {% endraw %}

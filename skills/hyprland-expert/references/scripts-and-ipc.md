@@ -195,5 +195,4 @@ brightnessctl -r                                  # Restore saved brightness
 - Avoid polling loops (e.g., `while true; do hyprctl clients; sleep 1; done`) — use the socket instead
 - Batch multiple `hyprctl keyword` calls into a single script rather than separate keybindings
 - `jq` is fast but for high-frequency operations, consider `hyprctl -j clients | jq -c '.[] | select(.focusHistoryID == 0)'` (filter server-side as much as possible)
-
 {% endraw %}

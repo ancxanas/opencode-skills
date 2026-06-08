@@ -17,5 +17,4 @@
 | Edge case | Boundary condition | Action | Graceful handling |
 | Authorization | User role | Protected action | Appropriate access |
 | Concurrency | Multiple actors | Simultaneous action | Consistent state |
-
 {% endraw %}

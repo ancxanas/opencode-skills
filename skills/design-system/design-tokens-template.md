@@ -116,5 +116,4 @@ color-{role}-{variant}-{strength}
 - Roles: brand, primary, secondary, neutral, success, warning, danger, info
 - Variants: bg, text, border, icon
 - Strengths (for neutral): 50, 100, 200, ..., 900, 950
-
 {% endraw %}

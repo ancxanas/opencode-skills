@@ -13,5 +13,4 @@
 | secure | HTTPS only |
 | sameSite=strict | CSRF protection |
 | maxAge | Expiration |
-
 {% endraw %}

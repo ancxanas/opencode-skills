@@ -42,5 +42,4 @@ Save specification as: `specs/{project_name}_reverse_spec.md`
 | Acceptance Criteria | Given/When/Then format |
 | Uncertainties | Questions for clarification |
 | Recommendations | Improvements identified |
-
 {% endraw %}

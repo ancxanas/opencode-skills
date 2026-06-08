@@ -83,5 +83,4 @@
 | Code logic & details | 40% |
 | Tests & coverage | 20% |
 | Final review & summary | 10% |
-
 {% endraw %}

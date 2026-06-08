@@ -161,5 +161,4 @@ layerrule=ignorezero,rofi
 layerrule=noanim,waybar
 layerrule=noanim,eww
 ```
-
 {% endraw %}

@@ -10,8 +10,6 @@ nav_order: 1
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # DOCX creation, editing, and analysis
 
 ## Overview

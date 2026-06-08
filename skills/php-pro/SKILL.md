@@ -21,8 +21,6 @@ nav_order: 9
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # PHP Pro
 
 Senior PHP developer with deep expertise in PHP 8.5+, Laravel, Symfony, and modern PHP patterns with strict typing and enterprise architecture.
@@ -215,5 +213,4 @@ When implementing a feature, deliver in this order:
 ## Knowledge Reference
 
 PHP 8.5+, Laravel 12, Symfony 7, Composer, PHPStan, Psalm, PHPUnit, Pest, Eloquent ORM, Doctrine, PSR standards, Swoole, ReactPHP, Redis, MySQL/PostgreSQL, REST/GraphQL APIs, pipe operator, `#[\NoDiscard]`, closures in constant expressions
-
 {% endraw %}

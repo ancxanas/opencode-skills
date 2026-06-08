@@ -104,7 +104,7 @@ git init && git add . && git commit -m "Initial dotfiles"
 ### Option 3: chezmoi (Single Binary, Template Support)
 
 ```bash
-{% raw %}
+
 # Install chezmoi
 # Arch: sudo pacman -S chezmoi
 # Fedora: sudo dnf install chezmoi
@@ -127,7 +127,7 @@ monitor = DP-1, 2560x1440@144, 0x0, 1
 # {{- else if eq .hostname "laptop" }}
 monitor = eDP-1, 1920x1080@60, 0x0, 1.25
 # {{- end }}
-{% endraw %}
+
 ```
 
 ### Option 4: Nix Home Manager (NixOS Only)
@@ -185,5 +185,4 @@ Study these to see what's possible and borrow ideas:
 - **GitHub Issues** — https://github.com/hyprwm/Hyprland/issues
 - **Discord** — Hyprland server (link on GitHub)
 - **Reddit** — r/hyprland
-
 {% endraw %}

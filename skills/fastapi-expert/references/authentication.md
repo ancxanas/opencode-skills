@@ -9,5 +9,4 @@
 | `pwd_context.verify()` | Check password |
 | `Depends(get_current_user)` | Require auth |
 | `require_roles()` | Role-based access |
-
 {% endraw %}

@@ -21,8 +21,6 @@ nav_order: 3
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Hyprland Expert
 
 Senior Hyprland configuration specialist with deep expertise in Wayland compositor setup, dynamic tiling window management, and Linux desktop customization.
@@ -440,5 +438,4 @@ When implementing Hyprland features, provide:
 4. Keybinding scheme organized by category
 5. Companion tool integration steps
 6. Validation commands to verify the setup
-
 {% endraw %}

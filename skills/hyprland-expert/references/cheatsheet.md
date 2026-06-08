@@ -116,5 +116,4 @@ bezier=easeInOut,0.42,0.0,0.58,1.0         # Smooth in-out
 | Screen sharing | Enable `xdg-desktop-portal-hyprland` |
 | Electron apps glitchy | Set `ELECTRON_OZONE_PLATFORM_HINT=auto` |
 | NVIDIA flickering | `nvidia_drm.modeset=1`, `WLR_NO_HARDWARE_CURSORS=1` |
-
 {% endraw %}

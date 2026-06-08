@@ -7,5 +7,4 @@
 | `StreamProvider` | Real-time data streams |
 | `NotifierProvider` | Complex state with methods |
 | `AsyncNotifierProvider` | Async state with methods |
-
 {% endraw %}

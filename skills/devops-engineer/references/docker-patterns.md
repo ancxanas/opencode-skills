@@ -22,5 +22,4 @@ docker-compose*
 coverage
 .nyc_output
 ```
-
 {% endraw %}

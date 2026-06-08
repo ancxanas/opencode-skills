@@ -16,5 +16,4 @@
 | `renderToString()` | Custom SSR with Fastify/Express |
 | `vite: {}` | Vite configuration in nuxt.config.ts |
 | `nuxt-delay-hydration` | Progressive hydration for performance |
-
 {% endraw %}

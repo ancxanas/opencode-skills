@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Server Options Overview
@@ -44,7 +44,7 @@ npm install atlassian-mcp
 
 | Feature | Official | sooperset | xuanxt |
 |---
-{% raw %}
+
 ------|----------|-----------|--------|
 | Jira Cloud | Yes | Yes | Yes |
 | Jira Server/DC | No | Yes | Limited |
@@ -294,5 +294,4 @@ Enable verbose logging:
 - `authentication-patterns.md` - OAuth 2.1 and API token setup details
 - `jira-queries.md` - JQL syntax after connection is established
 - `confluence-operations.md` - CQL and page operations
-
 {% endraw %}

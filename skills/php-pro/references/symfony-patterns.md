@@ -11,5 +11,4 @@
 | Message | Async messages | `src/Message/` |
 | MessageHandler | Message handlers | `src/MessageHandler/` |
 | DTO | Data transfer | `src/DTO/` |
-
 {% endraw %}

@@ -13,5 +13,4 @@
 | `create()` | Custom creation logic |
 | `update()` | Custom update logic |
 | `to_representation()` | Custom output |
-
 {% endraw %}

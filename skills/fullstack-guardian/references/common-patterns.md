@@ -7,5 +7,4 @@
 | Delete | DELETE + confirm | Soft delete |
 | Auth | Token storage | JWT middleware |
 | Upload | FormData | Multer/streaming |
-
 {% endraw %}

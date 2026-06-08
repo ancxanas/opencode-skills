@@ -6,5 +6,4 @@
 | Decision | The choice | What did we choose? |
 | Consequences | Impact | What happens now? |
 | Alternatives | Options | What else was considered? |
-
 {% endraw %}

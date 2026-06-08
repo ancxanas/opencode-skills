@@ -13,5 +13,4 @@
 | Error handling | `catchError`, `retry` |
 | Cleanup | `takeUntilDestroyed`, `takeUntil` |
 | Share result | `shareReplay` |
-
 {% endraw %}

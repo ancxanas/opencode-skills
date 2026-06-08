@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Two-Stage Review Architecture
@@ -45,7 +45,7 @@ render_with_liquid: false
 **Critical:** Complete Stage 1 (spec compliance) BEFORE Stage 2 (code quality). Never review code quality for functionality that doesn't meet the specification.
 
 ---
-{% raw %}
+
 
 
 ## Stage 1: Spec Compliance Review
@@ -260,5 +260,4 @@ All requirements verified:
 ---
 
 *Content adapted from [obra/superpowers](https://github.com/obra/superpowers) by Jesse Vincent (@obra), MIT License.*
-
 {% endraw %}

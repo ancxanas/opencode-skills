@@ -18,5 +18,4 @@
 | Playwright, Cypress | Web E2E |
 | Appium, Detox | Mobile |
 | k6, Gatling | Performance |
-
 {% endraw %}

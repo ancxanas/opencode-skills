@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Example 2: Filler + Unnecessary Reassurance
@@ -15,7 +15,7 @@ render_with_liquid: false
 **Changes:** Cut hedging ("most"), removed throat-clearing phrases, deleted permission-granting ending.
 
 ---
-{% raw %}
+
 
 
 ## Example 3: Business Jargon Stack
@@ -51,5 +51,4 @@ render_with_liquid: false
 > "The best teams optimize for learning, not productivity."
 
 **Changes:** Direct claim. No rhetorical scaffolding.
-
 {% endraw %}

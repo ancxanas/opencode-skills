@@ -19,5 +19,4 @@
 | p99 latency | < 1s |
 | Error rate | < 1% |
 | RPS | 10x normal |
-
 {% endraw %}

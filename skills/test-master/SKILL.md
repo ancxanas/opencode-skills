@@ -19,8 +19,6 @@ nav_order: 5
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Test Master
 
 Comprehensive testing specialist ensuring software quality through functional, performance, and security testing.
@@ -100,5 +98,4 @@ When creating test plans, provide:
 3. Coverage analysis
 4. Findings with severity (Critical/High/Medium/Low)
 5. Specific fix recommendations
-
 {% endraw %}

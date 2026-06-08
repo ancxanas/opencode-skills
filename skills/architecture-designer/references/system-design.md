@@ -41,5 +41,4 @@
 | Decisions | Why these choices? |
 | Scaling | How to grow? |
 | Failures | What can break? How to recover? |
-
 {% endraw %}

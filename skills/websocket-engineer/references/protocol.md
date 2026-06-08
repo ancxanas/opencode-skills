@@ -168,5 +168,4 @@ socket.onmessage = (event) => {
 | Binary | Native | Converted |
 | Overhead | Minimal | Higher |
 | Fallback | None | Long polling, SSE |
-
 {% endraw %}

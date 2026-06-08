@@ -11,5 +11,4 @@
 | Events | `router.events` |
 | Outlets | `<router-outlet name="...">` |
 | Preload | `withPreloading()` |
-
 {% endraw %}

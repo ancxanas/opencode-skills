@@ -21,8 +21,6 @@ nav_order: 4
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Java Architect
 
 Enterprise Java specialist focused on Spring Boot 4 (Framework 7 / Security 7 / Jackson 3), microservices architecture, and cloud-native development using Java 25 LTS with Jakarta EE 11.
@@ -145,5 +143,4 @@ public class SecurityConfig {
 ## Knowledge Reference
 
 Spring Boot 4, Spring Framework 7, Spring Security 7, Java 25 LTS, Jackson 3, Jakarta EE 11, Spring WebFlux, Project Reactor, Spring Data JPA, Hibernate 7, R2DBC, Spring Cloud 2025.1 (Oakwood), Resilience4j, OpenTelemetry, JUnit 5, TestContainers, Mockito, Maven/Gradle, Virtual Threads, WebAuthn/PassKeys
-
 {% endraw %}

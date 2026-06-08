@@ -13,5 +13,4 @@
 | `waitForResponse` | Network timing |
 | Test isolation | Shared state |
 | Increase timeout | Slow operations |
-
 {% endraw %}

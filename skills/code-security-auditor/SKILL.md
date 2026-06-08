@@ -19,8 +19,6 @@ nav_order: 2
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Code Security Auditor
 
 ## Overview
@@ -180,5 +178,4 @@ This skill does not require executable scripts.
 ### assets/
 
 This skill does not require assets.
-
 {% endraw %}

@@ -1,9 +1,9 @@
 ---
 render_with_liquid: false
 ---
-
------BEGIN CERTIFICATE---
 {% raw %}
+-----BEGIN CERTIFICATE---
+
 --
     MIIDXTCCAkWgAwIBAgIJAKZ...
     -----END CERTIFICATE-----
@@ -326,7 +326,7 @@ spec:
 ## Dynamic Configuration Updates
 
 ```yaml
-{% raw %}
+
 apiVersion: v1
 kind: Deployment
 metadata:
@@ -350,7 +350,7 @@ spec:
       - name: config
         configMap:
           name: app-config
-{% endraw %}
+
 ```
 
 ## Best Practices
@@ -365,5 +365,4 @@ spec:
 8. **GitOps**: Use Sealed Secrets for safe GitOps workflows
 9. **Rotation**: Implement secret rotation strategies
 10. **Validation**: Validate configuration before deployment
-
 {% endraw %}

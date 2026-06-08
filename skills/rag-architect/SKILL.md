@@ -21,8 +21,6 @@ nav_order: 6
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # RAG Architect
 
 ## Core Workflow
@@ -202,5 +200,4 @@ When designing RAG architecture, deliver:
 3. Chunking strategy with examples and rationale
 4. Retrieval pipeline design (query → results flow)
 5. Evaluation plan with metrics, benchmarks, and pass/fail thresholds
-
 {% endraw %}

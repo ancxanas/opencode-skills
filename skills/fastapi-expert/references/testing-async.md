@@ -7,5 +7,4 @@
 | `app.dependency_overrides` | Override deps |
 | `AsyncMock` | Mock async functions |
 | `pytest.raises()` | Assert exception |
-
 {% endraw %}

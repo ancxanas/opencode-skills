@@ -12,5 +12,4 @@
 | `dependsOn` | Source set hierarchy |
 | `.freeze()` | iOS memory model (legacy) |
 | `kotlin("multiplatform")` | KMP Gradle plugin |
-
 {% endraw %}

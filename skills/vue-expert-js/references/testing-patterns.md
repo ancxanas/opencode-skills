@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Setup
@@ -34,7 +34,7 @@ config.global.stubs = {
 ```
 
 ---
-{% raw %}
+
 
 
 ## Component Testing Basics
@@ -239,5 +239,4 @@ describe('ChildComponent', () => {
 | Test Pinia | `createTestingPinia({ initialState })` |
 | Provide | `global: { provide: { key: value } }` |
 | Stub component | `global: { stubs: { Comp: true } }` |
-
 {% endraw %}

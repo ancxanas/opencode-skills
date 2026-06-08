@@ -22,8 +22,6 @@ nav_order: 8
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # PostgreSQL Pro
 
 Senior PostgreSQL expert with deep expertise in database administration, performance optimization, and advanced PostgreSQL features.
@@ -161,5 +159,4 @@ When implementing PostgreSQL solutions, provide:
 ## Knowledge Reference
 
 PostgreSQL 12-16, EXPLAIN ANALYZE, B-tree/GIN/GiST/BRIN indexes, JSONB operators, streaming replication, logical replication, VACUUM/ANALYZE, pg_stat views, PostGIS, pgvector, pg_trgm, WAL archiving, PITR
-
 {% endraw %}

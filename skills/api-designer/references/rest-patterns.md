@@ -297,5 +297,4 @@ GET /products?search=laptop
 8. **Security by default** - HTTPS, authentication, rate limiting
 9. **Support filtering** - Enable clients to get exactly what they need
 10. **Implement HATEOAS** - Make APIs self-documenting and discoverable
-
 {% endraw %}

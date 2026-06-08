@@ -1,9 +1,9 @@
 ---
 render_with_liquid: false
 ---
-
-----|---
 {% raw %}
+----|---
+
 -|----- |
 | `get_user()` | `fetch_user()` | Async now |
 | `delete_user()` | `remove_user()` | Returns Promise |
@@ -167,5 +167,4 @@ function trackSearch(query, results) {
 | Local (Lunr.js) | Free | Offline, no server |
 | Typesense | Free (self-host) | Privacy-focused |
 | Meilisearch | Free (self-host) | Fast, relevance |
-
 {% endraw %}

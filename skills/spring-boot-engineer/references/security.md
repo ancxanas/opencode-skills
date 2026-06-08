@@ -24,5 +24,4 @@
 - **Security 7**: WebAuthn/PassKeys support is GA for passwordless authentication
 - **Security 7**: Multi-factor authentication (MFA) is built-in
 - Use proper session timeout for stateful apps
-
 {% endraw %}

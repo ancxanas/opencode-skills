@@ -15,5 +15,4 @@
 | `@EntityGraph` | Defines fetch graph for associations |
 | `@Version` | Optimistic locking version field |
 | `@SoftDelete` | Hibernate 7 — declarative soft deletion |
-
 {% endraw %}

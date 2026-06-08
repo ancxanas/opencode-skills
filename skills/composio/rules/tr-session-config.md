@@ -5,8 +5,6 @@ description: Use session configuration options to control toolkit access, tools,
 tags: [tool-router, configuration, toolkits, tools, session]
 ---
 {% raw %}
-
-
 # Configure Tool Router Sessions Properly
 
 Tool Router sessions support rich configuration for fine-grained control over toolkit and tool access.
@@ -172,5 +170,4 @@ session = composio.create(
 
 - [Configuration Options](https://docs.composio.dev/sdk/typescript/api/tool-router#configuration-options)
 - [Tool Tags](https://docs.composio.dev/sdk/typescript/api/tool-router#tags)
-
 {% endraw %}

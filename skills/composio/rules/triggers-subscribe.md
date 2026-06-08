@@ -5,8 +5,6 @@ description: Listen to real-time trigger events during development using subscri
 tags: [triggers, events, subscribe, development, real-time]
 ---
 {% raw %}
-
-
 # Subscribe to Trigger Events
 
 Use `subscribe()` to listen to trigger events in **development only**. For production, use webhooks via `listenToTriggers()`.
@@ -173,5 +171,4 @@ app.listen(3000);
 - **Filter events** - Reduce noise with triggerSlugs, userIds, connectedAccountIds
 - **Cleanup** - Always call unsubscribe() when done
 - **Long-running process** - Keep Node.js process alive to receive events
-
 {% endraw %}

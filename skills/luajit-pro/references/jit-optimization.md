@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---]     -- trace aborted (NYI hit)
 [TRACE   4 myfile.lua:42 stop]    -- trace completed and compiled
 ```
@@ -23,7 +23,7 @@ jit.prng("seed")    -- seed the PRNG for reproducible JIT behavior
 
 | Pattern | Performance | Notes |
 |---
-{% raw %}
+
 ------|-------------|-------|
 | Numeric `for` | JIT-traced | Preferred loop construct |
 | `while` with `next` | JIT-traced | Good for dict iteration |
@@ -46,5 +46,4 @@ jit.prng("seed")    -- seed the PRNG for reproducible JIT behavior
 - PPC: limited JIT support
 
 Run `luajit -jv` on your target architecture during development to identify architecture-specific NYI issues.
-
 {% endraw %}

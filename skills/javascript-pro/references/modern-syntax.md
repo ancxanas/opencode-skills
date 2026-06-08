@@ -10,5 +10,4 @@
 | Object.hasOwn() | ES2022 | `Object.hasOwn(obj, 'key')` |
 | Array.findLast() | ES2023 | `arr.findLast(fn)` |
 | toSorted() | ES2023 | `arr.toSorted()` |
-
 {% endraw %}

@@ -1,9 +1,9 @@
 ---
 render_with_liquid: false
 ---
-
------|---
 {% raw %}
+-----|---
+
 -------|----------------|
 | Fetch | HTTP requests | Modern browsers |
 | Web Workers | CPU-intensive tasks | Modern browsers |
@@ -14,5 +14,4 @@ render_with_liquid: false
 | Notifications | User alerts | Modern browsers (permission) |
 | Canvas | 2D graphics | All browsers |
 | WebGL | 3D graphics | Modern browsers |
-
 {% endraw %}

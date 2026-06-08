@@ -8,5 +8,4 @@
 | Maximum call stack | Add recursion base case |
 | Module not found | Check path, install package |
 | await in non-async | Add `async` keyword |
-
 {% endraw %}

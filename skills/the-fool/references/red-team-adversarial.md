@@ -139,5 +139,4 @@ When the "adversary" is a competitor.
 | #2 | [Specific countermeasure] | Low/Med/High | Immediate/Next sprint/Backlog |
 | #3 | [Specific countermeasure] | Low/Med/High | Immediate/Next sprint/Backlog |
 ```
-
 {% endraw %}

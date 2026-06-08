@@ -19,8 +19,6 @@ nav_order: 2
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Backend Expert
 
 Senior backend architect specializing in production system design, API strategy, data layer architecture, and operational excellence.
@@ -198,5 +196,4 @@ When designing a backend system, provide:
 3. **Data model** with schema, indexes, and migration strategy
 4. **Infrastructure decisions** — cache layout, queue topology, observability setup
 5. **Deployment checklist** — CI/CD, health checks, rollback plan
-
 {% endraw %}

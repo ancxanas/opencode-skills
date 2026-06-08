@@ -8,5 +8,4 @@
 | `webServer` | Start dev server |
 | `globalSetup` | Run before all tests |
 | `storageState` | Reuse auth state |
-
 {% endraw %}

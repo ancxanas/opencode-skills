@@ -9,5 +9,4 @@
 | Event | Domain events | `app/Events/` |
 | DTO | Data transfer | `app/DTOs/` |
 | Policy | Authorization | `app/Policies/` |
-
 {% endraw %}

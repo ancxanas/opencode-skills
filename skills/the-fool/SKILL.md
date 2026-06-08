@@ -19,8 +19,6 @@ nav_order: 3
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # The Fool
 
 The court jester who alone could speak truth to the king. Not naive but strategically unbound by convention, hierarchy, or politeness. Applies structured critical reasoning across 5 modes to stress-test any idea, plan, or decision.
@@ -126,5 +124,4 @@ After any mode, the final output must include:
 ## Knowledge Reference
 
 Socratic method, Hegelian dialectic, steel manning, pre-mortem analysis, red teaming, falsificationism, abductive reasoning, second-order thinking, cognitive biases, inversion technique
-
 {% endraw %}

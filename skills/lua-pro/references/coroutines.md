@@ -120,5 +120,4 @@ coroutine.resume(co, "hello")        -- true, "received: hello"
 - Lua 5.3+: `coroutine.running()` returns the coroutine + boolean (main thread check)
 - Lua 5.4: `coroutine.close(co)` closes a coroutine (calls `__close` methods)
 - LuaJIT: matches Lua 5.1 semantics; TValue stacks are less forgiving on deep yield chains
-
 {% endraw %}

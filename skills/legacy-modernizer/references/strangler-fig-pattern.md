@@ -6,5 +6,4 @@
 | Ramp | Route 50% traffic | Performance parity |
 | Full | Route 100% traffic | All metrics green |
 | Cleanup | Remove legacy code | Legacy unused 30 days |
-
 {% endraw %}

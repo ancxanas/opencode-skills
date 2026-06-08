@@ -13,5 +13,4 @@
 | Stress | Find breaking point |
 | Spike | Sudden traffic surge |
 | Soak | Long duration stability |
-
 {% endraw %}

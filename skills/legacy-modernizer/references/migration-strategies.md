@@ -7,5 +7,4 @@
 | Frontend | Incremental, shared state | Bundle size, compatibility |
 | Microservices | Extract, events | Network reliability, data |
 | Language | Compatibility layer | Dependency updates |
-
 {% endraw %}

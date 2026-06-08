@@ -18,8 +18,6 @@ nav_order: 6
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Interview Prep Generator
 
 ## When to Use This Skill
@@ -390,5 +388,4 @@ For complete interview prep:
 8. ✅ Prepare logistics (outfit, route, tech check)
 9. ✅ Review the day before interview
 10. ✅ Send thank you notes after
-
 {% endraw %}

@@ -14,5 +14,4 @@
 | Inline functions | useCallback |
 | Large bundle | lazy() + Suspense |
 | Long lists | Virtualization |
-
 {% endraw %}

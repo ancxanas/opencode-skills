@@ -74,5 +74,4 @@
 - Stack trace analysis
 - Integration with Cloud Logging
 - Notifications for new errors
-
 {% endraw %}

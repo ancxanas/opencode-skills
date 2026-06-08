@@ -53,5 +53,4 @@ receivers:
 | p95 latency > 1s | Warning |
 | Disk < 10% | Critical |
 | Memory > 90% | Warning |
-
 {% endraw %}

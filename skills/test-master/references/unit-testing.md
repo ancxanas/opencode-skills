@@ -7,5 +7,4 @@
 | `jest.fn()` | Create mock function |
 | `mockResolvedValue()` | Mock async return |
 | `expect().toThrow()` | Assert exception |
-
 {% endraw %}

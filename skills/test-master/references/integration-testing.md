@@ -6,5 +6,4 @@
 | `.expect(status)` | Assert status code |
 | `.expect('Content-Type', /json/)` | Assert header |
 | `response.body` | Parsed JSON body |
-
 {% endraw %}

@@ -83,5 +83,4 @@
 | Angular | @angular/localize | https://angular.io/guide/i18n |
 | JS | Lingui | https://lingui.dev/ |
 | JS | globalize | https://github.com/globalizejs/globalize |
-
 {% endraw %}

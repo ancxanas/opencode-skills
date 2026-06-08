@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## CQL Fundamentals
@@ -16,7 +16,7 @@ field OPERATOR value [AND|OR field OPERATOR value]
 
 | Operator | Description | Example |
 |---
-{% raw %}
+
 -------|-------------|---------|
 | `=` | Exact match | `space = "DEV"` |
 | `!=` | Not equal | `type != attachment` |
@@ -530,5 +530,4 @@ created >= "2024-01-01"  -- CORRECT
 - `common-workflows.md` - Documentation sync and automation
 - `jira-queries.md` - Linking Confluence pages to Jira issues
 - `authentication-patterns.md` - API access configuration
-
 {% endraw %}

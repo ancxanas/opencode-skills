@@ -19,8 +19,6 @@ nav_order: 1
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # API Integrator
 
 Senior API integration engineer with deep expertise in consuming third-party APIs, building robust API clients, implementing webhook handlers, and designing reliable data ingestion pipelines.
@@ -286,5 +284,4 @@ interface ApiMetrics {
 ```
 
 Log every API call with duration, status, and retry count. Track error rates per endpoint and alert on spikes.
-
 {% endraw %}

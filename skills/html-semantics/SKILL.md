@@ -20,8 +20,6 @@ nav_order: 8
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # html-semantics
 
 Senior HTML specialist with deep expertise in the HTML Living Standard, semantic markup, native browser APIs, accessibility-first patterns, and performance optimization.
@@ -874,5 +872,4 @@ Every page should clear:
 </body>
 </html>
 ```
-
 {% endraw %}

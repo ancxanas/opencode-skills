@@ -11,5 +11,4 @@
 | `/token/` | Get access + refresh |
 | `/token/refresh/` | New access from refresh |
 | `/token/verify/` | Validate token |
-
 {% endraw %}

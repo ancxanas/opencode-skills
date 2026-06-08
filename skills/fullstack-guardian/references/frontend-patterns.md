@@ -7,5 +7,4 @@
 | Lazy Loading | Images, routes | Reduce bundle size |
 | ARIA attributes | Screen readers | Accessibility compliance |
 | Focus trap | Modals | Keyboard navigation |
-
 {% endraw %}

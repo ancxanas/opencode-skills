@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## When to Use
@@ -20,7 +20,7 @@ render_with_liquid: false
 - Admin-side order processing (use Admin API)
 
 ---
-{% raw %}
+
 
 
 ## Checkout Extensibility Overview
@@ -876,5 +876,4 @@ describe("CheckoutBanner", () => {
 - **App Development** - For backend webhook handling
 - **Storefront API** - For headless checkout flows
 - **Liquid Templating** - For pre-checkout cart customization
-
 {% endraw %}

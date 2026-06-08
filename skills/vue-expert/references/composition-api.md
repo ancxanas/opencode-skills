@@ -9,5 +9,4 @@
 | `onMounted()` | DOM-dependent operations |
 | `onUnmounted()` | Cleanup (timers, listeners) |
 | Composables | Reusable stateful logic |
-
 {% endraw %}

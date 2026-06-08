@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Basic JSDoc with Vue
@@ -81,7 +81,7 @@ const form = reactive({
 ```
 
 ---
-{% raw %}
+
 
 
 ## Props with JSDoc
@@ -206,7 +206,7 @@ function handleClose() {
 ### With Validation
 
 ```vue
-{% raw %}
+
 <script setup>
 const emit = defineEmits({
   /**
@@ -222,7 +222,7 @@ const emit = defineEmits({
   delete: (payload) => typeof payload.id === 'number'
 })
 </script>
-{% endraw %}
+
 ```
 
 ---
@@ -539,5 +539,4 @@ export const useUserStore = defineStore('user', () => {
 | Import | `import('./file').Type` | Import from file |
 | Vue Ref | `import('vue').Ref<T>` | Typed ref |
 | Vue Computed | `import('vue').ComputedRef<T>` | Typed computed |
-
 {% endraw %}

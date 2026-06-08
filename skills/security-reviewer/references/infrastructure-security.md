@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 # Network Policy - Default deny
 apiVersion: networking.k8s.io/v1
@@ -62,7 +62,7 @@ end
 ### HashiCorp Vault
 
 ```bash
-{% raw %}
+
 # Initialize and configure
 vault operator init
 vault secrets enable -path=secret kv-v2
@@ -82,7 +82,7 @@ vault write database/roles/app \
   db_name=postgresql \
   creation_statements="CREATE ROLE \"{{name}}\" WITH LOGIN PASSWORD '{{password}}';" \
   default_ttl="1h" max_ttl="24h"
-{% endraw %}
+
 ```
 
 ### Kubernetes Secrets with External Secrets Operator
@@ -101,7 +101,7 @@ spec:
         kubernetes:
           role: "app-role"
 ---
-{% raw %}
+
 
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
@@ -156,5 +156,4 @@ output.elasticsearch:
 | PCI DSS | Payment security | Network segmentation, encryption |
 | HIPAA | Healthcare | Encryption, access logs |
 | GDPR | Data privacy | Consent, retention, DLP |
-
 {% endraw %}

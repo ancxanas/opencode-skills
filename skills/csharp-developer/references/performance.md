@@ -10,5 +10,4 @@
 | Object pooling | Heavy objects | Reuse instances |
 | Response caching | Static responses | Reduce server load |
 | Native AOT | Startup time critical | Faster cold start |
-
 {% endraw %}

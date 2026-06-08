@@ -5,8 +5,6 @@ description: Build a popup-based Composio auth-link UI with dedicated callback p
 tags: [connected-accounts, auth-link, popup, callback-page, ui]
 ---
 {% raw %}
-
-
 # Building Popup Connection UI
 
 Use this pattern when you want to open Composio auth links in a popup window and handle completion in the parent window.
@@ -143,6 +141,4 @@ const { status, connected_account_id } = await initiateComposioAuthFlow(
 - Always clear interval on every exit path
 - Reject immediately if popup cannot be opened
 - Use a stable callback URL path across environments
-
-
 {% endraw %}

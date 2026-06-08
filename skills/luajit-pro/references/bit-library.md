@@ -106,5 +106,4 @@ end
 - Use `bit.band` / `bit.bor` for flag checks even if you could use arithmetic — they produce single machine instructions
 - Avoid `bit.tohex` in hot paths (it allocates a string)
 - `bit.bswap` (if available) is faster than manual byteswap
-
 {% endraw %}

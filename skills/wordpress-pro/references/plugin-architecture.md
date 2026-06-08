@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Plugin Structure
@@ -78,7 +78,7 @@ plugin-name/
 ```
 
 ---
-{% raw %}
+
 
 
 ## Main Plugin File
@@ -1043,5 +1043,4 @@ class UpdateChecker {
 - Register hooks in constructors (use init methods)
 - Modify core WordPress tables
 - Include heavy operations in activation hooks
-
 {% endraw %}

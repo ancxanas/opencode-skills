@@ -11,5 +11,4 @@
 | `.retry()` | Retry on error |
 | `.timeout()` | Set timeout |
 | `.subscribe()` | Trigger execution |
-
 {% endraw %}

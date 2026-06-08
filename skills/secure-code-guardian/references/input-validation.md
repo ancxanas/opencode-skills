@@ -7,5 +7,4 @@
 | SQL | Parameterized queries |
 | Command | execFile + no shell |
 | File upload | Type + size + magic bytes |
-
 {% endraw %}

@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## GitOps Principles
@@ -76,7 +76,7 @@ spec:
 ## ArgoCD ApplicationSet
 
 ```yaml
-{% raw %}
+
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
@@ -111,7 +111,7 @@ spec:
         automated:
           prune: true
           selfHeal: true
-{% endraw %}
+
 ```
 
 ## ArgoCD with Helm
@@ -269,7 +269,7 @@ spec:
   interval: 1h
   url: https://charts.bitnami.com/bitnami
 ---
-{% raw %}
+
 
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -299,7 +299,7 @@ spec:
 ## Flux ImageUpdateAutomation
 
 ```yaml
-{% raw %}
+
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageRepository
 metadata:
@@ -347,7 +347,7 @@ spec:
   update:
     path: ./overlays/production
     strategy: Setters
-{% endraw %}
+
 ```
 
 ## Progressive Delivery with Flagger
@@ -536,5 +536,4 @@ fleet-infra/
 8. **Version your Helm charts** semantically
 9. **Keep manifests DRY** with Kustomize overlays
 10. **Monitor reconciliation metrics** and alerts
-
 {% endraw %}

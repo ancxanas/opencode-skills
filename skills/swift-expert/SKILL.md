@@ -21,8 +21,6 @@ nav_order: 13
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Swift Expert
 
 ## Core Workflow
@@ -212,5 +210,4 @@ When implementing Swift features, provide:
 3. View implementations (SwiftUI) or view controllers
 4. Tests demonstrating usage
 5. Brief explanation of architectural decisions
-
 {% endraw %}

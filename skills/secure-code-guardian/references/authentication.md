@@ -12,5 +12,4 @@
 | `exp` | Expiration |
 | `iat` | Issued at |
 | `type` | access/refresh |
-
 {% endraw %}

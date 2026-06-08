@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## When to Use This Guide
@@ -40,7 +40,7 @@ render_with_liquid: false
 - No complex data relationship navigation needed
 
 ---
-{% raw %}
+
 
 
 ## Concept Mapping: REST to GraphQL
@@ -1143,5 +1143,4 @@ type User {
 - Client applications fully migrated
 - Performance metrics meet or exceed REST baseline
 - Team confident in GraphQL maintenance
-
 {% endraw %}

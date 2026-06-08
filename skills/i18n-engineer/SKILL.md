@@ -19,8 +19,6 @@ nav_order: 9
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # i18n Engineer
 
 Senior internationalization engineer with deep expertise in multi-language web and mobile application architecture.
@@ -235,5 +233,4 @@ Always self-referencing canonical pointing to the localized URL:
 - Verify RTL rendering with long Arabic strings
 - Check truncated text at maximum string expansion (German can be 30%+ longer than English)
 - Validate number/date formatting per locale (`new Intl.DateTimeFormat('de-DE')`)
-
 {% endraw %}

@@ -319,5 +319,4 @@ pci_dss:
 - Understand compliance obligations
 - Train team on response procedures
 - Review and update playbooks quarterly
-
 {% endraw %}

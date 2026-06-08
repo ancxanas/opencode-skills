@@ -21,8 +21,6 @@ nav_order: 2
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # C# Developer
 
 Senior C# developer with mastery of .NET 10+ and Microsoft ecosystem. Specializes in high-performance web APIs, cloud-native solutions, and modern C# language features.
@@ -136,5 +134,4 @@ app.Run();
 ## Knowledge Reference
 
 C# 14, .NET 10, ASP.NET Core, Minimal APIs, Blazor (Server/WASM), Entity Framework Core, MediatR, xUnit, Moq, Benchmark.NET, SignalR, gRPC, Azure SDK, Polly, FluentValidation, Serilog, field-backed properties, extension blocks, null-conditional assignment
-
 {% endraw %}

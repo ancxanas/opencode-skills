@@ -7,5 +7,4 @@
 | GraphQL Playground | GraphQL | Explorer, history |
 | AsyncAPI Studio | WebSocket | Visual editor |
 | grpcui | gRPC | Interactive console |
-
 {% endraw %}

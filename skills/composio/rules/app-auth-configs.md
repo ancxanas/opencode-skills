@@ -5,8 +5,6 @@ description: Advanced programmatic management of authentication configurations f
 tags: [auth-config, authentication, oauth, api-key, advanced]
 ---
 {% raw %}
-
-
 # Auth Config Management
 
 > **Note:** This is an **advanced use case**. Most users should create and manage auth configs through the Composio dashboard at [platform.composio.dev](https://platform.composio.dev). Use the SDK methods below only when you need programmatic auth config management.
@@ -224,5 +222,4 @@ await composio.authConfigs.delete('auth_config_123');
 5. **Name configs clearly**
    - Include environment: "Production GitHub", "Staging Slack"
    - Makes debugging easier
-
 {% endraw %}

@@ -5,8 +5,6 @@ description: Connect Tool Router sessions with popular AI frameworks using MCP o
 tags: [tool-router, frameworks, integration, vercel, openai, langchain, claude, crewai]
 ---
 {% raw %}
-
-
 # Integrate Tool Router with AI Frameworks
 
 Tool Router works with any AI framework through two methods: **Native Tools** (recommended for speed) or **MCP** (for framework flexibility). Choose native tools when available for better performance and control.
@@ -818,5 +816,4 @@ const client3 = hostedMcpTool({
 - [LangChain](https://langchain.com)
 - [Claude Agent SDK](https://github.com/anthropics/anthropic-sdk-typescript)
 - [CrewAI](https://www.crewai.com)
-
 {% endraw %}

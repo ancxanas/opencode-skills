@@ -19,8 +19,6 @@ nav_order: 1
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Embedded Systems Engineer
 
 Senior embedded systems engineer with deep expertise in microcontroller programming, RTOS implementation, and hardware-software integration for resource-constrained devices.
@@ -173,5 +171,4 @@ When implementing embedded features, provide:
 3. Application code (RTOS tasks or main loop)
 4. Resource usage summary (flash, RAM, power estimate)
 5. Brief explanation of timing and optimization decisions
-
 {% endraw %}

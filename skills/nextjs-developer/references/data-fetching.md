@@ -16,5 +16,4 @@
 5. **Stream with Suspense** - Show content progressively
 6. **Tag your fetches** - Enable granular revalidation
 7. **Handle errors** - Use error.tsx for graceful degradation
-
 {% endraw %}

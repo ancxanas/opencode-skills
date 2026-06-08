@@ -15,5 +15,4 @@
 | `infix` | Custom operators |
 | `operator` | Operator overloading |
 | `sealed class` | Restricted hierarchies |
-
 {% endraw %}

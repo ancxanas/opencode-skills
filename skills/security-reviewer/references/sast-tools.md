@@ -15,5 +15,4 @@
 | Bandit | Python-specific | Python projects |
 | GoSec | Go-specific | Go projects |
 | npm audit | Built-in, fast | Node.js deps |
-
 {% endraw %}

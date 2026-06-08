@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## When to Use
@@ -20,7 +20,7 @@ render_with_liquid: false
 - Simple product displays (Liquid is faster)
 
 ---
-{% raw %}
+
 
 
 ## API Fundamentals
@@ -130,7 +130,7 @@ export default defineConfig({
 ### Route with Data Loading
 
 ```typescript
-{% raw %}
+
 // app/routes/products.$handle.tsx
 import {useLoaderData, type MetaFunction} from '@remix-run/react';
 import {json, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
@@ -282,7 +282,7 @@ const PRODUCT_QUERY = `#graphql
     }
   }
 `;
-{% endraw %}
+
 ```
 
 ---
@@ -940,5 +940,4 @@ export async function loader({context}: LoaderFunctionArgs) {
 - **App Development** - For Admin API and backend integration
 - **Checkout Customization** - For checkout extensions with Storefront API
 - **Performance Optimization** - Detailed performance patterns
-
 {% endraw %}

@@ -10,5 +10,4 @@
 | `Q()` | Complex queries |
 | `bulk_create()` | Mass insert |
 | `update()` | Mass update |
-
 {% endraw %}

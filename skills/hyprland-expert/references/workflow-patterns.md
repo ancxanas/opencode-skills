@@ -300,5 +300,4 @@ scrolling {
 bind=$mainMod,grave,togglespecialworkspace                   # Toggle scratchpad
 bind=$mainMod SHIFT,grave,movetoworkspace,special:scratchpad  # Send to scratchpad
 ```
-
 {% endraw %}

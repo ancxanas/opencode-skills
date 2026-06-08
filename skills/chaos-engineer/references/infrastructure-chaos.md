@@ -9,5 +9,4 @@
 | Container kill | pumba | `kill --signal SIGKILL` |
 | DNS failure | /etc/hosts | Block domain resolution |
 | Cert expiry | cryptography | Generate expired cert |
-
 {% endraw %}

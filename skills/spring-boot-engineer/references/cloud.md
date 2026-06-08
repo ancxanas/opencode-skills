@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 apiVersion: v1
 kind: Service
@@ -51,7 +51,7 @@ ENTRYPOINT ["java","-cp","app:app/lib/*","com.example.Application"]
 
 | Component | Purpose |
 |---
-{% raw %}
+
 --------|---------|
 | **Config Server** | Centralized configuration management |
 | **Eureka** | Service discovery and registration |
@@ -61,5 +61,4 @@ ENTRYPOINT ["java","-cp","app:app/lib/*","com.example.Application"]
 | **OpenTelemetry** | Unified metrics, traces, and logs via `spring-boot-starter-opentelemetry` |
 | **Actuator** | Production-ready monitoring and management |
 | **Kubernetes** | Container orchestration and deployment |
-
 {% endraw %}

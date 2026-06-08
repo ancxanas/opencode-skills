@@ -9,5 +9,4 @@
 | `@RolesAllowed` | JSR-250 security |
 | `SecurityContextHolder` | Access current security context |
 | `@AuthenticationPrincipal` | Inject current user |
-
 {% endraw %}

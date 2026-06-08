@@ -22,8 +22,6 @@ nav_order: 3
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Salesforce Developer
 
 ## Core Workflow
@@ -212,5 +210,4 @@ export default class CounterComponent extends LightningElement {
     </targets>
 </LightningComponentBundle>
 ```
-
 {% endraw %}

@@ -2,7 +2,6 @@
 render_with_liquid: false
 ---
 {% raw %}
-
 # Monitoring and Alerting
 
 ## Golden Signals Monitoring
@@ -62,7 +61,7 @@ groups:
 Good alerts are actionable, not just informative.
 
 ```yaml
-{% raw %}
+
 # alerts.yaml - SLO-based alerting
 groups:
   - name: slo_alerts
@@ -147,7 +146,7 @@ groups:
             3. Consider scaling up
 
             RUNBOOK: https://runbooks.example.com/high-memory
-{% endraw %}
+
 ```
 
 ## Alert Runbook Template
@@ -244,7 +243,7 @@ Incident doc: [link]
 ## Dashboard Configuration
 
 ```python
-{% raw %}
+
 # grafana_dashboard.py - Generate SLO dashboard using Grafana SDK
 from grafana_dashboard import Dashboard, Panel, Target
 
@@ -357,7 +356,7 @@ def create_slo_dashboard(service: str) -> dict:
     )
 
     return dashboard.to_json()
-{% endraw %}
+
 ```
 
 ## Alert Fatigue Prevention
@@ -431,5 +430,4 @@ alert_standards:
     info:
       - dashboard: only
 ```
-
 {% endraw %}

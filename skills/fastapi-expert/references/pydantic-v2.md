@@ -8,5 +8,4 @@
 | `Optional[X]` | `X \| None` |
 | `.dict()` | `.model_dump()` |
 | `.parse_obj()` | `.model_validate()` |
-
 {% endraw %}

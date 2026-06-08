@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## When to Use This Guide
@@ -31,7 +31,7 @@ render_with_liquid: false
 5. Stable, working components (lowest priority)
 
 ---
-{% raw %}
+
 
 
 ## Lifecycle to Hooks Concept Map
@@ -1121,5 +1121,4 @@ function TodoList({ todos }: { todos: Todo[] }) {
 ---
 
 This migration guide provides practical patterns for modernizing React codebases while avoiding common pitfalls and maintaining code quality throughout the transition.
-
 {% endraw %}

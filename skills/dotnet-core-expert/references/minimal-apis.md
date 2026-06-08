@@ -11,5 +11,4 @@
 | `app.MapGroup()` | Group related endpoints |
 | `.WithTags()` | OpenAPI tag grouping |
 | `.Produces<T>()` | Document response type |
-
 {% endraw %}

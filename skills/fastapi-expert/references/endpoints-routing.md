@@ -9,5 +9,4 @@
 | `Annotated[T, Depends()]` | Type alias pattern |
 | `response_model=Model` | Response schema |
 | `HTTPException(status, detail)` | Error response |
-
 {% endraw %}

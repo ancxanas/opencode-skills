@@ -10,5 +10,4 @@
 | std::expected | - | - | ✓ |
 | std::print | - | - | ✓ |
 | Deducing this | - | - | ✓ |
-
 {% endraw %}

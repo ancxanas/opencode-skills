@@ -11,5 +11,4 @@
 | Singleton | Ensure single instance |
 | Query Builder | Type-safe database queries |
 | Container | Dependency injection |
-
 {% endraw %}

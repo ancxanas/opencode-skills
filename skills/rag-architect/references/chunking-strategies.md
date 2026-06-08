@@ -1,14 +1,14 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Strategy Comparison Matrix
 
 | Strategy | Best For | Chunk Quality | Implementation Complexity |
 |---
-{% raw %}
+
 -------|----------|---------------|---------------------------|
 | **Fixed-size** | Simple documents, logs | Low-Medium | Simple |
 | **Recursive character** | General text, articles | Medium | Simple |
@@ -880,5 +880,4 @@ def enrich_chunk(
 - **RAG Architect** - Integration with vector databases
 - **Python Pro** - Preprocessing pipelines
 - **NLP Engineer** - Tokenization and text processing
-
 {% endraw %}

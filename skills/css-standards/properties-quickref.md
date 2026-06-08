@@ -80,5 +80,4 @@
 | `:has(>` | All modern | Direct children |
 | `:has(+ sibling)` | All modern | Adjacent sibling |
 | `::target-text` | Chrome, FF | Text fragment highlight |
-
 {% endraw %}

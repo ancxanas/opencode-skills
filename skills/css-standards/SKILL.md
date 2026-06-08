@@ -22,8 +22,6 @@ nav_order: 4
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # css-standards
 
 Senior CSS specialist with deep expertise in modern CSS specifications, cross-browser layout, color science, typography, progressive enhancement, and design system implementation.
@@ -1449,5 +1447,4 @@ When using newer CSS features, follow this order:
 | `initial-letter` | 110+ (partial) | 9+ (prefixed) | — | ❌ Not cross-browser |
 
 This file is a living reference. As browser support improves, sections guarded with `@supports` can be promoted to baseline usage.
-
 {% endraw %}

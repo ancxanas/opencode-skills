@@ -9,5 +9,4 @@
 | Type Traits | Type introspection | Compile-time |
 | Fold Expressions | Parameter pack ops | Optimal |
 | Template Specialization | Type-specific impl | Zero overhead |
-
 {% endraw %}

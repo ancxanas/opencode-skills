@@ -9,5 +9,4 @@
 | Delete | `delete(Model).where(...)` |
 | Commit | `await db.commit()` |
 | Rollback | `await db.rollback()` |
-
 {% endraw %}

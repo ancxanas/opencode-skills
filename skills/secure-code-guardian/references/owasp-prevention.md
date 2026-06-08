@@ -1,9 +1,9 @@
 ---
 render_with_liquid: false
 ---
-
----|---
 {% raw %}
+---|---
+
 ------------|------------|
 | 1 | Injection | Parameterized queries, ORMs |
 | 2 | Broken Auth | Strong passwords, MFA, secure sessions |
@@ -134,5 +134,4 @@ const clean = DOMPurify.sanitize(userInput);
 | CSRF | CSRF tokens |
 | IDOR | Authorization checks |
 | Command Injection | Avoid exec(), validate input |
-
 {% endraw %}

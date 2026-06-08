@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Partitioning Fundamentals
@@ -34,7 +34,7 @@ recommended_partitions = total_cores * 2 to 4
 
 | Data Volume | Target Partition Size | Partition Count |
 |---
-{% raw %}
+
 ----------|----------------------|-----------------|
 | < 1GB | 64MB | 8-16 |
 | 1-10GB | 128MB | 8-80 |
@@ -545,5 +545,4 @@ result = large.join(also_large, "key")  # Sort-merge join
 8. **Repartition for joins** - Co-partition related tables
 9. **Partition writes by filter columns** - Enable partition pruning
 10. **Monitor Storage tab** - Ensure cache fits in memory
-
 {% endraw %}

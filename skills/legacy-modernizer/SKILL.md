@@ -19,8 +19,6 @@ nav_order: 4
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Legacy Modernizer
 
 ## Core Workflow
@@ -143,5 +141,4 @@ When implementing modernization, provide:
 ## Knowledge Reference
 
 Strangler fig pattern, branch by abstraction, characterization testing, incremental migration, feature flags, canary deployments, API versioning, database refactoring, microservices extraction, technical debt reduction, zero-downtime deployment
-
 {% endraw %}

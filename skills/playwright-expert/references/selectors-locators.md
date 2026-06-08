@@ -8,5 +8,4 @@
 | `getByText()` | Static text |
 | `filter()` | Narrowing results |
 | `nth()` / `first()` | Multiple matches |
-
 {% endraw %}

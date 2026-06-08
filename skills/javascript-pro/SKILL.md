@@ -21,8 +21,6 @@ nav_order: 5
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # JavaScript Pro
 
 ## When to Use This Skill
@@ -145,5 +143,4 @@ When implementing JavaScript features, provide:
 2. Test file with comprehensive coverage
 3. JSDoc documentation for public APIs
 4. Brief explanation of patterns used
-
 {% endraw %}

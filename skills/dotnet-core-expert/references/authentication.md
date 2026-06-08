@@ -9,5 +9,4 @@
 | `ICurrentUserService` | Access current user info |
 | `IPasswordHasher` | Hash and verify passwords |
 | `IJwtService` | Generate and validate tokens |
-
 {% endraw %}

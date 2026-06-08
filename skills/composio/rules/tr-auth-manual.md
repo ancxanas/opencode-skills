@@ -5,8 +5,6 @@ description: Control authentication flows explicitly using session.authorize() f
 tags: [authentication, tool-router, authorization, oauth]
 ---
 {% raw %}
-
-
 # Use Manual Authorization for Explicit Control
 
 Use `session.authorize()` to explicitly control when users authenticate toolkits - perfect for onboarding flows, settings pages, or when you want authentication before starting agent workflows.
@@ -161,5 +159,4 @@ async def settings_page_handler(user_id: str, toolkit: str):
 
 - [session.authorize()](https://docs.composio.dev/sdk/typescript/api/tool-router#authorize)
 - [Authorization Flow](https://docs.composio.dev/sdk/typescript/api/tool-router#authorization-flow)
-
 {% endraw %}

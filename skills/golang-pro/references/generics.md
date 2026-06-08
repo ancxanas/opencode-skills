@@ -8,5 +8,4 @@
 | Ordered | `func F[T constraints.Ordered]()` | Types supporting <, >, <=, >= |
 | Union | `T interface{int \| string}` | Either type |
 | Approximate | `~int` | Include type aliases |
-
 {% endraw %}

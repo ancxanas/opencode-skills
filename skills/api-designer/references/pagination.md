@@ -9,5 +9,4 @@
 | Real-time data | Poor | Poor | Excellent | Excellent |
 | Database load | High | High | Low | Low |
 | Use case | Small datasets | Web UIs | Feeds/streams | Large datasets |
-
 {% endraw %}

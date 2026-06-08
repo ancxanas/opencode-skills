@@ -119,5 +119,4 @@ Watch for language that hides assumptions.
 |-----------|-----------|--------|--------|
 | [Riskiest assumption] | [How to test it] | Low/Med/High | [What result means] |
 ```
-
 {% endraw %}

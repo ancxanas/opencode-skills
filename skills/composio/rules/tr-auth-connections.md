@@ -5,8 +5,6 @@ description: Understand manageConnections settings to control authentication beh
 tags: [authentication, tool-router, connections, configuration]
 ---
 {% raw %}
-
-
 # Configure Connection Management Properly
 
 The `manageConnections` setting determines how Tool Router handles missing toolkit connections. Configure it correctly based on your application type.
@@ -167,5 +165,4 @@ With `manageConnections: true`, **you never need to check connections before age
 
 - [Connection Management](https://docs.composio.dev/sdk/typescript/api/tool-router#manageconnections)
 - [Wait for Connections](https://docs.composio.dev/sdk/typescript/api/tool-router#wait-for-connections)
-
 {% endraw %}

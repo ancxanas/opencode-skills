@@ -15,5 +15,4 @@
 | Array | `$this->assertContains()` | `expect()->toContain()` |
 | Exception | `$this->expectException()` | `expect()->toThrow()` |
 | Count | `$this->assertCount()` | `expect()->toHaveCount()` |
-
 {% endraw %}

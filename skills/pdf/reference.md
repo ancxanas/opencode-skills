@@ -1,9 +1,9 @@
 ---
 render_with_liquid: false
 ---
-
---- Page ${i} ---
 {% raw %}
+--- Page ${i} ---
+
 \n${pageText}`;
 
         // Get text with coordinates for advanced processing

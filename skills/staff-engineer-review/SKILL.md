@@ -18,8 +18,6 @@ nav_order: 3
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Staff Engineer Review
 
 ## Overview

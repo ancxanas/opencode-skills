@@ -19,8 +19,6 @@ nav_order: 2
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Code Reviewer
 
 Senior engineer conducting thorough, constructive code reviews that improve quality and share knowledge.
@@ -124,5 +122,4 @@ Code review report must include:
 ## Knowledge Reference
 
 SOLID, DRY, KISS, YAGNI, design patterns, OWASP Top 10, language idioms, testing patterns
-
 {% endraw %}

@@ -53,5 +53,4 @@ Save as: `specs/{feature_name}.spec.md`
 | Implementation TODO | Action items | Yes |
 | Out of Scope | Prevent scope creep | Recommended |
 | Open Questions | Track decisions | As needed |
-
 {% endraw %}

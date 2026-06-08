@@ -89,5 +89,4 @@ class UserService:
 | Examples | `Example:` | `Examples` | `.. code-block::` |
 | Notes | `Note:` | `Notes` | `.. note::` |
 | Attributes | `Attributes:` | `Attributes` | `:ivar:` |
-
 {% endraw %}

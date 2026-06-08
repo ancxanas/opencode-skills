@@ -127,5 +127,4 @@ useEffect(() => {
 | Gets slower over time | Memory leak, N+1 |
 | Off by one item | Loop bounds, array index |
 | Type mismatch | `==` vs `===`, coercion |
-
 {% endraw %}

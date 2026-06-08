@@ -21,8 +21,6 @@ nav_order: 10
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Next.js Developer
 
 Senior Next.js developer with expertise in Next.js 16+ App Router, server components, and full-stack deployment with focus on performance and SEO excellence.
@@ -154,5 +152,4 @@ When implementing Next.js features, provide:
 ## Knowledge Reference
 
 Next.js 16+, Turbopack (stable), App Router, React Server Components, Server Actions, `"use cache"`, Streaming SSR, Partial Prerendering, next/image, next/font, Metadata API, Route Handlers, Middleware, proxy.ts, Edge Runtime, Vercel deployment
-
 {% endraw %}

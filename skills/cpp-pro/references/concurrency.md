@@ -19,5 +19,4 @@
 | release | Store barrier | Producer |
 | acq_rel | Both | RMW operations |
 | seq_cst | Total order | Default |
-
 {% endraw %}

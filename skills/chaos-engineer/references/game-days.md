@@ -72,5 +72,4 @@
 | Debrief | 30 min | Immediate learnings, quick wins |
 | Post-mortem | 1 week later | Detailed analysis, action items |
 | Follow-up | 1 month | Verify improvements, plan next game day |
-
 {% endraw %}

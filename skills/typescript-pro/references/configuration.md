@@ -13,5 +13,4 @@
 | `noEmit` | Don't emit output (type check only) |
 | `isolatedModules` | Each file can be transpiled separately |
 | `allowImportingTsExtensions` | Import .ts files directly |
-
 {% endraw %}

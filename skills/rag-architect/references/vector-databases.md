@@ -1,14 +1,14 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Database Comparison Matrix
 
 | Feature | Pinecone | Weaviate | Qdrant | Chroma | pgvector |
 |---
-{% raw %}
+
 ------|----------|----------|--------|--------|----------|
 | **Hosting** | Managed only | Managed + Self-hosted | Managed + Self-hosted | Self-hosted (cloud beta) | Self-hosted |
 | **Hybrid Search** | Yes (sparse-dense) | Yes (BM25 + vector) | Yes (sparse vectors) | Limited | Manual (+ pg_trgm) |
@@ -591,5 +591,4 @@ Start
 - **Database Optimizer** - Index tuning and query performance
 - **Cloud Architect** - Infrastructure decisions for vector DB hosting
 - **Python Pro** - Implementation patterns with async clients
-
 {% endraw %}

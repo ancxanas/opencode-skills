@@ -173,5 +173,4 @@ Alternative explanations:
 1. [Specific action to strengthen the weakest claim]
 2. [Specific action to test the riskiest assumption]
 ```
-
 {% endraw %}

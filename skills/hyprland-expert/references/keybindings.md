@@ -263,5 +263,4 @@ bind=$mainMod SHIFT,S,exec,grim -g "$(slurp)" - | wl-copy
 bind=$mainMod,Print,exec,grim ~/Pictures/$(date +%Y%m%d-%H%M%S).png
 bind=,Print,exec,grim -g "$(slurp)" ~/Pictures/$(date +%Y%m%d-%H%M%S).png
 ```
-
 {% endraw %}

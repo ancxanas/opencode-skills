@@ -2,7 +2,6 @@
 render_with_liquid: false
 ---
 {% raw %}
-
 # Helm Charts
 
 ## Chart Structure
@@ -225,7 +224,7 @@ redis:
 ## templates/_helpers.tpl
 
 ```yaml
-{% raw %}
+
 {{/*
 Expand the name of the chart.
 */}}
@@ -286,13 +285,13 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
-{% endraw %}
+
 ```
 
 ## templates/deployment.yaml
 
 ```yaml
-{% raw %}
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -367,13 +366,13 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-{% endraw %}
+
 ```
 
 ## templates/hpa.yaml
 
 ```yaml
-{% raw %}
+
 {{- if .Values.autoscaling.enabled }}
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
@@ -406,7 +405,7 @@ spec:
         averageUtilization: {{ .Values.autoscaling.targetMemoryUtilizationPercentage }}
   {{- end }}
 {{- end }}
-{% endraw %}
+
 ```
 
 ## Helm Hooks
@@ -414,7 +413,7 @@ spec:
 ### Pre-Install Hook (Database Migration)
 
 ```yaml
-{% raw %}
+
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -443,13 +442,13 @@ spec:
             secretKeyRef:
               name: {{ include "myapp.fullname" . }}-secrets
               key: database-url
-{% endraw %}
+
 ```
 
 ### Post-Install Hook (Test)
 
 ```yaml
-{% raw %}
+
 apiVersion: v1
 kind: Pod
 metadata:
@@ -469,7 +468,7 @@ spec:
     args:
     - |
       curl -f http://{{ include "myapp.fullname" . }}:{{ .Values.service.port }}/health || exit 1
-{% endraw %}
+
 ```
 
 ## Helm Commands
@@ -756,7 +755,7 @@ helm repo index ./repo --url https://charts.example.com --merge ./repo/index.yam
 ### GitHub Pages Repository
 
 ```yaml
-{% raw %}
+
 # .github/workflows/release.yaml
 name: Release Charts
 on:
@@ -780,7 +779,7 @@ jobs:
         uses: helm/chart-releaser-action@v1.6.0
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-{% endraw %}
+
 ```
 
 ### OCI Registry
@@ -874,7 +873,7 @@ version: 1.0.0
 ```
 
 ```yaml
-{% raw %}
+
 # templates/_deployment.tpl in library
 {{- define "mylib.deployment" -}}
 apiVersion: apps/v1
@@ -897,11 +896,11 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
 {{- end }}
-{% endraw %}
+
 ```
 
 ```yaml
-{% raw %}
+
 # Using library chart
 # Chart.yaml
 dependencies:
@@ -911,7 +910,7 @@ dependencies:
 
 # templates/deployment.yaml
 {{- include "mylib.deployment" . }}
-{% endraw %}
+
 ```
 
 ## Best Practices
@@ -931,5 +930,4 @@ dependencies:
 13. **Encrypt secrets** with helm-secrets or sealed-secrets
 14. **Use library charts** for shared patterns
 15. **Push to OCI registries** for better artifact management
-
 {% endraw %}

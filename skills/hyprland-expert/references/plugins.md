@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Plugin Index
@@ -50,7 +50,7 @@ gestures {
 - Requires Hyprland v0.44+
 
 ---
-{% raw %}
+
 
 
 ### hyprspace — Workspace Overview
@@ -336,5 +336,4 @@ cmake .. -DCMAKE_INSTALL_PREFIX=/usr
 make
 sudo make install
 ```
-
 {% endraw %}

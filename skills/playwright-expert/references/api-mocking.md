@@ -14,5 +14,4 @@
 | Mock errors | Error handling |
 | Modify response | Test edge cases |
 | Network delay | Loading states |
-
 {% endraw %}

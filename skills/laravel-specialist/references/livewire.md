@@ -2,7 +2,6 @@
 render_with_liquid: false
 ---
 {% raw %}
-
 # Livewire Components
 
 ## Component Patterns
@@ -61,7 +60,7 @@ class PostList extends Component
 ## Blade Template
 
 ```blade
-{% raw %}
+
 <div>
     {{-- Search --}}
     <input
@@ -115,7 +114,7 @@ class PostList extends Component
         Searching...
     </div>
 </div>
-{% endraw %}
+
 ```
 
 ## Form Component
@@ -194,7 +193,7 @@ class PostForm extends Component
 ## Form Template
 
 ```blade
-{% raw %}
+
 <form wire:submit.prevent="save">
     {{-- Title --}}
     <div>
@@ -273,7 +272,7 @@ class PostForm extends Component
         {{ session('message') }}
     </div>
 @endif
-{% endraw %}
+
 ```
 
 ## Real-time Validation
@@ -363,7 +362,7 @@ window.addEventListener('post-saved', event => {
 ## Polling
 
 ```blade
-{% raw %}
+
 {{-- Poll every 2 seconds --}}
 <div wire:poll.2s>
     Current time: {{ now() }}
@@ -378,13 +377,13 @@ window.addEventListener('post-saved', event => {
 <div wire:poll.keep-alive.2s>
     <!-- content -->
 </div>
-{% endraw %}
+
 ```
 
 ## Loading States
 
 ```blade
-{% raw %}
+
 {{-- Basic loading state --}}
 <div wire:loading>
     Loading...
@@ -426,7 +425,7 @@ window.addEventListener('post-saved', event => {
 >
     Save
 </button>
-{% endraw %}
+
 ```
 
 ## Traits
@@ -518,12 +517,11 @@ class PostList extends Component
 ```
 
 ```blade
-{% raw %}
+
 {{-- Access computed property --}}
 @foreach($this->posts as $post)
     <!-- content -->
 @endforeach
-{% endraw %}
-```
 
+```
 {% endraw %}

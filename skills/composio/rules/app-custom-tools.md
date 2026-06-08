@@ -5,8 +5,6 @@ description: Build standalone and toolkit-based custom tools with proper authent
 tags: [custom-tools, extensibility, authentication, zod, development]
 ---
 {% raw %}
-
-
 # Creating Custom Tools
 
 Create your own tools that integrate with Composio:
@@ -220,5 +218,4 @@ execute: async (input) => {
 - **Describe parameters:** AI agents need clear descriptions
 - **Not persisted:** Custom tools exist in memory only, recreate on restart
 - **Single toolkit scope:** executeToolRequest only works within same toolkit
-
 {% endraw %}

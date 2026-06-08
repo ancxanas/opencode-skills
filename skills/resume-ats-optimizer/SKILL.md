@@ -18,8 +18,6 @@ nav_order: 12
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Resume ATS Optimizer
 
 ## When to Use This Skill
@@ -334,5 +332,4 @@ After optimization, the resume should:
 - Include all critical keywords 2-4x each
 - Read naturally (not keyword-stuffed)
 - Be ready to submit immediately
-
 {% endraw %}

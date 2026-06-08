@@ -143,5 +143,4 @@ This ensures the Feature Forge interview starts with concrete technical context 
 | Details | Journey, scope, constraints | AskUserQuestions → Open-ended |
 | Edge Cases | Failures, limits, security | AskUserQuestions → Open-ended |
 | Validation | Summary, gaps | AskUserQuestions |
-
 {% endraw %}

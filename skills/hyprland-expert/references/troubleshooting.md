@@ -323,5 +323,4 @@ hyprctl setprop debug:damage_tracking 1
 
 # Log rendering timings
 journalctl -f -u hyprland | grep "render"
-
 {% endraw %}

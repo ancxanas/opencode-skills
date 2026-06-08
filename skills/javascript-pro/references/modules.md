@@ -10,5 +10,4 @@
 | `__dirname` | Use `import.meta.url` | Built-in |
 | Browser support | Native | Needs bundler |
 | Default mode | `"type": "module"` | No type field |
-
 {% endraw %}

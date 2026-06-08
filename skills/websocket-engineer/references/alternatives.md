@@ -386,5 +386,4 @@ io.on('connection', (socket) => {
 6. Load test before production
 7. Have fallback strategy
 8. Monitor connection success rates
-
 {% endraw %}

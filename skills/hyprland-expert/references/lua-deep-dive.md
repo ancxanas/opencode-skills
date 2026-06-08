@@ -502,7 +502,7 @@ See `workflow-patterns.md` for full scrolling layout details.
 ## Full Example
 
 ```lua
-{% raw %}
+
 -- ~/.config/hypr/hyprland.lua
 
 -- Variables
@@ -615,7 +615,6 @@ hl.timer(function()
         counter = 0
     end
 end, { timeout = 60000, type = "repeat" })
-{% endraw %}
-```
 
+```
 {% endraw %}

@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ### "Rate limit exceeded"
@@ -82,7 +82,7 @@ Currently: US East, US West, EU Central, Asia Pacific.
 Credit card, PayPal, wire transfer (annual plans only).
 
 ---
-{% raw %}
+
 
 
 **Can't find your answer?**
@@ -107,5 +107,4 @@ Credit card, PayPal, wire transfer (annual plans only).
 | Scannability | Headings, lists, code blocks |
 | Completeness | Prerequisites, next steps, related links |
 | Accuracy | Test all code, version specifics |
-
 {% endraw %}

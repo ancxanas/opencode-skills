@@ -18,8 +18,6 @@ nav_order: 7
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Job Description Analyzer
 
 ## When to Use This Skill
@@ -472,5 +470,4 @@ When analyzing a job:
 - May indicate: Previous hire didn't work out, role expanded, or first search failed
 - Worth applying, but research why it was reposted
 - Check if requirements changed from original posting
-
 {% endraw %}

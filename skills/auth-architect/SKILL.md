@@ -21,8 +21,6 @@ nav_order: 1
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Auth Architect
 
 Senior authentication and authorization engineer with deep expertise in OAuth 2.0, OIDC, passkeys, session management, and access control models.
@@ -248,5 +246,4 @@ Generate 8-10 single-use codes on MFA enable. Hash and store. One-time use, rege
 - [ ] Session invalidation on password change
 - [ ] CSRF protection on cookie-based auth
 - [ ] Secure cookie flags (httpOnly, secure, sameSite)
-
 {% endraw %}

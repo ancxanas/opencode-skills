@@ -15,5 +15,4 @@
 | useLocalStorage | Persistent state |
 | useMediaQuery | Responsive logic |
 | useApi | Data fetching |
-
 {% endraw %}

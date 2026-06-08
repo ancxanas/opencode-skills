@@ -18,8 +18,6 @@ nav_order: 1
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Academic CV Builder
 
 ## When to Use This Skill
@@ -436,5 +434,4 @@ When creating an academic CV:
 - ✅ Reverse chronological order (usually)
 - ✅ No unexplained gaps
 - ✅ Updated within last 6 months
-
 {% endraw %}

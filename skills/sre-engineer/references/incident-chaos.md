@@ -430,5 +430,4 @@ maturity = assess_maturity(current_practices)
 print(f"Chaos maturity: {maturity.name}")
 # Target: CONTINUOUS or CULTURE
 ```
-
 {% endraw %}

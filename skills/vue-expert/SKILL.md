@@ -21,8 +21,6 @@ nav_order: 14
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Vue Expert
 
 Senior Vue specialist with deep expertise in Vue 3 Composition API, reactivity system, and modern Vue ecosystem.
@@ -55,7 +53,7 @@ Load detailed guidance based on context:
 Minimal component demonstrating preferred patterns:
 
 ```vue
-{% raw %}
+
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
@@ -72,7 +70,7 @@ function increment() {
 <template>
   <button @click="increment">Count: {{ count }} (doubled: {{ doubled }})</button>
 </template>
-{% endraw %}
+
 ```
 
 ## Constraints
@@ -108,5 +106,4 @@ When implementing Vue features, provide:
 ## Knowledge Reference
 
 Vue 3 Composition API, Pinia, Nuxt 3, Vue Router 4, Vite, VueUse, TypeScript, Vitest, Vue Test Utils, SSR/SSG, reactive programming, performance optimization
-
 {% endraw %}

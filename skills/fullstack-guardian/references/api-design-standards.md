@@ -11,5 +11,4 @@
 | CORS | Whitelist origins | Production domains only |
 | Validation | Schema-based | Zod/Pydantic with detailed errors |
 | Documentation | OpenAPI | Auto-generated from decorators |
-
 {% endraw %}

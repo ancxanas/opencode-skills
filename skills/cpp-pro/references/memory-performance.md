@@ -9,5 +9,4 @@
 | Memory Pools | Frequent alloc/dealloc | Reduced fragmentation |
 | Alignment | SIMD/cache optimization | Performance |
 | RVO/NRVO | Return objects | Zero-copy |
-
 {% endraw %}

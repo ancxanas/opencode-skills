@@ -17,5 +17,4 @@
 | IDOR | Access other user's resources |
 | CSRF | Missing/invalid tokens |
 | Auth Bypass | Missing auth, expired tokens |
-
 {% endraw %}

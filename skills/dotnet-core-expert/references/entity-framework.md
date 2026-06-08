@@ -11,5 +11,4 @@
 | `Update()` | Mark entity as modified |
 | `Remove()` | Mark entity for deletion |
 | `SaveChangesAsync()` | Persist changes to database |
-
 {% endraw %}

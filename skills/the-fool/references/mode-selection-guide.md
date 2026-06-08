@@ -87,5 +87,4 @@ Then confirm with `AskUserQuestion`:
 - **Multiple concerns**: Recommend Pre-mortem Analysis — it covers breadth naturally
 - **User is emotional/frustrated**: Default to Dialectic Synthesis — steel manning validates their position before challenging it
 - **Technical vs business split**: Match the mode to which side the user emphasizes
-
 {% endraw %}

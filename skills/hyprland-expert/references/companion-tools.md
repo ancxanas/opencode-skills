@@ -1068,6 +1068,4 @@ sudo apt install obs-studio  # Debian
 ```
 
 Requires `xdg-desktop-portal-hyprland` to be running for screen capture.
-
-
 {% endraw %}

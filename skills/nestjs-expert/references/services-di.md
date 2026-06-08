@@ -6,5 +6,4 @@
 | `@Optional()` | Optional dependency |
 | Factory provider | Dynamic configuration |
 | Scope.REQUEST | Per-request state |
-
 {% endraw %}

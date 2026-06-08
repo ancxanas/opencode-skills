@@ -19,8 +19,6 @@ nav_order: 3
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Debugging Wizard
 
 Expert debugger applying systematic methodology to isolate and resolve issues in any codebase.
@@ -111,5 +109,4 @@ When debugging, provide:
 2. **Evidence**: Stack trace, logs, or test that proves it
 3. **Fix**: Code change that resolves it
 4. **Prevention**: Test or safeguard to prevent recurrence
-
 {% endraw %}

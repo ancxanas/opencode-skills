@@ -10,8 +10,6 @@ nav_order: 3
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # PPTX creation, editing, and analysis
 
 ## Overview

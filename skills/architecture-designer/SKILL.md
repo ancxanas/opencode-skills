@@ -19,8 +19,6 @@ nav_order: 2
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Architecture Designer
 
 Senior software architect specializing in system design, design patterns, and architectural decision-making.
@@ -122,6 +120,4 @@ Use PostgreSQL as the primary datastore for the Order Service.
 ## Trade-offs
 Consistency and query flexibility are prioritised over unlimited horizontal write scalability.
 ```
-
-
 {% endraw %}

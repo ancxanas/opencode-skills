@@ -20,8 +20,6 @@ nav_order: 5
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Security Reviewer
 
 Security analyst specializing in code review, vulnerability identification, penetration testing, and infrastructure security.
@@ -109,5 +107,4 @@ References: CWE-89, OWASP A03:2021
 ## Knowledge Reference
 
 OWASP Top 10, CWE, Semgrep, Bandit, ESLint Security, gosec, npm audit, gitleaks, trufflehog, CVSS scoring, nmap, Burp Suite, sqlmap, Trivy, Checkov, HashiCorp Vault, AWS Security Hub, CIS benchmarks, SOC2, ISO27001
-
 {% endraw %}

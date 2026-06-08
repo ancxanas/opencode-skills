@@ -19,8 +19,6 @@ nav_order: 4
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Stop Slop
 
 Eliminate predictable AI writing patterns from prose.
@@ -105,5 +103,4 @@ See [references/examples.md](references/examples.md) for more before/after trans
 ## License
 
 MIT
-
 {% endraw %}

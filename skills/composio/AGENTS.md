@@ -4,8 +4,6 @@ description: Use 1000+ external apps via Composio - either directly through the 
 tags: [composio, tool-router, agents, mcp, tools, api, automation, cli]
 ---
 {% raw %}
-
-
 # composio
 
 Use 1000+ external apps via Composio - either directly through the CLI or by building AI agents and apps with the SDK
@@ -404,5 +402,4 @@ Using incorrect slugs causes runtime errors.
 
 _This file was automatically generated from individual rule files on 2026-03-13T12:37:41.138Z_
 _To update, run: `npm run build:agents`_
-
 {% endraw %}

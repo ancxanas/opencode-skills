@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Structured Streaming Overview
@@ -21,7 +21,7 @@ render_with_liquid: false
 - Very simple event processing (Kafka Streams may suffice)
 
 ---
-{% raw %}
+
 
 
 ## Reading from Streaming Sources
@@ -788,5 +788,4 @@ df.writeStream.foreachBatch(process_batch).start()  # Batch-level efficiency
 8. **Use stream-static joins when possible** - Simpler than stream-stream
 9. **Test with production data rates** - Performance varies with volume
 10. **Enable structured streaming UI** - Detailed metrics in Spark UI
-
 {% endraw %}

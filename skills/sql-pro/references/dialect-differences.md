@@ -41,5 +41,4 @@
 - Use bind variables to avoid parsing
 - Configure SGA/PGA appropriately
 - Consider Real Application Clusters (RAC)
-
 {% endraw %}

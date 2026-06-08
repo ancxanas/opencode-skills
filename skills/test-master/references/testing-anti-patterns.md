@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Core Principle
@@ -11,7 +11,7 @@ render_with_liquid: false
 When tests verify mock behavior instead of actual functionality, they provide false confidence while catching zero real bugs.
 
 ---
-{% raw %}
+
 
 
 ## The Five Anti-Patterns
@@ -233,5 +233,4 @@ Review your tests for these warning signs:
 ---
 
 *Content adapted from [obra/superpowers](https://github.com/obra/superpowers) by Jesse Vincent (@obra), MIT License.*
-
 {% endraw %}

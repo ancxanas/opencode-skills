@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## When to Use This Guide
@@ -25,7 +25,7 @@ render_with_liquid: false
 - Migration cost exceeds business value
 
 ---
-{% raw %}
+
 
 
 ## Concept Mapping: Django/DRF → FastAPI

@@ -11,5 +11,4 @@
 | Second-level cache | Frequently accessed data |
 | Stream API | Process large results |
 | `readOnly = true` | Optimization hint |
-
 {% endraw %}

@@ -5,8 +5,6 @@ description: Critical patterns for user identification, multi-tenancy, and data 
 tags: [user-context, security, multi-tenancy, isolation, production]
 ---
 {% raw %}
-
-
 # User Context and ID Patterns
 
 Every Composio operation requires a `userId` parameter for security and data isolation. Users can only access their own connected accounts.
@@ -222,5 +220,4 @@ accounts.items.forEach(account => {
 - **Use consistent format** - Pick one pattern and stick to it
 - **Organization IDs** - For team-wide tool access
 - **Handle changes gracefully** - Maintain mapping if IDs can change
-
 {% endraw %}

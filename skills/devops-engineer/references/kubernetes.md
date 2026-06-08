@@ -12,7 +12,6 @@ spec:
   type: ClusterIP
 ---
 {% raw %}
-
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -103,5 +102,4 @@ kubectl exec -it <pod-name> -- /bin/sh
 kubectl rollout status deployment/app
 kubectl rollout undo deployment/app
 ```
-
 {% endraw %}

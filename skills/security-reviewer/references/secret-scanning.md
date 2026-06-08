@@ -23,7 +23,7 @@ repos:
 ## CI/CD Integration
 
 ```yaml
-{% raw %}
+
 # GitHub Actions
 - name: Gitleaks
   uses: gitleaks/gitleaks-action@v2
@@ -38,7 +38,7 @@ secret_detection:
   artifacts:
     reports:
       secret_detection: gl-secret-detection-report.sarif
-{% endraw %}
+
 ```
 
 ## Remediation Steps
@@ -67,5 +67,4 @@ git filter-branch --force --index-filter \
 | TruffleHog | Deep scanning | Medium |
 | grep | Quick checks | Fast |
 | GitHub Secret Scanning | GitHub repos | Auto |
-
 {% endraw %}

@@ -13,5 +13,4 @@
 | `Scaffold` | Material 3 layout structure |
 | `viewModelScope` | ViewModel coroutine scope |
 | `@HiltViewModel` | Hilt dependency injection |
-
 {% endraw %}

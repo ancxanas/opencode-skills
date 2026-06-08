@@ -13,5 +13,4 @@
 | **P1** | Payment, settings, common flows |
 | **P2** | Edge cases, admin features |
 | **P3** | Rare scenarios |
-
 {% endraw %}

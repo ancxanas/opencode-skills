@@ -105,5 +105,4 @@ interrogate -v src/
 | Class coverage | 100% | >90% | <90% |
 | API endpoint coverage | 100% | 100% | <100% |
 | Example coverage | >50% | 30-50% | <30% |
-
 {% endraw %}

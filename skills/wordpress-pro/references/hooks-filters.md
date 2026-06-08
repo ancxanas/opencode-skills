@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## WordPress Hook System
@@ -10,7 +10,7 @@ WordPress uses an event-driven architecture with two types of hooks:
 
 | Hook Type | Purpose | Function |
 |---
-{% raw %}
+
 --------|---------|----------|
 | **Actions** | Execute code at specific points | `add_action()` / `do_action()` |
 | **Filters** | Modify data before it's used | `add_filter()` / `apply_filters()` |
@@ -847,5 +847,4 @@ add_action('admin_post_my_plugin_save', function(): void {
     // Process form
 });
 ```
-
 {% endraw %}

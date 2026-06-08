@@ -6,5 +6,4 @@
 | `**/models/**/*` | Data models |
 | `@Controller\|@Get` | NestJS patterns |
 | `router.\|app.get` | Express patterns |
-
 {% endraw %}

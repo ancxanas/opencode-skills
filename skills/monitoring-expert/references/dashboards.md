@@ -11,5 +11,4 @@
 | Heatmap | Latency distribution |
 | Table | Top N, details |
 | Gauge | Current vs threshold |
-
 {% endraw %}

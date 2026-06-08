@@ -135,5 +135,4 @@ spew.Dump(variable)
 | Stack trace | `console.trace()` / `traceback.print_stack()` |
 | Inspect object | `console.dir(obj)` / `dir(obj)` |
 | Step through | IDE debugger or CLI debugger |
-
 {% endraw %}

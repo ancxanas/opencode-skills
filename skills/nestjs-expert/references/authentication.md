@@ -7,5 +7,4 @@
 | `@Public()` | Skip auth |
 | `@Roles('admin')` | Require role |
 | `@UseGuards()` | Apply guard |
-
 {% endraw %}

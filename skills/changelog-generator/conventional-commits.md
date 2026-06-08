@@ -50,5 +50,4 @@ BREAKING CHANGE → MAJOR (1.0.0 → 2.0.0)
 - `semantic-release` — Full pipeline (version, changelog, publish)
 - `commitlint` — Lint commit messages
 - `git-cliff` — Configurable changelog generator
-
 {% endraw %}

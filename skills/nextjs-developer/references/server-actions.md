@@ -19,5 +19,4 @@
 5. **Rate limiting** - Protect against abuse
 6. **Type safety** - Define input/output types
 7. **Optimistic updates** - Use useOptimistic for better UX
-
 {% endraw %}

@@ -13,5 +13,4 @@
 | `useCallback` | renderItem, keyExtractor |
 | `getItemLayout` | Fixed height items |
 | `FlashList` | Very large lists |
-
 {% endraw %}

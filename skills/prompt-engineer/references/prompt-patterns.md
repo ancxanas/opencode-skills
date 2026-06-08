@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Pattern Selection Guide
@@ -24,7 +24,7 @@ render_with_liquid: false
 
 | Pattern | Best For | Token Cost | Reliability |
 |---
-{% raw %}
+
 ------|----------|------------|-------------|
 | Zero-shot | Simple, well-defined tasks | Low | Medium |
 | Few-shot | Tasks needing format guidance | Medium | High |
@@ -508,5 +508,4 @@ Action: search("specific query based on reasoning")
 - **RAG Architect** - Retrieval patterns for grounding prompts
 - **Fine-Tuning Expert** - When prompting isn't enough
 - **LLM Architect** - System-level prompt orchestration
-
 {% endraw %}

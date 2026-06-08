@@ -1,9 +1,9 @@
 ---
 render_with_liquid: false
 ---
-
----|---
 {% raw %}
+---|---
+
 |
 | macOS — top bar, smooth, polished | [macOS Refugee](#-macos-refugee) |
 | Windows — taskbar, start menu, familiar | [Windows Migrant](#-windows-migrant) |
@@ -38,7 +38,7 @@ render_with_liquid: false
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
-{% raw %}
+
 -- ~/.config/hypr/hyprland.lua
 -- macOS Refugee Profile
 
@@ -229,7 +229,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("/usr/libexec/hyprpolkitagent")
     hl.exec_cmd("sleep 5; nm-applet")
 end)
-{% endraw %}
+
 ```
 
 ### Tweak Further
@@ -266,7 +266,7 @@ end)
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
-{% raw %}
+
 -- ~/.config/hypr/hyprland.lua
 -- Windows Migrant Profile
 
@@ -425,7 +425,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("/usr/libexec/hyprpolkitagent")
     hl.exec_cmd("sleep 5; nm-applet")
 end)
-{% endraw %}
+
 ```
 
 ### Tweak Further
@@ -461,7 +461,7 @@ end)
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
-{% raw %}
+
 -- ~/.config/hypr/hyprland.lua
 -- GNOME Transplant Profile
 
@@ -644,7 +644,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("swaync")
     hl.exec_cmd("/usr/libexec/hyprpolkitagent")
 end)
-{% endraw %}
+
 ```
 
 ### Tweak Further
@@ -681,7 +681,7 @@ end)
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
-{% raw %}
+
 -- ~/.config/hypr/hyprland.lua
 -- Gamer Profile
 
@@ -852,7 +852,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle")
     hl.exec_cmd("dunst")
 end)
-{% endraw %}
+
 ```
 
 ### Tweak Further
@@ -888,7 +888,7 @@ end)
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
-{% raw %}
+
 -- ~/.config/hypr/hyprland.lua
 -- Developer Profile
 
@@ -1099,7 +1099,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("sleep 5; nm-applet")
 end)
-{% endraw %}
+
 ```
 
 ### Tweak Further
@@ -1136,7 +1136,7 @@ end)
 Save as `~/.config/hypr/hyprland.lua`:
 
 ```lua
-{% raw %}
+
 -- ~/.config/hypr/hyprland.lua
 -- Designer Profile
 
@@ -1350,7 +1350,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprsunset -t 6500")
     hl.exec_cmd("/usr/libexec/hyprpolkitagent")
 end)
-{% endraw %}
+
 ```
 
 ### Tweak Further
@@ -1360,5 +1360,4 @@ end)
 - [Theme: Catppuccin Mocha ecosystem](theming.md#catppuccin-mocha)
 - [Plugins: hyprpicker color picker](companion-tools.md#hyprpicker--color-picker)
 - [Animations: smooth presets](animations.md)
-
 {% endraw %}

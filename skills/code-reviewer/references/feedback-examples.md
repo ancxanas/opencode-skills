@@ -6,5 +6,4 @@
 | Minor | Optional | Nice to have |
 | Praise | Positive | None - reinforcement |
 | Question | Curious | Response needed |
-
 {% endraw %}

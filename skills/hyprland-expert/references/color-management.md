@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## FP16 Precision (v0.55+)
@@ -17,7 +17,7 @@ Hyprland v0.55+ uses **FP16 (16-bit floating point)** precision by default for c
 **Impact:** Slightly higher GPU memory bandwidth usage, but no meaningful performance difference on modern GPUs (2020+).
 
 ---
-{% raw %}
+
 
 
 ## HDR
@@ -258,5 +258,4 @@ env = ICC_PROFILE,/path/to/profile.icc  # Load ICC profile
 env = GDK_DPI_SCALE,1                   # GTK scaling
 env = QT_WAYLAND_FORCE_DPI,96           # Qt DPI
 ```
-
 {% endraw %}

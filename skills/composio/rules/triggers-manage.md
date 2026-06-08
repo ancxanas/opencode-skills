@@ -5,8 +5,6 @@ description: Control trigger states, update configurations, and manage trigger i
 tags: [triggers, lifecycle, enable, disable, update, management]
 ---
 {% raw %}
-
-
 # Manage Trigger Lifecycle
 
 Control trigger states and configurations without recreating triggers.
@@ -275,5 +273,4 @@ async function handleUpgrade(userId: string) {
 - **Batch operations** - Loop through triggers for bulk enable/disable
 - **Handle disconnects** - Disable or delete triggers when accounts disconnect
 - **Status check** - Always verify trigger status before operations
-
 {% endraw %}

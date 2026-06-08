@@ -18,8 +18,6 @@ nav_order: 17
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Resume Tailor
 
 ## When to Use This Skill
@@ -327,5 +325,4 @@ When tailoring a resume, provide:
 - Maintain master resume as source of truth
 - Never sacrifice ATS compatibility for tailoring
 - Test keyword match after tailoring
-
 {% endraw %}

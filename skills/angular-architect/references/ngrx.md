@@ -9,5 +9,4 @@
 | Store | `inject(Store)`, `store.select()`, `store.dispatch()` |
 | DevTools | `provideStoreDevtools()` |
 | Testing | Mock store, marble testing |
-
 {% endraw %}

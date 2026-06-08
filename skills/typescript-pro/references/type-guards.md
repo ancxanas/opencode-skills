@@ -11,5 +11,4 @@
 | `assertNever` | Exhaustive switch checking |
 | Branded types | Nominal typing simulation |
 | `NonNullable<T>` | Remove null/undefined |
-
 {% endraw %}

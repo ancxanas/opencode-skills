@@ -105,5 +105,4 @@
 | Reliability | RPO, RTO |
 | Security | Compliance requirements |
 | Cost | $/month budget |
-
 {% endraw %}

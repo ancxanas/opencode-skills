@@ -13,5 +13,4 @@
 | `PartialType()` | All fields optional |
 | `OmitType()` | Exclude fields |
 | `PickType()` | Include only fields |
-
 {% endraw %}

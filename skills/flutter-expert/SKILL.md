@@ -21,8 +21,6 @@ nav_order: 6
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Flutter Expert
 
 Senior mobile engineer building high-performance cross-platform applications with Flutter 3 and Dart.
@@ -147,5 +145,4 @@ When implementing Flutter features, provide:
 2. Provider/Bloc definitions
 3. Route configuration if needed
 4. Test file structure
-
 {% endraw %}

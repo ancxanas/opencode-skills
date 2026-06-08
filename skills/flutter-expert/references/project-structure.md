@@ -33,5 +33,4 @@ class MyApp extends ConsumerWidget {
   }
 }
 ```
-
 {% endraw %}

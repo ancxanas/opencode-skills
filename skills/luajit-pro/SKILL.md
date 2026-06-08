@@ -20,8 +20,6 @@ nav_order: 8
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # LuaJIT Pro
 
 Performance-critical Lua specialist focused on LuaJIT's FFI, JIT compiler internals, and bit-level operations.
@@ -127,5 +125,4 @@ When implementing LuaJIT features, provide:
 ## Knowledge Reference
 
 LuaJIT, FFI, `ffi.cdef`, `ffi.new`, `ffi.metatype`, `ffi.gc`, `ffi.string`, `ffi.copy`, `ffi.cast`, `ffi.typeof`, `ffi.sizeof`, JIT compiler, trace compilation, NYI, `jit.opt`, `jit.flush`, `jit.on`/`jit.off`, `jit.v`, `jit.dump`, `jit.prng`, `bit.band`, `bit.bor`, `bit.bxor`, `bit.lshift`, `bit.rshift`, `bit.arshift`, `bit.rol`, `bit.ror`, `bit.bswap`, `bit.tobit`, `bit.tohex`, `jit.prngstate`, mcode, SSA IR, DynASM
-
 {% endraw %}

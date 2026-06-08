@@ -5,8 +5,6 @@ description: Use Tool Router for native tool integration and MCP for multi-tenan
 tags: [tool-router, mastra, framework, native-tools, mcp, integration]
 ---
 {% raw %}
-
-
 # Using Composio with Mastra Framework
 
 Composio integrates with Mastra using **Tool Router sessions**. Use **native tools** (recommended) via `session.tools()`, or **MCP tools** when MCP protocol compliance is required.
@@ -185,5 +183,4 @@ model: 'openai/gpt-5.2' // Wrong - use openai('gpt-5.2')
 - [Mastra MCP](https://mastra.ai/docs/mcp/overview)
 - [Composio Tool Router](https://docs.composio.dev/sdk/typescript/api/tool-router)
 - [Tool Router Sessions](tr-session-lifecycle.md)
-
 {% endraw %}

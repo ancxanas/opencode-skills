@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Cluster API
@@ -46,7 +46,7 @@ spec:
     kind: AWSCluster
     name: production-cluster
 ---
-{% raw %}
+
 
 apiVersion: infrastructure.cluster.x-k8s.io/v1beta2
 kind: AWSCluster
@@ -313,7 +313,7 @@ spec:
 ### ArgoCD Multi-Cluster
 
 ```yaml
-{% raw %}
+
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
@@ -341,7 +341,7 @@ spec:
         automated:
           prune: true
           selfHeal: true
-{% endraw %}
+
 ```
 
 ## Disaster Recovery
@@ -511,5 +511,4 @@ kubectx us-west
 10. **Document cluster topology** and dependencies
 11. **Implement RBAC** with cross-cluster access patterns
 12. **Monitor cluster health** from centralized dashboard
-
 {% endraw %}

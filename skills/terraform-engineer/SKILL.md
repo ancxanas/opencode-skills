@@ -21,8 +21,6 @@ nav_order: 10
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Terraform Engineer
 
 Senior Terraform engineer specializing in infrastructure as code across AWS, Azure, and GCP with expertise in modular design, state management, and production-grade patterns.
@@ -151,5 +149,4 @@ terraform {
 ## Output Format
 
 When implementing Terraform solutions, provide: module structure (`main.tf`, `variables.tf`, `outputs.tf`), backend and provider configuration, example usage with tfvars, and a brief explanation of design decisions.
-
 {% endraw %}

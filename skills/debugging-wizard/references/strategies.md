@@ -7,5 +7,4 @@
 | Time Travel | Known error location |
 | Rubber Duck | Logic errors |
 | Delta Debug | Recent breakage |
-
 {% endraw %}

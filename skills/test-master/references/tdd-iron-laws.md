@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## The Fundamental Principle
@@ -11,7 +11,7 @@ render_with_liquid: false
 This is non-negotiable. If you wrote production code before writing a failing test, delete it and start over. No exceptions.
 
 ---
-{% raw %}
+
 
 
 ## The Three Iron Laws
@@ -176,5 +176,4 @@ Before claiming any code is complete:
 ---
 
 *Content adapted from [obra/superpowers](https://github.com/obra/superpowers) by Jesse Vincent (@obra), MIT License.*
-
 {% endraw %}

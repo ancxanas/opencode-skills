@@ -31,5 +31,4 @@
 - Use flakes for latest Hyprland: `hyprland.url = "github:hyprwm/Hyprland";`
 - Home Manager: `wayland.windowManager.hyprland.enable = true;`
 - Enable Polkit: `security.polkit.enable = true;`
-
 {% endraw %}

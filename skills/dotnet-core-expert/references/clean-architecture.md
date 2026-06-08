@@ -9,5 +9,4 @@
 | Domain entities | Business logic and invariants |
 | Application layer | Use cases and orchestration |
 | Infrastructure | External dependencies |
-
 {% endraw %}

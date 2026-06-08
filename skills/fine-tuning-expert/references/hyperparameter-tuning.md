@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Overview
@@ -14,7 +14,7 @@ Hyperparameter selection significantly impacts fine-tuning success. This referen
 
 | Method | Typical Range | Starting Point | Notes |
 |---
-{% raw %}
+
 -----|---------------|----------------|-------|
 | Full Fine-Tuning | 1e-6 to 5e-5 | 2e-5 | Lower for larger models |
 | LoRA | 1e-5 to 3e-4 | 2e-4 | Can use higher LR |
@@ -567,5 +567,4 @@ TrainingArguments(
 - `lora-peft.md` - LoRA rank and alpha selection
 - `evaluation-metrics.md` - Tracking training progress
 - `dataset-preparation.md` - Dataset size impacts on hyperparameters
-
 {% endraw %}

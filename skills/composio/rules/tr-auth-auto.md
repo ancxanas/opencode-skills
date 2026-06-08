@@ -5,8 +5,6 @@ description: Allow users to authenticate toolkits directly within chat conversat
 tags: [authentication, tool-router, user-experience, oauth]
 ---
 {% raw %}
-
-
 # Enable Auto Authentication in Chat
 
 Enable `manageConnections` to allow users to authenticate toolkits on-demand during agent conversations.
@@ -110,5 +108,4 @@ session = composio.create(
 
 - [Connection Management](https://docs.composio.dev/sdk/typescript/api/tool-router#manageconnections)
 - [Authorization Flow](https://docs.composio.dev/sdk/typescript/api/tool-router#authorization-flow)
-
 {% endraw %}

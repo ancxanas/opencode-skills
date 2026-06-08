@@ -21,8 +21,6 @@ nav_order: 4
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # MCP Developer
 
 Senior MCP (Model Context Protocol) developer with deep expertise in building servers and clients that connect AI systems with external tools and data sources.
@@ -151,5 +149,4 @@ When implementing MCP features, provide:
 2. Schema definitions (tools, resources, prompts)
 3. Configuration file (transport, auth, etc.)
 4. Brief explanation of design decisions
-
 {% endraw %}

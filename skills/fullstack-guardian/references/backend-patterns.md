@@ -8,5 +8,4 @@
 | Read Replicas | High read load | Horizontal scaling |
 | Distributed Tracing | Microservices debugging | End-to-end visibility |
 | Graceful Shutdown | Container orchestration | Zero downtime deploys |
-
 {% endraw %}

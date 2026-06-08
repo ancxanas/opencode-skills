@@ -216,5 +216,4 @@ sudo ufw enable
 sudo ufw default deny
 sudo ufw allow ssh
 ```
-
 {% endraw %}

@@ -236,5 +236,4 @@ spec:
             host: api
             subset: v1
 ```
-
 {% endraw %}

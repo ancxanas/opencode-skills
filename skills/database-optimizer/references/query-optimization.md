@@ -28,5 +28,4 @@ FLUSH STATUS;
 -- run your query
 SHOW STATUS LIKE 'Handler%';
 ```
-
 {% endraw %}

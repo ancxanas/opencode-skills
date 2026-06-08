@@ -9,5 +9,4 @@
 | `@Profile` | Environment-specific beans |
 | `@EnableJpaAuditing` | Automatic audit fields |
 | `ProblemDetail` | RFC 7807 error responses |
-
 {% endraw %}

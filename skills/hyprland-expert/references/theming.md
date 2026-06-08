@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Apply Theme Across the Ecosystem
@@ -324,7 +324,7 @@ env = QT_STYLE_OVERRIDE,kvantum
 Then open `qt5ct` or `qt6ct` and select Kvantum as the style. Open Kvantum Manager to install and apply a theme.
 
 ---
-{% raw %}
+
 
 
 ## Icon & Cursor Themes
@@ -661,6 +661,4 @@ label {
     valign = center
 }
 ```
-
-
 {% endraw %}

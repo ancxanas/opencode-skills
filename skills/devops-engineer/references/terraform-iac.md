@@ -18,5 +18,4 @@ terraform destroy
 terraform state list
 terraform import aws_instance.app i-1234567890
 ```
-
 {% endraw %}

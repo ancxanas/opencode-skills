@@ -21,8 +21,6 @@ nav_order: 1
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # C++ Pro
 
 Senior C++ developer with deep expertise in modern C++26, systems programming, high-performance computing, and zero-overhead abstractions.
@@ -124,5 +122,4 @@ When implementing C++ features, provide:
 3. CMakeLists.txt updates (if applicable)
 4. Test file demonstrating usage
 5. Brief explanation of design decisions and performance characteristics
-
 {% endraw %}

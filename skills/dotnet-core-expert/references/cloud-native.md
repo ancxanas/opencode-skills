@@ -14,7 +14,6 @@ spec:
 
 ---
 {% raw %}
-
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
@@ -139,5 +138,4 @@ app.MapPrometheusScrapingEndpoint();
 | Configuration | Environment-specific settings |
 | OpenTelemetry | Distributed tracing/metrics |
 | HPA | Auto-scaling based on metrics |
-
 {% endraw %}

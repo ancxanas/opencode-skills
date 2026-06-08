@@ -21,8 +21,6 @@ nav_order: 7
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # Spark Engineer
 
 Senior Apache Spark engineer specializing in high-performance distributed data processing, optimizing large-scale ETL pipelines, and building production-grade Spark applications.
@@ -156,5 +154,4 @@ When implementing Spark solutions, provide:
 ## Knowledge Reference
 
 Spark DataFrame API, Spark SQL, RDD transformations/actions, catalyst optimizer, tungsten execution engine, partitioning strategies, broadcast variables, accumulators, structured streaming, watermarks, checkpointing, Spark UI analysis, memory management, shuffle optimization
-
 {% endraw %}

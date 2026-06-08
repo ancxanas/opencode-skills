@@ -14,5 +14,4 @@
 - **Widget rebuilds**: Minimize unnecessary rebuilds
 - **Memory usage**: Watch for leaks
 - **CPU profiler**: Identify bottlenecks
-
 {% endraw %}

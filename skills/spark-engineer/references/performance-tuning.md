@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Cluster Sizing
@@ -25,7 +25,7 @@ spark.conf.set("spark.dynamicAllocation.executorIdleTimeout", "60s")
 
 | Cluster Size | Executor Memory | Executor Cores | Instances |
 |---
-{% raw %}
+
 -----------|-----------------|----------------|-----------|
 | Small (dev) | 4-8GB | 2-4 | 2-5 |
 | Medium | 8-16GB | 4-5 | 10-50 |
@@ -546,5 +546,4 @@ Slow Spark Job
 8. **Avoid UDFs** - Use built-in functions (10-100x faster)
 9. **Cache strategically** - Only reused data, unpersist when done
 10. **Test at scale** - Performance varies significantly with data volume
-
 {% endraw %}

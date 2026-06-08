@@ -151,5 +151,4 @@
 2. ARIA-enhanced generic (role="tabpanel" on a div)
 3. Bare div/span (zero semantics)
 ```
-
 {% endraw %}

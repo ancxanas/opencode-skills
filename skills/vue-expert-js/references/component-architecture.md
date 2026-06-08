@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Props
@@ -33,13 +33,13 @@ const props = defineProps({
 ```
 
 ---
-{% raw %}
+
 
 
 ## Emits
 
 ```vue
-{% raw %}
+
 <script setup>
 const emit = defineEmits(['update', 'delete', 'close'])
 
@@ -56,7 +56,7 @@ const emit = defineEmits({
 emit('update', 'new value')
 emit('delete', { id: 1 })
 </script>
-{% endraw %}
+
 ```
 
 ---
@@ -99,7 +99,7 @@ defineEmits(['update:firstName', 'update:lastName'])
 ```
 
 ```vue
-{% raw %}
+
 <!-- Scoped slot -->
 <template>
   <ul>
@@ -117,7 +117,7 @@ defineEmits(['update:firstName', 'update:lastName'])
     {{ index + 1 }}. {{ item.name }}
   </template>
 </DataList>
-{% endraw %}
+
 ```
 
 ---
@@ -173,7 +173,7 @@ export function useTheme() {
 ## Dynamic Components
 
 ```vue
-{% raw %}
+
 <script setup>
 import { shallowRef, markRaw } from 'vue'
 import TabHome from './TabHome.vue'
@@ -195,7 +195,7 @@ const currentTab = shallowRef(tabs[0].component)
     <component :is="currentTab" />
   </KeepAlive>
 </template>
-{% endraw %}
+
 ```
 
 ```javascript
@@ -227,5 +227,4 @@ const AsyncModal = defineAsyncComponent({
 | Provide | `provide('key', value)` |
 | Inject | `inject('key', defaultValue)` |
 | Dynamic component | `<component :is="comp" />` |
-
 {% endraw %}

@@ -1,9 +1,9 @@
 ---
 render_with_liquid: false
 ---
-
------|---
 {% raw %}
+-----|---
+
 ------|---------|
 | `@param` | Parameter description | `@param name - User's name` |
 | `@returns` | Return value | `@returns User object` |
@@ -35,5 +35,4 @@ render_with_liquid: false
  * @returns Whether item passes filter
  */
 ```
-
 {% endraw %}

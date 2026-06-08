@@ -1,9 +1,9 @@
 ---
 render_with_liquid: false
 ---
-
-----|---
 {% raw %}
+----|---
+
 ----|----------|--------------|
 | 1.1.1 | A | Non-text Content | `alt` on all images |
 | 1.2.1 | A | Audio-only / Video-only | Transcript or audio description |
@@ -91,5 +91,4 @@ render_with_liquid: false
 - WebAIM Contrast Checker: https://webaim.org/resources/contrastchecker/
 - APCA (Advanced Perceptual Contrast Algorithm): https://www.myndex.com/APCA/
 - WCAG 3 draft uses APCA instead of simple ratio
-
 {% endraw %}

@@ -24,5 +24,4 @@
 - [ ] Test Core Web Vitals
 - [ ] Setup logging (Datadog/LogRocket)
 - [ ] Configure backup strategy
-
 {% endraw %}

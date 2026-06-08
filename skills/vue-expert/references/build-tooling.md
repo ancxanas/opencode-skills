@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Vite Configuration for Vue
@@ -126,7 +126,7 @@ export default defineConfig({
 ```
 
 ---
-{% raw %}
+
 
 
 ## Sourcemaps Configuration
@@ -482,5 +482,4 @@ if (import.meta.env.PROD) {
 | `import.meta.env.VITE_*` | Environment variables |
 | `defineAsyncComponent` | Component lazy loading |
 | `web-vitals` | Core Web Vitals monitoring |
-
 {% endraw %}

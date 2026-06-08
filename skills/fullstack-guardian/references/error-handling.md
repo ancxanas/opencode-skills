@@ -9,5 +9,4 @@
 | 422 | Validation failed | Invalid email format |
 | 429 | Rate limited | Too many requests |
 | 500 | Server error | Unhandled exception |
-
 {% endraw %}

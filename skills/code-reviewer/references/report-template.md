@@ -31,5 +31,4 @@
 - [ ] At least one positive comment included
 - [ ] Questions are specific and answerable
 - [ ] Verdict matches the issues found
-
 {% endraw %}

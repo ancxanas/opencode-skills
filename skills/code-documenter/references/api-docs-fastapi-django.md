@@ -17,5 +17,4 @@
 | `@extend_schema` | Customize schema |
 | `OpenApiParameter` | Query/path params |
 | `OpenApiExample` | Request examples |
-
 {% endraw %}

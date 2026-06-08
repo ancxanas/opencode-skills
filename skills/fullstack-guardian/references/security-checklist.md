@@ -101,5 +101,4 @@ app.post('/login', authLimiter, loginHandler);
 | IDOR | Authorization checks |
 | Brute Force | Rate limiting |
 | Data Exposure | Response filtering |
-
 {% endraw %}

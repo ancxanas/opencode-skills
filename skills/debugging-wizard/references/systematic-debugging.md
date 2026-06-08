@@ -1,7 +1,7 @@
 ---
 render_with_liquid: false
 ---
-
+{% raw %}
 ---
 
 ## Core Principle
@@ -11,7 +11,7 @@ render_with_liquid: false
 Jumping to fixes without understanding causes creates more bugs. Systematic debugging prevents the "fix one thing, break two more" cycle.
 
 ---
-{% raw %}
+
 
 
 ## The Four Mandatory Phases
@@ -369,5 +369,4 @@ When you notice these, stop and restart from Phase 1:
 ---
 
 *Content adapted from [obra/superpowers](https://github.com/obra/superpowers) by Jesse Vincent (@obra), MIT License.*
-
 {% endraw %}

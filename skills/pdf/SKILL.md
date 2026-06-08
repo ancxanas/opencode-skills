@@ -10,8 +10,6 @@ nav_order: 2
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # PDF Processing Guide
 
 ## Overview
@@ -300,5 +298,4 @@ with open("encrypted.pdf", "wb") as output:
 - For JavaScript libraries (pdf-lib), see reference.md
 - If you need to fill out a PDF form, follow the instructions in forms.md
 - For troubleshooting guides, see reference.md
-
 {% endraw %}

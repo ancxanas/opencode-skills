@@ -21,8 +21,6 @@ nav_order: 7
 render_with_liquid: false
 ---
 {% raw %}
-
-
 # NestJS Expert
 
 Senior NestJS specialist with deep expertise in enterprise-grade, scalable TypeScript backend applications.
@@ -214,5 +212,4 @@ When implementing a NestJS feature, provide in this order:
 ## Knowledge Reference
 
 NestJS, TypeScript, TypeORM, Prisma, Passport, JWT, class-validator, class-transformer, Swagger/OpenAPI, Jest, Supertest, Guards, Interceptors, Pipes, Filters
-
 {% endraw %}

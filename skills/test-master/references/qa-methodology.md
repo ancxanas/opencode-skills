@@ -178,5 +178,4 @@ const feedbackCycle = {
 | Leakage | <2% | 2-5% | >5% |
 | Automation | >80% | 60-80% | <60% |
 | MTTR | <24h | 24-48h | >48h |
-
 {% endraw %}

@@ -97,5 +97,4 @@ When to Avoid:
 | Time-based queries? | Time-Series |
 | Traversing relationships? | Graph (Neo4j) |
 | Full-text search primary? | Elasticsearch |
-
 {% endraw %}

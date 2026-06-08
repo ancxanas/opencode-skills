@@ -12,5 +12,4 @@
 | `replace()` | Replace current |
 | `back()` | Go back |
 | `dismissAll()` | Dismiss modals |
-
 {% endraw %}

@@ -5,8 +5,6 @@ description: Use webhook verification for reliable, scalable event delivery in p
 tags: [triggers, webhooks, production, security, verification, hmac]
 ---
 {% raw %}
-
-
 # Webhook Verification for Production
 
 Webhooks are the **production-ready** way to receive trigger events. Provides reliable delivery, automatic retries, and works with serverless.
@@ -227,5 +225,4 @@ app.listen(3000, () => {
 - **Quick response** - Return 200 OK within 30s
 - **Idempotency** - Handle duplicates with webhookId
 - **Error handling** - Log but don't throw
-
 {% endraw %}
