@@ -11,6 +11,7 @@ metadata:
   output-format: code
   related-skills: secure-code-guardian, security-reviewer
   last-reviewed: 2026-06-08
+  spec-source: https://cwe.mitre.org/
 ---
 
 # Code Security Auditor

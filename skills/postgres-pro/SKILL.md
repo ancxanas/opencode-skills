@@ -14,6 +14,7 @@ metadata:
   related-skills: database-optimizer, devops-engineer, sre-engineer
   targets-version: postgresql@17
   last-reviewed: 2026-06-08
+  spec-source: https://www.postgresql.org/docs/current/
 ---
 
 # PostgreSQL Pro

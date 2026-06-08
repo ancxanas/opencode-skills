@@ -12,6 +12,7 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: lua-pro, test-master, devops-engineer
+  spec-source: http://luajit.org/luajit.html
 ---
 
 # LuaJIT Pro

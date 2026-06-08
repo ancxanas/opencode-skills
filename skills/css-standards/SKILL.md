@@ -14,6 +14,7 @@ metadata:
   related-skills: css-motion-systems, tailwind-design-system, html-semantics, frontend-design, a11y-engineer, design-system
   targets-version: ""
   last-reviewed: 2026-06-08
+  spec-source: https://www.w3.org/Style/CSS/
 ---
 
 # css-standards

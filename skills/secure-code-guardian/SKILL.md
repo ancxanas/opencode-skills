@@ -12,6 +12,7 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: fullstack-guardian, security-reviewer, architecture-designer
+  spec-source: https://owasp.org/Top10/2025/en/
 ---
 
 # Secure Code Guardian

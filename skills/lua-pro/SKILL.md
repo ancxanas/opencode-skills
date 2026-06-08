@@ -14,6 +14,7 @@ metadata:
   related-skills: luajit-pro, test-master, devops-engineer
   targets-version: lua@5.5
   last-reviewed: 2026-06-08
+  spec-source: https://lua.org/manual/5.5/manual.html
 ---
 
 # Lua Pro

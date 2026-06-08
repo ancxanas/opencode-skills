@@ -12,6 +12,7 @@ metadata:
   scope: optimization
   output-format: analysis-and-code
   related-skills: csharp-developer, devops-engineer, graphql-architect, java-architect, postgres-pro, rag-architect, rails-expert, spring-boot-engineer
+  spec-source: https://www.postgresql.org/docs/current/performance-tips.html
 ---
 
 # Database Optimizer

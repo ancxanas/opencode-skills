@@ -12,6 +12,7 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: frontend-design, react-expert, vue-expert, angular-architect, test-master, css-motion-systems
+  spec-source: https://www.w3.org/TR/WCAG22/
 ---
 
 # a11y Engineer

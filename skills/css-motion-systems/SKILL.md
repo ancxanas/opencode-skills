@@ -17,6 +17,7 @@ metadata:
   output-format: code
   related-skills: tailwind-design-system, frontend-design
   last-reviewed: 2026-06-08
+  spec-source: https://www.w3.org/TR/css-animations-1/
 ---
 
 # CSS Motion Systems

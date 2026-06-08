@@ -12,6 +12,7 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: a11y-engineer, frontend-design, css-motion-systems, tailwind-design-system, javascript-pro, secure-code-guardian
+  spec-source: https://html.spec.whatwg.org/multipage/
 ---
 
 # html-semantics

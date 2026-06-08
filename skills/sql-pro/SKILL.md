@@ -12,6 +12,7 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: devops-engineer, spark-engineer
+  spec-source: https://www.iso.org/standard/76583.html
 ---
 
 # SQL Pro

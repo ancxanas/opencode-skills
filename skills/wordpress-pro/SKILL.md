@@ -14,6 +14,7 @@ metadata:
   related-skills: php-pro, laravel-specialist, fullstack-guardian, security-reviewer
   targets-version: wordpress@7.0
   last-reviewed: 2026-06-08
+  spec-source: https://developer.wordpress.org/
 ---
 
 # WordPress Pro

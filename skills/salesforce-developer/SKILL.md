@@ -14,6 +14,7 @@ metadata:
   related-skills: api-designer, java-architect, cloud-architect, devops-engineer
   targets-version: salesforce@spring26
   last-reviewed: 2026-06-08
+  spec-source: https://developer.salesforce.com/docs
 ---
 
 # Salesforce Developer

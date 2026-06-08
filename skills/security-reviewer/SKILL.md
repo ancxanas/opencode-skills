@@ -12,6 +12,7 @@ metadata:
   scope: review
   output-format: report
   related-skills: api-designer, atlassian-mcp, cloud-architect, code-reviewer, devops-engineer, kubernetes-specialist, laravel-specialist, mcp-developer, secure-code-guardian, websocket-engineer, wordpress-pro
+  spec-source: https://owasp.org/www-project-web-security-testing-guide/stable/
 ---
 
 # Security Reviewer
