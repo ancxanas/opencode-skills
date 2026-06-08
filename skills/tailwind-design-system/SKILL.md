@@ -1,6 +1,6 @@
 ---
 name: tailwind-design-system
-description: Build scalable design systems with Tailwind CSS v3 or v4, design tokens, component libraries, and responsive patterns. Use when creating component libraries, implementing design systems, standardizing UI patterns, or migrating from Tailwind v3 to v4.
+description: Build scalable design systems with Tailwind CSS v4, design tokens, component libraries, and responsive patterns. Use when creating component libraries with CSS-first @theme configuration, implementing design systems, standardizing UI patterns, or migrating from Tailwind v3 to v4.
 license: MIT
 compatibility: opencode
 metadata:
@@ -17,25 +17,9 @@ metadata:
 ---
 # Tailwind Design System
 
-Build production-ready design systems with Tailwind CSS (v3 or v4), including design tokens, component variants, responsive patterns, and accessibility.
+Build production-ready design systems with Tailwind CSS v4, including design tokens, @theme configuration, component variants, responsive patterns, and accessibility.
 
-## Version Support
-
-This skill covers both Tailwind CSS v3 and v4. The component architecture patterns (CVA, compound components) work identically in both. Configuration differs significantly.
-
-| Feature | Tailwind v3 (legacy) | Tailwind v4 (current) |
-|---------|---------------------|----------------------|
-| Config | `tailwind.config.js/ts` | CSS `@theme` directives |
-| Import | `@tailwind base/components/utilities` | `@import "tailwindcss"` |
-| Engine | PostCSS (Node.js) | Rust-based (Lightning CSS) |
-| Install plugin | `tailwindcss` | `@tailwindcss/postcss` or `@tailwindcss/vite` |
-| Content scan | Manual `content` array | Auto-detected from `.gitignore` |
-| Custom colors | `theme.extend.colors` in JS | `@theme { --color-*: ... }` in CSS |
-| Container queries | Plugin `@tailwindcss/container-queries` | Built-in |
-| Gradient syntax | `bg-gradient-to-r` | `bg-linear-to-r` |
-| Shadow scale | `shadow-sm` (small), `shadow` (default) | `shadow-xs` (small), `shadow-sm` (default) |
-
-> **If starting a new project:** use Tailwind v4. If maintaining a v3 project, the patterns below work for both.
+> **Tailwind v4 is the current standard.** Tailwind v3 is legacy and in maintenance mode. The component architecture patterns below (CVA, compound components) work identically in both versions. Only configuration differs. See the [migration section below](#migrating-from-v3-to-v4) for upgrading.
 
 ## When to Use This Skill
 
@@ -43,7 +27,6 @@ This skill covers both Tailwind CSS v3 and v4. The component architecture patter
 - Implementing design tokens and theming
 - Building responsive and accessible components
 - Standardizing UI patterns across a codebase
-- Migrating to or extending Tailwind CSS
 - Setting up dark mode and color schemes
 
 ## Core Concepts
@@ -67,64 +50,41 @@ Base styles → Variants → Sizes → States → Overrides
 
 ## Quick Start
 
-```typescript
-// tailwind.config.ts
-import type { Config } from 'tailwindcss'
+Tailwind v4 uses CSS-first configuration. No `tailwind.config.*` file needed.
 
-const config: Config = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
-  darkMode: 'class',
-  theme: {
-    extend: {
-      colors: {
-        // Semantic color tokens
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
-        },
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        border: 'hsl(var(--border))',
-        ring: 'hsl(var(--ring))',
-      },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
-      },
-    },
-  },
-  plugins: [require('tailwindcss-animate')],
-}
+### Install
 
-export default config
+```bash
+# Vite
+npm install @tailwindcss/vite
 ```
 
-### Tailwind v4: CSS-First Config
+```typescript
+// vite.config.ts
+import tailwindcss from '@tailwindcss/vite'
 
-In v4, configuration moves from JavaScript to CSS. No `tailwind.config.*` file needed.
+export default defineConfig({
+  plugins: [tailwindcss()],
+})
+```
+
+```bash
+# PostCSS (or standalone CLI)
+npm install @tailwindcss/postcss
+```
+
+```javascript
+// postcss.config.js — replaces both tailwindcss and autoprefixer
+export default { plugins: { '@tailwindcss/postcss': {} } }
+```
+
+### CSS Entry Point
 
 ```css
 /* app.css — v4 style */
 @import "tailwindcss";
 
-/* Theme tokens become real CSS custom properties */
+/* Theme tokens are plain CSS custom properties */
 @theme {
   --color-primary: oklch(0.21 0.034 264.665);
   --color-primary-foreground: oklch(0.985 0 0);
@@ -150,17 +110,41 @@ In v4, configuration moves from JavaScript to CSS. No `tailwind.config.*` file n
 @variant dark (&:where(.dark, .dark *));
 ```
 
-Install for Vite: `npm install @tailwindcss/vite` then add to `vite.config.ts`:
+Content paths are auto-detected from `.gitignore` — no `content` array needed. The utility classes are identical to v3 (`flex`, `p-4`, `text-lg`), but gradient syntax changed: `bg-gradient-to-r` → `bg-linear-to-r` and shadow scale shifted (`shadow-sm` → `shadow-xs`).
+
+### Legacy v3 Setup (maintenance only)
 
 ```typescript
-import tailwindcss from '@tailwindcss/vite'
+// tailwind.config.ts
+import type { Config } from 'tailwindcss'
 
-export default defineConfig({
-  plugins: [tailwindcss()],
-})
+const config: Config = {
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        primary: { DEFAULT: 'hsl(var(--primary))', foreground: 'hsl(var(--primary-foreground))' },
+        secondary: { DEFAULT: 'hsl(var(--secondary))', foreground: 'hsl(var(--secondary-foreground))' },
+        destructive: { DEFAULT: 'hsl(var(--destructive))', foreground: 'hsl(var(--destructive-foreground))' },
+        muted: { DEFAULT: 'hsl(var(--muted))', foreground: 'hsl(var(--muted-foreground))' },
+        accent: { DEFAULT: 'hsl(var(--accent))', foreground: 'hsl(var(--accent-foreground))' },
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        border: 'hsl(var(--border))',
+        ring: 'hsl(var(--ring))',
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+    },
+  },
+  plugins: [require('tailwindcss-animate')],
+}
+export default config
 ```
-
-Or for PostCSS: `npm install @tailwindcss/postcss` and update `postcss.config.js` to use `@tailwindcss/postcss` (replaces both `tailwindcss` and `autoprefixer`).
 
 ```css
 /* globals.css — v3 style */
@@ -169,40 +153,8 @@ Or for PostCSS: `npm install @tailwindcss/postcss` and update `postcss.config.js
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-  }
+  :root { /* HSL variables for colors */ }
+  .dark { /* Dark HSL overrides */ }
 }
 ```
 
@@ -728,7 +680,7 @@ export const disabled = 'disabled:pointer-events-none disabled:opacity-50'
 - **Add accessibility** - ARIA attributes, focus states
 
 ### Don'ts
-- **Don't use arbitrary values** - Extend theme instead
+- **Don't use arbitrary values** - Add to `@theme {}` in CSS instead
 - **Don't nest @apply** - Hurts readability
 - **Don't skip focus states** - Keyboard users need them
 - **Don't hardcode colors** - Use semantic tokens
