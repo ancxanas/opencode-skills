@@ -1,3 +1,7 @@
+---
+render_with_liquid: false
+---
+
 ----a--b--|';
       const result$ = source$.pipe(delay(20));
 

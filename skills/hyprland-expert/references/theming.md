@@ -1,4 +1,8 @@
 ---
+render_with_liquid: false
+---
+
+---
 
 ## Apply Theme Across the Ecosystem
 

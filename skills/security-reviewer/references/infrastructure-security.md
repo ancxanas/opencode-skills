@@ -1,4 +1,8 @@
 ---
+render_with_liquid: false
+---
+
+---
 # Network Policy - Default deny
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy

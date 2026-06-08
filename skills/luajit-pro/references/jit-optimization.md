@@ -1,3 +1,7 @@
+---
+render_with_liquid: false
+---
+
 ---]     -- trace aborted (NYI hit)
 [TRACE   4 myfile.lua:42 stop]    -- trace completed and compiled
 ```

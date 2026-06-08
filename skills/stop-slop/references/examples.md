@@ -1,4 +1,8 @@
 ---
+render_with_liquid: false
+---
+
+---
 
 ## Example 2: Filler + Unnecessary Reassurance
 
