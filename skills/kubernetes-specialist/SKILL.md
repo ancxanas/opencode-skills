@@ -12,6 +12,8 @@ metadata:
   scope: infrastructure
   output-format: manifests
   related-skills: chaos-engineer, cloud-architect, devops-engineer, microservices-architect, ml-pipeline, security-reviewer, sre-engineer, terraform-engineer
+  targets-version: kubernetes@1.36
+  last-reviewed: 2026-06-08
 ---
 
 # Kubernetes Specialist

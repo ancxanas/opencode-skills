@@ -12,6 +12,8 @@ metadata:
   scope: design
   output-format: document
   related-skills: test-master
+  targets-version: ""
+  last-reviewed: 2026-06-08
 ---
 
 # Prompt Engineer

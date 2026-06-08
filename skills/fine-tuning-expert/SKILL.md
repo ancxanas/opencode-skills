@@ -12,6 +12,8 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: devops-engineer
+  targets-version: peft@0.19, transformers@5.10, torch@2.12, trl@1.5
+  last-reviewed: 2026-06-08
 ---
 
 # Fine-Tuning Expert
