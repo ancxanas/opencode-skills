@@ -1,0 +1,116 @@
+name: Skill Validation
+
+on:
+  push:
+    branches: [main]
+    paths: ['skills/**/*.md']
+  pull_request:
+    branches: [main]
+    paths: ['skills/**/*.md']
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate YAML frontmatter
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const skillsDir = path.join(process.env.GITHUB_WORKSPACE, 'skills');
+
+            const dirs = fs.readdirSync(skillsDir, { withFileTypes: true })
+              .filter(d => d.isDirectory());
+
+            let errors = [];
+
+            for (const dir of dirs) {
+              const skillPath = path.join(skillsDir, dir.name, 'SKILL.md');
+              if (!fs.existsSync(skillPath)) {
+                errors.push(`${dir.name}: missing SKILL.md`);
+                continue;
+              }
+
+              const content = fs.readFileSync(skillPath, 'utf-8');
+              const match = content.match(/^---\n([\s\S]*?)\n---/);
+
+              if (!match) {
+                errors.push(`${dir.name}: missing YAML frontmatter`);
+                continue;
+              }
+
+              let fm;
+              try {
+                fm = parseYaml(match[1]);
+              } catch (e) {
+                errors.push(`${dir.name}: invalid YAML — ${e.message}`);
+                continue;
+              }
+
+              if (!fm.name) errors.push(`${dir.name}: missing 'name' field`);
+              if (!fm.description) errors.push(`${dir.name}: missing 'description' field`);
+              if (!fm.license) errors.push(`${dir.name}: missing 'license' field`);
+              if (!fm.compatibility) errors.push(`${dir.name}: missing 'compatibility' field`);
+
+              if (fm.last_reviewed && !/^\d{4}-\d{2}-\d{2}$/.test(fm.last_reviewed)) {
+                errors.push(`${dir.name}: 'last-reviewed' must be YYYY-MM-DD format`);
+              }
+            }
+
+            function parseYaml(str) {
+              const result = {};
+              let currentKey = null;
+              let currentIndent = 0;
+              let nested = null;
+
+              for (const line of str.split('\n')) {
+                if (!line.trim() || line.trim().startsWith('#')) continue;
+
+                const indent = line.search(/\S/);
+                const stripped = line.trim();
+
+                if (!stripped.includes(':')) continue;
+
+                const colonIdx = stripped.indexOf(':');
+                const key = stripped.slice(0, colonIdx).trim();
+                const val = stripped.slice(colonIdx + 1).trim();
+
+                if (!key) continue;
+
+                if (indent === 0) {
+                  currentKey = key;
+                  currentIndent = 0;
+                  if (val === '') {
+                    nested = {};
+                    result[currentKey] = nested;
+                  } else {
+                    result[currentKey] = val;
+                    nested = null;
+                  }
+                } else if (nested !== null) {
+                  if (val === '') {
+                    nested[key] = true;
+                  } else {
+                    nested[key] = val;
+                  }
+                }
+              }
+
+              return result;
+            }
+
+            if (errors.length > 0) {
+              console.log('::error::Validation failed for ' + errors.length + ' skill(s)');
+              for (const err of errors) {
+                console.log(`::error::  ${err}`);
+              }
+              process.exit(1);
+            }
+
+            console.log(`All ${dirs.length} skills passed validation`);
