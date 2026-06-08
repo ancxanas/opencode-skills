@@ -11,7 +11,7 @@ metadata:
   role: specialist
   scope: implementation
   output-format: code
-  related-skills: frontend-design, react-expert, vue-expert, angular-architect, testing-expert, css-motion-systems
+  related-skills: frontend-design, react-expert, vue-expert, angular-architect, test-master, css-motion-systems
 ---
 
 # a11y Engineer
