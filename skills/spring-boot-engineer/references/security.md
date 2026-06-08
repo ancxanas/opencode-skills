@@ -1,6 +1,8 @@
-# Security - Spring Security 6
+# Security - Spring Security 7
 
-## Security Configuration
+## Security Configuration (Stateless JWT)
+
+**Important in Security 7:** CSRF is enabled for API endpoints by default. For stateless JWT-authenticated APIs, explicitly disable it:
 
 ```java
 @Configuration
@@ -11,13 +13,10 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .csrf(csrf -> csrf
-                .ignoringRequestMatchers("/api/auth/**")
-                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-            )
+            .csrf(csrf -> csrf.disable()) // Required in Security 7 for stateless JWT APIs
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/**", "/actuator/health").permitAll()
+                .requestMatchers("/api/auth/**", "/actuator/health", "/actuator/info").permitAll()
                 .requestMatchers("/api/admin/**").hasRole("ADMIN")
                 .requestMatchers("/api/users/**").hasAnyRole("USER", "ADMIN")
                 .anyRequest().authenticated()
@@ -47,12 +46,6 @@ public class SecurityConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
-    }
-
-    @Bean
-    public AuthenticationManager authenticationManager(
-            AuthenticationConfiguration config) throws Exception {
-        return config.getAuthenticationManager();
     }
 
     @Bean
@@ -438,7 +431,7 @@ public class OAuth2ResourceServerConfig {
 | Annotation | Purpose |
 |------------|---------|
 | `@EnableWebSecurity` | Enables Spring Security |
-| `@EnableMethodSecurity` | Enables method-level security annotations |
+| `@EnableMethodSecurity` | Enables method-level security annotations (`@PreAuthorize`, `@PostAuthorize`, `@Secured`) |
 | `@PreAuthorize` | Checks authorization before method execution |
 | `@PostAuthorize` | Checks authorization after method execution |
 | `@Secured` | Role-based method security |
@@ -455,5 +448,8 @@ public class OAuth2ResourceServerConfig {
 - Validate all user inputs
 - Log security events
 - Keep dependencies updated
-- Use CSRF protection for state-changing operations
-- Implement proper session timeout
+- **Security 7**: Disable CSRF explicitly for stateless JWT APIs (`csrf.disable()`)
+- **Security 7**: Use `authorizeHttpRequests()` only — `authorizeRequests()` was removed
+- **Security 7**: WebAuthn/PassKeys support is GA for passwordless authentication
+- **Security 7**: Multi-factor authentication (MFA) is built-in
+- Use proper session timeout for stateful apps

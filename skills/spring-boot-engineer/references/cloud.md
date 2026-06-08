@@ -1,4 +1,6 @@
-# Cloud Native - Spring Cloud
+# Cloud Native - Spring Cloud 2025.1 (Oakwood)
+
+Spring Cloud 2025.1 (Oakwood) is aligned with Spring Boot 4, adopting Jakarta EE 11, Jackson 3, and JSpecify null-safety.
 
 ## Spring Cloud Config Server
 
@@ -265,39 +267,52 @@ resilience4j:
         timeout-duration: 0s
 ```
 
-## Distributed Tracing - Micrometer Tracing
+## Observability - OpenTelemetry Starter
 
-```java
-// application.yml
+Boot 4 ships `spring-boot-starter-opentelemetry` — single dependency for metrics, traces, and logs:
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-opentelemetry</artifactId>
+</dependency>
+```
+
+```yaml
+# application.yml
 management:
   tracing:
     sampling:
       probability: 1.0
-  zipkin:
+  otlp:
     tracing:
-      endpoint: http://localhost:9411/api/v2/spans
+      endpoint: http://localhost:4318/v1/traces
+    metrics:
+      endpoint: http://localhost:4318/v1/metrics
 
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+```
 
-// Custom spans
+Custom spans use OpenTelemetry's `Span` API directly (no Micrometer Tracing Tracer needed):
+
+```java
 @Service
 @RequiredArgsConstructor
 public class OrderService {
-    private final Tracer tracer;
     private final OrderRepository orderRepository;
+    private final OpenTelemetry openTelemetry;
 
     public Order processOrder(OrderRequest request) {
-        Span span = tracer.nextSpan().name("processOrder").start();
-        try (Tracer.SpanInScope ws = tracer.withSpan(span)) {
-            span.tag("order.type", request.type());
-            span.tag("order.items", String.valueOf(request.items().size()));
+        var tracer = openTelemetry.getTracer("order-service");
+        var span = tracer.spanBuilder("processOrder")
+            .startSpan();
+        try (var ignored = span.makeCurrent()) {
+            span.setAttribute("order.type", request.type());
+            span.addEvent("order.created");
 
-            // Business logic
             Order order = createOrder(request);
-
-            span.event("order.created");
             return order;
         } finally {
             span.end();
@@ -484,6 +499,12 @@ COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
 ENTRYPOINT ["java","-cp","app:app/lib/*","com.example.Application"]
 ```
 
+## Boot 4 Actuator Changes
+
+- `/actuator/info` now includes OS and process information by default
+- `spring-boot-starter-opentelemetry` replaces manual Micrometer + Zipkin wiring
+- Actuator probes (liveness/readiness) configured out of the box for Kubernetes
+
 ## Quick Reference
 
 | Component | Purpose |
@@ -491,8 +512,8 @@ ENTRYPOINT ["java","-cp","app:app/lib/*","com.example.Application"]
 | **Config Server** | Centralized configuration management |
 | **Eureka** | Service discovery and registration |
 | **Gateway** | API gateway with routing, filtering, load balancing |
-| **Circuit Breaker** | Fault tolerance and fallback patterns |
-| **Load Balancer** | Client-side load balancing |
-| **Tracing** | Distributed tracing across services |
+| **Circuit Breaker** | Fault tolerance via Resilience4j |
+| **Load Balancer** | Client-side load balancing (Spring Cloud LoadBalancer) |
+| **OpenTelemetry** | Unified metrics, traces, and logs via `spring-boot-starter-opentelemetry` |
 | **Actuator** | Production-ready monitoring and management |
 | **Kubernetes** | Container orchestration and deployment |

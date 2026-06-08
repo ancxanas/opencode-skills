@@ -1,4 +1,8 @@
-# Testing - Spring Boot Test
+# Testing - Spring Boot Test (Boot 4)
+
+> JUnit 4 is deprecated in Spring Boot 4. All tests must use JUnit 5.  
+> Jackson 3: `ObjectMapper` → `tools.jackson.databind.JsonMapper` (with `JsonMapperBuilder`).  
+> `RestTemplate` auto-config is opt-in — use `RestClient` or `WebTestClient` for integration tests.
 
 ## Unit Testing with JUnit 5
 
@@ -157,7 +161,7 @@ class UserControllerTest {
     private UserService userService;
 
     @Autowired
-    private ObjectMapper objectMapper;
+    private JsonMapper jsonMapper; // Jackson 3: tools.jackson.databind.JsonMapper
 
     @Test
     @WithMockUser(roles = "ADMIN")
@@ -208,7 +212,7 @@ class UserControllerTest {
         // When & Then
         mockMvc.perform(post("/api/v1/users")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(request)))
+                .content(jsonMapper.writeValueAsString(request)))
             .andExpect(status().isCreated())
             .andExpect(header().exists("Location"))
             .andExpect(jsonPath("$.email").value(request.email()))

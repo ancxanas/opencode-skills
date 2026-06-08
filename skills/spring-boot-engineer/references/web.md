@@ -1,29 +1,29 @@
-# Web Layer - Controllers & REST APIs
+# Web Layer - Controllers & REST APIs (Spring Framework 7)
 
-## REST Controller Pattern
+## REST Controller Pattern with API Versioning
 
 ```java
 @RestController
-@RequestMapping("/api/v1/users")
+@RequestMapping("/api/users")
 @Validated
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
 
-    @GetMapping
+    @GetMapping(version = "1.0") // Built-in API versioning — Framework 7 feature
     public ResponseEntity<Page<UserResponse>> getUsers(
             @PageableDefault(size = 20, sort = "createdAt") Pageable pageable) {
         Page<UserResponse> users = userService.findAll(pageable);
         return ResponseEntity.ok(users);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}", version = "1.0")
     public ResponseEntity<UserResponse> getUser(@PathVariable Long id) {
         UserResponse user = userService.findById(id);
         return ResponseEntity.ok(user);
     }
 
-    @PostMapping
+    @PostMapping(version = "1.0")
     public ResponseEntity<UserResponse> createUser(
             @Valid @RequestBody UserCreateRequest request) {
         UserResponse user = userService.create(request);
@@ -35,7 +35,7 @@ public class UserController {
         return ResponseEntity.created(location).body(user);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping(value = "/{id}", version = "1.0")
     public ResponseEntity<UserResponse> updateUser(
             @PathVariable Long id,
             @Valid @RequestBody UserUpdateRequest request) {
@@ -43,10 +43,91 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}", version = "1.0")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteUser(@PathVariable Long id) {
         userService.delete(id);
+    }
+}
+```
+
+### API Versioning Configuration
+
+The `version` attribute on mapping annotations supports four resolution strategies:
+
+```yaml
+# application.yml
+spring:
+  mvc:
+    apiversion:
+      # Strategy: use-request-header, use-path-segment, use-query-param, use-media-type
+      use-request-header: API-Version
+      deprecation:
+        enabled: true  # RFC 9745 Deprecation/Sunset/Link headers on deprecated versions
+```
+
+Multiple strategies can be combined for backward compatibility during migration.
+
+## Declarative HTTP Client (@HttpServiceClient)
+
+Spring Framework 7 introduces declarative HTTP clients — define an interface, Spring generates the implementation:
+
+```java
+// Declarative client interface
+@HttpServiceClient(baseUrl = "https://api.example.com")
+public interface UserApiClient {
+    @GetExchange("/users/{id}")
+    UserResponse getUser(@PathVariable Long id);
+
+    @GetExchange("/users")
+    List<UserResponse> getUsers(@PageableDefault(size = 20) Pageable pageable);
+
+    @PostExchange("/users")
+    ResponseEntity<UserResponse> createUser(@Valid @RequestBody UserCreateRequest request);
+
+    @PutExchange("/users/{id}")
+    UserResponse updateUser(@PathVariable Long id, @Valid @RequestBody UserUpdateRequest request);
+
+    @DeleteExchange("/users/{id}")
+    ResponseEntity<Void> deleteUser(@PathVariable Long id);
+}
+
+// Usage in service
+@Service
+@RequiredArgsConstructor
+public class UserService {
+    private final UserApiClient apiClient;
+
+    public UserResponse getUser(Long id) {
+        return apiClient.getUser(id);
+    }
+}
+```
+
+## RestClient (Preferred over RestTemplate)
+
+`RestClient` is the default HTTP client in Boot 4. `RestTemplate` auto-configuration is opt-in.
+
+```java
+@Service
+public class ExternalService {
+    private final RestClient restClient;
+
+    public ExternalService(RestClient.Builder builder) {
+        this.restClient = builder
+            .baseUrl("https://api.example.com")
+            .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+            .build();
+    }
+
+    public ExternalData fetchData(String id) {
+        return restClient.get()
+            .uri("/data/{id}", id)
+            .retrieve()
+            .onStatus(HttpStatusCode::is4xxClientError, (req, res) -> {
+                throw new ResourceNotFoundException("Not found");
+            })
+            .body(ExternalData.class);
     }
 }
 ```
@@ -110,7 +191,9 @@ public record UserResponse(
 }
 ```
 
-## Global Exception Handling
+## Global Exception Handling (RFC 9457 Problem Details)
+
+Boot 4 defaults to RFC 9457 `application/problem+json` responses via ProblemDetail:
 
 ```java
 @RestControllerAdvice
@@ -118,80 +201,39 @@ public record UserResponse(
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleNotFound(
-            ResourceNotFoundException ex, WebRequest request) {
+    public ProblemDetail handleNotFound(ResourceNotFoundException ex) {
         log.error("Resource not found: {}", ex.getMessage());
-        ErrorResponse error = new ErrorResponse(
-            HttpStatus.NOT_FOUND.value(),
-            ex.getMessage(),
-            request.getDescription(false),
-            LocalDateTime.now()
-        );
-        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+        return ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, ex.getMessage());
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ValidationErrorResponse> handleValidation(
-            MethodArgumentNotValidException ex) {
-        Map<String, String> errors = ex.getBindingResult()
+    public ProblemDetail handleValidation(MethodArgumentNotValidException ex) {
+        var problem = ProblemDetail.forStatus(HttpStatus.BAD_REQUEST);
+        problem.setTitle("Validation failed");
+        problem.setProperty("errors", ex.getBindingResult()
             .getFieldErrors()
             .stream()
             .collect(Collectors.toMap(
                 FieldError::getField,
-                error -> error.getDefaultMessage() != null
-                    ? error.getDefaultMessage()
-                    : "Invalid value"
-            ));
-
-        ValidationErrorResponse response = new ValidationErrorResponse(
-            HttpStatus.BAD_REQUEST.value(),
-            "Validation failed",
-            errors,
-            LocalDateTime.now()
-        );
-        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+                e -> e.getDefaultMessage() != null ? e.getDefaultMessage() : "Invalid value"
+            )));
+        return problem;
     }
 
     @ExceptionHandler(DataIntegrityViolationException.class)
-    public ResponseEntity<ErrorResponse> handleDataIntegrity(
-            DataIntegrityViolationException ex, WebRequest request) {
+    public ProblemDetail handleDataIntegrity(DataIntegrityViolationException ex) {
         log.error("Data integrity violation", ex);
-        ErrorResponse error = new ErrorResponse(
-            HttpStatus.CONFLICT.value(),
-            "Data integrity violation - resource may already exist",
-            request.getDescription(false),
-            LocalDateTime.now()
-        );
-        return new ResponseEntity<>(error, HttpStatus.CONFLICT);
+        return ProblemDetail.forStatusAndDetail(HttpStatus.CONFLICT,
+            "Data integrity violation — resource may already exist");
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponse> handleGlobalException(
-            Exception ex, WebRequest request) {
+    public ProblemDetail handleGlobalException(Exception ex) {
         log.error("Unexpected error", ex);
-        ErrorResponse error = new ErrorResponse(
-            HttpStatus.INTERNAL_SERVER_ERROR.value(),
-            "An unexpected error occurred",
-            request.getDescription(false),
-            LocalDateTime.now()
-        );
-        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+        return ProblemDetail.forStatusAndDetail(HttpStatus.INTERNAL_SERVER_ERROR,
+            "An unexpected error occurred");
     }
 }
-
-record ErrorResponse(
-    int status,
-    String message,
-    String path,
-    LocalDateTime timestamp
-) {}
-
-record ValidationErrorResponse(
-    int status,
-    String message,
-    Map<String, String> errors,
-    LocalDateTime timestamp
-) {}
 ```
 
 ## Custom Validation
@@ -286,10 +328,22 @@ public class WebConfig implements WebMvcConfigurer {
 |------------|---------|
 | `@RestController` | Marks class as REST controller (combines @Controller + @ResponseBody) |
 | `@RequestMapping` | Maps HTTP requests to handler methods |
-| `@GetMapping/@PostMapping` | HTTP method-specific mappings |
+| `@GetMapping/@PostMapping/@HttpExchange` | HTTP method-specific mappings (declarative client) |
 | `@PathVariable` | Extracts values from URI path |
 | `@RequestParam` | Extracts query parameters |
 | `@RequestBody` | Binds request body to method parameter |
 | `@Valid` | Triggers validation on request body |
-| `@RestControllerAdvice` | Global exception handling for REST controllers |
+| `@RestControllerAdvice` | Global exception handling returning `ProblemDetail` (RFC 9457) |
 | `@ResponseStatus` | Sets HTTP status code for method |
+| `@HttpServiceClient` | Declarative HTTP client — Spring generates the implementation |
+
+## Jackson 3 Notes
+
+- **Package**: `com.fasterxml.jackson` → `tools.jackson`
+- **Builder**: Use `tools.jackson.databind.JsonMapper` (extends `ObjectMapper` with immutable builder API)
+- **Customizer**: `JsonMapperBuilderCustomizer` replaces `Jackson2ObjectMapperBuilderCustomizer`
+- **Dates**: `WRITE_DATES_AS_TIMESTAMPS` defaults to `false` (ISO strings, not Unix timestamps)
+- **Property order**: `SORT_PROPERTIES_ALPHABETICALLY` defaults to `true`
+- **Exceptions**: `JacksonException` extends `RuntimeException`, not `IOException` — audit `catch (IOException e)` blocks
+- **Annotations**: `@JsonProperty`, `@JsonIgnore`, `@JsonView` remain at `com.fasterxml.jackson.annotation` (shared with Jackson 2)
+- **Compatibility**: Add `spring.jackson.use-jackson2-defaults: true` + `spring-boot-jackson2` for incremental migration

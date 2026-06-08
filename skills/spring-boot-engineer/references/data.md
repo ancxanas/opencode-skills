@@ -1,4 +1,4 @@
-# Data Access - Spring Data JPA
+# Data Access - Spring Data JPA (Hibernate 7, JPA 3.2, Jakarta EE 11)
 
 ## JPA Entity Pattern
 
@@ -362,6 +362,24 @@ CREATE TABLE addresses (
 CREATE INDEX idx_addresses_user_id ON addresses(user_id);
 ```
 
+## Hibernate 7 / JPA 3.2 New Features
+
+- **`@SoftDelete`** — built-in soft deletion without custom logic
+- **`CriteriaBuilder.union()`** — JPQL unions finally available
+- **`find()` with `TypedQueryReference`** — compile-safe named queries
+- **`@Id` on records** (experimental)
+- **ReentrantLock** replaces `synchronized` blocks internally — better throughput with virtual threads
+- **JPQL string queries** for derived queries (~3.5× better throughput)
+
+```java
+@Entity
+@Table(name = "users")
+@SoftDelete // Hibernate 7 — adds deleted flag automatically
+public class User {
+    // ...
+}
+```
+
 ## Quick Reference
 
 | Annotation | Purpose |
@@ -379,3 +397,4 @@ CREATE INDEX idx_addresses_user_id ON addresses(user_id);
 | `@Modifying` | Marks query as UPDATE/DELETE |
 | `@EntityGraph` | Defines fetch graph for associations |
 | `@Version` | Optimistic locking version field |
+| `@SoftDelete` | Hibernate 7 — declarative soft deletion |
