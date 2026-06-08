@@ -19,10 +19,6 @@ defaults:
       path: ""
     values:
       layout: default
-  - scope:
-      path: "skills/*/SKILL.md"
-    values:
-      layout: default
       render_with_liquid: false
 
 exclude:
