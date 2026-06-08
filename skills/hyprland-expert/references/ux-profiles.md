@@ -26,8 +26,8 @@ Pick a persona that matches how you want your desktop to feel. Each includes a *
 | Bar framework | Quickshell (top, ~/Quickshell/bar.qml) | Menubar-style bar at the top, QML-native smooth animations |
 | Launcher | rofi (Cmd+Space) | Spotlight replacement |
 | Notifications | swaync | Banner-style notifications like macOS |
-| Wallpaper | swww | Smooth crossfade transitions |
-| Lock screen | hyprlock | Native, good macOS-like blur |
+| Wallpaper | hyprpaper | Smooth crossfade transitions |
+| Lock screen | hyprlock (or loginctl) | Native, good macOS-like blur |
 | Mod key | SUPER (acts as Cmd) | Cmd+Q = quit, Cmd+W = close, etc. |
 | Layout | Master-stack | Primary window on left/right like macOS split |
 | Animations | Smooth + popin | Scale/fade effects reminiscent of Dock genie |
@@ -104,7 +104,7 @@ hl.config({
         mouse_move_enables_dpms = true,
         key_press_enables_dpms = true,
         enable_swallow = true,
-        swallow_regex = "^(kitty|alacritty|foot)$",
+        swallow_regex = "^(com\\.mitchellh\\.ghostty|alacritty|foot)$",
         force_default_wallpaper = 0,
     },
 })
@@ -120,7 +120,7 @@ hl.animation({ leaf = "borderangle", enabled = true, speed = 100, bezier = "defa
 
 -- == APPEARANCE ==
 local mod = "SUPER"
-local terminal = "kitty"
+local terminal = "ghostty"
 local browser = "firefox"
 
 -- == WINDOW RULES ==
@@ -223,10 +223,10 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 -- == AUTOSTART ==
 hl.on("hyprland.start", function()
     hl.exec_cmd("quickshell ~/.config/quickshell/bar.qml")
-    hl.exec_cmd("swww-daemon")
+    hl.exec_cmd("hyprpaper")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("swaync")
-    hl.exec_cmd("/usr/lib/hyprpolkitagent")
+    hl.exec_cmd("/usr/libexec/hyprpolkitagent")
     hl.exec_cmd("sleep 5; nm-applet")
 end)
 ```
@@ -253,7 +253,7 @@ end)
 | Launcher | wofi (Win key, type to search) | Start menu replacement |
 | Notifications | swaync | Action center feel |
 | Wallpaper | hyprpaper | Simple, no transitions |
-| Lock screen | hyprlock | Blur background like Windows lock |
+| Lock screen | hyprlock (or loginctl) | Blur background like Windows lock |
 | Mod key | SUPER (Win key) | Win+arrow = snap, Win+D = show desktop |
 | Layout | Dwindle | PowerToys FancyZones-like window splitting |
 | Animations | Minimal, fast | Windows restrained animation style |
@@ -320,7 +320,7 @@ hl.config({
         mouse_move_enables_dpms = true,
         key_press_enables_dpms = true,
         enable_swallow = true,
-        swallow_regex = "^(kitty|alacritty|foot)$",
+        swallow_regex = "^(com\\.mitchellh\\.ghostty|alacritty|foot)$",
         force_default_wallpaper = 0,
     },
 })
@@ -334,7 +334,7 @@ hl.animation({ leaf = "workspaces", enabled = true, speed = 2, bezier = "default
 
 -- == APPEARANCE ==
 local mod = "SUPER"
-local terminal = "kitty"
+local terminal = "ghostty"
 local browser = "firefox"
 
 -- == WINDOW RULES ==
@@ -420,7 +420,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("swaync")
-    hl.exec_cmd("/usr/lib/hyprpolkitagent")
+    hl.exec_cmd("/usr/libexec/hyprpolkitagent")
     hl.exec_cmd("sleep 5; nm-applet")
 end)
 ```
@@ -445,8 +445,8 @@ end)
 | Bar framework | AGS (top, with clock + quick settings) | Activities-like bar, scriptable in JS |
 | Launcher | rofi (with desktop overview mode) | Activities overview replacement |
 | Notifications | swaync | Notification center like GNOME |
-| Wallpaper | swww | Smooth transitions |
-| Lock screen | hyprlock | Clean blur like GNOME lock |
+| Wallpaper | hyprpaper | Smooth transitions |
+| Lock screen | hyprlock (or loginctl) | Clean blur like GNOME lock |
 | Mod key | SUPER | Activities overview, just like GNOME |
 | Layout | Master-stack | One main window + side stack, like GNOME tiling |
 | Animations | Medium, smooth curves | Polished but not slow |
@@ -519,7 +519,7 @@ hl.config({
         mouse_move_enables_dpms = true,
         key_press_enables_dpms = true,
         enable_swallow = true,
-        swallow_regex = "^(kitty|alacritty|foot)$",
+        swallow_regex = "^(com\\.mitchellh\\.ghostty|alacritty|foot)$",
         animate_mouse_windowdragging = true,
         force_default_wallpaper = 0,
     },
@@ -534,7 +534,7 @@ hl.animation({ leaf = "workspaces", enabled = true, speed = 5, bezier = "smooth"
 
 -- == APPEARANCE ==
 local mod = "SUPER"
-local terminal = "kitty"
+local terminal = "ghostty"
 local browser = "firefox"
 
 -- == WINDOW RULES ==
@@ -614,7 +614,7 @@ hl.bind(mod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mod .. " + A", hl.dsp.exec_cmd("rofi -show window"))
 
 -- Lock screen (Super+L)
-hl.bind(mod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mod .. " + L", hl.dsp.exec_cmd("hyprlock"))  -- or use: loginctl lock-session
 
 -- Exit (Super+Shift+Q)
 hl.bind(mod .. " SHIFT" .. " + Q", hl.dsp.exit())
@@ -635,10 +635,10 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 -- == AUTOSTART ==
 hl.on("hyprland.start", function()
     hl.exec_cmd("ags")
-    hl.exec_cmd("swww-daemon")
+    hl.exec_cmd("hyprpaper")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("swaync")
-    hl.exec_cmd("/usr/lib/hyprpolkitagent")
+    hl.exec_cmd("/usr/libexec/hyprpolkitagent")
 end)
 ```
 
@@ -664,7 +664,7 @@ end)
 | Launcher | wofi or Steam Big Picture | Lightweight launcher, Steam for game library |
 | Notifications | dunst (minimal) | No notification center needed |
 | Wallpaper | hyprpaper (static) | No GPU wasted on animations |
-| Lock screen | hyprlock | Simple, fast |
+| Lock screen | hyprlock (or loginctl) | Simple, fast |
 | Mod key | SUPER | Minimal modifier conflicts with games |
 | Layout | Fullscreen + Scrolling | Games fullscreen, library scrollable |
 | Animations | **Disabled** during gameplay | Max FPS, enable VRR |
@@ -725,7 +725,7 @@ hl.config({
         mouse_move_enables_dpms = true,
         key_press_enables_dpms = true,
         enable_swallow = true,
-        swallow_regex = "^(kitty)$",
+        swallow_regex = "^(com\\.mitchellh\\.ghostty)$",
         vrr = 0,  -- Gaming mode script sets to 2
         force_default_wallpaper = 0,
     },
@@ -739,7 +739,7 @@ hl.animation({ leaf = "workspaces", enabled = true, speed = 1, bezier = "default
 
 -- == APPEARANCE ==
 local mod = "SUPER"
-local terminal = "kitty"
+local terminal = "ghostty"
 
 -- Start with animations ON for desktop, gaming_mode.sh turns them OFF
 
@@ -869,7 +869,7 @@ end)
 | Launcher | rofi | Fast, extensible, dev-friendly |
 | Notifications | dunst | Minimal, no GUI needed |
 | Wallpaper | hyprpaper (static) | No distractions |
-| Lock screen | hyprlock | Quick lock/unlock |
+| Lock screen | hyprlock (or loginctl) | Quick lock/unlock |
 | Mod key | SUPER | Standard |
 | Layout | Dwindle | Best for multi-terminal splits |
 | Animations | Medium, fast | Sub-second transitions |
@@ -939,7 +939,7 @@ hl.config({
         mouse_move_enables_dpms = true,
         key_press_enables_dpms = true,
         enable_swallow = true,
-        swallow_regex = "^(kitty|alacritty|foot)$",
+        swallow_regex = "^(com\\.mitchellh\\.ghostty|alacritty|foot)$",
         force_default_wallpaper = 0,
     },
 })
@@ -953,19 +953,20 @@ hl.animation({ leaf = "workspaces", enabled = true, speed = 3, bezier = "fast" }
 
 -- == APPEARANCE ==
 local mod = "SUPER"
-local terminal = "kitty"
+local terminal = "ghostty"
 local browser = "firefox"
 local editor = "Code"
 
 -- == WINDOW RULES ==
+-- Workspace assignments: 1=browser, 2=code, 3=terminals, 4=comms, 5=misc, 6=scratchpad
 hl.window_rule({
     name  = "ws-custom",
-    match = { class = "^" .. editor .. "$" },
+    match = { class = "^" .. browser .. "$" },
     workspace = "1",
 })
 hl.window_rule({
     name  = "ws-custom",
-    match = { class = "^" .. browser .. "$" },
+    match = { class = "^" .. editor .. "$" },
     workspace = "2",
 })
 hl.window_rule({
@@ -976,6 +977,11 @@ hl.window_rule({
 hl.window_rule({
     name  = "ws-discord-Slack-Teams",
     match = { class = "^(discord|Slack|Teams)$" },
+    workspace = "4",
+})
+hl.window_rule({
+    name  = "ws-misc",
+    match = { class = "^(org.gnome.Nautilus|thunar|vlc|obsidian)$" },
     workspace = "5",
 })
 -- Note: per-window opacity and grouping are not available in the Lua API as of v0.55
@@ -994,6 +1000,11 @@ hl.window_rule({
     name  = "float-discord",
     match = { class = "^(discord)$", title = "^(Quick Switcher|Settings)$" },
     float = true,
+})
+hl.window_rule({
+    name  = "noblur-terminal",
+    match = { class = "^" .. terminal .. "$" },
+    no_blur = true,
 })
 
 -- == KEYBINDINGS (Vim-adjacent) ==
@@ -1028,6 +1039,9 @@ hl.bind(mod .. " + T", hl.dsp.exec_cmd(terminal .. " -e npm test"))
 
 -- Quick build output
 hl.bind(mod .. " SHIFT", "T", "exec", terminal .. " -e cargo build")
+
+-- Wifi menu
+hl.bind(mod .. " + F2", hl.dsp.exec_cmd("nm-connection-editor"))
 
 -- Workspaces
 for i = 1, 9 do
@@ -1072,7 +1086,9 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("dunst")
-    hl.exec_cmd("/usr/lib/hyprpolkitagent")
+    hl.exec_cmd("/usr/libexec/hyprpolkitagent")
+    hl.exec_cmd("nmcli radio wifi on")
+    hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("sleep 5; nm-applet")
 end)
 ```
@@ -1098,7 +1114,7 @@ end)
 | Launcher | rofi | Fast, search-driven |
 | Notifications | swaync | Dark-themed notification center |
 | Wallpaper | hyprpaper (static, solid color or subtle gradient) | Avoid distraction from color-critical work |
-| Lock screen | hyprlock | Dark blur lock screen |
+| Lock screen | hyprlock (or loginctl) | Dark blur lock screen |
 | Mod key | SUPER | Standard |
 | Layout | Master-stack | Reference material tiled, tools float |
 | Animations | Smooth, medium | Polished but not slow |
@@ -1187,7 +1203,7 @@ hl.animation({ leaf = "workspaces", enabled = true, speed = 5, bezier = "smooth"
 
 -- == APPEARANCE ==
 local mod = "SUPER"
-local terminal = "kitty"
+local terminal = "ghostty"
 local browser = "firefox"
 
 -- == WINDOW RULES ==
@@ -1322,7 +1338,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle")
     hl.exec_cmd("swaync")
     hl.exec_cmd("hyprsunset -t 6500")
-    hl.exec_cmd("/usr/lib/hyprpolkitagent")
+    hl.exec_cmd("/usr/libexec/hyprpolkitagent")
 end)
 ```
 

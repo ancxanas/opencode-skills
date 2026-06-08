@@ -43,10 +43,10 @@ Schema + endpoint + dependency injection in one cohesive unit:
 
 ```python
 # schemas.py
-from pydantic import BaseModel, EmailStr, field_validator, model_config
+from pydantic import BaseModel, ConfigDict, EmailStr, field_validator
 
 class UserCreate(BaseModel):
-    model_config = model_config(str_strip_whitespace=True)
+    model_config = ConfigDict(str_strip_whitespace=True)
 
     email: EmailStr
     password: str
@@ -60,7 +60,7 @@ class UserCreate(BaseModel):
         return v
 
 class UserResponse(BaseModel):
-    model_config = model_config(from_attributes=True)
+    model_config = ConfigDict(from_attributes=True)
 
     id: int
     email: EmailStr
@@ -114,7 +114,7 @@ async def create_user(db: AsyncSession, payload: UserCreate) -> User:
 ```python
 # security.py
 from datetime import datetime, timedelta, timezone
-from jose import JWTError, jwt
+from jose import JWTError, jwt  # or PyJWT: import jwt
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from typing import Annotated

@@ -1,6 +1,6 @@
 ---
 name: nextjs-developer
-description: "Use when building Next.js 14+ applications with App Router, server components, or server actions. Invoke to configure route handlers, implement middleware, set up API routes, add streaming SSR, write generateMetadata for SEO, scaffold loading.tsx/error.tsx boundaries, or deploy to Vercel. Triggers on: Next.js, Next.js 14, App Router, RSC, use server, Server Components, Server Actions, React Server Components, generateMetadata, loading.tsx, Next.js deployment, Vercel, Next.js performance."
+description: "Use when building Next.js 14+ or 15 applications with App Router, server components, or server actions. Invoke to configure route handlers, implement middleware, set up API routes, add streaming SSR, write generateMetadata for SEO, scaffold loading.tsx/error.tsx boundaries, or deploy to Vercel. Triggers on: Next.js, Next.js 14, Next.js 15, App Router, RSC, use server, Server Components, Server Actions, React Server Components, generateMetadata, loading.tsx, Next.js deployment, Vercel, Next.js performance."
 license: MIT
 compatibility: opencode
 metadata:
@@ -44,7 +44,7 @@ Load detailed guidance based on context:
 ### MUST DO (Next.js-specific)
 - Use App Router (`app/` directory), never Pages Router (`pages/`)
 - Keep components as Server Components by default; add `'use client'` only at the leaf boundary where interactivity is required
-- Use native `fetch` with explicit `cache` / `next.revalidate` options — do not rely on implicit caching
+- Use native `fetch` with explicit `cache` / `next.revalidate` options — do not rely on implicit caching (Note: in Next.js 15 params and searchParams are Promises and must be awaited)
 - Use `generateMetadata` (or the static `metadata` export) for all SEO — never hardcode `<title>` or `<meta>` tags in JSX
 - Optimize every image with `next/image`; never use a plain `<img>` tag for content images
 - Add `loading.tsx` and `error.tsx` at every route segment that performs async data fetching
@@ -119,8 +119,9 @@ export default function NewProductPage() {
 import type { Metadata } from 'next'
 
 export async function generateMetadata(
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ): Promise<Metadata> {
+  const { id } = await params
   const product = await fetchProduct(params.id)
   return {
     title: product.name,
@@ -136,9 +137,9 @@ When implementing Next.js features, provide:
 1. App structure (route organization)
 2. Layout/page components with proper data fetching
 3. Server actions if mutations needed
-4. Configuration (`next.config.js`, TypeScript)
+4. Configuration (`next.config.ts`, TypeScript)
 5. Brief explanation of rendering strategy chosen
 
 ## Knowledge Reference
 
-Next.js 14+, App Router, React Server Components, Server Actions, Streaming SSR, Partial Prerendering, next/image, next/font, Metadata API, Route Handlers, Middleware, Edge Runtime, Turbopack, Vercel deployment
+Next.js 14+, Next.js 15, App Router, React Server Components, Server Actions, Streaming SSR, Partial Prerendering, next/image, next/font, Metadata API, Route Handlers, Middleware, Edge Runtime, Turbopack, Vercel deployment

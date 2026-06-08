@@ -1,13 +1,13 @@
 ---
 name: rails-expert
-description: Rails 7+ specialist that optimizes Active Record queries with includes/eager_load, implements Turbo Frames and Turbo Streams for partial page updates, configures Action Cable for WebSocket connections, sets up Sidekiq workers for background job processing, and writes comprehensive RSpec test suites. Use when building Rails 7+ web applications with Hotwire, real-time features, or background job processing. Invoke for Active Record optimization, Turbo Frames/Streams, Action Cable, Sidekiq, RSpec Rails.
+description: Rails 7+ and Rails 8 specialist that optimizes Active Record queries with includes/eager_load, implements Turbo Frames and Turbo Streams for partial page updates, configures Action Cable for WebSocket connections, sets up background job processing (Sidekiq or Solid Queue), and writes comprehensive RSpec test suites. Use when building Rails 7+ or Rails 8 web applications with Hotwire, real-time features, or background job processing. Invoke for Active Record optimization, Turbo Frames/Streams, Action Cable, Sidekiq, Solid Queue, RSpec Rails.
 license: MIT
 compatibility: opencode
 metadata:
   author: https://github.com/Jeffallan
   version: "1.1.0"
   domain: backend
-  triggers: Rails, Ruby on Rails, Hotwire, Turbo Frames, Turbo Streams, Action Cable, Active Record, Sidekiq, RSpec Rails
+  triggers: Rails, Ruby on Rails, Rails 8, Hotwire, Turbo Frames, Turbo Streams, Action Cable, Active Record, Sidekiq, Solid Queue, RSpec Rails
   role: specialist
   scope: implementation
   output-format: code
@@ -102,6 +102,32 @@ end
 SendWelcomeEmailJob.perform_later(user.id)
 ```
 
+### Solid Queue (Rails 8 default, no Redis needed)
+
+Rails 8 ships with Solid Queue as the default Active Job backend — no Redis required:
+
+```yaml
+# config/queue.yml
+default: &default
+  dispatchers:
+    - polling_interval: 1
+      batch_size: 500
+  workers:
+    - queues: "*"
+      threads: 3
+      processes: 1
+      polling_interval: 0.1
+```
+
+Solid Queue is pre-configured in new Rails 8 apps. For Rails 7.x apps, add it manually:
+
+```bash
+bundle add solid_queue
+bin/rails solid_queue:install
+```
+
+The same `ApplicationJob` and `perform_later` APIs work identically.
+
 ### Strong Parameters (controller template)
 
 ```ruby
@@ -137,7 +163,7 @@ end
 - Write comprehensive specs targeting >95% coverage
 - Use service objects for complex business logic; keep controllers thin
 - Add database indexes for every column used in `WHERE`, `ORDER BY`, or `JOIN`
-- Offload slow operations to Sidekiq — never run them synchronously in a request cycle
+- Offload slow operations to Sidekiq or Solid Queue — never run them synchronously in a request cycle
 
 ### MUST NOT DO
 - Skip migrations for schema changes

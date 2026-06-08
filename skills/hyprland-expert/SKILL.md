@@ -11,7 +11,7 @@ metadata:
   role: specialist
   scope: implementation
   output-format: config
-  related-skills: devops-engineer, embedded-systems
+  related-skills: devops-engineer
 ---
 
 # Hyprland Expert
@@ -88,7 +88,7 @@ This skill supports users at every level. Follow the path that matches your expe
 Install Hyprland, log in, then follow `references/getting-started.md`. You'll have a working desktop in 10 minutes.
 
 ### "How do I make Hyprland look good?"
-Add `decoration { blur, drop_shadow }`, configure `animations` with smooth bezier curves, install waybar with a theme, use swww for animated wallpapers. See `references/companion-tools.md`.
+Add `decoration { blur, drop_shadow }`, configure `animations` with smooth bezier curves, install waybar with a theme, use hyprpaper for wallpapers. See `references/companion-tools.md`.
 
 ### "How do I make my apps open on the right workspace?"
 Use window rules: `windowrulev2=workspace 2,class:^(firefox)$`. See `references/window-rules.md`.
@@ -118,7 +118,7 @@ This happens when Hyprland starts without finding a config at all — it auto-ge
 If you already deleted the conf and see regeneration, just create `hyprland.lua` before the next logout, then restart the session.
 
 ### "How do I make Hyprland look like the screenshots I see?"
-Apply a Catppuccin Mocha theme across hyprland.conf, waybar, rofi, kitty, and swaync. See `references/theming.md` for full ecosystem drop-in configs.
+Apply a Catppuccin Mocha theme across hyprland.lua, waybar, rofi, ghostty, and swaync. See `references/theming.md` for full ecosystem drop-in configs.
 
 ### "What plugins should I install?"
 Start with `hyprspace` (workspace overview) and `hyprbars` (title bars). For laptops, add `hyprgrass` (touch gestures). See `references/plugins.md`.
@@ -248,11 +248,11 @@ hl.window_rule({ name = "float-pavucontrol", match = { class = "^pavucontrol$" }
 hl.window_rule({ name = "float-blueman", match = { class = "^blueman-manager$" }, float = true })
 hl.window_rule({ name = "ws-firefox", match = { class = "^firefox$" }, workspace = "2" })
 
-hl.bind("SUPER + Return", hl.dsp.exec_cmd("kitty"))
+hl.bind("SUPER + Return", hl.dsp.exec_cmd("ghostty"))
 hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("SUPER + Space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + F", hl.dsp.window.fullscreen())
-hl.bind("SUPER SHIFT + L", hl.dsp.exit())
+hl.bind("SUPER + Shift + Q", hl.dsp.exit())
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("waybar")
@@ -284,89 +284,103 @@ end)
 
 ## Templates
 
-### Minimal `hyprland.conf`
+### Minimal `hyprland.lua`
 
-```conf
-monitor=,preferred,auto,1
+```lua
+-- ~/.config/hypr/hyprland.lua
+-- Minimal Hyprland Lua config (v0.55+)
 
-input {
-    kb_layout=us
-    follow_mouse=1
-    touchpad {
-        natural_scroll=true
-        tap-to-click=true
-    }
-}
+-- == MONITORS ==
+-- Replace with your monitors from `hyprctl monitors`
+hl.monitor({
+    output   = "eDP-1",
+    mode     = "preferred",
+    position = "0x0",
+    scale    = 1,
+})
 
-general {
-    gaps_in=5
-    gaps_out=10
-    border_size=2
-    layout=dwindle
-}
+-- == INPUT & APPEARANCE ==
+hl.config({
+    input = {
+        kb_layout = "us",
+        kb_variant = "",
+        follow_mouse = 1,
+        touchpad = {
+            natural_scroll = true,
+            ["tap-to-click"] = true,
+        },
+    },
+    general = {
+        gaps_in = 5,
+        gaps_out = 10,
+        border_size = 2,
+        layout = "dwindle",
+    },
+    decoration = {
+        rounding = 10,
+        active_opacity = 1.0,
+        inactive_opacity = 0.9,
+        blur = {
+            enabled = true,
+            size = 3,
+            passes = 1,
+        },
+        shadow = {
+            enabled = true,
+            range = 4,
+        },
+    },
+})
 
-decoration {
-    rounding=10
-    blur {
-        enabled=true
-        size=3
-        passes=1
-    }
-    drop_shadow=true
-    shadow_range=4
-}
+-- == ANIMATIONS ==
+hl.curve("myBezier", { 0.05, 0.9, 0.1, 1.05 })
+hl.animation("windows", { enabled = true, speed = 7, curve = "myBezier" })
+hl.animation("fade", { enabled = true, speed = 7 })
+hl.animation("workspaces", { enabled = true, speed = 6 })
 
-animations {
-    enabled=true
-    bezier=myBezier,0.05,0.9,0.1,1.05
-    animation=windows,1,7,myBezier
-    animation=fade,1,7,default
-    animation=workspaces,1,6,default
-}
+-- == WINDOW RULES ==
+hl.window_rule({ name = "float-pavucontrol", match = { class = "^pavucontrol$" }, float = true })
+hl.window_rule({ name = "float-blueman", match = { class = "^blueman-manager$" }, float = true })
+hl.window_rule({ name = "ws-firefox", match = { class = "^firefox$" }, workspace = "1" })
+hl.window_rule({ name = "ws-code", match = { class = "^code$" }, workspace = "2" })
 
-windowrule=float,^(pavucontrol)$
-windowrule=float,^(blueman-manager)$
-windowrule=workspace 2 silent,^(firefox)$
-windowrule=workspace 3 silent,^(code)$
-windowrule=opacity 0.9,^(kitty)$
+-- == KEYBINDS ==
+local mod = "SUPER"
+hl.bind(mod .. " + Return", hl.dsp.exec_cmd("ghostty"))
+hl.bind(mod .. " + Q", hl.dsp.window.close())
+hl.bind(mod .. " + Space", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mod .. " + F", hl.dsp.window.fullscreen())
+hl.bind(mod .. " + left", hl.dsp.window.focus({ direction = "l" }))
+hl.bind(mod .. " + right", hl.dsp.window.focus({ direction = "r" }))
+hl.bind(mod .. " + up", hl.dsp.window.focus({ direction = "u" }))
+hl.bind(mod .. " + down", hl.dsp.window.focus({ direction = "d" }))
+hl.bind(mod .. " + Shift + left", hl.dsp.window.move({ direction = "l" }))
+hl.bind(mod .. " + Shift + right", hl.dsp.window.move({ direction = "r" }))
+hl.bind(mod .. " + Shift + up", hl.dsp.window.move({ direction = "u" }))
+hl.bind(mod .. " + Shift + down", hl.dsp.window.move({ direction = "d" }))
+hl.bind(mod .. " + 1", hl.dsp.dispatch("workspace", "1"))
+hl.bind(mod .. " + 2", hl.dsp.dispatch("workspace", "2"))
+hl.bind(mod .. " + 3", hl.dsp.dispatch("workspace", "3"))
+hl.bind(mod .. " + 4", hl.dsp.dispatch("workspace", "4"))
+hl.bind(mod .. " + Shift + 1", hl.dsp.dispatch("movetoworkspace", "1"))
+hl.bind(mod .. " + Shift + 2", hl.dsp.dispatch("movetoworkspace", "2"))
+hl.bind(mod .. " + Shift + 3", hl.dsp.dispatch("movetoworkspace", "3"))
+hl.bind(mod .. " + Shift + 4", hl.dsp.dispatch("movetoworkspace", "4"))
+hl.bind(mod .. " + Shift + Q", hl.dsp.exit())
 
-$mainMod=SUPER
-bind=$mainMod, Return, exec, kitty
-bind=$mainMod, Q, killactive
-bind=$mainMod, Space, togglefloating
-bind=$mainMod, F, fullscreen
-bind=$mainMod, left, movefocus, l
-bind=$mainMod, right, movefocus, r
-bind=$mainMod, up, movefocus, u
-bind=$mainMod, down, movefocus, d
-bind=$mainMod SHIFT, left, movewindow, l
-bind=$mainMod SHIFT, right, movewindow, r
-bind=$mainMod SHIFT, up, movewindow, u
-bind=$mainMod SHIFT, down, movewindow, d
-bind=$mainMod, 1, workspace, 1
-bind=$mainMod, 2, workspace, 2
-bind=$mainMod, 3, workspace, 3
-bind=$mainMod, 4, workspace, 4
-bind=$mainMod SHIFT, 1, movetoworkspace, 1
-bind=$mainMod SHIFT, 2, movetoworkspace, 2
-bind=$mainMod SHIFT, 3, movetoworkspace, 3
-bind=$mainMod SHIFT, 4, movetoworkspace, 4
-bind=$mainMod, T, togglegroup
-bind=$mainMod, tab, changegroupactive
-bind=$mainMod, mouse_down, workspace, e+1
-bind=$mainMod, mouse_up, workspace, e-1
-bind=$mainMod, M, exit
+-- == AUTOSTART ==
+hl.on("hyprland.start", function()
+    hl.exec_cmd("waybar")
+    hl.exec_cmd("hyprpaper")
+    hl.exec_cmd("hypridle")
+end)
 
-env=XCURSOR_SIZE,24
-env=HYPRCURSOR_SIZE,24
-env=GDK_BACKEND,wayland,x11,*
-env=QT_QPA_PLATFORM,wayland;xcb
-env=SDL_VIDEODRIVER,wayland
-
-exec-once=waybar
-exec-once=hyprpaper
-exec-once=hypridle
-exec-once=sleep 5; nm-applet
+-- == ENVIRONMENT ==
+hl.env("XCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("GDK_BACKEND", "wayland,x11,*")
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("SDL_VIDEODRIVER", "wayland")
 ```
 
 ### Multi-Monitor Setup
@@ -381,21 +395,18 @@ workspace=3,monitor:HDMI-A-1,default:true
 workspace=4,monitor:HDMI-A-1
 ```
 
-### Window Rules Reference
+### Window Rules Reference (Lua API)
 
-```conf
-windowrule=float,^(pavucontrol|blueman-manager|gnome-calculator)$
-windowrule=workspace 1,^(firefox)$
-windowrule=workspace 2,^(code|Alacritty)$
-windowrule=fullscreen,^(firefox)$
-windowrule=opacity 0.9 0.8,^(kitty)$
-windowrule=nofocus,^(waybar)$
-windowrule=noborder,^(anyrun)$
-windowrule=noblur,^(rofi)$
-windowrule=pin,^(firefox)$
-windowrule=suppressevent,^(steam)$,fullscreen
-windowrule=dimaround,^(anyrun)$
-windowrule=group,^(Alacritty)$
+```lua
+hl.window_rule({ name = "float",       match = { class = "^(pavucontrol|blueman-manager)$" }, float = true })
+hl.window_rule({ name = "ws-browser",  match = { class = "^(firefox)$" }, workspace = "1" })
+hl.window_rule({ name = "ws-dev",      match = { class = "^(code|ghostty)$" }, workspace = "2" })
+hl.window_rule({ name = "fullscreen",  match = { class = "^(firefox)$" }, fullscreen = true })
+hl.window_rule({ name = "nofocus",     match = { class = "^(waybar)$" }, focus = false })
+hl.window_rule({ name = "noborder",    match = { class = "^(rofi)$" }, border = false })
+hl.window_rule({ name = "pin",         match = { class = "^(firefox)$" }, pin = true })
+hl.window_rule({ name = "dimaround",   match = { class = "^(rofi)$" }, dim_around = true })
+hl.window_rule({ name = "suppress",    match = { class = "^(steam)$" }, suppressevent = "fullscreen" })
 ```
 
 ### Debug Commands

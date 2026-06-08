@@ -1,21 +1,24 @@
 # OpenCode Skills
 
-A collection of 70+ skills for [OpenCode](https://opencode.ai) — covering languages, frameworks, DevOps, cloud, and more.
+A collection of **108 skills** for [OpenCode](https://opencode.ai) — covering languages, frameworks, DevOps, cloud, AI/ML, security, frontend, mobile, and more.
 
 ## Included Skills
 
 All major domains:
-- **Languages** — python-pro, golang-pro, rust-engineer, lua-pro, luajit-pro, cpp-pro, java-architect, csharp-developer, and more
-- **Frameworks** — react-expert, nextjs-developer, vue-expert, django-expert, fastapi-expert, rails-expert, laravel-specialist, spring-boot-engineer, angular-architect, nestjs-expert
-- **DevOps & Cloud** — devops-engineer, terraform-engineer, kubernetes-specialist, cloud-architect, sre-engineer
+- **Languages** — python-pro, golang-pro, rust-engineer, lua-pro, luajit-pro, cpp-pro, java-architect, csharp-developer, javascript-pro, typescript-pro, kotlin-specialist, swift-expert
+- **Frontend** — react-expert, nextjs-developer, vue-expert, vue-expert-js, angular-architect, html-semantics, frontend-design, css-motion-systems, tailwind-design-system, a11y-engineer, i18n-engineer
+- **Backend & API** — fastapi-expert, nestjs-expert, django-expert, rails-expert, laravel-specialist, spring-boot-engineer, php-pro, api-designer, api-integrator, graphql-architect, websocket-engineer, mcp-developer
+- **Mobile** — flutter-expert, react-native-expert, swift-expert
+- **DevOps & Cloud** — devops-engineer, terraform-engineer, kubernetes-specialist, cloud-architect, sre-engineer, monitoring-expert
 - **Databases** — sql-pro, postgres-pro, database-optimizer
-- **Testing** — test-master, playwright-expert
-- **More** — security-reviewer, prompt-engineer, mcp-developer, and many others
-
-### New: Lua Skills
-
-- **lua-pro** — Lua 5.1–5.4 generalist: tables, metatables, coroutines, modules, standard library, testing
-- **luajit-pro** — LuaJIT specialist: FFI bindings, JIT trace optimization, bit operations
+- **Security & Auth** — auth-architect, secure-code-guardian, security-reviewer, code-security-auditor
+- **AI/ML** — ai-agent-builder, rag-architect, fine-tuning-expert, ml-pipeline, prompt-engineer
+- **Testing** — test-master, playwright-expert, debugging-wizard
+- **Platform & SaaS** — shopify-expert, wordpress-pro, salesforce-developer, composio, atlassian-mcp
+- **Process** — code-reviewer, staff-engineer-review, feature-forge, changelog-generator, stop-slop, the-fool, code-documenter
+- **Career & Resume** — 22 skills covering resume writing, cover letters, interview prep, negotiation, LinkedIn optimization
+- **Document & Office** — docx, pdf, pptx, xlsx
+- **Infrastructure** — terraform-engineer, kubernetes-specialist, cloud-architect, chaos-engineer, embedded-systems, game-developer
 
 ## Usage
 

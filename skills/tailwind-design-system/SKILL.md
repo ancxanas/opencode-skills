@@ -1,17 +1,39 @@
 ---
 name: tailwind-design-system
-description: Build scalable design systems with Tailwind CSS, design tokens, component
-  libraries, and responsive patterns. Use when creating component libraries, implementing
-  design systems, or standardizing UI patterns.
-category: frontend
-tags:
-- frontend
-- tailwind
-- system
+description: Build scalable design systems with Tailwind CSS v3 or v4, design tokens, component libraries, and responsive patterns. Use when creating component libraries, implementing design systems, standardizing UI patterns, or migrating from Tailwind v3 to v4.
+license: MIT
+compatibility: opencode
+metadata:
+  author: opencode
+  version: "2.0.0"
+  domain: frontend
+  triggers: tailwind, tailwindcss, design system, component library, UI patterns, shadcn, tailwind v4, tailwind config, @theme, CVA
+  role: specialist
+  scope: implementation
+  output-format: code
+  related-skills: frontend-design, css-motion-systems, react-expert, vue-expert
 ---
 # Tailwind Design System
 
-Build production-ready design systems with Tailwind CSS, including design tokens, component variants, responsive patterns, and accessibility.
+Build production-ready design systems with Tailwind CSS (v3 or v4), including design tokens, component variants, responsive patterns, and accessibility.
+
+## Version Support
+
+This skill covers both Tailwind CSS v3 and v4. The component architecture patterns (CVA, compound components) work identically in both. Configuration differs significantly.
+
+| Feature | Tailwind v3 (legacy) | Tailwind v4 (current) |
+|---------|---------------------|----------------------|
+| Config | `tailwind.config.js/ts` | CSS `@theme` directives |
+| Import | `@tailwind base/components/utilities` | `@import "tailwindcss"` |
+| Engine | PostCSS (Node.js) | Rust-based (Lightning CSS) |
+| Install plugin | `tailwindcss` | `@tailwindcss/postcss` or `@tailwindcss/vite` |
+| Content scan | Manual `content` array | Auto-detected from `.gitignore` |
+| Custom colors | `theme.extend.colors` in JS | `@theme { --color-*: ... }` in CSS |
+| Container queries | Plugin `@tailwindcss/container-queries` | Built-in |
+| Gradient syntax | `bg-gradient-to-r` | `bg-linear-to-r` |
+| Shadow scale | `shadow-sm` (small), `shadow` (default) | `shadow-xs` (small), `shadow-sm` (default) |
+
+> **If starting a new project:** use Tailwind v4. If maintaining a v3 project, the patterns below work for both.
 
 ## When to Use This Skill
 
@@ -92,8 +114,54 @@ const config: Config = {
 export default config
 ```
 
+### Tailwind v4: CSS-First Config
+
+In v4, configuration moves from JavaScript to CSS. No `tailwind.config.*` file needed.
+
 ```css
-/* globals.css */
+/* app.css — v4 style */
+@import "tailwindcss";
+
+/* Theme tokens become real CSS custom properties */
+@theme {
+  --color-primary: oklch(0.21 0.034 264.665);
+  --color-primary-foreground: oklch(0.985 0 0);
+  --color-secondary: oklch(0.967 0.001 286.375);
+  --color-secondary-foreground: oklch(0.21 0.034 264.665);
+  --color-destructive: oklch(0.577 0.245 27.325);
+  --color-destructive-foreground: oklch(0.985 0 0);
+  --color-muted: oklch(0.967 0.001 286.375);
+  --color-muted-foreground: oklch(0.551 0.013 285.938);
+  --color-accent: oklch(0.967 0.001 286.375);
+  --color-accent-foreground: oklch(0.21 0.034 264.665);
+  --color-background: oklch(1 0 0);
+  --color-foreground: oklch(0.21 0.034 264.665);
+  --color-border: oklch(0.92 0.004 286.375);
+  --color-ring: oklch(0.21 0.034 264.665);
+  --radius-xs: calc(var(--radius) - 4px);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius);
+}
+
+/* Dark mode via class-based @variant */
+@variant dark (&:where(.dark, .dark *));
+```
+
+Install for Vite: `npm install @tailwindcss/vite` then add to `vite.config.ts`:
+
+```typescript
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [tailwindcss()],
+})
+```
+
+Or for PostCSS: `npm install @tailwindcss/postcss` and update `postcss.config.js` to use `@tailwindcss/postcss` (replaces both `tailwindcss` and `autoprefixer`).
+
+```css
+/* globals.css — v3 style */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -664,9 +732,50 @@ export const disabled = 'disabled:pointer-events-none disabled:opacity-50'
 - **Don't hardcode colors** - Use semantic tokens
 - **Don't forget dark mode** - Test both themes
 
+## Migrating from v3 to v4
+
+### Automated Upgrade
+
+```bash
+npx @tailwindcss/upgrade
+```
+
+The codemod handles: `@tailwind` → `@import "tailwindcss"`, class renames (`shadow-sm` → `shadow-xs`), opacity syntax changes (`bg-opacity-50` → `bg-black/50`), and JS config → `@theme` conversion.
+
+### Manual Review Required
+
+After the codemod, check:
+
+1. **Border defaults changed** — v3 used `gray-200`, v4 uses `currentColor`. Add explicit border colors where needed.
+2. **Shadow scale renamed** — `shadow-sm` → `shadow-xs`, `shadow` → `shadow-sm`. Update class names or styles will look different.
+3. **Ring width changed** — default dropped from 3px to 1px. Use `ring-3` to restore old behaviour.
+4. **Custom plugins** — v3 JS API plugins need rewriting as `@utility`/`@variant` CSS.
+5. **Dynamic classes** — string-concatenated classes like `` `shadow-${size}` `` won't be renamed by the codemod.
+6. **PostCSS plugin** — `tailwindcss` → `@tailwindcss/postcss` in `postcss.config.js`.
+7. **Gradients** — `bg-gradient-to-r` → `bg-linear-to-r` (and all other gradient directions).
+
+### Key Renames
+
+| v3 | v4 |
+|----|----|
+| `shadow-sm` | `shadow-xs` |
+| `shadow` | `shadow-sm` |
+| `shadow-md`+ | unchanged |
+| `rounded-sm` | `rounded-xs` |
+| `rounded` | `rounded-sm` |
+| `bg-gradient-to-*` | `bg-linear-to-*` |
+| `flex-shrink-0` | `shrink-0` |
+| `flex-grow` | `grow` |
+| `overflow-ellipsis` | `text-ellipsis` |
+| `outline-none` | `outline-hidden` |
+| `ring` (3px) | `ring-3` to restore |
+| `drop-shadow-sm` | `drop-shadow-xs` |
+| `blur-sm` | `blur-xs` |
+
 ## Resources
 
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Tailwind CSS v4 Docs](https://tailwindcss.com/docs)
+- [Tailwind v4 Upgrade Guide](https://tailwindcss.com/docs/upgrade-guide)
 - [CVA Documentation](https://cva.style/docs)
 - [shadcn/ui](https://ui.shadcn.com/)
 - [Radix Primitives](https://www.radix-ui.com/primitives)

@@ -1,0 +1,27 @@
+/* Motion Tokens — CSS Custom Properties for Consistent Animation */
+
+/* Durations */
+--dur-micro:   120ms;   /* hover, active, toggle (tiny state changes) */
+--dur-fast:    180ms;   /* tooltip, badge, simple feedback */
+--dur-component: 240ms; /* cards, modals, menus, list changes */
+--dur-expand:  300ms;   /* accordions, collapsible panels */
+--dur-route:   350ms;   /* page transitions, route changes */
+--dur-hero:    420ms;   /* hero sections, large structural changes */
+
+/* Easings */
+--ease-out:    cubic-bezier(0.16, 1, 0.3, 1);         /* decelerate: elements entering */
+--ease-in:     cubic-bezier(0.4, 0, 0.68, 0.06);       /* accelerate: elements leaving */
+--ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);         /* symmetrical emphasis */
+--ease-spring: linear(0, 0.006 8%, 0.027 15.5%, …);    /* subtle overshoot settle */
+
+/* Travel Distance */
+--travel-micro:  4px;   /* icon state change, inner-shadow feedback */
+--travel-small:  8px;   /* tooltip, badge relative positioning */
+--travel-medium: 16px;  /* menu, dropdown, sub-panel reveal */
+--travel-large:  32px;  /* drawer, sheet, side panel */
+--travel-xlarge: 64px;  /* full modal overlay, page-level entry */
+
+/* Stagger Delays */
+--stagger-fast:  30ms;  /* list items, grid cells (tight rhythm) */
+--stagger-normal: 50ms; /* cards, sections (balanced) */
+--stagger-slow:  80ms;  /* hero, feature blocks (deliberate reveal) */

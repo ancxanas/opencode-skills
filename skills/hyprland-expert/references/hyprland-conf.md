@@ -156,7 +156,7 @@ misc {
     mouse_move_enables_dpms=true          # Wake screen on mouse move
     key_press_enables_dpms=true           # Wake screen on key press
     enable_swallow=true                   # Terminal "swallowing" — when a GUI app launches from terminal, the terminal hides until the app closes
-    swallow_regex=^(kitty|alacritty|foot)$  # Which terminals can swallow
+    swallow_regex=^(com\\.mitchellh\\.ghostty|alacritty|foot)$  # Which terminals can swallow
     font_family=Sans                      # Default font for internal UI
     animate_mouse_windowdragging=false     # Animate window while dragging
     force_default_wallpaper=0             # 0=let wallpaper tool handle it
@@ -172,7 +172,7 @@ Tell certain windows how to behave when they open. See full reference in `window
 windowrule=float,^(pavucontrol)$
 windowrule=workspace 2 silent,^(firefox)$
 windowrulev2=float,class:^(pavucontrol)$,title:^(Volume Control)$
-windowrulev2=opacity 0.9 0.8,class:^(kitty)$
+windowrulev2=opacity 0.9 0.8,class:^(com\\.mitchellh\\.ghostty)$
 ```
 
 **v1 vs v2:**
@@ -184,7 +184,7 @@ windowrulev2=opacity 0.9 0.8,class:^(kitty)$
 Maps keyboard and mouse shortcuts to actions. See full reference in `keybindings.md`.
 
 ```
-bind=SUPER,Return,exec,kitty
+bind=SUPER,Return,exec,ghostty
 bind=SUPER SHIFT,Q,killactive
 bindl=,XF86AudioRaiseVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
 bindl=,XF86AudioLowerVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-

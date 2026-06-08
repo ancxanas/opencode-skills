@@ -6,9 +6,9 @@ Choose a combination that matches your needs:
 
 | Stack | Bar | Launcher | Notifications | Lock Screen | Clipboard | Wallpaper | Screenshots |
 |-------|-----|----------|---------------|-------------|-----------|-----------|-------------|
-| Minimal | waybar | wofi | dunst | hyprlock | wl-clipboard | hyprpaper | grim+slurp |
-| Balanced | waybar | rofi | swaync | hyprlock | cliphist | swww | hyprshot |
-| Full-featured | waybar | rofi | swaync | hyprlock | cliphist | swww | hyprshot |
+| Minimal | waybar | wofi | dunst / swaync | hyprlock / loginctl | wl-clipboard | hyprpaper | grim+slurp |
+| Balanced | waybar | rofi | swaync | hyprlock / loginctl | cliphist | hyprpaper | hyprshot |
+| Full-featured | waybar | rofi | swaync | hyprlock / loginctl | cliphist | hyprpaper | hyprshot |
 
 **Minimal** — Fewest dependencies, lowest resource usage, gets the job done
 **Balanced** — Good feature set with moderate resource usage
@@ -298,7 +298,7 @@ bind = $mainMod, B, exec, eww open bar
 
 ---
 
-## Lock Screen: hyprlock
+## Lock Screen: hyprlock / loginctl
 
 ### Install
 
@@ -354,6 +354,30 @@ label {
 }
 ```
 
+### Alternative: loginctl (lightweight, reuses SDDM/login manager lock)
+
+If you don't need a custom lock screen UI, use `loginctl lock-session`:
+
+```bash
+# Included with systemd — no install needed
+loginctl lock-session
+```
+
+In hypridle.conf:
+```conf
+lock_cmd = loginctl lock-session
+```
+
+In hyprland.lua:
+```lua
+hl.bind("SUPER + Escape", hl.dsp.exec_cmd("loginctl lock-session"))
+```
+
+**Pros:** Zero dependencies, uses your login manager's lock (SDDM, GDM, etc.)
+**Cons:** No custom background/blur/time display
+
+---
+
 ## Idle Daemon: hypridle
 
 ### Install
@@ -377,7 +401,7 @@ environment.systemPackages = with pkgs; [ hypridle ];
 ```conf
 # ~/.config/hypr/hypridle.conf
 general {
-    lock_cmd = pidof hyprlock || hyprlock
+    lock_cmd = pidof hyprlock || hyprlock   # or: loginctl lock-session
     before_sleep_cmd = loginctl lock-session
     after_sleep_cmd = hyprctl dispatch dpms on
 }
@@ -477,7 +501,9 @@ hyprctl hyprpaper wallpaper "DP-1,~/.config/hypr/new_wall.png" # Change wallpape
 killall hyprpaper && hyprpaper &                               # Reload
 ```
 
-### Alternative: swww
+### Alternative: swww (animated transitions)
+
+If you prefer animated wallpaper transitions, `swww` offers fade/slide/wave effects.
 
 ```
 # Arch
@@ -498,6 +524,8 @@ swww-daemon                                                    # Start
 swww img ~/.config/hypr/wallpaper.png                          # Set with transition
 swww img ~/.config/hypr/wallpaper.png --transition-type wave   # Custom transition
 ```
+
+**Note:** `hyprpaper` (above) is the recommended default — simpler, no flicker, and first-party Hyprland integration. Use `swww` only if you specifically want animated transitions.
 
 ## Screen Sharing: xdg-desktop-portal-hyprland
 
@@ -806,7 +834,7 @@ sudo pacman -S hyprpolkitagent
 
 **Autostart:**
 ```bash
-exec-once=/usr/lib/hyprpolkitagent
+exec-once=/usr/libexec/hyprpolkitagent
 ```
 # Arch
 yay -S hyprpolkitagent
@@ -817,7 +845,7 @@ yay -S hyprpolkitagent
 
 ```bash
 # Start (replaces polkit-gnome)
-exec-once=/usr/lib/hyprpolkitagent
+exec-once=/usr/libexec/hyprpolkitagent
 ```
 
 **Why:** Native Hyprland look (QT/QML), no GNOME dependency, handles auth dialogs with proper Wayland integration.
@@ -871,7 +899,7 @@ sudo pacman -S hyprpolkitagent
 
 then autostart it:
 ```bash
-exec-once=/usr/lib/hyprpolkitagent
+exec-once=/usr/libexec/hyprpolkitagent
 
 # Fallback: polkit-gnome
 # sudo pacman -S polkit-gnome

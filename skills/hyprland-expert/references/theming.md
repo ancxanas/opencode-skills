@@ -270,60 +270,11 @@ element selected {
 }
 ```
 
-### Kitty
+### Ghostty
 
 ```conf
-# ~/.config/kitty/kitty.conf — Catppuccin Mocha
-background #1e1e2e
-foreground #cdd6f4
-selection_background #585b70
-selection_foreground #cdd6f4
-
-cursor #f5e0dc
-cursor_text_color #1e1e2e
-
-url_color #89b4fa
-
-active_border_color #cba6f7
-inactive_border_color #45475a
-bell_border_color #f9e2af
-
-# Black
-color0 #45475a
-color8 #585b70
-
-# Red
-color1 #f38ba8
-color9 #f38ba8
-
-# Green
-color2 #a6e3a1
-color10 #a6e3a1
-
-# Yellow
-color3 #f9e2af
-color11 #f9e2af
-
-# Blue
-color4 #89b4fa
-color12 #89b4fa
-
-# Magenta
-color5 #cba6f7
-color13 #cba6f7
-
-# Cyan
-color6 #94e2d5
-color14 #94e2d5
-
-# White
-color7 #bac2de
-color15 #a6adc8
-
-font_family JetBrainsMono Nerd Font
-bold_font JetBrainsMono Nerd Font Bold
-italic_font JetBrainsMono Nerd Font Italic
-font_size 12.0
+# ~/.config/ghostty/config — Catppuccin Mocha
+theme = catppuccin-mocha
 ```
 
 ### Alacritty
@@ -716,10 +667,10 @@ animations {
 windowrule=float,^(pavucontrol|blueman-manager|gnome-calculator|org.gnome.Nautilus)$
 windowrule=workspace 2 silent,^(firefox)$
 windowrule=workspace 3 silent,^(code|Code)$
-windowrule=opacity 0.9 0.8,^(kitty|Alacritty|foot)$
+windowrule=opacity 0.9 0.8,^(com\\.mitchellh\\.ghostty|Alacritty|foot)$
 
 $mainMod=SUPER
-bind=$mainMod,Return,exec,kitty
+bind=$mainMod,Return,exec,ghostty
 bind=$mainMod,D,exec,rofi -show drun
 bind=$mainMod,Q,killactive
 bind=$mainMod,M,exit
@@ -760,7 +711,7 @@ exec-once=waybar
 exec-once=hyprpaper
 exec-once=hypridle
 exec-once=swaync
-exec-once=/usr/lib/hyprpolkitagent            -- hyprpolkitagent preferred; fallback: /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec-once=/usr/libexec/hyprpolkitagent            -- hyprpolkitagent preferred; fallback: /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 ```
 
 ### hyprpaper.conf
@@ -776,7 +727,9 @@ wallpaper {
 splash = false
 ```
 
-### hyprlock.conf
+### hyprlock.conf — or use loginctl
+
+For a lightweight alternative that uses your login manager's lock screen (SDDM, GDM), use `loginctl lock-session` instead — no extra config needed.
 
 ```conf
 # ~/.config/hypr/hyprlock.conf — Catppuccin Mocha

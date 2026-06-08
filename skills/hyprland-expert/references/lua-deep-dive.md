@@ -113,8 +113,8 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name  = "opacity-kitty",
-    match = { class = "^(kitty)$" },
+    name  = "opacity-terminal",
+    match = { class = "^(com\\.mitchellh\\.ghostty)$" },
     -- Note: per-window opacity is not available in the Lua API as of v0.55
     -- Use decoration { active_opacity, inactive_opacity } in hl.config() instead
 })
@@ -136,7 +136,7 @@ Use `hl.bind()` with `hl.dsp.*` dispatchers:
 local mod = "SUPER"
 
 -- Execute a command
-hl.bind(mod .. " + Return", hl.dsp.exec_cmd("kitty"))
+hl.bind(mod .. " + Return", hl.dsp.exec_cmd("ghostty"))
 hl.bind(mod .. " + D",      hl.dsp.exec_cmd("wofi --show drun"))
 
 -- Built-in dispatchers
@@ -245,7 +245,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("hypridle")
     -- Use hyprpolkitagent if available, fallback to polkit-gnome
-    -- hl.exec_cmd("/usr/lib/hyprpolkitagent")
+    -- hl.exec_cmd("/usr/libexec/hyprpolkitagent")
     -- hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 end)
 ```
@@ -666,8 +666,8 @@ See `workflow-patterns.md` for full scrolling layout details.
 | `monitor=DP-1,preferred,auto,1` | `hl.monitor({ output = "DP-1", mode = "preferred", position = "auto", scale = 1 })` |
 | `general { gaps_in=5 }` | `hl.config({ general = { gaps_in = 5 } })` |
 | `decoration { blur { enabled=true } }` | `hl.config({ decoration = { blur = { enabled = true } } })` |
-| `windowrule=float,^(kitty)$` | `hl.window_rule({ name = "float-kitty", match = { class = "^(kitty)$" }, float = true })` |
-| `bind=SUPER,Return,exec,kitty` | `hl.bind("SUPER + Return", hl.dsp.exec_cmd("kitty"))` |
+| `windowrule=float,^(ghostty)$` | `hl.window_rule({ name = "float-ghostty", match = { class = "^(ghostty)$" }, float = true })` |
+| `bind=SUPER,Return,exec,ghostty` | `hl.bind("SUPER + Return", hl.dsp.exec_cmd("ghostty"))` |
 | `bindl=,XF86AudioRaiseVolume,exec,cmd` | `hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("cmd"), { locked = true })` |
 | `bindm=SUPER,mouse:272,movewindow` | `hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })` |
 | `$var = value` | `local var = "value"` |
@@ -696,7 +696,7 @@ See `workflow-patterns.md` for full scrolling layout details.
 - Lua config replaces hyprlang entirely — you can't use both at once. If both `hyprland.lua` and `hyprland.conf` exist, Lua takes priority
 - `hyprctl dispatch` syntax changed in v0.55: use `hyprctl dispatch 'hl.dsp.exec_cmd("cmd")'` instead of `hyprctl dispatch 'exec cmd'`
 - `hyprctl eval` lets you run arbitrary Lua: `hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = "3" }))'`
-- Some hyprlang-only modules (hyprlock, hypridle) don't support Lua yet — they still use `hyprlang`
+- Some hyprlang-only modules (hypridle) don't support Lua yet — they still use `hyprlang`
 - The Lua API is still evolving — check the wiki for the latest changes
 - No Lua support for plugin configuration (yet)
 
@@ -706,7 +706,7 @@ See `workflow-patterns.md` for full scrolling layout details.
 -- ~/.config/hypr/hyprland.lua
 
 -- Variables
-local terminal    = "kitty"
+local terminal    = "ghostty"
 local browser     = "firefox"
 local fileManager = "thunar"
 local mod         = "SUPER"
@@ -781,7 +781,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("waybar")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("hypridle")
-    -- hl.exec_cmd("/usr/lib/hyprpolkitagent")
+    -- hl.exec_cmd("/usr/libexec/hyprpolkitagent")
 end)
 
 -- Events

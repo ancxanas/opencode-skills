@@ -51,7 +51,7 @@ mv ~/.config/hypr ~/.config/hypr.bak
 - `SUPER + mouse_up` — Previous workspace
 - `SUPER + click/drag` — Move/resize floating window
 
-Open a terminal: `SUPER + Return` (if kitty is installed) or use `SUPER + F2` to run a command.
+Open a terminal: `SUPER + Return` (if ghostty is installed) or use `SUPER + F2` to run a command.
 
 ## Your First Config
 
@@ -115,7 +115,7 @@ windowrule=workspace 2,^(code|Alacritty)$   # Code + terminal on workspace 2
 $mainMod=SUPER                              # Shortcut for the SUPER key
 
 # Launch applications
-bind=$mainMod,Return,exec,kitty             # Open terminal
+bind=$mainMod,Return,exec,ghostty           # Open terminal
 bind=$mainMod,D,exec,wofi --show drun       # Open app launcher
 
 # Close and exit
@@ -165,7 +165,7 @@ env=SDL_VIDEODRIVER,wayland
 exec-once=waybar                             # Status bar
 exec-once=hyprpaper                          # Wallpaper daemon
 exec-once=hypridle                           # Idle management
-exec-once=/usr/lib/hyprpolkitagent                                  # Auth dialogs (hyprpolkitagent preferred; fallback: polkit-gnome)
+exec-once=/usr/libexec/hyprpolkitagent                              # Auth dialogs (hyprpolkitagent preferred; fallback: polkit-gnome)
 exec-once=sleep 5; nm-applet                 # Network manager tray
 ```
 
@@ -174,10 +174,10 @@ exec-once=sleep 5; nm-applet                 # Network manager tray
 | Purpose | Terminal | Bar | App Launcher | Notifications | Wallpaper |
 |---------|----------|-----|-------------|---------------|-----------|
 | Minimal | `foot` | `waybar` | `wofi` | `dunst` | `hyprpaper` |
-| Full-featured | `kitty` | `waybar` | `rofi` | `swaync` | `swww` |
-| Eye candy | `alacritty` | `waybar` | `rofi` | `swaync` | `swww` |
+| Full-featured | `ghostty` | `waybar` | `rofi` | `swaync` | `hyprpaper` |
+| Eye candy | `alacritty` | `waybar` | `rofi` | `swaync` | `hyprpaper` |
 
-**Terminal** — Your primary tool. `kitty` is GPU-accelerated, `foot` is minimal and fast, `alacritty` is fast and configurable.
+**Terminal** — Your primary tool. `ghostty` is GPU-accelerated with modern features, `foot` is minimal and fast, `alacritty` is fast and configurable.
 
 **Bar** — Shows workspaces, clock, system tray. `waybar` is the most popular choice.
 
@@ -254,7 +254,7 @@ dotgit checkout
 # Structure your repo
 mkdir -p ~/dotfiles/hypr/.config/hypr
 mkdir -p ~/dotfiles/waybar/.config/waybar
-mkdir -p ~/dotfiles/kitty/.config/kitty
+mkdir -p ~/dotfiles/ghostty/.config/ghostty
 
 # Move configs into the repo
 mv ~/.config/hypr/hyprland.conf ~/dotfiles/hypr/.config/hypr/hyprland.conf
@@ -264,7 +264,7 @@ mv ~/.config/waybar/config.jsonc ~/dotfiles/waybar/.config/waybar/config.jsonc
 cd ~/dotfiles
 stow hypr
 stow waybar
-stow kitty
+stow ghostty
 
 # ~/.config/hypr/hyprland.conf → ~/dotfiles/hypr/.config/hypr/hyprland.conf (symlink)
 
@@ -329,7 +329,7 @@ monitor = eDP-1, 1920x1080@60, 0x0, 1.25
 After your Hyprland desktop is running, customize in this order:
 
 1. **Keybindings** — Change `$mainMod`, add your most-used app shortcuts (browser, file manager, terminal)
-2. **Terminal** — Pick and theme your terminal (`kitty`, `alacritty`, `foot`, `wezterm`)
+2. **Terminal** — Pick and theme your terminal (`ghostty`, `alacritty`, `foot`, `wezterm`)
 3. **Wallpaper** — Set a wallpaper with `hyprpaper` or `swww`
 4. **Bar** — Tweak Waybar modules: add weather, remove CPU if not needed
 5. **Window rules** — Send your browser to workspace 2, terminal to workspace 1

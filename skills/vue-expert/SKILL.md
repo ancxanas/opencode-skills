@@ -7,7 +7,7 @@ metadata:
   author: https://github.com/Jeffallan
   version: "1.1.0"
   domain: frontend
-  triggers: Vue 3, Composition API, Nuxt, Pinia, Vue composables, reactive, ref, Vue Router, Vite Vue, Quasar, Capacitor, PWA, service worker, Fastify SSR, sourcemap, Vite config, build optimization
+  triggers: Vue 3, Composition API, Nuxt, Pinia, Vue composables, reactive, ref, Vue Router, Vite Vue, Quasar, Capacitor, PWA, service worker, sourcemap, Vite config, build optimization
   role: specialist
   scope: implementation
   output-format: code
